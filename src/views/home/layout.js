@@ -9,7 +9,7 @@ import {
 } from "@mui/material"
 import MuiAppBar from "@mui/material/AppBar"
 import { Box } from "@mui/system"
-import { motion, useAnimation, useCycle, useInView } from "framer-motion"
+import { motion, useAnimation, useInView } from "framer-motion"
 import Router, { useRouter } from "next/router"
 import React from "react"
 import { AngleDownWard, UserIcon } from "../../components/svg"
@@ -34,13 +34,8 @@ export default function HomeLayout({ children }) {
   const mainControls = useAnimation()
   const router = useRouter()
   const [loading, setLoading] = React.useState(false)
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [openNest, setOpenNest] = React.useState("")
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
-  const [isOpen, toggleOpen] = useCycle(false, true)
-  const containerRef = React.useRef(null)
-  // const { height } = useDimensions(containerRef)
 
   const menu = [
     {

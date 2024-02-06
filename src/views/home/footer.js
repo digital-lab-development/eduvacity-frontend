@@ -197,7 +197,7 @@ export default function FooterPage() {
                   flexDirection: "column",
                   gap: "16px",
                   alignItems: "flex-start",
-                  ml: { xs: 0, sm: 4, lg: 6 },
+                  ml: { xs: 0, sm: 4, lg: 6, xl: 3 },
                 }}
               >
                 <Typography
