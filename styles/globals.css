@@ -1,0 +1,147 @@
+:root {
+  /* Colors: */
+  --primary: #41a36e;
+  --light: #ffffff;
+  --black: #000000;
+  --secondary: #011b23;
+  --primary-light: #e6f3ed;
+  --primary-dark: rgba(1, 27, 35, 1);
+  --text-color: #757575;
+  --primary-font: Helvetica, "sans-serif";
+  --secondary-font: Inter, sans;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: normal normal 400 16px/1.5 Helvetica, Inter, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif !important;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+/* The grabbable scrollbar button  */
+html::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 15px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* The vertical scrollbar background */
+html::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+/* The grabbable scrollbar button  */
+html::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 30px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* The vertical scrollbar background */
+html::-webkit-scrollbar-track {
+  background: #344054;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+  display: none;
+}
+
+input::-webkit-calendar-picker-indicator:hover {
+  color: #757575;
+  cursor: pointer;
+}
+
+::-webkit-calendar-picker-indicator {
+  background: url("/images/svgs/calender-alt.svg") no-repeat right #fff;
+  -webkit-appearance: none;
+  background-position: right 0px top 50%;
+}
+
+/* ::-webkit-textfield-decoration-container { } */
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+::-ms-reveal {
+  display: none;
+}
+::-moz-placeholder {
+  color: #757575;
+  font-family: var(--primary-font);
+}
+
+@font-face {
+  font-family: "AvantPro";
+  src: url("/fonts/ITCAvantGardePro-Md.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Habibi";
+  src: url("/fonts/Habibi-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvantDemi";
+  src: url("/fonts/ITCAvantGardePro-Demi.otf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  padding: "0px 20px 20px";
+}
+
+@media only screen and (max-width: 600px) {
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    padding: "20px 0px";
+  }
+}
