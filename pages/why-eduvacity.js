@@ -932,9 +932,7 @@ export default function WhyEduvasityPage() {
               textAlign: { xs: "center", sm: "left" },
             }}
           >
-            Engage in hands-on learning through cutting-edge simulations
-            designed to replicate industry challenges. Sharpen your skills and
-            apply theoretical knowledge in a practical, risk-free environment.
+            Bridging the gap between skillsets and market-ready experiences...
           </Typography>
           <Box sx={{ width: { xs: "100%", sm: 159 }, mt: 3 }}>
             <Box
