@@ -13,12 +13,13 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import Router, { useRouter } from "next/router"
 import React from "react"
 import { AngleDownWard, UserIcon } from "../../components/svg"
-import AppLogo from "../../components/svg/applogo"
+// import AppLogo from "../../components/svg/applogo"
 import { Colors } from "../../components/themes/colors"
 import { Fonts } from "../../components/themes/fonts"
 import { StyledMenuTooltip } from "../../components/tooltip"
 import FooterPage from "./footer"
 import MenuLists from "./popover"
+import Image from "next/image"
 
 const appHeight = 95
 function updateKey(str) {
@@ -121,7 +122,13 @@ export default function HomeLayout({ children }) {
             }}
           >
             <Link underline="none" href="/" sx={{ width: 200 }}>
-              <AppLogo />
+              <Image
+                src="/images/logo.png"
+                width={150}
+                height={28}
+                alt="logo"
+                layout="fixed"
+              />
             </Link>
             <Box
               sx={{

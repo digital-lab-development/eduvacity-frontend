@@ -10,7 +10,8 @@ import {
   Youtube,
 } from "../../components/svg"
 import { Fonts } from "../../components/themes/fonts"
-import AppLogo from "../../components/svg/applogo"
+// import AppLogo from "../../components/svg/applogo"
+import Image from "next/image"
 
 export default function FooterPage() {
   const today = new Date()
@@ -48,8 +49,14 @@ export default function FooterPage() {
             gap: 2,
           }}
         >
-          <Link underline="none" href="/">
-            <AppLogo />
+          <Link underline="none" href="/" sx={{ width: 200 }}>
+            <Image
+              src="/images/logo.png"
+              width={150}
+              height={28}
+              alt="logo"
+              layout="fixed"
+            />
           </Link>
           <Typography
             variant="span"
