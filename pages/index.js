@@ -4,22 +4,18 @@ import {
   Box,
   CssBaseline,
   Divider,
-  Link,
   Typography,
 } from "@mui/material"
-import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
-import smVideoplayer from "../public/images/video-guy-xs.svg"
-import videoplayer from "../public/images/video-guy.svg"
 import { ArrowUp, PlayButton, WhatsApp } from "../src/components/svg"
 import { Colors } from "../src/components/themes/colors"
 import { Fonts } from "../src/components/themes/fonts"
+import FrequentlyAskQuestions from "../src/views/home/faq"
 import FeaturesCard from "../src/views/home/features"
 import HomePageLayout from "../src/views/home/layout"
 import ProgramsCard from "../src/views/home/programs"
 import AcademicTabs from "../src/views/home/tab"
-import FrequentlyAskQuestions from "../src/views/home/faq"
 
 export default function HomePage() {
   const router = useRouter()
