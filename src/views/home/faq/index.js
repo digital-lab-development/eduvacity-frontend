@@ -38,8 +38,8 @@ const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(
 )
 
 const AccordionDetails = styled(MuiAccordionDetails)(() => ({
-  padding: "0px 16px 0",
-  textAlign: "left",
+  padding: 0,
+  textAlign: "justify",
   font: `normal normal normal 16px/24px ${Fonts.primary}`,
   letterSpacing: 0,
   color: "#868B93",

@@ -56,11 +56,11 @@ export default function FooterPage() {
             sx={{
               maxWidth: "100%",
               font: {
-                xs: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
                 md: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
               },
               color: "#87A0A8",
-              textAlign: { xs: "center", sm: "left" },
+              textAlign: { xs: "left", sm: "left" },
             }}
           >
             We bridge the education gap and assist individuals in building their

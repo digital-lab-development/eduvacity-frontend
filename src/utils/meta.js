@@ -1,10 +1,10 @@
-import Head from "next/head";
-import React from "react";
+import Head from "next/head"
+import React from "react"
 
 export default function MetaData({ title, content }) {
   return (
     <Head>
-      <title>{title} | Peer learning </title>
+      <title>{title} | Eduvacity </title>
       <meta name="description" content={content} />
       <link
         rel="apple-touch-icon"
@@ -29,5 +29,5 @@ export default function MetaData({ title, content }) {
       <meta name="theme-color" content="#0d1825" />
       {/* <link rel="shortcut icon" href="/favicon.ico" /> */}
     </Head>
-  );
+  )
 }

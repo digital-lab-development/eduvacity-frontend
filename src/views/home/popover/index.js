@@ -1,46 +1,20 @@
-import * as React from "react"
-import Box from "@mui/material/Box"
-import { styled, ThemeProvider, createTheme, alpha } from "@mui/material/styles"
-import Divider from "@mui/material/Divider"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemIcon from "@mui/material/ListItemIcon"
-import ListItemText from "@mui/material/ListItemText"
-import Paper from "@mui/material/Paper"
-import IconButton from "@mui/material/IconButton"
-import Tooltip from "@mui/material/Tooltip"
-import ArrowRight from "@mui/icons-material/ArrowRight"
-import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown"
-import Home from "@mui/icons-material/Home"
-import Settings from "@mui/icons-material/Settings"
+import Dns from "@mui/icons-material/Dns"
 import People from "@mui/icons-material/People"
 import PermMedia from "@mui/icons-material/PermMedia"
-import Dns from "@mui/icons-material/Dns"
 import Public from "@mui/icons-material/Public"
-import { MenuToggle } from "../sidebar/menuToggle"
+import { Menu, MenuItem, Typography } from "@mui/material"
+import Box from "@mui/material/Box"
+import Divider from "@mui/material/Divider"
+import List from "@mui/material/List"
+import ListItemButton from "@mui/material/ListItemButton"
+import { alpha, styled } from "@mui/material/styles"
 import { motion, useCycle } from "framer-motion"
-import { useRef } from "react"
-import { Colors } from "../../../components/themes/colors"
-import {
-  Button,
-  Card,
-  CardHeader,
-  Menu,
-  MenuItem,
-  MenuList,
-  Popover,
-  Typography,
-} from "@mui/material"
-import EditIcon from "@mui/icons-material/Edit"
-import ArchiveIcon from "@mui/icons-material/Archive"
-import FileCopyIcon from "@mui/icons-material/FileCopy"
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz"
-import { Fonts } from "../../../components/themes/fonts"
-import { AngleDownWard, UserIcon } from "../../../components/svg"
-import { StyledMenuTooltip } from "../../../components/tooltip"
-import { ShowChart } from "@mui/icons-material"
 import { useRouter } from "next/router"
+import * as React from "react"
+import { AngleDownWard, UserIcon } from "../../../components/svg"
+import { Colors } from "../../../components/themes/colors"
+import { Fonts } from "../../../components/themes/fonts"
+import { MenuToggle } from "../sidebar/menuToggle"
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}

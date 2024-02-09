@@ -1325,7 +1325,7 @@ export function SchoolLogo() {
     >
       <rect
         x="0.666992"
-        y="0.833252"
+        y="0.833496"
         width="28.5"
         height="28.5"
         rx="5.54167"
@@ -1333,7 +1333,7 @@ export function SchoolLogo() {
       />
       <rect
         x="0.666992"
-        y="0.833252"
+        y="0.833496"
         width="28.5"
         height="28.5"
         rx="5.54167"
@@ -1341,7 +1341,7 @@ export function SchoolLogo() {
       />
       <rect
         x="1.06283"
-        y="1.22909"
+        y="1.22933"
         width="27.7083"
         height="27.7083"
         rx="5.14583"

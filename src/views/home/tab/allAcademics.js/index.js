@@ -40,8 +40,8 @@ export default function AllAcademicsCards({ cards }) {
     >
       <Swiper
         ref={swiperRef}
-        spaceBetween={20}
-        slidesPerView={1}
+        spaceBetween={15}
+        slidesPerView={1.1}
         navigation
         breakpoints={{
           640: {
@@ -66,15 +66,13 @@ export default function AllAcademicsCards({ cards }) {
             <SwiperSlide key={`card-${i}`}>
               <Card
                 sx={{
-                  width: "100%",
-                  maxWidth: "100%",
                   padding: "0 0 24px 0",
                   borderRadius: "16px",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "24px",
+                  gap: { xs: "6.33px", sm: "8px" },
                   boxShadow: "0px 16px 16px 0px #0000000D",
-                  m: { xs: "10px", sm: "20px" },
+                  m: { xs: "10px 0", sm: "20px 0" },
                 }}
               >
                 <CardMedia
@@ -87,42 +85,66 @@ export default function AllAcademicsCards({ cards }) {
                     width: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    gap: 1,
-                    p: "0 16px 0 16px",
                   }}
                 >
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
+                  <Box
                     sx={{
                       display: "flex",
                       alignItems: "center",
                       gap: 1,
-                      font: `normal normal 500 normal 16px/20px ${Fonts.primary}`,
-                      color: Colors.greyText,
-                      mt: "24px",
+                      mt: { xs: 0, sm: 3 },
+                      px: 2,
                     }}
                   >
-                    {card.icon} {`${card.name}`}
-                  </Typography>
+                    {card.icon}{" "}
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        font: `normal normal 500 normal 16px/20px ${Fonts.primary}`,
+                        color: Colors.greyText,
+                        mt: { xs: 2, sm: 1 },
+                        px: 2,
+                      }}
+                    >{`${card.name}`}</Typography>
+                  </Box>
                   <Typography
                     gutterBottom
-                    variant="g"
+                    variant="p"
                     component="div"
                     sx={{
-                      font: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
+                      font: {
+                        xs: `normal normal 700 normal 12px/25.33px ${Fonts.secondary}`,
+                        sm: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
+                      },
                       color: Colors.dark,
+                      px: 2,
                     }}
                   >
                     {card.program}
                   </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1,
+                  }}
+                >
                   <Typography
-                    variant="p"
+                    variant="h4"
                     sx={{
-                      width: "95%",
-                      font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
+                      textAlign: "justify",
+                      font: {
+                        xs: `normal normal 500 normal 11.08px/19px ${Fonts.primary}`,
+                        sm: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
+                      },
                       color: Colors.grey,
+                      px: { xs: 2, sm: 2 },
                     }}
                   >
                     {card.description}
@@ -132,8 +154,12 @@ export default function AllAcademicsCards({ cards }) {
                       display: "flex",
                       alignItems: "center",
                       gap: 1,
-                      font: `normal normal 500 normal 14px/24px ${Fonts.tertiary}`,
+                      font: {
+                        xs: `normal normal 500 normal 11.08px/19px ${Fonts.primary}`,
+                        sm: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
+                      },
                       color: Colors.grey,
+                      px: { xs: 2, sm: 2 },
                     }}
                   >
                     <ClockIcon />{" "}
@@ -160,6 +186,7 @@ export default function AllAcademicsCards({ cards }) {
                         textTransform: "none",
                         color: Colors.primary,
                         cursor: "pointer",
+                        px: { xs: 2, sm: 2 },
                         "&:hover": {
                           background: "transparent",
                         },
@@ -194,10 +221,7 @@ export default function AllAcademicsCards({ cards }) {
             justifyContent: "center",
             alignItems: "center",
             gap: "12px",
-            color:
-              swiperRef?.current?.swiper?.slidePrev() === true
-                ? Colors.primary
-                : "#667085",
+            color: "#667085",
           }}
         >
           <ArrowBackward />
@@ -213,10 +237,7 @@ export default function AllAcademicsCards({ cards }) {
             justifyContent: "center",
             alignItems: "center",
             gap: "12px",
-            color:
-              swiperRef?.current?.swiper?.slideNext() === true
-                ? Colors.primary
-                : "#667085",
+            color: "#667085",
           }}
         >
           <ArrowForward />

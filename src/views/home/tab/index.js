@@ -127,17 +127,7 @@ export function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box
-          component="div"
-          sx={{
-            p: 0,
-            m: { xs: 0, sm: "0 0 0 20px" },
-          }}
-        >
-          {children}
-        </Box>
-      )}
+      {value === index && <Box component="div">{children}</Box>}
     </div>
   )
 }
@@ -157,10 +147,12 @@ export default function AcademicTabs() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ bgcolor: "#fff" }}>
+      <Box>
         <StyledTabs
           value={value}
           onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
           aria-label="ant example"
         >
           <StyledTab label="All" />
@@ -191,23 +183,19 @@ export default function AcademicTabs() {
             iconPosition="end"
           />
         </StyledTabs>
-        <Box sx={{ p: 3 }} />
       </Box>
-      <Box sx={{ bgcolor: Colors.light, width: "100%" }}>
-        <TabPanel value={value} index={0}>
-          <AllAcademicsCards cards={cards} />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <DiplomaCards cards={diploma} />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <BootscampCards cards={bootscamp} />
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <DegreeCards cards={degree} />
-        </TabPanel>
-      </Box>
-      <Box sx={{ pb: 3 }} />
+      <TabPanel value={value} index={0}>
+        <AllAcademicsCards cards={cards} />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <DiplomaCards cards={diploma} />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <BootscampCards cards={bootscamp} />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <DegreeCards cards={degree} />
+      </TabPanel>
     </Box>
   )
 }

@@ -10,7 +10,7 @@ import {
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
-import heropic from "../public/images/svgs/hero-pic.svg"
+import smVideoplayer from "../public/images/video-guy-xs.svg"
 import videoplayer from "../public/images/video-guy.svg"
 import { ArrowUp, PlayButton, WhatsApp } from "../src/components/svg"
 import { Colors } from "../src/components/themes/colors"
@@ -23,6 +23,12 @@ import FrequentlyAskQuestions from "../src/views/home/faq"
 
 export default function HomePage() {
   const router = useRouter()
+  const [showCover, setShowCover] = React.useState(true)
+  const videoId = "qqMrLuVI3d0"
+  const handleVideoClick = () => {
+    setShowCover(!showCover)
+  }
+  console.log("first", showCover)
   return (
     <Box
       sx={{
@@ -41,8 +47,13 @@ export default function HomePage() {
           display: "flex",
           flexDirection: "column",
           pt: { xs: 8, md: 15.5 },
-          pb: { xs: 4, md: 6.5 },
-          backgroundImage: "url('/images/hero.svg')",
+          pb: { xs: 8, md: 6.5 },
+          backgroundImage: {
+            xs: "url(/images/hero-section-pattern-xs.svg)",
+            sm: "url(/images/hero.svg)",
+          },
+          backgroundRepeat: "repeat",
+          backgroundSize: "cover",
           backgroundColor: Colors.primaryDark,
         }}
       >
@@ -53,8 +64,8 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
-            gap: 8,
+            px: { xs: 4, sm: 10, lg: 12.5, xl: 16 },
+            gap: { xs: 4, sm: 8 },
           }}
         >
           <Box
@@ -76,8 +87,9 @@ export default function HomePage() {
               <Typography
                 variant="h1"
                 sx={{
+                  maxWidth: { xs: 340, sm: 1260 },
                   font: {
-                    xs: `normal normal 600 normal 36px/48px ${Fonts.primary}`,
+                    xs: `normal normal 600 normal 32px/48px ${Fonts.primary}`,
                     md: `normal normal 600 normal 64px/77px ${Fonts.primary}`,
                   },
                   color: Colors.light,
@@ -120,14 +132,13 @@ export default function HomePage() {
                     maxWidth: 500,
                     display: "flex",
                     flexDirection: { xs: "column", sm: "row" },
-                    gap: "20px",
-                    mt: { xs: 5, md: 12 },
+                    gap: "24px",
+                    mt: { xs: 4, md: 12 },
                   }}
                 >
                   <Box
                     onClick={() => router.push("/signup")}
                     sx={{
-                      height: 40,
                       padding: "12px 20px 12px 20px",
                       display: "flex",
                       justifyContent: "center",
@@ -148,7 +159,6 @@ export default function HomePage() {
                   <Box
                     onClick={() => router.push("/auth/login")}
                     sx={{
-                      height: 40,
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
@@ -171,14 +181,22 @@ export default function HomePage() {
                 </Box>
               </Box>
             </Box>
-            <div style={{ width: "100%", height: "100%" }}>
-              <Image
-                src={heropic}
-                alt="hero sectio image"
-                priority
-                layout="responsive"
-              />
-            </div>
+
+            <Box
+              sx={{
+                width: "100%",
+                height: {
+                  xs: 240,
+                  sm: 516,
+                },
+                backgroundImage: {
+                  xs: "url(/images/hero-section-img-xs.svg)",
+                  sm: "url(/images/hero-pic.svg)",
+                },
+                backgroundSize: { xs: "cover", sm: "cover" },
+                backgroundRepeat: "no-repeat",
+              }}
+            />
           </Box>
         </Box>
       </Box>
@@ -190,7 +208,7 @@ export default function HomePage() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          pt: { xs: 8, md: 15.5 },
+          pt: { xs: 10, md: 15.5 },
           pb: { xs: 4, md: 6.5 },
           backgroundColor: Colors.light,
         }}
@@ -202,8 +220,8 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
-            gap: 8,
+            px: { xs: 4, sm: 10, lg: 12.5, xl: 16 },
+            gap: { xs: 4, sm: 8 },
           }}
         >
           <Box
@@ -239,8 +257,8 @@ export default function HomePage() {
                 variant="h1"
                 sx={{
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
-                    md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
+                    xs: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    md: `normal normal 600 normal 36px/44px ${Fonts.Demi}`,
                   },
                   color: Colors.dark,
                   m: 0,
@@ -293,7 +311,7 @@ export default function HomePage() {
           display: "flex",
           flexDirection: "column",
           pt: { xs: 8, md: 15.5 },
-          pb: { xs: 4, md: 6.5 },
+          pb: { xs: 8, md: 6.5 },
           backgroundColor: Colors.light,
         }}
       >
@@ -325,17 +343,18 @@ export default function HomePage() {
               }}
             >
               <Typography
-                variant="h1"
+                variant="h2"
                 sx={{
                   maxWidth: 768,
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
-                    md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
+                    xs: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    md: `normal normal 600 normal 36px/44px ${Fonts.Demi}`,
                   },
                   color: Colors.dark,
                   m: 0,
                   p: 0,
-                  letterSpacing: "-2%",
+                  letterSpacing: { xs: "-0.02em", sm: "-2%" },
+                  textAlign: "left",
                 }}
               >
                 We are transforming the accessibility of tertiary education in
@@ -355,7 +374,7 @@ export default function HomePage() {
           display: "flex",
           flexDirection: "column",
           pt: { xs: 8, md: 15.5 },
-          pb: { xs: 4, md: 6.5 },
+          pb: { xs: 8, md: 6.5 },
           backgroundColor: "#F6F7F7",
         }}
       >
@@ -367,7 +386,7 @@ export default function HomePage() {
             justifyContent: "center",
             alignItems: "center",
             px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
-            gap: 8,
+            gap: { xs: "32px", sm: 8 },
           }}
         >
           <Box
@@ -425,56 +444,84 @@ export default function HomePage() {
                   opportunities.
                 </Typography>
               </Box>
-              <Box
-                sx={{
+              <div
+                style={{
                   position: "relative",
                   width: "100%",
-                  height: "100%",
-                  cursor: "pointer",
-                  top: "20px",
                 }}
               >
-                <Link
-                  underline="none"
-                  target="_blank"
-                  href="https://www.youtube.com/watch?v=qqMrLuVI3d0"
-                  sx={{
-                    position: "relative",
-                    width: "100%",
-                    height: "100%",
-                    cursor: "pointer",
-                  }}
-                >
-                  <Box>
-                    <Image
-                      src={videoplayer}
-                      alt="YouTube Video Thumbnail"
-                      layout="responsive"
+                {showCover && (
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      height: "100%",
+                      cursor: "pointer",
+                      top: "20px",
+                    }}
+                    onClick={handleVideoClick}
+                  >
+                    <Box
+                      sx={{
+                        width: "100%",
+                        height: { xs: 240, sm: 516 },
+                        backgroundImage: {
+                          xs: "url(/images/video-guy-xs.svg)",
+                          sm: "url(/images/video-guy.svg)",
+                        },
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
                     />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        inset: {
+                          xs: "45px 0 0 0",
+                          sm: "133px 0 0 0",
+                          md: "173px 0 0 0",
+                          lg: "200px 0 0 0",
+                          xl: "250px 0 0 0",
+                        },
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <PlayButton />
+                    </Box>
                   </Box>
-                </Link>
+                )}
                 <Box
                   sx={{
-                    position: "absolute",
-                    inset: {
-                      xs: "45px 0 0 0",
-                      sm: "133px 0 0 0",
-                      md: "173px 0 0 0",
-                      lg: "200px 0 0 0",
-                      xl: "250px 0 0 0",
+                    height: {
+                      xs: showCover ? 0 : 240,
+                      sm: showCover ? 0 : 516,
                     },
-                    display: "flex",
-                    justifyContent: "center",
                   }}
                 >
-                  <PlayButton />
+                  <iframe
+                    title="How to be a school teacher"
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    allowFullScreen
+                    style={{
+                      display: showCover ? "none" : "block",
+                      borderRadius: "24px",
+                      position: "relative",
+                      width: "100%",
+                      cursor: "pointer",
+                      top: "20px",
+                    }}
+                  />
                 </Box>
-              </Box>
+              </div>
             </Box>
             <Box>
               <Divider
                 sx={{
                   borderColor: "#EAECF0",
+                  mt: { xs: showCover ? 10 : 8, sm: showCover ? 10 : 8 },
                 }}
               />
             </Box>
@@ -483,6 +530,7 @@ export default function HomePage() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
+                // my: 8,
               }}
             >
               <Typography
@@ -499,7 +547,7 @@ export default function HomePage() {
                 Programs
               </Typography>
               <Typography
-                variant="h1"
+                variant="h4"
                 sx={{
                   font: {
                     xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
@@ -522,12 +570,15 @@ export default function HomePage() {
       <Box
         sx={{
           width: "100%",
-          height: 456,
+          height: { xs: 850, sm: 456 },
           padding: "96px 0 96px 0",
-          backgroundImage: "url('/images/graduate.svg')",
+          backgroundImage: {
+            xs: "url('/images/graduate-sm.svg')",
+            sm: "url('/images/graduate.svg')",
+          },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          gap: "64px",
+          gap: { xs: "48px", sm: "64px" },
         }}
       >
         <Box
@@ -535,8 +586,7 @@ export default function HomePage() {
             width: "100%",
             display: "flex",
             flexDirection: "column",
-            gap: "16px",
-            // p: "0 32px 0 32px",
+            gap: { xs: "8px", sm: "16px" },
             px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
           }}
         >
@@ -545,7 +595,7 @@ export default function HomePage() {
             sx={{
               font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
               color: Colors.light,
-              m: 0,
+              mt: -3,
               p: 0,
               letterSpacing: "2%",
               textAlign: { xs: "center", sm: "left" },
@@ -569,11 +619,18 @@ export default function HomePage() {
             designed to replicate industry challenges. Sharpen your skills and
             apply theoretical knowledge in a practical, risk-free environment.
           </Typography>
-          <Box sx={{ width: { xs: "100%", sm: 159 }, mt: 3 }}>
+          <Box
+            sx={{
+              width: "100%",
+              mt: 3,
+              display: "flex",
+              justifyContent: { xs: "center", sm: "flex-start" },
+            }}
+          >
             <Box
               onClick={() => router.push("/signup")}
               sx={{
-                height: 40,
+                width: { xs: 159, sm: 159 },
                 padding: "12px 20px 12px 20px",
                 display: "flex",
                 justifyContent: "center",
@@ -613,7 +670,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 2, sm: 3, lg: 12.5, xl: 16 },
             gap: 8,
           }}
         >
@@ -673,6 +730,7 @@ export default function HomePage() {
                 justifyContent: "center",
                 alignItems: "center",
                 gap: "16px",
+                px: 1,
               }}
             >
               <FrequentlyAskQuestions />
@@ -680,7 +738,10 @@ export default function HomePage() {
             <Box
               sx={{
                 width: "100%",
-                padding: "32px 32px 40px 32px",
+                padding: {
+                  xs: "32px 16px 32px 16px",
+                  sm: "32px 32px 40px 32px",
+                },
                 borderRadius: "16px",
                 display: "flex",
                 flexDirection: "column",
@@ -703,7 +764,7 @@ export default function HomePage() {
                     background: "transparent",
                   }}
                 />
-                <Avatar alt="Cindy Baker" src="/images/Avatar3.png" />
+                <Avatar alt="avatar 2" src="/images/Avatar3.png" />
               </AvatarGroup>
               <Typography
                 variant="p"

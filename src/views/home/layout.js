@@ -138,7 +138,6 @@ export default function HomeLayout({ children }) {
                 mt: 0,
                 display: { xs: "none", lg: "flex" },
                 width: 542,
-                // maxWidth: 530,
               }}
             >
               <Box
