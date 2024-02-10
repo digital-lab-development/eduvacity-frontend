@@ -21,7 +21,7 @@ export default function FooterPage() {
       component="div"
       sx={{
         width: "100%",
-        background: Colors.primaryDark,
+        background: Colors.secondary,
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
@@ -489,7 +489,7 @@ export default function FooterPage() {
           gap: "64px",
           padding: "48px 0 48px 0",
           borderTop: `1px solid #1B3139`,
-          background: Colors.primaryDark,
+          background: Colors.secondary,
           mb: { xs: "45px", sm: 0 },
         }}
       >

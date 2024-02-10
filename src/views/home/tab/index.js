@@ -55,7 +55,7 @@ const cards = [
     name: "IAIICT Ahmadu Bello University, Zaria",
     program: "Diploma in Computer Engineering",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.",
+      "The department is known for excellence and pace-setting in creating ground breaking solutions. We provide the platform for our promising graduates to be well equipped with sufficient knowledge to meet the manpower demand in the society and at the same time imbibe the culture of self-employment and job creation.",
     duration: "3 months",
     type: "diploma",
     image: "/images/senatebuilding.png",
@@ -146,7 +146,13 @@ export default function AcademicTabs() {
   }
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box
+      sx={{
+        width: "100%",
+        pl: { xs: 2, sm: 3, lg: 5, xl: 13 },
+        pr: { xs: 2, sm: 0 },
+      }}
+    >
       <Box>
         <StyledTabs
           value={value}
@@ -184,18 +190,20 @@ export default function AcademicTabs() {
           />
         </StyledTabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        <AllAcademicsCards cards={cards} />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <DiplomaCards cards={diploma} />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <BootscampCards cards={bootscamp} />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <DegreeCards cards={degree} />
-      </TabPanel>
+      <Box sx={{ mt: { xs: 2, sm: 4 } }}>
+        <TabPanel value={value} index={0}>
+          <AllAcademicsCards cards={cards} />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <DiplomaCards cards={diploma} />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <BootscampCards cards={bootscamp} />
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <DegreeCards cards={degree} />
+        </TabPanel>
+      </Box>
     </Box>
   )
 }

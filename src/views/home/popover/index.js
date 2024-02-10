@@ -33,7 +33,7 @@ const StyledMenu = styled((props) => (
     marginTop: 8,
     minWidth: 180,
     color: Colors.offWhite,
-    background: Colors.primaryDark,
+    background: Colors.secondary,
     transition: "all 0.25s",
     boxShadow: "none",
     display: "flex",

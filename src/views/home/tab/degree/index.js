@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"
+import { Box, CardContent } from "@mui/material"
 import Button from "@mui/material/Button"
 import Card from "@mui/material/Card"
 import CardMedia from "@mui/material/CardMedia"
@@ -35,150 +35,174 @@ export default function DegreeCards({ cards }) {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        gap: "64px",
+        gap: { xs: "32px", sm: "64px" },
       }}
     >
       <Swiper
         ref={swiperRef}
         spaceBetween={15}
-        slidesPerView={1.1}
+        slidesPerView={1}
         navigation
         breakpoints={{
           640: {
-            slidesPerView: 2.5,
-            spaceBetween: 32,
+            slidesPerView: 2.2,
+            spaceBetween: 20,
           },
           768: {
-            slidesPerView: 2.5,
-            spaceBetween: 32,
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 2.1,
+            spaceBetween: 20,
           },
           1280: {
-            slidesPerView: 3.5,
+            slidesPerView: 3.1,
+            spaceBetween: 25,
+          },
+          1500: {
+            slidesPerView: 3.2,
             spaceBetween: 32,
           },
         }}
         className="swiper"
+        style={{ margin: 0, padding: 0 }}
       >
         {cards.map((card, i) => {
           const duration = card.duration
           const [number, unit] = duration.split(" ")
           return (
-            <SwiperSlide key={`card-${i}`}>
+            <SwiperSlide key={`card-${i}`} style={{ margin: 0, padding: 0 }}>
               <Card
                 sx={{
                   padding: "0 0 24px 0",
                   borderRadius: "16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: { xs: "6.33px", sm: "8px" },
+                  width: "100%",
+                  height: { xs: 405.42, sm: 510 },
                   boxShadow: "0px 16px 16px 0px #0000000D",
-                  m: { xs: "10px 0", sm: "20px 0" },
+                  m: { xs: "20px 0px", sm: "20px 0" },
+                  border: `1px solid #0000000D`,
                 }}
               >
                 <CardMedia
-                  sx={{ height: 240 }}
+                  sx={{ height: { xs: 190, sm: 240 } }}
                   image={card.image}
                   title={card.name}
                 />
-                <Box
+                <CardContent
                   sx={{
                     width: "100%",
+                    maxWidth: { xs: 354.43, sm: 450 },
                     display: "flex",
                     flexDirection: "column",
+                    gap: { xs: "6.33px", sm: "8px" },
+                    px: { xs: 1, lg: 1.5, xl: 2 },
                   }}
                 >
                   <Box
                     sx={{
+                      width: "100%",
                       display: "flex",
-                      alignItems: "center",
-                      gap: 1,
-                      mt: { xs: 0, sm: 3 },
-                      px: 2,
+                      flexDirection: "column",
                     }}
                   >
-                    {card.icon}{" "}
-                    <Typography
-                      gutterBottom
-                      variant="h5"
+                    <Box
                       sx={{
                         display: "flex",
                         alignItems: "center",
                         gap: 1,
-                        font: `normal normal 500 normal 16px/20px ${Fonts.primary}`,
-                        color: Colors.greyText,
-                        mt: { xs: 2, sm: 1 },
-                        px: 2,
-                      }}
-                    >{`${card.name}`}</Typography>
-                  </Box>
-                  <Typography
-                    gutterBottom
-                    variant="p"
-                    component="div"
-                    sx={{
-                      font: {
-                        xs: `normal normal 700 normal 12px/25.33px ${Fonts.secondary}`,
-                        sm: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
-                      },
-                      color: Colors.dark,
-                      px: 2,
-                    }}
-                  >
-                    {card.program}
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 1,
-                  }}
-                >
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      textAlign: "justify",
-                      font: {
-                        xs: `normal normal 500 normal 11.08px/19px ${Fonts.primary}`,
-                        sm: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
-                      },
-                      color: Colors.grey,
-                      px: { xs: 2, sm: 2 },
-                    }}
-                  >
-                    {card.description}
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 1,
-                      font: {
-                        xs: `normal normal 500 normal 11.08px/19px ${Fonts.primary}`,
-                        sm: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
-                      },
-                      color: Colors.grey,
-                      px: { xs: 2, sm: 2 },
-                    }}
-                  >
-                    <ClockIcon />{" "}
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        color: Colors.secondary,
-                        font: `normal normal 500 normal 14px/24px ${Fonts.secondary}`,
+                        mt: { xs: "6.33px", sm: "20px" },
                       }}
                     >
-                      {number}
-                    </span>{" "}
-                    {unit}
+                      <Box>{card.icon} </Box>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1,
+                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                          color: Colors.greyText,
+                        }}
+                      >{`${card.name}`}</Typography>
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        font: {
+                          xs: `normal normal 700 normal 14px/25.33px ${Fonts.inter}`,
+                          sm: `normal normal 700 normal 16px/32px ${Fonts.inter}`,
+                        },
+                        color: Colors.dark,
+                      }}
+                    >
+                      {card.program}
+                    </Typography>
                   </Box>
-                  <Box sx={{ width: 200 }}>
+                  <Box
+                    sx={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 1,
+                    }}
+                  >
+                    <Typography
+                      variant="p"
+                      sx={{
+                        textAlign: "left",
+                        font: {
+                          xs: `normal normal 500 normal 11.8px/19px ${Fonts.primary}`,
+                          sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                        },
+                        color: Colors.grey,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                      }}
+                    >
+                      {card.description}
+                    </Typography>
+
+                    <Box
+                      sx={{
+                        width: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                      }}
+                    >
+                      <Box sx={{ mt: 0.8 }}>
+                        <ClockIcon />{" "}
+                      </Box>
+                      <Box
+                        sx={{
+                          font: {
+                            xs: `normal normal 500 normal 11.08px/19px ${Fonts.tertiary}`,
+                            sm: `normal normal 500 normal 14px/24px ${Fonts.tertiary}`,
+                          },
+                          color: Colors.textPrimaryDark,
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: "inline-flex",
+                            color: Colors.secondary,
+                            font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
+                          }}
+                        >
+                          {number}
+                        </span>{" "}
+                        {unit}
+                      </Box>
+                    </Box>
                     <Button
                       size="small"
                       endIcon={<ArrowForward />}
                       sx={{
+                        width: 140,
                         display: "flex",
                         alignItems: "center",
                         gap: 1,
@@ -186,7 +210,6 @@ export default function DegreeCards({ cards }) {
                         textTransform: "none",
                         color: Colors.primary,
                         cursor: "pointer",
-                        px: { xs: 2, sm: 2 },
                         "&:hover": {
                           background: "transparent",
                         },
@@ -195,17 +218,18 @@ export default function DegreeCards({ cards }) {
                       View courses
                     </Button>
                   </Box>
-                </Box>
+                </CardContent>
               </Card>
             </SwiperSlide>
           )
         })}
       </Swiper>
-      <div
-        style={{
+      <Box
+        sx={{
           width: "100%",
           display: "flex",
-          gap: 12,
+          gap: "12px",
+          mt: 2,
         }}
       >
         <Button
@@ -242,7 +266,7 @@ export default function DegreeCards({ cards }) {
         >
           <ArrowForward />
         </Button>
-      </div>
+      </Box>
     </div>
   )
 }
