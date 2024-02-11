@@ -149,7 +149,7 @@ export default function AcademicTabs() {
     <Box
       sx={{
         width: "100%",
-        pl: { xs: 2, sm: 3, lg: 5, xl: 13 },
+        pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
         pr: { xs: 2, sm: 0 },
       }}
     >

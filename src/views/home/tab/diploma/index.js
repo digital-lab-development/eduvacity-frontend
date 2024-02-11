@@ -44,24 +44,36 @@ export default function DiplomaCards({ cards }) {
         slidesPerView={1}
         navigation
         breakpoints={{
+          540: {
+            slidesPerView: 1.4,
+            spaceBetween: 20,
+          },
           640: {
             slidesPerView: 2.2,
             spaceBetween: 20,
           },
-          768: {
-            slidesPerView: 2,
+          700: {
+            slidesPerView: 1.35,
             spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 1.4,
+            spaceBetween: 20,
+          },
+          900: {
+            slidesPerView: 1.7,
+            spaceBetween: 32,
           },
           1024: {
-            slidesPerView: 2.1,
-            spaceBetween: 20,
+            slidesPerView: 1.9,
+            spaceBetween: 32,
           },
           1280: {
-            slidesPerView: 3.1,
-            spaceBetween: 25,
+            slidesPerView: 2.4,
+            spaceBetween: 32,
           },
           1500: {
-            slidesPerView: 3.2,
+            slidesPerView: 3.1,
             spaceBetween: 32,
           },
         }}
@@ -92,11 +104,11 @@ export default function DiplomaCards({ cards }) {
                 <CardContent
                   sx={{
                     width: "100%",
-                    maxWidth: { xs: 354.43, sm: 450 },
+                    maxWidth: { xs: 330, sm: 450 },
                     display: "flex",
                     flexDirection: "column",
                     gap: { xs: "6.33px", sm: "8px" },
-                    px: { xs: 1, lg: 1.5, xl: 2 },
+                    px: { xs: 1, sm: 2, md: 2, lg: 2.5, xl: 3 },
                   }}
                 >
                   <Box
@@ -152,10 +164,10 @@ export default function DiplomaCards({ cards }) {
                       sx={{
                         textAlign: "left",
                         font: {
-                          xs: `normal normal 500 normal 11.8px/19px ${Fonts.primary}`,
+                          xs: `normal normal 500 normal 14px/19px ${Fonts.primary}`,
                           sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                         },
-                        color: Colors.grey,
+                        color: Colors.textPrimaryDark,
                         overflow: "hidden",
                         textOverflow: "ellipsis",
                         display: "-webkit-box",
@@ -170,7 +182,6 @@ export default function DiplomaCards({ cards }) {
                       sx={{
                         width: "100%",
                         display: "flex",
-                        alignItems: "center",
                         gap: 1,
                       }}
                     >
@@ -184,6 +195,7 @@ export default function DiplomaCards({ cards }) {
                             sm: `normal normal 500 normal 14px/24px ${Fonts.tertiary}`,
                           },
                           color: Colors.textPrimaryDark,
+                          mt: 0.45,
                         }}
                       >
                         <span
@@ -202,7 +214,7 @@ export default function DiplomaCards({ cards }) {
                       size="small"
                       endIcon={<ArrowForward />}
                       sx={{
-                        width: 140,
+                        width: { xs: 160, sm: 140 },
                         display: "flex",
                         alignItems: "center",
                         gap: 1,

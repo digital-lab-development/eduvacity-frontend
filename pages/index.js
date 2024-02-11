@@ -223,7 +223,7 @@ export default function HomePage() {
               width: "100%",
               display: "flex",
               flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
+              gap: { xs: "40px", sm: "32px" },
             }}
           >
             <Box
@@ -232,7 +232,7 @@ export default function HomePage() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
-                px: { xs: 4, sm: 10, lg: 12.5, xl: 16 },
+                px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
               }}
             >
               <Typography
@@ -318,7 +318,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 2, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -381,7 +381,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 2, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: { xs: "32px", sm: 8 },
           }}
         >
@@ -583,7 +583,7 @@ export default function HomePage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 2, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
           }}
         >
           <Typography
@@ -666,7 +666,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 2, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
