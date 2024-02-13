@@ -1,45 +1,69 @@
-# Build Stage
-FROM node:18-alpine AS build
+FROM node:18-alpine AS base
 
-# Create app directory
-WORKDIR /usr/src/app
+# Install dependencies only when needed
+FROM base AS deps
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+# Install dependencies based on the preferred package manager
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+RUN \
+  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+  elif [ -f package-lock.json ]; then npm ci; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
+  else echo "Lockfile not found." && exit 1; \
+  fi
 
-# Install dependencies
-RUN npm ci
 
-# Copy the rest of the application code
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build the Next.js application
-RUN npm run build
+# Next.js collects completely anonymous telemetry data about general usage.
+# Learn more here: https://nextjs.org/telemetry
+# Uncomment the following line in case you want to disable telemetry during the build.
+# ENV NEXT_TELEMETRY_DISABLED 1
 
-# Set STRIPE_PUBLIC_KEY environment variable
-ARG STRIPE_PUBLIC_KEY
-ENV STRIPE_PUBLIC_KEY=$STRIPE_PUBLIC_KEY
+RUN \
+  if [ -f yarn.lock ]; then yarn run build; \
+  elif [ -f package-lock.json ]; then npm run build; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
+  else echo "Lockfile not found." && exit 1; \
+  fi
 
-# Production Stage
-FROM node:18-alpine AS production
+# Production image, copy all the files and run next
+FROM base AS runner
+WORKDIR /app
 
-# Create app directory
-WORKDIR /usr/src/app
+ENV NODE_ENV production
+# Uncomment the following line in case you want to disable telemetry during runtime.
+# ENV NEXT_TELEMETRY_DISABLED 1
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-# Install production dependencies
-RUN npm ci --only=production
+COPY --from=builder /app/public ./public
 
-# Copy the built application from the build stage
-COPY --from=build /usr/src/app/.next ./.next
+# Set the correct permission for prerender cache
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
 
-# Set NODE_ENV environment variable to production
-ENV NODE_ENV=production
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Expose the port Next.js app runs on
+USER nextjs
+
 EXPOSE 3000
 
-# Start the Next.js application
-CMD ["npm", "start"]
+ENV PORT 3000
+# set hostname to localhost
+ENV HOSTNAME "0.0.0.0"
+
+# server.js is created by next build from the standalone output
+# https://nextjs.org/docs/pages/api-reference/next-config-js/output
+CMD ["node", "server.js"]

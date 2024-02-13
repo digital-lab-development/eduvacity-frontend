@@ -35,13 +35,13 @@ jobs:
           password: ${{secrets.DROPLET_PASSWORD}}
           script: |
             docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }} 
-            docker stop educative-frontend
-            docker rm educative-frontend
+            docker stop eduvacity-frontend
+            docker rm eduvacity-frontend
             docker rmi eduv/eduvacity-frontend:latest
             docker pull eduv/eduvacity-frontend:latest
             docker run -d  -p 3001:3000 \
             --restart always \
-            --name educative-frontend \
+            --name eduvacity-frontend \
             eduv/eduvacity-frontend:latest
 
        # Notify Slack on success
