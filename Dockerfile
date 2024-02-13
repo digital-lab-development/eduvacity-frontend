@@ -63,6 +63,7 @@ ARG STRIPE_PUBLIC_KEY
 
 EXPOSE 3000
 
+#ENV
 ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
