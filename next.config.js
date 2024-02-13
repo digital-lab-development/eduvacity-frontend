@@ -1,6 +1,8 @@
 module.exports = {
   reactStrictMode: true,
   images: {
+    loader: 'imgix',
+    path: 'https://img.youtube.com/',
     domains: ["img.youtube.com"],
   },
   i18n: {
