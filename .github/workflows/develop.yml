@@ -44,25 +44,25 @@ jobs:
             --name eduvacity-frontend \
             eduv/eduvacity-frontend:latest
 
-       # Notify Slack on success
-      - name: Slack Notification on Success
-        if: success()
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          channel: development
-          text: "✅ Workflow Succeeded: ${{ github.workflow }} on branch ${{ github.ref }} by ${{ github.actor }}"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #  # Notify Slack on success
+      # - name: Slack Notification on Success
+      #   if: success()
+      #   uses: 8398a7/action-slack@v3
+      #   with:
+      #     status: ${{ job.status }}
+      #     channel: development
+      #     text: "✅ Workflow Succeeded: ${{ github.workflow }} on branch ${{ github.ref }} by ${{ github.actor }}"
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-      # Notify Slack on failure
-      - name: Slack Notification on Failure
-        if: failure()
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          channel: development
-          text: "❌ Workflow Failed: ${{ github.workflow }} on branch ${{ github.ref }} by ${{ github.actor }}"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      # # Notify Slack on failure
+      # - name: Slack Notification on Failure
+      #   if: failure()
+      #   uses: 8398a7/action-slack@v3
+      #   with:
+      #     status: ${{ job.status }}
+      #     channel: development
+      #     text: "❌ Workflow Failed: ${{ github.workflow }} on branch ${{ github.ref }} by ${{ github.actor }}"
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
