@@ -24,7 +24,6 @@ export default function HomePage() {
   const handleVideoClick = () => {
     setShowCover(!showCover)
   }
-  console.log("first", showCover)
   return (
     <Box
       sx={{
@@ -50,7 +49,7 @@ export default function HomePage() {
           },
           backgroundRepeat: "repeat",
           backgroundSize: "cover",
-          backgroundColor: Colors.primaryDark,
+          backgroundColor: Colors.secondary,
         }}
       >
         <Box
@@ -216,7 +215,6 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 10, lg: 12.5, xl: 16 },
             gap: { xs: 4, sm: 8 },
           }}
         >
@@ -225,7 +223,7 @@ export default function HomePage() {
               width: "100%",
               display: "flex",
               flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
+              gap: { xs: "40px", sm: "32px" },
             }}
           >
             <Box
@@ -234,6 +232,7 @@ export default function HomePage() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
+                px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
               }}
             >
               <Typography
@@ -287,6 +286,7 @@ export default function HomePage() {
                 </Typography>
               </Box>
             </Box>
+
             <AcademicTabs />
           </Box>
         </Box>
@@ -318,7 +318,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -343,7 +343,7 @@ export default function HomePage() {
                 sx={{
                   maxWidth: 768,
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.Demi}`,
                     md: `normal normal 600 normal 36px/44px ${Fonts.Demi}`,
                   },
                   color: Colors.dark,
@@ -381,7 +381,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: { xs: "32px", sm: 8 },
           }}
         >
@@ -405,7 +405,7 @@ export default function HomePage() {
                 variant="h1"
                 sx={{
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
+                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.primary}`,
                     md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
                   },
                   color: Colors.dark,
@@ -546,7 +546,7 @@ export default function HomePage() {
                 variant="h4"
                 sx={{
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
+                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.primary}`,
                     md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
                   },
                   color: Colors.dark,
@@ -583,7 +583,7 @@ export default function HomePage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
           }}
         >
           <Typography
@@ -604,10 +604,10 @@ export default function HomePage() {
             sx={{
               maxWidth: 665,
               font: {
-                xs: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                 md: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
               },
-              color: "#87A0A8",
+              color: "#B9C8CD",
               textAlign: { xs: "center", sm: "left" },
             }}
           >
@@ -666,7 +666,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 2, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -793,7 +793,6 @@ export default function HomePage() {
                 <Box
                   onClick={() => router.push("/signup")}
                   sx={{
-                    height: 40,
                     padding: "12px 20px 12px 20px",
                     display: "flex",
                     justifyContent: "center",

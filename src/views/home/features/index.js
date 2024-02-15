@@ -20,7 +20,7 @@ const cards = [
     icon: <BadgeIcon />,
   },
   {
-    name: "Industry-Relevant Curriculum",
+    name: "Industry-relevant curriculum",
     description:
       "Eduvacity collaborates with experts and institutions to offer courses aligned with industry needs. This ensure that the skills learned are up-to-date and applicable in the real world.",
     icon: <StackedCard />,
@@ -79,7 +79,11 @@ export default function FeaturesCard() {
                     variant="g"
                     component="div"
                     sx={{
-                      font: `normal normal 700 normal 20px/30px ${Fonts.secondary}`,
+                      font: {
+                        xs: `normal normal 700 normal 18px/30px ${Fonts.secondary}`,
+                        sm: `normal normal 700 normal 20px/30px ${Fonts.secondary}`,
+                        textTransform: "capitalize",
+                      },
                       color: Colors.dark,
                     }}
                   >
@@ -90,7 +94,7 @@ export default function FeaturesCard() {
                     sx={{
                       width: 341,
                       font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                      color: "#868B93",
+                      color: Colors.textColor,
                     }}
                   >
                     {card.description}

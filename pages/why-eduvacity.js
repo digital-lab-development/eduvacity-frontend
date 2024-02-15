@@ -44,7 +44,7 @@ export default function WhyEduvasityPage() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          backgroundColor: Colors.primaryDark,
+          backgroundColor: Colors.secondary,
           pt: { xs: 4, md: 15.5 },
           pb: { xs: 4, md: 6.5 },
         }}
@@ -56,7 +56,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             py: { xs: 4, sm: 3, xl: 4 },
             gap: { xs: "32px", sm: "64px" },
           }}
@@ -155,8 +155,8 @@ export default function WhyEduvasityPage() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          pt: { xs: 8, md: 15.5 },
-          pb: { xs: 4, md: 6.5 },
+          pt: { xs: 6, md: 15.5 },
+          pb: { xs: 2, md: 15.5 },
           backgroundColor: Colors.light,
         }}
       >
@@ -167,7 +167,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -215,7 +215,7 @@ export default function WhyEduvasityPage() {
                         variant="span"
                         sx={{
                           width: "100%",
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                           color: Colors.light,
                           m: 0,
                           p: 0,
@@ -242,7 +242,7 @@ export default function WhyEduvasityPage() {
                         variant="span"
                         sx={{
                           width: "100%",
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                           color: Colors.light,
                           m: 0,
                           p: 0,
@@ -268,7 +268,7 @@ export default function WhyEduvasityPage() {
                         variant="span"
                         sx={{
                           width: "100%",
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                           color: Colors.light,
                           m: 0,
                           p: 0,
@@ -294,7 +294,7 @@ export default function WhyEduvasityPage() {
                         variant="span"
                         sx={{
                           width: "100%",
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                           color: Colors.light,
                           m: 0,
                           p: 0,
@@ -331,7 +331,7 @@ export default function WhyEduvasityPage() {
                   variant="h1"
                   sx={{
                     font: {
-                      xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
+                      xs: `normal normal 600 normal 25px/36px ${Fonts.primary}`,
                       md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
                     },
                     color: Colors.dark,
@@ -355,10 +355,10 @@ export default function WhyEduvasityPage() {
                     variant="span"
                     sx={{
                       font: {
-                        xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                        sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
+                        xs: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                        sm: `normal normal 400 normal 20px/30px ${Fonts.inter}`,
                       },
-                      color: Colors.grey,
+                      color: Colors.textPrimaryDark,
                     }}
                   >
                     Zero roadblocks left! Get the Degree you need with Eduvacity
@@ -415,14 +415,14 @@ export default function WhyEduvasityPage() {
                       <Typography
                         variant="span"
                         sx={{
-                          font: `normal normal 500 normal 8.11px/10px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
                           color: Colors.light,
                           letterSpacing: { xs: "0em", sm: "-2%" },
                           textAlign: "left",
                         }}
                       >
                         Collaborates with experts institutions to offer courses
-                        aligned with industry needs.
+                        aligned with industry needs
                       </Typography>
                     }
                     sx={{
@@ -440,7 +440,7 @@ export default function WhyEduvasityPage() {
                         variant="span"
                         sx={{
                           width: "100%",
-                          font: `normal normal 500 normal 8.11px/10px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
                           color: Colors.light,
                           m: 0,
                           p: 0,
@@ -465,7 +465,7 @@ export default function WhyEduvasityPage() {
                         variant="span"
                         sx={{
                           width: "100%",
-                          font: `normal normal 500 normal 8.11px/10px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
                           color: Colors.light,
                           m: 0,
                           p: 0,
@@ -489,7 +489,7 @@ export default function WhyEduvasityPage() {
                       <Typography
                         variant="span"
                         sx={{
-                          font: `normal normal 500 normal 8.11px/10px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
                           color: Colors.light,
                           m: 0,
                           p: 0,
@@ -528,9 +528,9 @@ export default function WhyEduvasityPage() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          py: { xs: 4, md: 6.5 },
+          py: { xs: 2, md: 15.5 },
           backgroundColor: Colors.light,
-          gap: 12,
+          gap: { xs: 0, sm: 12 },
         }}
       >
         <Box
@@ -539,14 +539,14 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
-            gap: 8,
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
+            gap: { xs: 4, sm: 8 },
           }}
         >
           <Box
             sx={{
               width: { xs: "100%", md: "55%" },
-              pt: { xs: 0, md: 15.5 },
+              pt: { xs: 6, md: 15.5 },
               display: "flex",
               justifyContent: "flex-start",
             }}
@@ -650,13 +650,14 @@ export default function WhyEduvasityPage() {
 
           <Box
             sx={{
-              width: { xs: 343, sm: "45%" },
-              height: "100%",
+              width: { xs: "100%", sm: "45%" },
+              height: { xs: 342, sm: "100%" },
               backgroundImage: {
                 xs: "url(/images/access-building-xs.svg)",
                 sm: "url(/images/access-building.svg)",
               },
-              backgroundPosition: { xs: "top center", sm: "top right" },
+              backgroundSize: "contain",
+              backgroundPosition: { xs: "top right", sm: "top right" },
               backgroundRepeat: "no-repeat",
             }}
           />
@@ -667,7 +668,7 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -683,7 +684,7 @@ export default function WhyEduvasityPage() {
           <Box
             sx={{
               width: { xs: "100%", md: "50%" },
-              pt: { xs: 8, md: 8.5 },
+              pt: { xs: 0, md: 8.5 },
             }}
           >
             <Card
@@ -705,7 +706,10 @@ export default function WhyEduvasityPage() {
                   variant="h4"
                   component="div"
                   sx={{
-                    font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    font: {
+                      xs: `normal normal 600 normal 26px/36px ${Fonts.Demi}`,
+                      sm: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    },
                     color: Colors.dark,
                     letterSpacing: "-0.02em",
                   }}
@@ -778,7 +782,6 @@ export default function WhyEduvasityPage() {
               </Box>
             </Card>
           </Box>
-
           <Box
             sx={{
               width: { xs: 343, sm: "45%" },
@@ -801,7 +804,7 @@ export default function WhyEduvasityPage() {
           flexDirection: "column",
           justifyContent: "center",
           alignContent: "center",
-          py: { xs: 4, md: "64px" },
+          py: { xs: 8, md: "64px" },
           backgroundColor: "#F6F7F7",
           gap: 12,
         }}
@@ -813,7 +816,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -825,7 +828,7 @@ export default function WhyEduvasityPage() {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
-              gap: "16px",
+              gap: { xs: "8px", sm: "16px" },
             }}
           >
             <Typography
@@ -855,12 +858,12 @@ export default function WhyEduvasityPage() {
                 variant="span"
                 sx={{
                   font: {
-                    xs: `normal normal 500 normal 18px/28px ${Fonts.Demi}`,
-                    sm: `normal normal 500 normal 20px/28px ${Fonts.Demi}`,
+                    xs: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                    sm: `normal normal 400 normal 20px/28px ${Fonts.inter}`,
                   },
-                  color: Colors.grey,
+                  color: Colors.textPrimaryDark,
                   letterSpacing: "0em",
-                  textAlign: "center",
+                  textAlign: { xs: "left", sm: "center" },
                 }}
               >
                 Experience a transformative approach to education with the power
@@ -870,7 +873,7 @@ export default function WhyEduvasityPage() {
                 world.
               </Typography>
             </Box>
-            <Box sx={{ width: "100%", height: "100%" }}>
+            <Box sx={{ width: "100%", height: { xs: 200, sm: "100%" } }}>
               <Image
                 src={digitalLeraning}
                 alt="ipad landscape photo"
@@ -1032,13 +1035,13 @@ export default function WhyEduvasityPage() {
       <Box
         sx={{
           width: "100%",
-          height: { xs: 850, sm: 456 },
+          height: { xs: 850, sm: "100%" },
           padding: "96px 0 96px 0",
           backgroundImage: {
             xs: "url('/images/graduate-sm.svg')",
             sm: "url('/images/graduate.svg')",
           },
-          backgroundSize: "cover",
+          backgroundSize: { xs: "cover", sm: "cover" },
           backgroundRepeat: "no-repeat",
           gap: { xs: "48px", sm: "64px" },
         }}
@@ -1049,7 +1052,7 @@ export default function WhyEduvasityPage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
           }}
         >
           <Typography
@@ -1070,8 +1073,8 @@ export default function WhyEduvasityPage() {
             sx={{
               maxWidth: 665,
               font: {
-                xs: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
-                md: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
+                xs: `normal normal 400 normal 14px/20px ${Fonts.primary}`,
+                md: `normal normal 400 normal 16px/24px ${Fonts.primary}`,
               },
               color: "#87A0A8",
               textAlign: { xs: "center", sm: "left" },

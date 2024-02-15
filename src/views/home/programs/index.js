@@ -93,7 +93,7 @@ export default function ProgramsCard() {
                     sx={{
                       width: "100%",
                       font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                      color: "#868B93",
+                      color: Colors.textPrimaryDark,
                     }}
                   >
                     {card.description}

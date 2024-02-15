@@ -174,7 +174,7 @@ export default function HomeLayout({ children }) {
                               position: "relative",
                               top: 6,
                               minWidth: 375,
-                              backgroundColor: Colors.primaryDark,
+                              backgroundColor: Colors.secondary,
                               border: 0,
                             },
                           }}
