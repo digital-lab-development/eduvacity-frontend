@@ -88,6 +88,10 @@ export default function HomeLayout({ children }) {
     router.push(`${baseUrl}/signin`);
   };
 
+  const handleSignUp = () => {
+    router.push(`${baseUrl}/signup`);
+  };
+
   return (
     <div
       ref={ref}
@@ -193,9 +197,9 @@ export default function HomeLayout({ children }) {
                                     onClick={() =>
                                       router.push(
                                         `/${updateKey(
-                                          item.name.toLowerCase()
+                                          item.name?.toLowerCase()
                                         )}/${updateKey(
-                                          child.name.toLowerCase()
+                                          child.name?.toLowerCase()
                                         )}`
                                       )
                                     }
@@ -321,7 +325,7 @@ export default function HomeLayout({ children }) {
                 <UserIcon /> Student portal
               </Box>
               <Box
-                onClick={() => router.push('/signup')}
+                onClick={handleSignUp}
                 sx={{
                   padding: '12px 20px 12px 20px',
                   display: 'flex',
