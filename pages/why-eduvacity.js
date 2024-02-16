@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Box,
   Card,
@@ -6,8 +8,6 @@ import {
   Divider,
   Typography,
 } from '@mui/material';
-import { useRouter } from 'next/router';
-import React from 'react';
 import {
   ArrowUp,
   CheckCircled,
@@ -24,17 +24,17 @@ import { Fonts } from '../src/components/themes/fonts';
 import HomePageLayout from '../src/views/home/layout';
 import digitalLeraning from '../public/images/digital-learning.svg';
 import Image from 'next/image';
+import JoinWaitlistDialog from '../src/components/waitlistdialog';
 
 export default function WhyEduvasityPage() {
-  const router = useRouter();
+  const [open, setOpen] = useState(false);
 
-  const isProduction = process.env.NODE_ENV === 'production';
-  const baseUrl = isProduction
-    ? 'https://portal.eduvacity.com'
-    : 'http://portal.localhost:3000';
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
-  const handleSignUp = () => {
-    router.push(`${baseUrl}/signup`);
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -352,7 +352,7 @@ export default function WhyEduvasityPage() {
                   </Typography>
                   <Box sx={{ width: 160, mt: 3 }}>
                     <Box
-                      onClick={handleSignUp}
+                      onClick={handleClickOpen}
                       sx={{
                         height: 48,
                         padding: '12px 20px 12px 20px',
@@ -946,7 +946,7 @@ export default function WhyEduvasityPage() {
                   </Typography>
                 </Box>
                 <Box
-                  onClick={handleSignUp}
+                  onClick={handleClickOpen}
                   sx={{
                     height: 48,
                     width: 160,
@@ -1036,7 +1036,7 @@ export default function WhyEduvasityPage() {
               justifyContent: { xs: 'center', sm: 'flex-start' },
             }}>
             <Box
-              onClick={handleSignUp}
+              onClick={handleClickOpen}
               sx={{
                 width: { xs: 159, sm: 159 },
                 padding: '12px 20px 12px 20px',
@@ -1057,6 +1057,7 @@ export default function WhyEduvasityPage() {
           </Box>
         </Box>
       </Box>
+      <JoinWaitlistDialog open={open} handleClose={handleClose} />
     </Box>
   );
 }

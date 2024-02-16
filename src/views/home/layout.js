@@ -20,6 +20,7 @@ import { StyledMenuTooltip } from '../../components/tooltip';
 import FooterPage from './footer';
 import MenuLists from './popover';
 import Image from 'next/image';
+import JoinWaitlistDialog from '../../components/waitlistdialog';
 
 const appHeight = 95;
 function updateKey(str) {
@@ -36,6 +37,7 @@ export default function HomeLayout({ children }) {
   const router = useRouter();
   const [loading, setLoading] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openWaitlistDialog, setOpenWaitlistDialog] = React.useState(false);
   const open = Boolean(anchorEl);
 
   const menu = [
@@ -78,6 +80,10 @@ export default function HomeLayout({ children }) {
   const handlePopoverClose = () => {
     setAnchorEl(null);
   };
+
+  const handleClickOpen = () => setOpenWaitlistDialog(true);
+
+  const handleClose = () => setOpenWaitlistDialog(false);
 
   const isProduction = process.env.NODE_ENV === 'production';
   const baseUrl = isProduction
@@ -325,7 +331,7 @@ export default function HomeLayout({ children }) {
                 <UserIcon /> Student portal
               </Box>
               <Box
-                onClick={handleSignUp}
+                onClick={handleClickOpen}
                 sx={{
                   padding: '12px 20px 12px 20px',
                   display: 'flex',
@@ -356,6 +362,8 @@ export default function HomeLayout({ children }) {
           <FooterPage />
         </Box>
       </motion.div>
+
+      <JoinWaitlistDialog open={openWaitlistDialog} handleClose={handleClose} />
     </div>
   );
 }
