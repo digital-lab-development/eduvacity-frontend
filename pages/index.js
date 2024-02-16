@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Avatar,
   AvatarGroup,
@@ -16,14 +18,20 @@ import FeaturesCard from '../src/views/home/features';
 import HomePageLayout from '../src/views/home/layout';
 import ProgramsCard from '../src/views/home/programs';
 import AcademicTabs from '../src/views/home/tab';
+import JoinWaitlistDialog from '../src/components/waitlistdialog';
 
 export default function HomePage() {
   const router = useRouter();
-  const [showCover, setShowCover] = React.useState(true);
+  const [open, setOpen] = useState(false);
+  const [showCover, setShowCover] = useState(true);
   const videoId = 'qqMrLuVI3d0';
   const handleVideoClick = () => {
     setShowCover(!showCover);
   };
+
+  const handleClickOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Box
       sx={{
@@ -123,7 +131,7 @@ export default function HomePage() {
                     mt: { xs: 4, md: 12 },
                   }}>
                   <Box
-                    onClick={() => router.push('/signup')}
+                    onClick={handleClickOpen}
                     sx={{
                       padding: '12px 20px 12px 20px',
                       display: 'flex',
@@ -268,7 +276,7 @@ export default function HomePage() {
               </Box>
             </Box>
 
-            <AcademicTabs />
+            <AcademicTabs handleClick={handleClickOpen} />
           </Box>
         </Box>
       </Box>
@@ -460,11 +468,38 @@ export default function HomePage() {
                       sm: showCover ? 0 : 516,
                     },
                   }}>
-                  <iframe
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      height: '0px',
+                      paddingBottom: '56.250%',
+                    }}>
+                    <iframe
+                      title="How to be a school teacher"
+                      allow="fullscreen"
+                      allowFullScreen
+                      height="100%"
+                      src="https://streamable.com/e/m2a6rc"
+                      width="100%"
+                      style={{
+                        display: showCover ? 'none' : 'block',
+                        borderRadius: '24px',
+                        border: 'none',
+                        width: '100%',
+                        height: '100%',
+                        position: 'absolute',
+                        left: '0px',
+                        top: '0px',
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                      }}></iframe>
+                  </div>
+                  {/* <iframe
                     title="How to be a school teacher"
                     width="100%"
                     height="100%"
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    src={`https://streamable.com/m2a6rc`}
                     allowFullScreen
                     style={{
                       display: showCover ? 'none' : 'block',
@@ -474,7 +509,7 @@ export default function HomePage() {
                       cursor: 'pointer',
                       top: '20px',
                     }}
-                  />
+                  /> */}
                 </Box>
               </div>
             </Box>
@@ -737,7 +772,7 @@ export default function HomePage() {
               </Typography>
               <Box sx={{ width: 137 }}>
                 <Box
-                  onClick={() => router.push('/signup')}
+                  onClick={handleClickOpen}
                   sx={{
                     padding: '12px 20px 12px 20px',
                     display: 'flex',
@@ -759,6 +794,7 @@ export default function HomePage() {
           </Box>
         </Box>
       </Box>
+      <JoinWaitlistDialog open={open} handleClose={handleClose} />
     </Box>
   );
 }
