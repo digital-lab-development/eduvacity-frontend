@@ -45,7 +45,7 @@ export default function WhyEduvasityPage() {
           display: "flex",
           flexDirection: "column",
           backgroundColor: Colors.secondary,
-          pt: { xs: 4, md: 15.5 },
+          pt: { xs: 4, md: 12.5 },
           pb: { xs: 4, md: 6.5 },
         }}
       >
@@ -56,7 +56,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
             py: { xs: 4, sm: 3, xl: 4 },
             gap: { xs: "32px", sm: "64px" },
           }}
@@ -155,8 +155,8 @@ export default function WhyEduvasityPage() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          pt: { xs: 6, md: 15.5 },
-          pb: { xs: 2, md: 15.5 },
+          pt: { xs: 6, md: 12.5 },
+          pb: { xs: 2, md: 12.5 },
           backgroundColor: Colors.light,
         }}
       >
@@ -167,7 +167,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -528,7 +528,7 @@ export default function WhyEduvasityPage() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          py: { xs: 2, md: 15.5 },
+          py: { xs: 2, md: 12.5 },
           backgroundColor: Colors.light,
           gap: { xs: 0, sm: 12 },
         }}
@@ -539,14 +539,14 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
             gap: { xs: 4, sm: 8 },
           }}
         >
           <Box
             sx={{
               width: { xs: "100%", md: "55%" },
-              pt: { xs: 6, md: 15.5 },
+              pt: { xs: 6, md: 12.5 },
               display: "flex",
               justifyContent: "flex-start",
             }}
@@ -668,7 +668,7 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -816,7 +816,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -1052,7 +1052,7 @@ export default function WhyEduvasityPage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
           }}
         >
           <Typography
