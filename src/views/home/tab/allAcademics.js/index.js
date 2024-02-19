@@ -13,6 +13,7 @@ import {
 import { Colors } from '../../../../components/themes/colors';
 import { Fonts } from '../../../../components/themes/fonts';
 import 'swiper/css';
+import Image from 'next/image';
 
 export default function AllAcademicsCards({ cards, handleClick }) {
   const swiperRef = React.useRef(null);
@@ -120,7 +121,14 @@ export default function AllAcademicsCards({ cards, handleClick }) {
                         gap: 1,
                         mt: { xs: '6.33px', sm: '20px' },
                       }}>
-                      <Box>{card.icon} </Box>
+                      <Box>
+                        <Image
+                          src={card.icon}
+                          alt="school"
+                          height={30}
+                          width={30}
+                        />{' '}
+                      </Box>
                       <Typography
                         variant="h5"
                         sx={{
@@ -129,7 +137,9 @@ export default function AllAcademicsCards({ cards, handleClick }) {
                           gap: 1,
                           font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                           color: Colors.greyText,
-                        }}>{`${card.name}`}</Typography>
+                        }}>
+                        {card.name}
+                      </Typography>
                     </Box>
                     <Typography
                       variant="h6"

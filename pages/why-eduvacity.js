@@ -25,6 +25,13 @@ import HomePageLayout from '../src/views/home/layout';
 import digitalLeraning from '../public/images/digital-learning.svg';
 import Image from 'next/image';
 import JoinWaitlistDialog from '../src/components/waitlistdialog';
+import {
+  EDUVACITY_VALUE,
+  WHY_EDUVACITY_DESC,
+  WHY_EDUVACITY_TITLE,
+  WHY_EDUVACITY_VALUE,
+  WHY_EDUVACITY_VALUE_DESC,
+} from '../src/utils/contants';
 
 export default function WhyEduvasityPage() {
   const [open, setOpen] = useState(false);
@@ -121,7 +128,7 @@ export default function WhyEduvasityPage() {
                       letterSpacing: { xs: '-0.02em', sm: '-2%' },
                       textAlign: 'left',
                     }}>
-                    Experience the future of tertiary education.
+                    {WHY_EDUVACITY_TITLE}
                   </Typography>
                 </Box>
                 <Typography
@@ -139,9 +146,7 @@ export default function WhyEduvasityPage() {
                     letterSpacing: { xs: '0em' },
                     maxWidth: 480,
                   }}>
-                  We&apos;re redefining the way you learn, grow, and succeed.
-                  Join us on a groundbreaking journey that brings innovation,
-                  accessibility, and excellence to your career pursuits.
+                  {WHY_EDUVACITY_DESC}
                 </Typography>
               </Box>
             </Box>
@@ -329,8 +334,7 @@ export default function WhyEduvasityPage() {
                     p: 0,
                     letterSpacing: '-2%',
                   }}>
-                  Access industry-required experiences from your chosen
-                  University, wherever you are
+                  {WHY_EDUVACITY_VALUE}
                 </Typography>
                 <Box
                   component="span"
@@ -348,7 +352,7 @@ export default function WhyEduvasityPage() {
                       },
                       color: Colors.textPrimaryDark,
                     }}>
-                    Zero roadblocks left! Get the Degree you need with Eduvacity
+                    {WHY_EDUVACITY_VALUE_DESC}
                   </Typography>
                   <Box sx={{ width: 160, mt: 3 }}>
                     <Box
@@ -1024,9 +1028,7 @@ export default function WhyEduvasityPage() {
               color: '#87A0A8',
               textAlign: { xs: 'center', sm: 'left' },
             }}>
-            Engage in hands-on learning through cutting-edge simulations
-            designed to replicate industry challenges. Sharpen your skills and
-            apply theoretical knowledge in a practical, risk-free environment.
+            {EDUVACITY_VALUE}
           </Typography>
           <Box
             sx={{

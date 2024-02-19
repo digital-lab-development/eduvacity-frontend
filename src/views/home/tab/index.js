@@ -42,74 +42,126 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
 );
 const cards = [
   {
-    name: 'Business School ABU, Zaria',
+    name: '',
     program: 'Diploma in Banking & Finance ',
     description:
-      'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-    duration: '3 months',
+      'Banking and finance are essential for economic advancement and stability. Our Banking and Finance program course is created to empower students with the expertise and abilities essential for excelling in this dynamic field, ensuring their readiness for success in the intricate realm of finance.',
+    duration: '16 months',
     type: 'diploma',
     image: '/images/business-school.png',
-    icon: <ABULogo />,
+    icon: '/images/eduvacity-logo.svg',
   },
   {
-    name: 'IAIICT Ahmadu Bello University, Zaria',
-    program: 'Diploma in Computer Engineering',
+    name: '',
+    program: 'Diploma in Computer Science',
     description:
-      'The department is known for excellence and pace-setting in creating ground breaking solutions. We provide the platform for our promising graduates to be well equipped with sufficient knowledge to meet the manpower demand in the society and at the same time imbibe the culture of self-employment and job creation.',
-    duration: '3 months',
+      'Our Marketing program is tailored to furnish students with the strategies and proficiencies crucial for thriving in this fast-paced domain, positioning them for success in marketing profession.',
+    duration: '16 months',
     type: 'diploma',
     image: '/images/senatebuilding.png',
-    icon: <ABULogo />,
+    icon: '/images/eduvacity-logo.svg',
   },
   {
-    name: 'ABU Zaria',
-    program: 'Computer Engineering',
+    name: '',
+    program: 'Diploma in Computer Science',
     description:
-      'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-    duration: '3 months',
-    type: 'degree',
+      "Computer science stands as the backbone of innovation and technological advancement in today's digital era. This program is design to equip students with the theoretical knowledge and practical skills necessary to empower  them to excel in various computing domains and contribute meaningfully to the technological landscape.",
+    duration: '16 months',
+    type: 'diploma',
     image: '/images/welcome-to-abu.png',
-    icon: <ABULogo />,
+    icon: '/images/eduvacity-logo.svg',
   },
   {
-    name: 'University of Lagos',
+    name: '',
     program: 'Diploma in Computer Engineering',
     description:
-      'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-    duration: '3 months',
-    type: 'degree',
-    image: '/images/castle-school.png',
-    icon: <SchoolLogo />,
+      'Computer engineering plays a vital role in shaping the technological landscape and driving innovation. These course equip students with the necessary theoretical foundations and hands-on skills to excel.',
+    duration: '16 months',
+    type: 'diploma',
+    image: '/images/welcome-to-abu.png',
+    icon: '/images/eduvacity-logo.svg',
   },
   {
-    name: 'University of Lagos',
-    program: 'Diploma in Computer Engineering',
+    name: '',
+    program: 'Diploma in Business Administration',
     description:
-      'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-    duration: '3 months',
-    type: 'degree',
-    image: '/images/castle-school.png',
-    icon: <SchoolLogo />,
+      'Eduvacity business administration is designed to provide students with a comprehensive understanding of business principles and practices, preparing them to succeed in diverse corporate environments.',
+    duration: '16 months',
+    type: 'diploma',
+    image: '/images/welcome-to-abu.png',
+    icon: '/images/eduvacity-logo.svg',
   },
+  //degree
+  // {
+  //   name: 'University of Lagos',
+  //   program: 'Diploma in Computer Engineering',
+  //   description:
+  //     'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
+  //   duration: '3 months',
+  //   type: 'degree',
+  //   image: '/images/castle-school.png',
+  //   icon: '/images/eduvacity-logo.svg',
+  // },
+  // {
+  //   name: 'University of Lagos',
+  //   program: 'Diploma in Computer Engineering',
+  //   description:
+  //     'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
+  //   duration: '3 months',
+  //   type: 'degree',
+  //   image: '/images/castle-school.png',
+  //   icon: '/images/eduvacity-logo.svg',
+  // },
+  //bootcamp
   {
-    name: 'Kaduna state University',
-    program: 'Java summer bootscamp',
+    name: '',
+    program: 'Frontend Development',
     description:
-      'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-    duration: '3 months',
+      'Frontend development is pivotal in shaping user experiences and interfaces across digital platforms this Bootcamp program equips students with the latest tools and techniques in web development and responsive design principles.',
+    duration: '6 weeks',
     type: 'bootscamp',
     image: '/images/castle-school.png',
-    icon: <ABULogo />,
+    icon: '/images/eduvacity-logo.svg',
   },
   {
-    name: 'University of Lagos',
-    program: 'Azure master class',
+    name: '',
+    program: 'Backend Development',
     description:
-      'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-    duration: '3 months',
+      'Backend development serves as the foundation of dynamic and data-driven web applications. Our program is designed to provide students with a deep understanding of server-side programming languages, databases, and frameworks essential for building scalable and secure systems.',
+    duration: '6 weeks',
     type: 'bootscamp',
     image: '/images/castle-school.png',
-    icon: <SchoolLogo />,
+    icon: '/images/eduvacity-logo.svg',
+  },
+  {
+    name: '',
+    program: 'Cloud Computing',
+    description:
+      'Cloud computing is revolutionizing the way businesses manage and deliver IT services. Our program is tailored to provide students with a comprehensive understanding of cloud technologies, including infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS).',
+    duration: '6 weeks',
+    type: 'bootscamp',
+    image: '/images/castle-school.png',
+    icon: '/images/eduvacity-logo.svg',
+  },
+  {
+    name: '',
+    program: 'UI/UX Design',
+    description:
+      'UI/UX design plays a crucial role in creating engaging and intuitive user experiences for digital products and services. Our program focuses on user-centered design principles, information architecture, user interface, and interactive prototyping techniques.',
+    duration: '6 weeks',
+    type: 'bootscamp',
+    image: '/images/castle-school.png',
+    icon: '/images/eduvacity-logo.svg',
+  },
+  {
+    name: '',
+    program: 'Data Science',
+    description:
+      'Data science is at the forefront of leveraging data to extract insights and drive decision-making across industries. Our program is designed to equip students with the essential skills in statistical analysis, machine learning, and data visualization.',
+    duration: '6 weeks',
+    type: 'bootscamp',
+    image: '/images/castle-school.png',
+    icon: '/images/eduvacity-logo.svg',
   },
 ];
 const degree = cards.filter((item) => item.type === 'degree');
@@ -161,7 +213,7 @@ export default function AcademicTabs({ handleClick }) {
           <StyledTab label="All" />
           <StyledTab label="Diplomas" />
           <StyledTab label="Bootcamps" />
-          <StyledTab
+          {/* <StyledTab
             label="Degree"
             icon={
               <Box
@@ -183,7 +235,7 @@ export default function AcademicTabs({ handleClick }) {
               </Box>
             }
             iconPosition="end"
-          />
+          /> */}
         </StyledTabs>
       </Box>
       <Box sx={{ mt: { xs: 2, sm: 4 } }}>

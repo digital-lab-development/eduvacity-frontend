@@ -19,6 +19,14 @@ import HomePageLayout from '../src/views/home/layout';
 import ProgramsCard from '../src/views/home/programs';
 import AcademicTabs from '../src/views/home/tab';
 import JoinWaitlistDialog from '../src/components/waitlistdialog';
+import {
+  EDUVACITY_VALUE,
+  EMPOWERMENT_DESC,
+  EMPOWERMENT_TITLE,
+  HERO_TEXT,
+  PROGRAM_DESC,
+  PROGRAM_TITLE,
+} from '../src/utils/contants';
 
 export default function HomePage() {
   const router = useRouter();
@@ -95,11 +103,11 @@ export default function HomePage() {
                   p: 0,
                   letterSpacing: '-2%',
                 }}>
-                Giving you Access to{' '}
+                Achieve top 1% status{' '}
                 <Typography variant="span" sx={{ color: Colors.primary }}>
-                  Lifelong Learning From top Universities
+                  with programs that ensures
                 </Typography>{' '}
-                in Nigeria.
+                employability.
               </Typography>
               <Box
                 component="span"
@@ -117,9 +125,7 @@ export default function HomePage() {
                     },
                     color: Colors.offWhite,
                   }}>
-                  Choose a course that suits you from leading universities in
-                  Nigeria & Africa, gaining valuable experience for today&apos;s
-                  job market with certifications equivalent to on-campus studies
+                  {HERO_TEXT.secondary}
                 </Typography>
                 <Box
                   component="div"
@@ -252,7 +258,7 @@ export default function HomePage() {
                   p: 0,
                   letterSpacing: '-2%',
                 }}>
-                Universities You Can Study From
+                {PROGRAM_TITLE}
               </Typography>
               <Box
                 component="span"
@@ -270,8 +276,7 @@ export default function HomePage() {
                     },
                     color: Colors.grey,
                   }}>
-                  We partner with the Universities of your choice to make
-                  quality education accessible for anyone, from anywhere
+                  {PROGRAM_DESC}
                 </Typography>
               </Box>
             </Box>
@@ -393,7 +398,7 @@ export default function HomePage() {
                   p: 0,
                   letterSpacing: '-2%',
                 }}>
-                How Eduvacity is Empowering African Youth for the Job Market
+                {EMPOWERMENT_TITLE}
               </Typography>
               <Box
                 component="span"
@@ -410,11 +415,7 @@ export default function HomePage() {
                     },
                     color: Colors.grey,
                   }}>
-                  Break free from limitations! Eduvacity opens doors to
-                  top-notch education from top universities around the globe.
-                  Access world-class resources right from the heart of Africa,
-                  bridging the gap between local talent and global
-                  opportunities.
+                  {EMPOWERMENT_DESC}
                 </Typography>
               </Box>
               <div
@@ -604,9 +605,7 @@ export default function HomePage() {
               color: '#B9C8CD',
               textAlign: { xs: 'center', sm: 'left' },
             }}>
-            Engage in hands-on learning through cutting-edge simulations
-            designed to replicate industry challenges. Sharpen your skills and
-            apply theoretical knowledge in a practical, risk-free environment.
+            {EDUVACITY_VALUE}
           </Typography>
           <Box
             sx={{
@@ -755,7 +754,7 @@ export default function HomePage() {
                   textTransform: 'capitalize',
                   alignItems: 'center',
                 }}>
-                Academic Programs
+                Do you have any inquiries?
               </Typography>
               <Typography
                 variant="span"
@@ -767,8 +766,8 @@ export default function HomePage() {
                   color: Colors.grey,
                   textAlign: 'center',
                 }}>
-                Can’t find the answer you’re looking for? Please chat to our
-                friendly team.
+                Feel free to get in touch with our Success Advisors for
+                assistance.
               </Typography>
               <Box sx={{ width: 137 }}>
                 <Box
