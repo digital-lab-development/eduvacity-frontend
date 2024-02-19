@@ -56,7 +56,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             py: { xs: 4, sm: 3, xl: 4 },
             gap: { xs: "32px", sm: "64px" },
           }}
@@ -167,7 +167,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -539,7 +539,7 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: { xs: 4, sm: 8 },
           }}
         >
@@ -668,7 +668,7 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -816,7 +816,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -1052,7 +1052,7 @@ export default function WhyEduvasityPage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 4, sm: 8.5, md: 8.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
           }}
         >
           <Typography

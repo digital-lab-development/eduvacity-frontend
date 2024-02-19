@@ -351,7 +351,6 @@ export default function HomeLayout({ children }) {
         <Box
           component="main"
           sx={{
-            flexGrow: 1,
             width: "100%",
           }}
         >

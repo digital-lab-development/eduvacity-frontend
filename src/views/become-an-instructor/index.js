@@ -1,10 +1,14 @@
-import { Box, CardContent } from "@mui/material"
+import { Box, Card, CardContent, CardHeader } from "@mui/material"
 import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import React from "react"
 import "swiper/css"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { ArrowBackward, ArrowForward, LinkedIn } from "../../components/svg"
+import {
+  ArrowBackward,
+  ArrowForward,
+  WhiteLinkedIn,
+} from "../../components/svg"
 import { Colors } from "../../components/themes/colors"
 import { Fonts } from "../../components/themes/fonts"
 
@@ -14,7 +18,7 @@ const cards = [
     program: "Product Marketing",
     description:
       "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    icon: <LinkedIn />,
+    icon: <WhiteLinkedIn />,
     image: "/images/teacher1.png",
   },
   {
@@ -22,7 +26,7 @@ const cards = [
     program: "Product Marketing",
     description:
       "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    icon: <LinkedIn />,
+    icon: <WhiteLinkedIn />,
     image: "/images/teacher2.png",
   },
   {
@@ -30,7 +34,7 @@ const cards = [
     program: "Product Marketing",
     description:
       "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    icon: <LinkedIn />,
+    icon: <WhiteLinkedIn />,
     image: "/images/teacher3.png",
   },
   {
@@ -38,7 +42,7 @@ const cards = [
     program: "Product Marketing",
     description:
       "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    icon: <LinkedIn />,
+    icon: <WhiteLinkedIn />,
     image: "/images/teacher4.png",
   },
 ]
@@ -73,7 +77,7 @@ export default function InstructorsCards() {
         navigation
         breakpoints={{
           540: {
-            slidesPerView: 1.4,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           640: {
@@ -85,123 +89,146 @@ export default function InstructorsCards() {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 1.4,
-            spaceBetween: 20,
+            slidesPerView: 1,
+            spaceBetween: 30,
           },
           900: {
-            slidesPerView: 1.7,
+            slidesPerView: 1,
             spaceBetween: 32,
           },
           1024: {
-            slidesPerView: 1.9,
+            slidesPerView: 1,
             spaceBetween: 32,
           },
           1280: {
-            slidesPerView: 2.4,
+            slidesPerView: 2.5,
             spaceBetween: 32,
           },
           1500: {
-            slidesPerView: 3.1,
+            slidesPerView: 2.5,
+            spaceBetween: 32,
+          },
+          1700: {
+            slidesPerView: 3.5,
             spaceBetween: 32,
           },
         }}
         className="swiper"
-        style={{ margin: 0, padding: 0 }}
+        style={{ width: "100%", height: "100%", margin: 0, padding: 0 }}
       >
         {cards.map((card, i) => {
           return (
             <SwiperSlide key={`card-${i}`} style={{ margin: 0, padding: 0 }}>
               <Box
                 sx={{
-                  padding: "0 0 24px 0",
                   borderRadius: "16px",
-                  width: "100%",
-                  height: { xs: 405.42, sm: 340, xl: 480 },
-                  boxShadow: "0px 16px 16px 0px #0000000D",
-                  m: { xs: "20px 0px", sm: "20px 0" },
+                  height: { xs: 565.42, sm: 740, md: 1000, lg: 540, xl: 500 },
                   border: `1px solid #0000000D`,
                   backgroundImage: `url(${card.image})`,
                   backgroundSize: "cover",
+                  position: "relative",
                 }}
               >
-                <CardContent
+                <Box
                   sx={{
                     width: "100%",
-                    maxWidth: { xs: 330, sm: 450 },
                     display: "flex",
-                    flexDirection: "column",
-                    gap: { xs: "6.33px", sm: "8px" },
-                    px: { xs: 1, sm: 2, md: 2, lg: 2.5, xl: 3 },
+                    justifyContent: "center",
+                    alignItems: "center",
+                    background:
+                      "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%)",
+                    height: "100%",
+                    gap: "32px",
                   }}
                 >
-                  <Box
+                  <Card
                     sx={{
-                      width: "100%",
-                      display: "flex",
-                      flexDirection: "column",
+                      background: "rgba(255, 255, 255, 0.3)",
+                      border: "1px solid rgba(255, 255, 255, 0.3)",
+                      boxShadow: "none",
+                      position: "absolute",
+                      bottom: 20,
+                      borderRadius: "6px",
+                      padding: "20px 24px 24px 24px",
+                      width: "80%",
                     }}
                   >
+                    <CardHeader
+                      title={
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            display: "flex",
+                            // alignItems: "center",
+                            gap: 1,
+                            font: `normal normal 600 normal 30px/38px ${Fonts.primary}`,
+                            color: Colors.light,
+                            textAlign: "left",
+                          }}
+                        >{`${card.name}`}</Typography>
+                      }
+                      action={<Box>{card.icon} </Box>}
+                      sx={{ m: 0, p: 0, mb: 2 }}
+                    />
                     <Box
                       sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 1,
-                        mt: { xs: "6.33px", sm: "20px" },
+                        flexDirection: "column",
                       }}
                     >
-                      <Box>{card.icon} </Box>
-                      <Typography
-                        variant="h5"
+                      <Box
                         sx={{
+                          width: "100%",
                           display: "flex",
-                          alignItems: "center",
+                          flexDirection: "column",
                           gap: 1,
-                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                          color: Colors.greyText,
                         }}
-                      >{`${card.name}`}</Typography>
+                      >
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            font: {
+                              xs: `normal normal 600 normal 14px/25px ${Fonts.inter}`,
+                              sm: `normal normal 600 normal 18px/28px ${Fonts.inter}`,
+                            },
+                            textAlign: "left",
+                            color: Colors.light,
+                          }}
+                        >
+                          {card.program}
+                        </Typography>
+                        <Box
+                          sx={{
+                            width: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 1,
+                          }}
+                        >
+                          <Typography
+                            variant="p"
+                            sx={{
+                              textAlign: "left",
+                              font: {
+                                xs: `normal normal 400 normal 14px/19px ${Fonts.primary}`,
+                                sm: `normal normal 400 normal 16px/24px ${Fonts.primary}`,
+                              },
+                              letterSpacing: "0em",
+                              textAlign: "left",
+                              color: Colors.light,
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              display: "-webkit-box",
+                              WebkitLineClamp: 3,
+                              WebkitBoxOrient: "vertical",
+                            }}
+                          >
+                            {card.description}
+                          </Typography>
+                        </Box>
+                      </Box>
                     </Box>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        font: {
-                          xs: `normal normal 700 normal 14px/25.33px ${Fonts.inter}`,
-                          sm: `normal normal 700 normal 16px/32px ${Fonts.inter}`,
-                        },
-                        color: Colors.dark,
-                      }}
-                    >
-                      {card.program}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 1,
-                    }}
-                  >
-                    <Typography
-                      variant="p"
-                      sx={{
-                        textAlign: "left",
-                        font: {
-                          xs: `normal normal 500 normal 14px/19px ${Fonts.primary}`,
-                          sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                        },
-                        color: Colors.textPrimaryDark,
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        display: "-webkit-box",
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: "vertical",
-                      }}
-                    >
-                      {card.description}
-                    </Typography>
-                  </Box>
-                </CardContent>
+                  </Card>
+                </Box>
               </Box>
             </SwiperSlide>
           )
