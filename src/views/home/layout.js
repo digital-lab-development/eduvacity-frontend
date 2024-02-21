@@ -21,6 +21,7 @@ import MenuLists from "./popover"
 import Image from "next/image"
 
 const appHeight = 95
+
 function updateKey(str) {
   if (typeof str !== "string") return ""
   const regex = / /g
@@ -35,6 +36,7 @@ export default function HomeLayout({ children }) {
   const router = useRouter()
   const [loading, setLoading] = React.useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null)
+  const [openWaitlistDialog, setOpenWaitlistDialog] = React.useState(false)
   const open = Boolean(anchorEl)
 
   const menu = [
@@ -88,6 +90,23 @@ export default function HomeLayout({ children }) {
 
   const handlePopoverClose = () => {
     setAnchorEl(null)
+  }
+
+  const handleClickOpen = () => setOpenWaitlistDialog(true)
+
+  const handleClose = () => setOpenWaitlistDialog(false)
+
+  const isProduction = process.env.NODE_ENV === "production"
+  const baseUrl = isProduction
+    ? "https://portal.eduvacity.com"
+    : "http://portal.localhost:3000"
+
+  const handleSignIn = () => {
+    router.push(`${baseUrl}/signin`)
+  }
+
+  const handleSignUp = () => {
+    router.push(`${baseUrl}/signup`)
   }
 
   return (
@@ -173,6 +192,7 @@ export default function HomeLayout({ children }) {
                   const selected = router.pathname.startsWith(
                     `/${updateKey(item.name.toLowerCase())}`
                   )
+
                   return (
                     <Box key={i} sx={{ width: "100%" }}>
                       {item && item.children ? (
@@ -186,7 +206,7 @@ export default function HomeLayout({ children }) {
                               top: 6,
                               minWidth: 375,
                               backgroundColor: Colors.secondary,
-                              border: 0,
+                              border: `2px solid ${Colors.secondary}`,
                             },
                           }}
                           title={
@@ -198,22 +218,27 @@ export default function HomeLayout({ children }) {
                               }}
                             >
                               {item.children.map((child, index) => {
+                                const selectedChild =
+                                  router.pathname.startsWith(
+                                    `/${updateKey(
+                                      item.name.toLowerCase()
+                                    )}/${updateKey(child.name.toLowerCase())}`
+                                  )
                                 return (
                                   <CardHeader
                                     onClick={() =>
                                       router.push(
                                         `/${updateKey(
-                                          item.name.toLowerCase()
+                                          item.name?.toLowerCase()
                                         )}/${updateKey(
-                                          child.name.toLowerCase()
+                                          child.name?.toLowerCase()
                                         )}`
                                       )
                                     }
                                     sx={{
-                                      gap: 2,
-                                      height: 48,
+                                      gap: 3,
+
                                       cursor: "pointer",
-                                      borderBottom: `1px solid rgba(27, 49, 57, 1)`,
                                       textTransform: "capitalize",
                                     }}
                                     key={index}
@@ -221,7 +246,9 @@ export default function HomeLayout({ children }) {
                                       <Box
                                         sx={{
                                           font: `normal normal 600 normal 16px/24px ${Fonts.primary}`,
-                                          color: Colors.textColor,
+                                          color: selectedChild
+                                            ? Colors.primary
+                                            : Colors.textColor,
                                           "&:hover": {
                                             textDecoration: "underline",
 
@@ -320,7 +347,7 @@ export default function HomeLayout({ children }) {
               }}
             >
               <Box
-                onClick={() => router.push("/auth/login")}
+                onClick={handleSignIn}
                 sx={{
                   display: "flex",
                   justifyContent: "center",
@@ -339,7 +366,7 @@ export default function HomeLayout({ children }) {
                 <UserIcon /> Student portal
               </Box>
               <Box
-                onClick={() => router.push("/signup")}
+                onClick={handleClickOpen}
                 sx={{
                   padding: "12px 20px 12px 20px",
                   display: "flex",
@@ -348,6 +375,7 @@ export default function HomeLayout({ children }) {
                   font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
                   color: "rgba(230, 244, 237, 1)",
                   borderRadius: "46px",
+                  cursor: "pointer",
                   background: Colors.primary,
                   "&:hover": {
                     background: Colors.primary,
@@ -370,6 +398,8 @@ export default function HomeLayout({ children }) {
           <FooterPage />
         </Box>
       </motion.div>
+
+      {/* <JoinWaitlistDialog open={openWaitlistDialog} handleClose={handleClose} /> */}
     </div>
   )
 }

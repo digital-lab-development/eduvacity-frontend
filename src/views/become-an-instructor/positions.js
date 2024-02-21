@@ -131,6 +131,7 @@ export default function PositionsCards() {
                     display: "flex",
                     alignItems: "center",
                     gap: 3,
+                    m: 0,
                   }}
                 >
                   <Button

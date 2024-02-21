@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["img.youtube.com"],
+    domains: [],
   },
   i18n: {
     locales: ["en"],
@@ -10,4 +10,5 @@ module.exports = {
   env: {
     STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
   },
+  output: 'standalone',
 }
