@@ -1218,7 +1218,7 @@ export default function CloudComputingPage() {
                     width: 2,
                     height: 2,
                   },
-                  "&::-webkitScrollbarThumb": {
+                  "&::WebkitScrollbarThumb": {
                     backgroundColor: Colors.primary,
                     borderRadius: 100,
                     boxShadow: `inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),inset -2px -2px 2px rgba(0, 0, 0, 0.25)`,
