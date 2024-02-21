@@ -87,7 +87,7 @@ export default function WhyEduvasityPage() {
                   color: Colors.primary,
                   m: 0,
                   p: 0,
-                  letterSpacing: { xs: "0em", sm: "1%" },
+                  letterSpacing: "0em",
                   textTransform: "uppercase",
                   textAlign: "left",
                 }}

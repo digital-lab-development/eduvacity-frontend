@@ -13,7 +13,6 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import Router, { useRouter } from "next/router"
 import React from "react"
 import { AngleDownWard, UserIcon } from "../../components/svg"
-// import AppLogo from "../../components/svg/applogo"
 import { Colors } from "../../components/themes/colors"
 import { Fonts } from "../../components/themes/fonts"
 import { StyledMenuTooltip } from "../../components/tooltip"
@@ -46,7 +45,19 @@ export default function HomeLayout({ children }) {
       name: "Programs",
       children: [
         {
-          title: "programs",
+          name: "Cloud computing",
+        },
+        {
+          name: "Frontend engineering",
+        },
+        {
+          name: "Backend engineering",
+        },
+        {
+          name: "Product design",
+        },
+        {
+          name: "Content marketing",
         },
       ],
     },
@@ -218,7 +229,7 @@ export default function HomeLayout({ children }) {
                                           },
                                         }}
                                       >
-                                        {child.title}
+                                        {child.name}
                                       </Box>
                                     }
                                   />

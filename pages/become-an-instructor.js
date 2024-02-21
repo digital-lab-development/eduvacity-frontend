@@ -1,32 +1,13 @@
-import {
-  Box,
-  Card,
-  CardHeader,
-  CssBaseline,
-  Divider,
-  Typography,
-} from "@mui/material"
+import { Box, CssBaseline, Typography } from "@mui/material"
 import { useRouter } from "next/router"
 import React from "react"
-import {
-  ArrowUp,
-  CheckCircled,
-  InstitutionIcon,
-  MonitorIcon,
-  PeopleAvarter,
-  PeopleCommunityAvater,
-  PeopleIcon,
-  PersonCheckedIcon,
-  StackBookAvatar,
-} from "../src/components/svg"
+import { ArrowUp } from "../src/components/svg"
 import { Colors } from "../src/components/themes/colors"
 import { Fonts } from "../src/components/themes/fonts"
-import HomePageLayout from "../src/views/home/layout"
-import digitalLeraning from "../public/images/digital-learning.svg"
-import Image from "next/image"
 import InstructorsCards from "../src/views/become-an-instructor"
 import EthicsCard from "../src/views/become-an-instructor/ethics"
 import PositionsCards from "../src/views/become-an-instructor/positions"
+import HomePageLayout from "../src/views/home/layout"
 
 export default function BecomeAnInstructor() {
   const router = useRouter()
@@ -90,7 +71,7 @@ export default function BecomeAnInstructor() {
                   color: Colors.primary,
                   m: 0,
                   p: 0,
-                  letterSpacing: { xs: "0em", sm: "1%" },
+                  letterSpacing: "0em",
                   textTransform: "uppercase",
                   textAlign: "left",
                 }}
