@@ -6,106 +6,118 @@ import {
   ListItemButton,
   Toolbar,
   Typography,
-} from '@mui/material';
-import MuiAppBar from '@mui/material/AppBar';
-import { Box } from '@mui/system';
-import { motion, useAnimation, useInView } from 'framer-motion';
-import Router, { useRouter } from 'next/router';
-import React from 'react';
-import { AngleDownWard, UserIcon } from '../../components/svg';
-// import AppLogo from "../../components/svg/applogo"
-import { Colors } from '../../components/themes/colors';
-import { Fonts } from '../../components/themes/fonts';
-import { StyledMenuTooltip } from '../../components/tooltip';
-import FooterPage from './footer';
-import MenuLists from './popover';
-import Image from 'next/image';
-import JoinWaitlistDialog from '../../components/waitlistdialog';
+} from "@mui/material"
+import MuiAppBar from "@mui/material/AppBar"
+import { Box } from "@mui/system"
+import { motion, useAnimation, useInView } from "framer-motion"
+import Router, { useRouter } from "next/router"
+import React from "react"
+import { AngleDownWard, UserIcon } from "../../components/svg"
+import { Colors } from "../../components/themes/colors"
+import { Fonts } from "../../components/themes/fonts"
+import { StyledMenuTooltip } from "../../components/tooltip"
+import FooterPage from "./footer"
+import MenuLists from "./popover"
+import Image from "next/image"
 
-const appHeight = 95;
+const appHeight = 95
+
 function updateKey(str) {
-  if (typeof str !== 'string') return '';
-  const regex = / /g;
-  const newStr = str.toLowerCase();
-  const update = newStr.replace(regex, '-');
-  return update;
+  if (typeof str !== "string") return ""
+  const regex = / /g
+  const newStr = str.toLowerCase()
+  const update = newStr.replace(regex, "-")
+  return update
 }
 export default function HomeLayout({ children }) {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-  const router = useRouter();
-  const [loading, setLoading] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [openWaitlistDialog, setOpenWaitlistDialog] = React.useState(false);
-  const open = Boolean(anchorEl);
+  const ref = React.useRef(null)
+  const isInView = useInView(ref, { once: true })
+  const mainControls = useAnimation()
+  const router = useRouter()
+  const [loading, setLoading] = React.useState(false)
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [openWaitlistDialog, setOpenWaitlistDialog] = React.useState(false)
+  const open = Boolean(anchorEl)
 
   const menu = [
     {
-      name: 'Why eduvacity',
+      name: "Why eduvacity",
     },
     {
-      name: 'Programs',
+      name: "Programs",
       children: [
         {
-          title: 'programs',
+          name: "Cloud computing",
+        },
+        {
+          name: "Frontend engineering",
+        },
+        {
+          name: "Backend engineering",
+        },
+        {
+          name: "Product design",
+        },
+        {
+          name: "Content marketing",
         },
       ],
     },
 
     {
-      name: 'Become an Instructor',
+      name: "Become an Instructor",
     },
-  ];
+  ]
   React.useEffect(() => {
     if (isInView) {
-      mainControls.start('visible');
+      mainControls.start("visible")
     }
-  }, [isInView, mainControls]);
+  }, [isInView, mainControls])
 
   React.useEffect(() => {
-    Router.events.on('routeChangeStart', () => setLoading(true));
-    Router.events.on('routeChangeComplete', () => setLoading(false));
-    Router.events.on('routeChangeError', () => setLoading(false));
+    Router.events.on("routeChangeStart", () => setLoading(true))
+    Router.events.on("routeChangeComplete", () => setLoading(false))
+    Router.events.on("routeChangeError", () => setLoading(false))
     return () => {
-      Router.events.off('routeChangeStart', () => setLoading(true));
-      Router.events.off('routeChangeComplete', () => setLoading(false));
-      Router.events.off('routeChangeError', () => setLoading(false));
-    };
-  }, []);
+      Router.events.off("routeChangeStart", () => setLoading(true))
+      Router.events.off("routeChangeComplete", () => setLoading(false))
+      Router.events.off("routeChangeError", () => setLoading(false))
+    }
+  }, [])
   const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
-  const handleClickOpen = () => setOpenWaitlistDialog(true);
+  const handleClickOpen = () => setOpenWaitlistDialog(true)
 
-  const handleClose = () => setOpenWaitlistDialog(false);
+  const handleClose = () => setOpenWaitlistDialog(false)
 
-  const isProduction = process.env.NODE_ENV === 'production';
+  const isProduction = process.env.NODE_ENV === "production"
   const baseUrl = isProduction
-    ? 'https://portal.eduvacity.com'
-    : 'http://portal.localhost:3000';
+    ? "https://portal.eduvacity.com"
+    : "http://portal.localhost:3000"
 
   const handleSignIn = () => {
-    router.push(`${baseUrl}/signin`);
-  };
+    router.push(`${baseUrl}/signin`)
+  }
 
   const handleSignUp = () => {
-    router.push(`${baseUrl}/signup`);
-  };
+    router.push(`${baseUrl}/signup`)
+  }
 
   return (
     <div
       ref={ref}
       style={{
-        width: '100%',
-        overflow: 'hidden',
-        position: 'relative',
-      }}>
+        width: "100%",
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -113,29 +125,32 @@ export default function HomeLayout({ children }) {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}>
+        transition={{ duration: 0.5, delay: 0.25 }}
+      >
         <CssBaseline />
         <MuiAppBar
           position="fixed"
           open={open}
           sx={{
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
             backgroundColor: Colors.secondary,
             height: appHeight,
-            boxShadow: 'none',
-            px: { xs: 2, sm: 3, lg: '10px', xl: '80px' },
-            py: { xs: 2, sm: 3, lg: '18px' },
-          }}>
+            boxShadow: "none",
+            px: { xs: 2, sm: 3, lg: "10px", xl: "80px" },
+            py: { xs: 2, sm: 3, lg: "18px" },
+          }}
+        >
           <Toolbar
             sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: '12px',
-            }}>
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "12px",
+            }}
+          >
             <Link underline="none" href="/" sx={{ width: 200 }}>
               <Image
                 src="/images/logo.png"
@@ -147,57 +162,68 @@ export default function HomeLayout({ children }) {
             </Link>
             <Box
               sx={{
-                display: { lg: 'none' },
-                position: 'relative',
+                display: { lg: "none" },
+                position: "relative",
                 top: -12,
                 right: 30,
-              }}>
+              }}
+            >
               <MenuLists />
             </Box>
             <Box
               sx={{
                 mt: 0,
-                display: { xs: 'none', lg: 'flex' },
+                display: { xs: "none", lg: "flex" },
                 width: 542,
-              }}>
+              }}
+            >
               <Box
                 sx={{
-                  width: '100%',
-                  display: 'flex',
-                  gap: '12px',
-                  height: '59px',
-                  borderRadius: '47px',
-                  border: '1.5px solid rgba(27, 49, 57, 1)',
-                  padding: '21px 35px 21px 35px',
-                }}>
+                  width: "100%",
+                  display: "flex",
+                  gap: "12px",
+                  height: "59px",
+                  borderRadius: "47px",
+                  border: "1.5px solid rgba(27, 49, 57, 1)",
+                  padding: "21px 35px 21px 35px",
+                }}
+              >
                 {menu?.map((item, i) => {
                   const selected = router.pathname.startsWith(
                     `/${updateKey(item.name.toLowerCase())}`
-                  );
+                  )
+
                   return (
-                    <Box key={i} sx={{ width: '100%' }}>
+                    <Box key={i} sx={{ width: "100%" }}>
                       {item && item.children ? (
                         <StyledMenuTooltip
                           placement="bottom-start"
                           disableFocusListener
                           disableTouchListener
                           sx={{
-                            '& .MuiTooltip-tooltipPlacementBottom': {
-                              position: 'relative',
+                            "& .MuiTooltip-tooltipPlacementBottom": {
+                              position: "relative",
                               top: 6,
                               minWidth: 375,
                               backgroundColor: Colors.secondary,
-                              border: 0,
+                              border: `2px solid ${Colors.secondary}`,
                             },
                           }}
                           title={
                             <Card
                               sx={{
-                                boxShadow: 'none',
-                                p: '16px 0px 16px 0px',
-                                backgroundColor: 'transparent',
-                              }}>
+                                boxShadow: "none",
+                                p: "16px 0px 16px 0px",
+                                backgroundColor: "transparent",
+                              }}
+                            >
                               {item.children.map((child, index) => {
+                                const selectedChild =
+                                  router.pathname.startsWith(
+                                    `/${updateKey(
+                                      item.name.toLowerCase()
+                                    )}/${updateKey(child.name.toLowerCase())}`
+                                  )
                                 return (
                                   <CardHeader
                                     onClick={() =>
@@ -210,32 +236,35 @@ export default function HomeLayout({ children }) {
                                       )
                                     }
                                     sx={{
-                                      gap: 2,
-                                      height: 48,
-                                      cursor: 'pointer',
-                                      borderBottom: `1px solid rgba(27, 49, 57, 1)`,
-                                      textTransform: 'capitalize',
+                                      gap: 3,
+
+                                      cursor: "pointer",
+                                      textTransform: "capitalize",
                                     }}
                                     key={index}
                                     title={
                                       <Box
                                         sx={{
                                           font: `normal normal 600 normal 16px/24px ${Fonts.primary}`,
-                                          color: Colors.textColor,
-                                          '&:hover': {
-                                            textDecoration: 'underline',
+                                          color: selectedChild
+                                            ? Colors.primary
+                                            : Colors.textColor,
+                                          "&:hover": {
+                                            textDecoration: "underline",
 
                                             color: Colors.primary,
                                           },
-                                        }}>
-                                        {child.title}
+                                        }}
+                                      >
+                                        {child.name}
                                       </Box>
                                     }
                                   />
-                                );
+                                )
                               })}
                             </Card>
-                          }>
+                          }
+                        >
                           <ListItemButton
                             disableTouchRipple
                             onMouseEnter={handlePopoverOpen}
@@ -243,32 +272,34 @@ export default function HomeLayout({ children }) {
                             sx={{
                               p: 0,
                               m: 0,
-                            }}>
+                            }}
+                          >
                             <Typography
                               sx={{
                                 maxWidth: 150,
                                 width: 300,
-                                display: 'flex',
+                                display: "flex",
                                 font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                                gap: '10px',
+                                gap: "10px",
                                 color: selected
                                   ? Colors.primary
                                   : Colors.offWhite,
-                                cursor: 'pointer',
-                                '&:hover': {
-                                  background: 'transparent',
+                                cursor: "pointer",
+                                "&:hover": {
+                                  background: "transparent",
                                   color: Colors.primary,
                                 },
-                              }}>
-                              {item.name}{' '}
+                              }}
+                            >
+                              {item.name}{" "}
                               <AngleDownWard
                                 style={{
-                                  mt: '-18px',
+                                  mt: "-18px",
                                   ...(open && {
                                     transform: `rotate(-180deg)`,
                                   }),
                                 }}
-                              />{' '}
+                              />{" "}
                             </Typography>
                           </ListItemButton>
                         </StyledMenuTooltip>
@@ -282,7 +313,8 @@ export default function HomeLayout({ children }) {
                             router.push(
                               `/${updateKey(item.name.toLocaleLowerCase())}`
                             )
-                          }>
+                          }
+                        >
                           <Typography
                             sx={{
                               maxWidth: 150,
@@ -291,17 +323,18 @@ export default function HomeLayout({ children }) {
                               color: selected
                                 ? Colors.primary
                                 : Colors.offWhite,
-                              cursor: 'pointer',
-                              '&:hover': {
+                              cursor: "pointer",
+                              "&:hover": {
                                 color: Colors.primary,
                               },
-                            }}>
+                            }}
+                          >
                             {item.name}
                           </Typography>
                         </ListItemButton>
                       )}
                     </Box>
-                  );
+                  )
                 })}
               </Box>
             </Box>
@@ -309,43 +342,46 @@ export default function HomeLayout({ children }) {
               component="div"
               sx={{
                 width: 309,
-                display: { xs: 'none', lg: 'flex' },
-                gap: '20px',
-              }}>
+                display: { xs: "none", lg: "flex" },
+                gap: "20px",
+              }}
+            >
               <Box
                 onClick={handleSignIn}
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                   font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                  gap: '8px',
-                  padding: '12px 20px 12px 20px',
-                  color: 'rgba(230, 244, 237, 1)',
-                  cursor: 'pointer',
-                  gap: '10px',
-                  '&:hover': {
-                    background: 'transparent',
+                  gap: "8px",
+                  padding: "12px 20px 12px 20px",
+                  color: "rgba(230, 244, 237, 1)",
+                  cursor: "pointer",
+                  gap: "10px",
+                  "&:hover": {
+                    background: "transparent",
                   },
-                }}>
+                }}
+              >
                 <UserIcon /> Student portal
               </Box>
               <Box
                 onClick={handleClickOpen}
                 sx={{
-                  padding: '12px 20px 12px 20px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  padding: "12px 20px 12px 20px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                   font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
-                  color: 'rgba(230, 244, 237, 1)',
-                  borderRadius: '46px',
-                  cursor: 'pointer',
+                  color: "rgba(230, 244, 237, 1)",
+                  borderRadius: "46px",
+                  cursor: "pointer",
                   background: Colors.primary,
-                  '&:hover': {
+                  "&:hover": {
                     background: Colors.primary,
                   },
-                }}>
+                }}
+              >
                 Apply now
               </Box>
             </Box>
@@ -354,16 +390,16 @@ export default function HomeLayout({ children }) {
         <Box
           component="main"
           sx={{
-            flexGrow: 1,
-            width: '100%',
-          }}>
+            width: "100%",
+          }}
+        >
           <Toolbar />
           {children}
           <FooterPage />
         </Box>
       </motion.div>
 
-      <JoinWaitlistDialog open={openWaitlistDialog} handleClose={handleClose} />
+      {/* <JoinWaitlistDialog open={openWaitlistDialog} handleClose={handleClose} /> */}
     </div>
-  );
+  )
 }
