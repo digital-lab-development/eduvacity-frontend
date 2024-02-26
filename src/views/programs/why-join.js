@@ -2,14 +2,7 @@ import { Box, Grid } from "@mui/material"
 import Card from "@mui/material/Card"
 import Typography from "@mui/material/Typography"
 import * as React from "react"
-import {
-  ArewaIcon,
-  ClipBoardIcon,
-  CommentIcon,
-  OpenedBookIcon,
-  PieIcon,
-  SparkIcon,
-} from "../../components/svg"
+import { OpenedBookIcon } from "../../components/svg"
 import { Colors } from "../../components/themes/colors"
 import { Fonts } from "../../components/themes/fonts"
 

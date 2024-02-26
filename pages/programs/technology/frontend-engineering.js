@@ -10,23 +10,27 @@ import { useRouter } from "next/router"
 import React from "react"
 import {
   ABULogo,
+  Accreditation,
   AccreditationIcon,
+  ApplicationFeeIcon,
   ArrowUp,
   CardIcon,
+  CertificationIcon,
   CheckCircled,
   DegreeIcon,
   LaptopIcon,
+  LearningModeIcon,
   PlayButton,
-} from "../../src/components/svg"
-import { Colors } from "../../src/components/themes/colors"
-import { Fonts } from "../../src/components/themes/fonts"
-import HomePageLayout from "../../src/views/home/layout"
-import AdmissionProcessCard from "../../src/views/programs/admission-process"
-import DataAnalysis from "../../src/views/programs/data-analysis"
-import KeyFeaturesCard from "../../src/views/programs/key-features"
-import BillingProcessCard from "../../src/views/programs/billing"
+} from "../../../src/components/svg"
+import { Colors } from "../../../src/components/themes/colors"
+import { Fonts } from "../../../src/components/themes/fonts"
+import HomePageLayout from "../../../src/views/home/layout"
+import AdmissionProcessCard from "../../../src/views/programs/admission-process"
+import DataAnalysis from "../../../src/views/programs/data-analysis"
+import KeyFeaturesCard from "../../../src/views/programs/key-features"
+import BillingProcessCard from "../../../src/views/programs/billing"
 
-export default function ContentMarketingPage() {
+export default function FrontendEngineeringPage() {
   const router = useRouter()
   const [scrollTop, setScrollTop] = React.useState(0)
   const [showCover, setShowCover] = React.useState(true)
@@ -134,7 +138,7 @@ export default function ContentMarketingPage() {
                       textAlign: "left",
                     }}
                   >
-                    A.B.U School of SICT: Diploma in Content marketing
+                    A.B.U School of SICT: Diploma in Frontend engineering
                   </Typography>
                   <Typography
                     variant="p"
@@ -216,7 +220,7 @@ export default function ContentMarketingPage() {
                     alignItems: "center",
                     position: "relative",
                     top: { xs: 0, xl: -20 },
-                    left: { xs: 0, md: 140 },
+                    left: { xs: 0, md: 20, xl: 140 },
                   }}
                 >
                   <Box
@@ -661,7 +665,7 @@ export default function ContentMarketingPage() {
                       }}
                     >
                       <CardHeader
-                        avatar={<DegreeIcon />}
+                        avatar={<CertificationIcon />}
                         title={
                           <Box
                             sx={{
@@ -692,7 +696,7 @@ export default function ContentMarketingPage() {
                         sx={{ gap: 0, m: 0, p: 0 }}
                       />
                       <CardHeader
-                        avatar={<LaptopIcon />}
+                        avatar={<LearningModeIcon />}
                         title={
                           <Box
                             sx={{
@@ -723,7 +727,7 @@ export default function ContentMarketingPage() {
                         sx={{ gap: 0, m: 0, p: 0 }}
                       />
                       <CardHeader
-                        avatar={<CardIcon />}
+                        avatar={<ApplicationFeeIcon />}
                         title={
                           <Box
                             sx={{
@@ -754,7 +758,7 @@ export default function ContentMarketingPage() {
                         sx={{ gap: 0, m: 0, p: 0 }}
                       />
                       <CardHeader
-                        avatar={<AccreditationIcon />}
+                        avatar={<Accreditation />}
                         title={
                           <Box
                             sx={{
@@ -1212,23 +1216,47 @@ export default function ContentMarketingPage() {
               </Box>
               <Box
                 style={{
+                  width: "100%",
                   height: 656,
-                  overflowY: "scroll",
+                  direction: "rtl",
+                  overflowY: "auto",
                   "&::-webkit-scrollbar": {
-                    width: 2,
-                    height: 2,
+                    width: 4,
+                    height: 4,
                   },
-                  "&::WebkitScrollbarThumb": {
+                  "&::-webkit-scrollbar-thumb": {
                     backgroundColor: Colors.primary,
-                    borderRadius: 100,
+                    borderRadius: "30px ",
                     boxShadow: `inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),inset -2px -2px 2px rgba(0, 0, 0, 0.25)`,
                   },
-                  "&::-webkitScrollbarTrack": {
+                  "&::-webkit-scrollbar-track": {
                     backgroundColor: "#d1dadd",
                   },
                 }}
               >
-                <AdmissionProcessCard />
+                <Box
+                  sx={{
+                    direction: "ltr",
+                    overflowY: "auto",
+                    scrollbarWidth: "4px" /* For Firefox */,
+                    scrollbarColor: Colors.primary /* For Firefox */,
+                    "&::-webkit-scrollbar": {
+                      width: 2,
+                      height: 2,
+                    },
+                    "&::-webkit-scrollbar-thumb": {
+                      backgroundColor: Colors.primary,
+                      borderRadius: 30,
+                      boxShadow: `inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),inset -2px -2px 2px rgba(0, 0, 0, 0.25)`,
+                    },
+                    "&::-webkit-scrollbar-track": {
+                      backgroundColor: "#d1dadd",
+                    },
+                    ml: 3,
+                  }}
+                >
+                  <AdmissionProcessCard />
+                </Box>
               </Box>
             </Card>
           </Box>
@@ -1628,6 +1656,6 @@ export default function ContentMarketingPage() {
   )
 }
 
-ContentMarketingPage.getLayout = function getLayout(page) {
+FrontendEngineeringPage.getLayout = function getLayout(page) {
   return <HomePageLayout>{page}</HomePageLayout>
 }
