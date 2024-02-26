@@ -17,14 +17,14 @@ import {
   DegreeIcon,
   LaptopIcon,
   PlayButton,
-} from "../../src/components/svg"
-import { Colors } from "../../src/components/themes/colors"
-import { Fonts } from "../../src/components/themes/fonts"
-import HomePageLayout from "../../src/views/home/layout"
-import AdmissionProcessCard from "../../src/views/programs/admission-process"
-import DataAnalysis from "../../src/views/programs/data-analysis"
-import KeyFeaturesCard from "../../src/views/programs/key-features"
-import BillingProcessCard from "../../src/views/programs/billing"
+} from "../../../src/components/svg"
+import { Colors } from "../../../src/components/themes/colors"
+import { Fonts } from "../../../src/components/themes/fonts"
+import HomePageLayout from "../../../src/views/home/layout"
+import AdmissionProcessCard from "../../../src/views/programs/admission-process"
+import DataAnalysis from "../../../src/views/programs/data-analysis"
+import KeyFeaturesCard from "../../../src/views/programs/key-features"
+import BillingProcessCard from "../../../src/views/programs/billing"
 
 export default function FrontendEngineeringPage() {
   const router = useRouter()
@@ -1318,21 +1318,10 @@ export default function FrontendEngineeringPage() {
                 </Box>
               </Box>
               <Box
-                style={{
+                sx={{
                   height: 656,
                   overflowY: "scroll",
-                  "&::-webkit-scrollbar": {
-                    width: 2,
-                    height: 2,
-                  },
-                  "&::-webkit-scrollbar-thumb": {
-                    backgroundColor: Colors.primary,
-                    borderRadius: 100,
-                    boxShadow: `inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),inset -2px -2px 2px rgba(0, 0, 0, 0.25)`,
-                  },
-                  "&::-webkit-scrollbar-track": {
-                    backgroundColor: "#d1dadd",
-                  },
+                  direction: "rtl",
                 }}
               >
                 <BillingProcessCard />

@@ -1,6 +1,4 @@
 import {
-  Card,
-  CardHeader,
   CssBaseline,
   Link,
   ListItemButton,
@@ -10,15 +8,15 @@ import {
 import MuiAppBar from "@mui/material/AppBar"
 import { Box } from "@mui/system"
 import { motion, useAnimation, useInView } from "framer-motion"
+import Image from "next/image"
 import Router, { useRouter } from "next/router"
 import React from "react"
-import { AngleDownWard, UserIcon } from "../../components/svg"
+import { UserIcon } from "../../components/svg"
 import { Colors } from "../../components/themes/colors"
 import { Fonts } from "../../components/themes/fonts"
-import { StyledMenuTooltip } from "../../components/tooltip"
+import PorgramPopover from "./dropdown"
 import FooterPage from "./footer"
 import MenuLists from "./popover"
-import Image from "next/image"
 
 const appHeight = 95
 
@@ -47,19 +45,254 @@ export default function HomeLayout({ children }) {
       name: "Programs",
       children: [
         {
-          name: "Cloud computing",
+          name: "Technology",
+          subpages: [
+            {
+              name: "Diploma in Technology",
+              content: [
+                {
+                  title: "Computer sciences",
+                  starts: "15 Feb, 2024",
+                  duration: "6 months",
+                  active: true,
+                  link: "/programs/technology/computer-science",
+                },
+                {
+                  title: "Computer engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: true,
+                  link: "/programs/technology/computer-engineering",
+                },
+                {
+                  title: "Product design",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/product-design",
+                },
+                {
+                  title: "Frontend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/frontend-engineering",
+                },
+                {
+                  title: "Backend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/backend-engineering",
+                },
+              ],
+            },
+            {
+              name: "Degree",
+              content: [
+                {
+                  title: "Computer sciences",
+                  starts: "15 Feb, 2024",
+                  duration: "6 months",
+                  active: true,
+                  link: "/programs/technology/computer-science",
+                },
+                {
+                  title: "Computer engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: true,
+                  link: "/programs/technology/computer-engineering",
+                },
+                {
+                  title: "Product design",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: true,
+                  link: "/programs/technology/product-design",
+                },
+                {
+                  title: "Frontend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/frontend-engineering",
+                },
+                {
+                  title: "Backend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/backend-engineering",
+                },
+              ],
+            },
+            {
+              name: "Bootcamps",
+              content: [
+                {
+                  title: "Computer sciences",
+                  starts: "15 Feb, 2024",
+                  duration: "6 months",
+                  active: false,
+                  link: "/programs/technology/computer-science",
+                },
+                {
+                  title: "Computer engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: true,
+                  link: "/programs/technology/computer-engineering",
+                },
+                {
+                  title: "Product design",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/product-design",
+                },
+                {
+                  title: "Frontend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/frontend-engineering",
+                },
+                {
+                  title: "Backend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/technology/backend-engineering",
+                },
+              ],
+            },
+          ],
         },
         {
-          name: "Frontend engineering",
-        },
-        {
-          name: "Backend engineering",
-        },
-        {
-          name: "Product design",
-        },
-        {
-          name: "Content marketing",
+          name: "Business",
+          subpages: [
+            {
+              name: "Diploma in Technology",
+              content: [
+                {
+                  title: "Content marketing",
+                  starts: "15 Feb, 2024",
+                  duration: "6 months",
+                  active: true,
+                  link: "/programs/business/content-marketing",
+                },
+                {
+                  title: "Cloud computing",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/cloud-computing",
+                },
+                {
+                  title: "Product design",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: true,
+                  link: "/programs/business/product-design",
+                },
+                {
+                  title: "Frontend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/frontend-engineering",
+                },
+                {
+                  title: "Backend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/backend-engineering",
+                },
+              ],
+            },
+            {
+              name: "Degree",
+              content: [
+                {
+                  title: "Content marketing",
+                  starts: "15 Feb, 2024",
+                  duration: "6 months",
+                  active: true,
+                  link: "/programs/business/content-marketing",
+                },
+                {
+                  title: "Cloud computing",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/cloud-computing",
+                },
+                {
+                  title: "Product design",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: true,
+                  link: "/programs/business/product-design",
+                },
+                {
+                  title: "Frontend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/frontend-engineering",
+                },
+                {
+                  title: "Backend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/backend-engineering",
+                },
+              ],
+            },
+            {
+              name: "Bootcamps",
+              content: [
+                {
+                  title: "Content marketing",
+                  starts: "15 Feb, 2024",
+                  duration: "6 months",
+                  active: true,
+                  link: "/programs/business/content-marketing",
+                },
+                {
+                  title: "Cloud computing",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/cloud-computing",
+                },
+                {
+                  title: "Product design",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: true,
+                  link: "/programs/business/product-design",
+                },
+                {
+                  title: "Frontend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/frontend-engineering",
+                },
+                {
+                  title: "Backend engineering",
+                  starts: "15 Feb, 2024",
+                  duration: "4 months",
+                  active: false,
+                  link: "/programs/business/backend-engineering",
+                },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -84,17 +317,8 @@ export default function HomeLayout({ children }) {
       Router.events.off("routeChangeError", () => setLoading(false))
     }
   }, [])
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null)
-  }
 
   const handleClickOpen = () => setOpenWaitlistDialog(true)
-
-  const handleClose = () => setOpenWaitlistDialog(false)
 
   const isProduction = process.env.NODE_ENV === "production"
   const baseUrl = isProduction
@@ -103,10 +327,6 @@ export default function HomeLayout({ children }) {
 
   const handleSignIn = () => {
     router.push(`${baseUrl}/signin`)
-  }
-
-  const handleSignUp = () => {
-    router.push(`${baseUrl}/signup`)
   }
 
   return (
@@ -168,7 +388,7 @@ export default function HomeLayout({ children }) {
                 right: 30,
               }}
             >
-              <MenuLists />
+              <MenuLists menu={menu} />
             </Box>
             <Box
               sx={{
@@ -192,117 +412,14 @@ export default function HomeLayout({ children }) {
                   const selected = router.pathname.startsWith(
                     `/${updateKey(item.name.toLowerCase())}`
                   )
-
                   return (
                     <Box key={i} sx={{ width: "100%" }}>
                       {item && item.children ? (
-                        <StyledMenuTooltip
-                          placement="bottom-start"
-                          disableFocusListener
-                          disableTouchListener
-                          sx={{
-                            "& .MuiTooltip-tooltipPlacementBottom": {
-                              position: "relative",
-                              top: 6,
-                              minWidth: 375,
-                              backgroundColor: Colors.secondary,
-                              border: `2px solid ${Colors.secondary}`,
-                            },
-                          }}
-                          title={
-                            <Card
-                              sx={{
-                                boxShadow: "none",
-                                p: "16px 0px 16px 0px",
-                                backgroundColor: "transparent",
-                              }}
-                            >
-                              {item.children.map((child, index) => {
-                                const selectedChild =
-                                  router.pathname.startsWith(
-                                    `/${updateKey(
-                                      item.name.toLowerCase()
-                                    )}/${updateKey(child.name.toLowerCase())}`
-                                  )
-                                return (
-                                  <CardHeader
-                                    onClick={() =>
-                                      router.push(
-                                        `/${updateKey(
-                                          item.name?.toLowerCase()
-                                        )}/${updateKey(
-                                          child.name?.toLowerCase()
-                                        )}`
-                                      )
-                                    }
-                                    sx={{
-                                      gap: 3,
-
-                                      cursor: "pointer",
-                                      textTransform: "capitalize",
-                                    }}
-                                    key={index}
-                                    title={
-                                      <Box
-                                        sx={{
-                                          font: `normal normal 600 normal 16px/24px ${Fonts.primary}`,
-                                          color: selectedChild
-                                            ? Colors.primary
-                                            : Colors.textColor,
-                                          "&:hover": {
-                                            textDecoration: "underline",
-
-                                            color: Colors.primary,
-                                          },
-                                        }}
-                                      >
-                                        {child.name}
-                                      </Box>
-                                    }
-                                  />
-                                )
-                              })}
-                            </Card>
-                          }
-                        >
-                          <ListItemButton
-                            disableTouchRipple
-                            onMouseEnter={handlePopoverOpen}
-                            onMouseLeave={handlePopoverClose}
-                            sx={{
-                              p: 0,
-                              m: 0,
-                            }}
-                          >
-                            <Typography
-                              sx={{
-                                maxWidth: 150,
-                                width: 300,
-                                display: "flex",
-                                font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                                gap: "10px",
-                                color: selected
-                                  ? Colors.primary
-                                  : Colors.offWhite,
-                                cursor: "pointer",
-                                "&:hover": {
-                                  background: "transparent",
-                                  color: Colors.primary,
-                                },
-                              }}
-                            >
-                              {item.name}{" "}
-                              <AngleDownWard
-                                style={{
-                                  mt: "-18px",
-                                  ...(open && {
-                                    transform: `rotate(-180deg)`,
-                                  }),
-                                }}
-                              />{" "}
-                            </Typography>
-                          </ListItemButton>
-                        </StyledMenuTooltip>
+                        <PorgramPopover
+                          name={item.name}
+                          item={item}
+                          selected={selected}
+                        />
                       ) : (
                         <ListItemButton
                           sx={{
@@ -314,6 +431,7 @@ export default function HomeLayout({ children }) {
                               `/${updateKey(item.name.toLocaleLowerCase())}`
                             )
                           }
+                          selected={selected}
                         >
                           <Typography
                             sx={{

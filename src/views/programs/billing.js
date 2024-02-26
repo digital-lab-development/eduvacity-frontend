@@ -1,9 +1,7 @@
-import { Box, Button, CardHeader, Grid } from "@mui/material"
+import { Box, CardHeader, Grid } from "@mui/material"
 import Card from "@mui/material/Card"
 import Typography from "@mui/material/Typography"
-import { useRouter } from "next/router"
 import * as React from "react"
-import { ArrowForward } from "../../components/svg"
 import { Colors } from "../../components/themes/colors"
 import { Fonts } from "../../components/themes/fonts"
 
