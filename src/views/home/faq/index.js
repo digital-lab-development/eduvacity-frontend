@@ -30,6 +30,7 @@ const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(
     letterSpacing: 0,
     color: "#011B23",
     padding: 0,
+    paddingBottom: 24,
     minHeight: 10,
     "& .MuiAccordionSummary-content": {
       maxWidth: "100%",
@@ -39,43 +40,46 @@ const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(
 
 const AccordionDetails = styled(MuiAccordionDetails)(() => ({
   padding: 0,
-  textAlign: "justify",
-  font: `normal normal normal 16px/24px ${Fonts.primary}`,
+  paddingBottom: 24,
+  textAlign: "left",
+  font: {
+    xs: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+    sm: `normal normal 500 normal 18px/24px ${Fonts.primary}`,
+  },
   letterSpacing: 0,
   color: "#868B93",
 }))
 
 const questions = [
   {
-    question: "What types of courses does Eduvacity offer?",
+    question: "What type of programs does eduvacity offers?",
     answer:
-      "Eduvacity provides a diverse range of higher education courses, including degree, diploma, Masters and Doctorate programs, bootcamps in different domains, including, technology, finance, and business from renowned universities which allows you to earn quality certification as the one obtain in on campus studies. ",
+      "Eduvacity offers a diverse range of higher education courses, including degree, diploma, master's, and doctoral programs, as well as bootcamps in various domains such as technology, finance, and business from renowned universities. This enables you to obtain quality certifications equivalent to those earned through on-campus studies.",
   },
   {
-    question: "How does the admission process work?",
+    question: "How deos the admission process work?",
     answer:
-      "Eduvacity provides a diverse range of higher education courses, including degree, diploma, Masters and Doctorate programs, bootcamps in different domains, including, technology, finance, and business from renowned universities which allows you to earn quality certification as the one obtain in on campus studies. ",
+      "Apply for a program by submitting your application requirements, undergo review by the eduvacity team for admission eligibility, and upon approval, receive orientation and course enrollment details to kick off your classes.",
   },
   {
-    question:
-      "What technology-related courses are available through Eduvacity?",
+    question: "What technology courses are available at eduvacity",
     answer:
-      "Eduvacity provides a diverse range of higher education courses, including degree, diploma, Masters and Doctorate programs, bootcamps in different domains, including, technology, finance, and business from renowned universities which allows you to earn quality certification as the one obtain in on campus studies. ",
+      "Apply for a degree by submitting your application requirements, undergo review by the Miva team for admission eligibility, and upon approval, receive orientation and course enrollment details to kick off your classes.",
   },
   {
-    question: "How are assessments and examinations conducted at eduvacity?",
+    question: "How are assessments and examinations conducted at Eduvacity?",
     answer:
-      "Eduvacity provides a diverse range of higher education courses, including degree, diploma, Masters and Doctorate programs, bootcamps in different domains, including, technology, finance, and business from renowned universities which allows you to earn quality certification as the one obtain in on campus studies. ",
+      "Eduvacity conducts exams at its physical centers situated across various states in Nigeria, while For students located outside Nigeria, examinations are supervised remotely.",
   },
   {
-    question: "How do I apply for a program?",
+    question: "Do I need to sit for the JAMB or UTME exams?",
     answer:
-      "Eduvacity provides a diverse range of higher education courses, including degree, diploma, Masters and Doctorate programs, bootcamps in different domains, including, technology, finance, and business from renowned universities which allows you to earn quality certification as the one obtain in on campus studies. ",
+      "Applying to Eduvacity do not require JAMB resultt, it  is optional at this time. However, upon university admission, the authenticity of your WAEC, NECO, GCE, or NABTEB results will be verified.",
   },
   {
-    question: "How much does tuition cost for Eduvacity programs?",
+    question: "How much does tuition cost for eduvacity programs",
     answer:
-      "Eduvacity provides a diverse range of higher education courses, including degree, diploma, Masters and Doctorate programs, bootcamps in different domains, including, technology, finance, and business from renowned universities which allows you to earn quality certification as the one obtain in on campus studies. ",
+      "The starting point for our tuition fees is just 120,000 Naira per year. We also offer flexible payment plans to make financing your education convenient and manageable.",
   },
 ]
 export default function FrequentlyAskQuestions() {

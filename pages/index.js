@@ -1,3 +1,4 @@
+import { useState } from "react"
 import {
   Avatar,
   AvatarGroup,
@@ -16,15 +17,29 @@ import FeaturesCard from "../src/views/home/features"
 import HomePageLayout from "../src/views/home/layout"
 import ProgramsCard from "../src/views/home/programs"
 import AcademicTabs from "../src/views/home/tab"
+import JoinWaitlistDialog from "../src/components/waitlistdialog"
+import {
+  EDUVACITY_VALUE,
+  EMPOWERMENT_DESC,
+  EMPOWERMENT_TITLE,
+  HERO_TEXT,
+  PROGRAM_DESC,
+  PROGRAM_TITLE,
+} from "../src/utils/contants"
 
 export default function HomePage() {
   const router = useRouter()
-  const [showCover, setShowCover] = React.useState(true)
+  const [open, setOpen] = useState(false)
+  const [showCover, setShowCover] = useState(true)
   const videoId = "qqMrLuVI3d0"
+
   const handleVideoClick = () => {
     setShowCover(!showCover)
   }
-  console.log("first", showCover)
+
+  const handleClickOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
   return (
     <Box
       sx={{
@@ -50,7 +65,7 @@ export default function HomePage() {
           },
           backgroundRepeat: "repeat",
           backgroundSize: "cover",
-          backgroundColor: Colors.primaryDark,
+          backgroundColor: Colors.secondary,
         }}
       >
         <Box
@@ -94,11 +109,11 @@ export default function HomePage() {
                   letterSpacing: "-2%",
                 }}
               >
-                Giving you Access to{" "}
+                Achieve top 1% status{" "}
                 <Typography variant="span" sx={{ color: Colors.primary }}>
-                  Lifelong Learning From top Universities
+                  with programs that ensures
                 </Typography>{" "}
-                in Nigeria.
+                employability.
               </Typography>
               <Box
                 component="span"
@@ -118,9 +133,7 @@ export default function HomePage() {
                     color: Colors.offWhite,
                   }}
                 >
-                  Choose a course that suits you from leading universities in
-                  Nigeria & Africa, gaining valuable experience for today&apos;s
-                  job market with certifications equivalent to on-campus studies
+                  {HERO_TEXT.secondary}
                 </Typography>
                 <Box
                   component="div"
@@ -133,7 +146,7 @@ export default function HomePage() {
                   }}
                 >
                   <Box
-                    onClick={() => router.push("/signup")}
+                    onClick={handleClickOpen}
                     sx={{
                       padding: "12px 20px 12px 20px",
                       display: "flex",
@@ -153,7 +166,7 @@ export default function HomePage() {
                     See All Courses <ArrowUp />
                   </Box>
                   <Box
-                    onClick={() => router.push("/auth/login")}
+                    onClick={() => router.push("https://wa.me/<number>")}
                     sx={{
                       display: "flex",
                       justifyContent: "center",
@@ -216,7 +229,6 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 10, lg: 12.5, xl: 16 },
             gap: { xs: 4, sm: 8 },
           }}
         >
@@ -225,7 +237,7 @@ export default function HomePage() {
               width: "100%",
               display: "flex",
               flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
+              gap: { xs: "40px", sm: "32px" },
             }}
           >
             <Box
@@ -234,6 +246,7 @@ export default function HomePage() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
+                px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
               }}
             >
               <Typography
@@ -262,7 +275,7 @@ export default function HomePage() {
                   letterSpacing: "-2%",
                 }}
               >
-                Universities You Can Study From
+                {PROGRAM_TITLE}
               </Typography>
               <Box
                 component="span"
@@ -282,12 +295,12 @@ export default function HomePage() {
                     color: Colors.grey,
                   }}
                 >
-                  We partner with the Universities of your choice to make
-                  quality education accessible for anyone, from anywhere
+                  {PROGRAM_DESC}
                 </Typography>
               </Box>
             </Box>
-            <AcademicTabs />
+
+            <AcademicTabs handleClick={handleClickOpen} />
           </Box>
         </Box>
       </Box>
@@ -318,7 +331,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -343,7 +356,7 @@ export default function HomePage() {
                 sx={{
                   maxWidth: 768,
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.Demi}`,
                     md: `normal normal 600 normal 36px/44px ${Fonts.Demi}`,
                   },
                   color: Colors.dark,
@@ -381,7 +394,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
             gap: { xs: "32px", sm: 8 },
           }}
         >
@@ -405,7 +418,7 @@ export default function HomePage() {
                 variant="h1"
                 sx={{
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
+                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.primary}`,
                     md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
                   },
                   color: Colors.dark,
@@ -414,7 +427,7 @@ export default function HomePage() {
                   letterSpacing: "-2%",
                 }}
               >
-                How Eduvacity is Empowering African Youth for the Job Market
+                {EMPOWERMENT_TITLE}
               </Typography>
               <Box
                 component="span"
@@ -433,11 +446,7 @@ export default function HomePage() {
                     color: Colors.grey,
                   }}
                 >
-                  Break free from limitations! Eduvacity opens doors to
-                  top-notch education from top universities around the globe.
-                  Access world-class resources right from the heart of Africa,
-                  bridging the gap between local talent and global
-                  opportunities.
+                  {EMPOWERMENT_DESC}
                 </Typography>
               </Box>
               <div
@@ -495,21 +504,50 @@ export default function HomePage() {
                     },
                   }}
                 >
-                  <iframe
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      height: "0px",
+                      paddingBottom: "56.250%",
+                    }}
+                  >
+                    <iframe
+                      title="How to be a school teacher"
+                      allow="fullscreen"
+                      allowFullScreen
+                      height="100%"
+                      src="https://streamable.com/e/m2a6rc"
+                      width="100%"
+                      style={{
+                        display: showCover ? "none" : "block",
+                        borderRadius: "24px",
+                        border: "none",
+                        width: "100%",
+                        height: "100%",
+                        position: "absolute",
+                        left: "0px",
+                        top: "0px",
+                        overflow: "hidden",
+                        cursor: "pointer",
+                      }}
+                    ></iframe>
+                  </div>
+                  {/* <iframe
                     title="How to be a school teacher"
                     width="100%"
                     height="100%"
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    src={`https://streamable.com/m2a6rc`}
                     allowFullScreen
                     style={{
-                      display: showCover ? "none" : "block",
-                      borderRadius: "24px",
-                      position: "relative",
-                      width: "100%",
-                      cursor: "pointer",
-                      top: "20px",
+                      display: showCover ? 'none' : 'block',
+                      borderRadius: '24px',
+                      position: 'relative',
+                      width: '100%',
+                      cursor: 'pointer',
+                      top: '20px',
                     }}
-                  />
+                  /> */}
                 </Box>
               </div>
             </Box>
@@ -546,7 +584,7 @@ export default function HomePage() {
                 variant="h4"
                 sx={{
                   font: {
-                    xs: `normal normal 600 normal 30px/36px ${Fonts.primary}`,
+                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.primary}`,
                     md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
                   },
                   color: Colors.dark,
@@ -583,7 +621,7 @@ export default function HomePage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 4, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
           }}
         >
           <Typography
@@ -604,16 +642,14 @@ export default function HomePage() {
             sx={{
               maxWidth: 665,
               font: {
-                xs: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                 md: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
               },
-              color: "#87A0A8",
+              color: "#B9C8CD",
               textAlign: { xs: "center", sm: "left" },
             }}
           >
-            Engage in hands-on learning through cutting-edge simulations
-            designed to replicate industry challenges. Sharpen your skills and
-            apply theoretical knowledge in a practical, risk-free environment.
+            {EDUVACITY_VALUE}
           </Typography>
           <Box
             sx={{
@@ -666,7 +702,7 @@ export default function HomePage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 2, sm: 3, lg: 12.5, xl: 16 },
+            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
             gap: 8,
           }}
         >
@@ -773,7 +809,7 @@ export default function HomePage() {
                   alignItems: "center",
                 }}
               >
-                Academic Programs
+                Do you have any inquiries?
               </Typography>
               <Typography
                 variant="span"
@@ -786,14 +822,13 @@ export default function HomePage() {
                   textAlign: "center",
                 }}
               >
-                Can’t find the answer you’re looking for? Please chat to our
-                friendly team.
+                Feel free to get in touch with our Success Advisors for
+                assistance.
               </Typography>
               <Box sx={{ width: 137 }}>
                 <Box
-                  onClick={() => router.push("/signup")}
+                  onClick={handleClickOpen}
                   sx={{
-                    height: 40,
                     padding: "12px 20px 12px 20px",
                     display: "flex",
                     justifyContent: "center",
@@ -815,6 +850,7 @@ export default function HomePage() {
           </Box>
         </Box>
       </Box>
+      <JoinWaitlistDialog open={open} handleClose={handleClose} />
     </Box>
   )
 }

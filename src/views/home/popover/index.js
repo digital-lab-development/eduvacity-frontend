@@ -1,20 +1,78 @@
-import Dns from "@mui/icons-material/Dns"
-import People from "@mui/icons-material/People"
-import PermMedia from "@mui/icons-material/PermMedia"
-import Public from "@mui/icons-material/Public"
-import { Menu, MenuItem, Typography } from "@mui/material"
+import {
+  Card,
+  Collapse,
+  Grid,
+  ListItemText,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material"
 import Box from "@mui/material/Box"
 import Divider from "@mui/material/Divider"
 import List from "@mui/material/List"
 import ListItemButton from "@mui/material/ListItemButton"
-import { alpha, styled } from "@mui/material/styles"
+import { styled } from "@mui/material/styles"
 import { motion, useCycle } from "framer-motion"
 import { useRouter } from "next/router"
 import * as React from "react"
-import { AngleDownWard, UserIcon } from "../../../components/svg"
+import {
+  AngleDownWard,
+  AngleUpwardIcon,
+  UserIcon,
+} from "../../../components/svg"
 import { Colors } from "../../../components/themes/colors"
 import { Fonts } from "../../../components/themes/fonts"
 import { MenuToggle } from "../sidebar/menuToggle"
+
+const StyledList = styled(List)({
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  "& .MuiListItemButton-root": {
+    width: "100%",
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    font: `normal normal normal 500 16px/24px ${Fonts.primaryMedium}`,
+    color: Colors.secondary,
+    padding: "10px 16px",
+    backgroundColor: "transparent",
+    "&:focused": {
+      backgroundColor: "transparent",
+      color: Colors.primary,
+      borderRadius: 8,
+      font: `normal normal normal 500 16px/24px ${Fonts.primaryExtraBold}`,
+    },
+    "&:hover": {
+      backgroundColor: "transparent",
+      color: Colors.primary,
+      borderRadius: 8,
+    },
+  },
+  "& .Mui-selected": {
+    backgroundColor: "transparent",
+    color: Colors.primary,
+    borderRadius: 8,
+    font: `normal normal normal 500 16px/24px ${Fonts.primaryExtraBold}`,
+    "&:focused": {
+      backgroundColor: "transparent",
+      color: Colors.primary,
+      borderRadius: 8,
+    },
+    "&:hover": {
+      backgroundColor: "transparent",
+      color: Colors.primary,
+      borderRadius: 8,
+    },
+  },
+  "& .MuiListItemIcon-root": {
+    minWidth: 0,
+    marginRight: 2,
+  },
+  "& .MuiSvgIcon-root": {
+    fontSize: "20px",
+  },
+})
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -28,37 +86,21 @@ const StyledMenu = styled((props) => (
     }}
     {...props}
   />
-))(({ theme }) => ({
+))(() => ({
   "& .MuiPaper-root": {
-    marginTop: 8,
-    minWidth: 180,
-    color: Colors.offWhite,
-    background: Colors.primaryDark,
+    width: "100%",
+    background: Colors.secondary,
     transition: "all 0.25s",
-    boxShadow: "none",
-    display: "flex",
-    border: "1px 0px 0px 0px",
-    padding: "16px 0px 16px 0px",
-    "& .MuiMenu-list": {
-      padding: "4px 0",
-    },
-    "& .MuiMenuItem-root": {
-      font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-      "& .MuiSvgIcon-root": {
-        fontSize: 18,
-        color: theme.palette.text.secondary,
-        marginRight: theme.spacing(1.5),
-      },
-      "&:active": {
-        backgroundColor: alpha(
-          theme.palette.primary.main,
-          theme.palette.action.selectedOpacity
-        ),
-      },
-    },
   },
 }))
 
+function updateKey(str) {
+  if (typeof str !== "string") return ""
+  const regex = / /g
+  const newStr = str.toLowerCase()
+  const update = newStr.replace(regex, "-")
+  return update
+}
 const variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
@@ -67,52 +109,14 @@ const variants = {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 }
-const menu = [
-  {
-    name: "Why eduvacity",
-    link: "/why-eduvacity",
-  },
-  {
-    name: "Programs",
-    children: [
-      {
-        title: "programs",
-        link: "/programs",
-      },
-    ],
-  },
 
-  {
-    name: "Become an Instructor",
-    link: "/career",
-  },
-]
-const data = [
-  { icon: <People />, label: "Authentication" },
-  { icon: <Dns />, label: "Database" },
-  { icon: <PermMedia />, label: "Storage" },
-  { icon: <Public />, label: "Hosting" },
-]
-
-const FireNav = styled(List)({
-  "& .MuiListItemButton-root": {
-    paddingLeft: 24,
-    paddingRight: 24,
-  },
-  "& .MuiListItemIcon-root": {
-    minWidth: 0,
-    marginRight: 16,
-  },
-  "& .MuiSvgIcon-root": {
-    fontSize: 20,
-  },
-})
-
-export default function MenuLists() {
+export default function MenuLists({ menu }) {
   const router = useRouter()
   const [isOpen, toggleOpen] = useCycle(false, true)
   const containerRef = React.useRef(null)
   const [anchorEl, setAnchorEl] = React.useState(null)
+  const [content, setContent] = React.useState(null)
+  const [openNest, setOpenNest] = React.useState(-1)
 
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget)
@@ -126,13 +130,9 @@ export default function MenuLists() {
   const id = open ? "simple-popover" : undefined
 
   const handleClick = (item, index) => {
-    item.children && openNest === index
-      ? setOpenNest("")
-      : item.children
-      ? setOpenNest(index)
-      : (router.push(item.link), setMobileOpen(false))
+    setContent(item)
+    setOpenNest((prevIndex) => (prevIndex === index ? -1 : index))
   }
-
   return (
     <div>
       <motion.nav
@@ -153,9 +153,8 @@ export default function MenuLists() {
           <Box
             sx={{
               background: "rgba(1, 27, 35, 1)",
-              border: "1px 0px 0px 0px",
+              borderTop: "1px",
               padding: "16px 0px 16px 0px",
-              // maxWidth: 375,
               display: "flex",
               gap: 24,
               position: "absolute",
@@ -167,95 +166,318 @@ export default function MenuLists() {
             <List
               component="nav"
               disablePadding
-              sx={{ display: "flex", flexDirection: "column", gap: "10px" }}
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+              }}
             >
-              {menu?.map((item, i) => (
-                <Box key={i}>
-                  {item.children && item.children.length !== 0 ? (
-                    <>
-                      <ListItemButton
-                        id="demo-customized-button"
-                        aria-controls={
-                          open ? "demo-customized-menu" : undefined
-                        }
-                        aria-haspopup="true"
-                        aria-expanded={open ? "true" : undefined}
-                        onClick={handleOpen}
-                        key={item.label}
-                        sx={{
-                          py: 0,
-                          minHeight: 48,
-                        }}
-                      >
-                        <Box
+              {menu?.map((item, i) => {
+                const selected = router.pathname.startsWith(
+                  `/${updateKey(item.name.toLowerCase())}`
+                )
+                return (
+                  <Box key={i}>
+                    {item.children && item.children.length !== 0 ? (
+                      <>
+                        <ListItemButton
+                          disableRipple
+                          id="popover-button"
+                          aria-controls={open ? "popover-menu" : undefined}
+                          aria-haspopup="true"
+                          aria-expanded={open ? "true" : undefined}
+                          onClick={handleOpen}
+                          key={item.label}
                           sx={{
-                            width: "100%",
-                            display: "flex",
-                            justifyContent: "space-between",
-                            font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                            gap: "10px",
-                            color: Colors.offWhite,
-                            "&:hover": { background: "transparent" },
+                            py: 0,
+                            minHeight: 48,
+                          }}
+                          selected={selected}
+                        >
+                          <Box
+                            sx={{
+                              width: "100%",
+                              display: "flex",
+                              justifyContent: "space-between",
+                              font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
+                              gap: "10px",
+                              color: Colors.offWhite,
+                              "&:hover": { background: "transparent" },
+                            }}
+                          >
+                            {item.name}{" "}
+                            <AngleDownWard
+                              style={{
+                                mt: "-18px",
+                                ...(open && {
+                                  transform: `rotate(-180deg)`,
+                                }),
+                              }}
+                            />{" "}
+                          </Box>
+                        </ListItemButton>
+                        <StyledMenu
+                          id="popover-menu"
+                          MenuListProps={{
+                            "aria-labelledby": "popover-button",
+                          }}
+                          anchorEl={anchorEl}
+                          open={open}
+                          onClose={handleClose}
+                        >
+                          <StyledList>
+                            {item.children.map((child, index) => {
+                              const selectedItem = content?.name === child.name
+                              return (
+                                <Box key={`item-${index}`}>
+                                  <ListItemButton
+                                    disableRipple
+                                    onClick={() => handleClick(child, index)}
+                                    alignItems="flex-start"
+                                    selected={selectedItem}
+                                  >
+                                    <ListItemText
+                                      primary={child.name}
+                                      primaryTypographyProps={{
+                                        fontSize: 16,
+                                        fontWeight: "500",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0em",
+                                        textAlign: "left",
+                                        fontFamily: Fonts.primary,
+                                        color: selectedItem
+                                          ? Colors.primary
+                                          : "#9BA5A8",
+                                      }}
+                                    />
+                                    {openNest === index ? (
+                                      <AngleDownWard />
+                                    ) : (
+                                      <AngleUpwardIcon />
+                                    )}
+                                  </ListItemButton>
+                                  <Collapse
+                                    in={openNest === index}
+                                    timeout="auto"
+                                    unmountOnExit
+                                  >
+                                    {content !== null ? (
+                                      <Box
+                                        sx={{
+                                          width: "100%",
+                                          height: "100%",
+                                          background: "rgba(249, 250, 251, 1)",
+                                          display: "flex",
+                                          flexDirection: "column",
+                                          gap: "16px",
+                                        }}
+                                      >
+                                        <Box
+                                          sx={{
+                                            width: "100%",
+                                            padding: "12px 16px 12px 16px",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            gap: "24px",
+                                          }}
+                                        >
+                                          {content?.subpages?.map(
+                                            (cont, index) => {
+                                              return (
+                                                <Box key={`item-${index}`}>
+                                                  <Typography
+                                                    sx={{
+                                                      font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+                                                      letterSpacing: "0em",
+                                                      color: Colors.dark,
+                                                      padding: "14px 0",
+                                                      textAlign: "left",
+                                                    }}
+                                                  >
+                                                    {cont.name}
+                                                  </Typography>
+
+                                                  <Divider
+                                                    sx={{
+                                                      borderColor: "#EAECF0",
+                                                    }}
+                                                  />
+                                                  <Grid
+                                                    container
+                                                    spacing={2}
+                                                    sx={{ mt: 2 }}
+                                                  >
+                                                    {cont?.content?.map(
+                                                      (sub, index) => {
+                                                        return (
+                                                          <Grid
+                                                            item
+                                                            xs={12}
+                                                            key={`{sub - ${index}}`}
+                                                          >
+                                                            <Card
+                                                              sx={{
+                                                                width: "100%",
+                                                                p: "14.81px",
+                                                                borderRadius:
+                                                                  "8.64px",
+                                                                border:
+                                                                  "1.23px solid #011B230F",
+                                                                display: "flex",
+                                                                flexDirection:
+                                                                  "column",
+                                                                gap: "8px",
+                                                                boxShadow:
+                                                                  "0px 4.9352521896362305px 7.4028778076171875px -2.4676260948181152px rgba(16, 24, 40, 0.03),0px 14.805755615234375px 19.741008758544922px -4.9352521896362305px rgba(16, 24, 40, 0.08)",
+                                                                cursor:
+                                                                  "pointer",
+                                                                backgroundColor:
+                                                                  "#FFF !important",
+                                                              }}
+                                                              onClick={() => {
+                                                                router.push(
+                                                                  sub.link
+                                                                )
+                                                                toggleOpen()
+                                                              }}
+                                                            >
+                                                              <Box
+                                                                sx={{
+                                                                  width: "100%",
+                                                                  display:
+                                                                    "flex",
+                                                                  justifyContent:
+                                                                    "flex-end",
+                                                                  alignItems:
+                                                                    "flex-end",
+                                                                }}
+                                                              >
+                                                                {sub.active ===
+                                                                true ? (
+                                                                  ""
+                                                                ) : (
+                                                                  <Box
+                                                                    sx={{
+                                                                      width: 130,
+                                                                      padding:
+                                                                        "2px 8px 2px 8px",
+                                                                      borderRadius: 9999,
+                                                                      border:
+                                                                        "0.82px solid #FFFFFF4D",
+                                                                      backgroundColor:
+                                                                        "#FBF0DD",
+                                                                      color:
+                                                                        "#E3A229",
+                                                                      font: `normal normal 500 normal 12/16px ${Fonts.inter}`,
+                                                                    }}
+                                                                  >
+                                                                    Coming
+                                                                    soon...
+                                                                  </Box>
+                                                                )}
+                                                              </Box>
+
+                                                              <Box
+                                                                sx={{
+                                                                  font: `normal normal 700 normal 12.85px/16px ${Fonts.secondary}`,
+                                                                  letterSpacing:
+                                                                    "0em",
+                                                                  color:
+                                                                    Colors.dark,
+                                                                }}
+                                                              >
+                                                                {sub.title}
+                                                              </Box>
+                                                              <Box
+                                                                sx={{
+                                                                  width: "100%",
+                                                                  display:
+                                                                    "flex",
+                                                                  gap: 0.5,
+                                                                  mt: 3,
+                                                                }}
+                                                              >
+                                                                <Typography
+                                                                  sx={{
+                                                                    font: `normal normal 500 normal 11px/14px ${Fonts.primary}`,
+                                                                    textAlign:
+                                                                      "left",
+                                                                    letterSpacing:
+                                                                      "0em",
+                                                                    pr: 1,
+                                                                    borderRight:
+                                                                      "1px solid #D7DEE0",
+                                                                  }}
+                                                                >
+                                                                  Cohort starts:{" "}
+                                                                  {sub.starts}
+                                                                </Typography>
+                                                                <Typography
+                                                                  sx={{
+                                                                    font: `normal normal 500 normal 11px/14px ${Fonts.primary}`,
+                                                                    textAlign:
+                                                                      "left",
+                                                                    letterSpacing:
+                                                                      "0em",
+                                                                  }}
+                                                                >
+                                                                  {sub.duration}
+                                                                </Typography>
+                                                              </Box>
+                                                            </Card>
+                                                          </Grid>
+                                                        )
+                                                      }
+                                                    )}
+                                                  </Grid>
+                                                </Box>
+                                              )
+                                            }
+                                          )}
+                                        </Box>
+                                      </Box>
+                                    ) : null}
+                                  </Collapse>
+                                </Box>
+                              )
+                            })}
+                          </StyledList>
+                          <Divider sx={{ my: 0.5 }} />
+                        </StyledMenu>
+                      </>
+                    ) : (
+                      <>
+                        <ListItemButton
+                          onClick={() => {
+                            router.push(
+                              `/${updateKey(item.name.toLocaleLowerCase())}`
+                            )
+                            toggleOpen()
+                          }}
+                          key={item.label}
+                          sx={{
+                            py: 0,
+                            minHeight: 48,
                           }}
                         >
-                          {item.name}{" "}
-                          <AngleDownWard
-                            style={{
-                              mt: "-18px",
-                              ...(open && {
-                                transform: `rotate(-180deg)`,
-                              }),
+                          <Typography
+                            sx={{
+                              width: 320,
+                              font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
+                              color: Colors.offWhite,
                             }}
-                          />{" "}
-                        </Box>
-                      </ListItemButton>
-                      <StyledMenu
-                        id="demo-customized-menu"
-                        MenuListProps={{
-                          "aria-labelledby": "demo-customized-button",
-                        }}
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                      >
-                        {item.children.map((child, index) => {
-                          return (
-                            <MenuItem
-                              onClick={handleClose}
-                              disableRipple
-                              key={index}
-                            >
-                              {child.title}
-                            </MenuItem>
-                          )
-                        })}
-                        <Divider sx={{ my: 0.5 }} />
-                      </StyledMenu>
-                    </>
-                  ) : (
-                    <ListItemButton
-                      onClick={() => handleClick(item)}
-                      key={item.label}
-                      sx={{
-                        py: 0,
-                        minHeight: 48,
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          width: 320,
-                          font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                          color: Colors.offWhite,
-                        }}
-                      >
-                        {item.name}
-                      </Typography>
-                    </ListItemButton>
-                  )}
-                </Box>
-              ))}
+                          >
+                            {item.name}
+                          </Typography>
+                        </ListItemButton>
+                      </>
+                    )}
+                  </Box>
+                )
+              })}
               <Divider sx={{ borderColor: "rgba(27, 49, 57, 1)", my: 0.5 }} />
-              <MenuItem onClick={handleClose} disableRipple>
+              <MenuItem disableRipple>
                 <Box
                   onClick={() => router.push("/auth/login")}
                   sx={{
