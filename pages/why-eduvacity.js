@@ -1,12 +1,7 @@
+import { Box, Card, CssBaseline, Divider, Typography } from "@mui/material"
+import Image from "next/image"
 import { useState } from "react"
-import {
-  Box,
-  Card,
-  CardHeader,
-  CssBaseline,
-  Divider,
-  Typography,
-} from "@mui/material"
+import digitalLeraning from "../public/images/digital-learning.svg"
 import {
   ArrowUp,
   CheckCircled,
@@ -20,9 +15,6 @@ import {
 } from "../src/components/svg"
 import { Colors } from "../src/components/themes/colors"
 import { Fonts } from "../src/components/themes/fonts"
-import HomePageLayout from "../src/views/home/layout"
-import digitalLeraning from "../public/images/digital-learning.svg"
-import Image from "next/image"
 import JoinWaitlistDialog from "../src/components/waitlistdialog"
 import {
   EDUVACITY_VALUE,
@@ -31,6 +23,7 @@ import {
   WHY_EDUVACITY_VALUE,
   WHY_EDUVACITY_VALUE_DESC,
 } from "../src/utils/contants"
+import HomePageLayout from "../src/views/home/layout"
 
 export default function WhyEduvasityPage() {
   const [open, setOpen] = useState(false)
@@ -72,7 +65,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             py: { xs: 4, sm: 3, xl: 4 },
             gap: { xs: "32px", sm: "64px" },
           }}
@@ -118,20 +111,20 @@ export default function WhyEduvasityPage() {
                   gap: { xs: "12px", sm: "64px" },
                 }}
               >
-                <Box sx={{ width: 672 }}>
+                <Box sx={{ width: "100%", maxWidth: 672 }}>
                   <Typography
                     variant="h4"
                     sx={{
                       width: "100%",
-                      maxWidth: { xs: 343, sm: 570, md: 672 },
+                      maxWidth: { xs: "100%", sm: "98%", md: 672 },
                       font: {
-                        xs: `normal normal 600 normal 36px/44px ${Fonts.inter}`,
+                        xs: `normal normal 600 normal 32.5px/44px ${Fonts.inter}`,
                         md: `normal normal 600 normal 46px/60px ${Fonts.inter}`,
                       },
                       color: Colors.light,
                       m: 0,
                       p: 0,
-                      letterSpacing: { xs: "-0.02em", sm: "-2%" },
+                      letterSpacing: "-0.02em",
                       textAlign: "left",
                     }}
                   >
@@ -142,16 +135,16 @@ export default function WhyEduvasityPage() {
                   variant="p"
                   sx={{
                     width: "100%",
-                    maxWidth: { xs: 343, sm: 570, md: 672 },
+                    maxWidth: { xs: "100%", sm: "98%", md: 672 },
                     font: {
-                      xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
+                      xs: `normal normal 500 normal 16px/28px ${Fonts.primary}`,
                       md: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
                     },
                     color: Colors.textColor,
                     m: 0,
                     p: 0,
-                    letterSpacing: { xs: "0em" },
-                    maxWidth: 480,
+                    letterSpacing: "0em",
+                    textAlign: "left",
                   }}
                 >
                   {WHY_EDUVACITY_DESC}
@@ -169,7 +162,7 @@ export default function WhyEduvasityPage() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          pt: { xs: 6, md: 12.5 },
+          pt: { xs: 6.5, md: 12.5 },
           pb: { xs: 2, md: 12.5 },
           backgroundColor: Colors.light,
         }}
@@ -181,7 +174,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -219,131 +212,144 @@ export default function WhyEduvasityPage() {
                     justifyContent: "flex-start",
                     alignItems: "center",
                     flexDirection: "column",
-                    gap: "12px",
+                    gap: "16px",
                   }}
                 >
-                  <CardHeader
-                    avatar={<StackBookAvatar />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          width: "100%",
-                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                          color: Colors.light,
-                          m: 0,
-                          p: 0,
-                          letterSpacing: "-2%",
-                        }}
-                      >
-                        Collaborates with experts institutions to offer courses
-                        aligned with industry needs.
-                      </Typography>
-                    }
+                  <Box
                     sx={{
                       width: "100%",
-                      maxWidth: { xs: 343, sm: 500 },
+                      display: "flex",
+                      gap: 1.5,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
+                      maxWidth: 560,
                     }}
-                  />
-                  <CardHeader
-                    avatar={<MonitorIcon />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          width: "100%",
-                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                          color: Colors.light,
-                          m: 0,
-                          p: 0,
-                          letterSpacing: "-2%",
-                        }}
-                      >
-                        Leverage Convenience and Accessibility
-                      </Typography>
-                    }
+                  >
+                    <Box>
+                      <StackBookAvatar />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        letterSpacing: { xs: "0em", sm: "-0.02em" },
+                        textAlign: "left",
+                      }}
+                    >
+                      Collaborates with experts institutions to offer courses
+                      aligned with industry needs
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
                       width: "100%",
-                      maxWidth: { xs: 343, sm: 500 },
+                      display: "flex",
+                      gap: 1.5,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
+                      maxWidth: 560,
                     }}
-                  />
-                  <CardHeader
-                    avatar={<PeopleAvarter />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          width: "100%",
-                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                          color: Colors.light,
-                          m: 0,
-                          p: 0,
-                          letterSpacing: "-2%",
-                        }}
-                      >
-                        Get a Personalize Learning Experience Tailored for You
-                      </Typography>
-                    }
+                  >
+                    <Box>
+                      <MonitorIcon />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        width: "100%",
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      Leverage Convenience and Accessibility
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
                       width: "100%",
-                      maxWidth: { xs: 343, sm: 500 },
+                      display: "flex",
+                      gap: 1.5,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
+                      maxWidth: 560,
                     }}
-                  />{" "}
-                  <CardHeader
-                    avatar={<PeopleCommunityAvater />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          width: "100%",
-                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                          color: Colors.light,
-                          m: 0,
-                          p: 0,
-                          letterSpacing: "-2%",
-                        }}
-                      >
-                        Enhanced Collaboration & Cost Effective Education
-                      </Typography>
-                    }
+                  >
+                    <Box>
+                      <PeopleAvarter />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        width: "100%",
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      Get a Personalize Learning Experience Tailored for You
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
                       width: "100%",
-                      maxWidth: { xs: 343, sm: 500 },
+                      display: "flex",
+                      gap: 1.5,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
+                      maxWidth: 560,
                     }}
-                  />{" "}
+                  >
+                    <Box>
+                      <PeopleCommunityAvater />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      Enhanced Collaboration & Cost Effective Education
+                    </Typography>
+                  </Box>
                 </Box>
               </Card>
               <Box
                 sx={{
                   maxWidth: 560,
-                  height: 288,
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: "12px",
+                  gap: "16px",
                   mt: { xs: 0, sm: 5, md: 10 },
                 }}
               >
                 <Typography
                   variant="h1"
                   sx={{
+                    width: "100%",
                     font: {
                       xs: `normal normal 600 normal 25px/36px ${Fonts.primary}`,
                       md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
@@ -351,7 +357,8 @@ export default function WhyEduvasityPage() {
                     color: Colors.dark,
                     m: 0,
                     p: 0,
-                    letterSpacing: "-2%",
+                    letterSpacing: "-0.02em",
+                    textTransform: "capitalize",
                   }}
                 >
                   {WHY_EDUVACITY_VALUE}
@@ -376,11 +383,10 @@ export default function WhyEduvasityPage() {
                   >
                     {WHY_EDUVACITY_VALUE_DESC}
                   </Typography>
-                  <Box sx={{ width: 160, mt: 3 }}>
+                  <Box sx={{ width: 180, mt: 3 }}>
                     <Box
                       onClick={handleClickOpen}
                       sx={{
-                        height: 48,
                         padding: "12px 20px 12px 20px",
                         display: "flex",
                         justifyContent: "center",
@@ -406,7 +412,7 @@ export default function WhyEduvasityPage() {
                   background: Colors.secondary,
                   borderRadius: "12px",
                   boxShadow: "none",
-                  px: 4,
+                  px: 2,
                   py: 4,
                   display: { xs: "block", sm: "none" },
                   my: 4,
@@ -419,107 +425,123 @@ export default function WhyEduvasityPage() {
                     justifyContent: "flex-start",
                     alignItems: "center",
                     flexDirection: "column",
-                    gap: "12px",
+                    gap: "16px",
                   }}
                 >
-                  <CardHeader
-                    avatar={<StackBookAvatar />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                          color: Colors.light,
-                          letterSpacing: { xs: "0em", sm: "-2%" },
-                          textAlign: "left",
-                        }}
-                      >
-                        Collaborates with experts institutions to offer courses
-                        aligned with industry needs
-                      </Typography>
-                    }
+                  <Box
                     sx={{
-                      width: 300,
+                      width: "100%",
+                      display: "flex",
+                      gap: 1,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
                     }}
-                  />
-                  <CardHeader
-                    avatar={<MonitorIcon />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          width: "100%",
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                          color: Colors.light,
-                          m: 0,
-                          p: 0,
-                          letterSpacing: "-2%",
-                        }}
-                      >
-                        Leverage Convenience and Accessibility
-                      </Typography>
-                    }
+                  >
+                    <Box>
+                      <StackBookAvatar />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        letterSpacing: { xs: "0em", sm: "-0.02em" },
+                        textAlign: "left",
+                      }}
+                    >
+                      Collaborates with experts institutions to offer courses
+                      aligned with industry needs
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
-                      width: 300,
+                      width: "100%",
+                      display: "flex",
+                      gap: 1,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
                     }}
-                  />
-                  <CardHeader
-                    avatar={<PeopleAvarter />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          width: "100%",
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                          color: Colors.light,
-                          m: 0,
-                          p: 0,
-                          letterSpacing: "-2%",
-                        }}
-                      >
-                        Get a Personalize Learning Experience Tailored for You
-                      </Typography>
-                    }
+                  >
+                    <Box>
+                      <MonitorIcon />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        width: "100%",
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      Leverage Convenience and Accessibility
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
-                      width: 300,
+                      width: "100%",
+                      display: "flex",
+                      gap: 1,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
                     }}
-                  />{" "}
-                  <CardHeader
-                    avatar={<PeopleCommunityAvater />}
-                    title={
-                      <Typography
-                        variant="span"
-                        sx={{
-                          font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                          color: Colors.light,
-                          m: 0,
-                          p: 0,
-                          letterSpacing: "-2%",
-                        }}
-                      >
-                        Enhanced Collaboration & Cost Effective Education
-                      </Typography>
-                    }
+                  >
+                    <Box>
+                      <PeopleAvarter />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        width: "100%",
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      Get a Personalize Learning Experience Tailored for You
+                    </Typography>
+                  </Box>
+                  <Box
                     sx={{
-                      width: 300,
+                      width: "100%",
+                      display: "flex",
+                      gap: 1,
                       background: "rgba(255, 255, 255, 0.4)",
-                      p: 2,
+                      p: 1,
                       border: "1px solid rgba(255, 255, 255, 0.3)",
                       borderRadius: 1,
+                      alignItems: "center",
                     }}
-                  />{" "}
+                  >
+                    <Box>
+                      <PeopleCommunityAvater />
+                    </Box>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        font: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        color: Colors.light,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      Enhanced Collaboration & Cost Effective Education
+                    </Typography>
+                  </Box>
                 </Box>
               </Card>
             </Box>
@@ -527,7 +549,7 @@ export default function WhyEduvasityPage() {
         </Box>
       </Box>
       {/* FEATURES SECTION */}
-      <Box sx={{ px: { xs: 4, sm: 3, lg: 12.5, xl: 16 } }}>
+      <Box sx={{ px: { xs: 3, sm: 3, lg: 12.5, xl: 16 } }}>
         <Divider
           sx={{
             borderColor: "#EAECF0",
@@ -543,7 +565,7 @@ export default function WhyEduvasityPage() {
           flexDirection: "column",
           py: { xs: 2, md: 12.5 },
           backgroundColor: Colors.light,
-          gap: { xs: 0, sm: 12 },
+          gap: { xs: 2, sm: 12 },
         }}
       >
         <Box
@@ -552,7 +574,7 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: { xs: 4, sm: 8 },
           }}
         >
@@ -584,7 +606,10 @@ export default function WhyEduvasityPage() {
                   variant="h4"
                   component="div"
                   sx={{
-                    font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    font: {
+                      xs: `normal normal 600 normal 25px/36px ${Fonts.Demi}`,
+                      sm: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    },
                     color: Colors.dark,
                     letterSpacing: "-0.02em",
                   }}
@@ -681,7 +706,7 @@ export default function WhyEduvasityPage() {
             height: { xs: 850, sm: 560 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -720,7 +745,7 @@ export default function WhyEduvasityPage() {
                   component="div"
                   sx={{
                     font: {
-                      xs: `normal normal 600 normal 26px/36px ${Fonts.Demi}`,
+                      xs: `normal normal 600 normal 25px/36px ${Fonts.Demi}`,
                       sm: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
                     },
                     color: Colors.dark,
@@ -735,7 +760,10 @@ export default function WhyEduvasityPage() {
                     variant="h6"
                     component="div"
                     sx={{
-                      font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                      font: {
+                        xs: `normal normal 400 normal 16px/28px ${Fonts.inter}`,
+                        sm: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                      },
                       color: "#475467",
                       letterSpacing: "0em",
                       textAlign: "left",
@@ -763,7 +791,10 @@ export default function WhyEduvasityPage() {
                     variant="h6"
                     component="div"
                     sx={{
-                      font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                      font: {
+                        xs: `normal normal 400 normal 16px/28px ${Fonts.inter}`,
+                        sm: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                      },
                       color: "#475467",
                       letterSpacing: "0em",
                       textAlign: "left",
@@ -782,7 +813,10 @@ export default function WhyEduvasityPage() {
                     variant="h6"
                     component="div"
                     sx={{
-                      font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                      font: {
+                        xs: `normal normal 400 normal 16px/28px ${Fonts.inter}`,
+                        sm: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                      },
                       color: "#475467",
                       letterSpacing: "0em",
                       textAlign: "left",
@@ -797,7 +831,7 @@ export default function WhyEduvasityPage() {
           </Box>
           <Box
             sx={{
-              width: { xs: 343, sm: "45%" },
+              width: { xs: "100%", sm: "45%" },
               height: "100%",
               backgroundImage: "url(/images/lady-in-class-xs.svg)",
               backgroundPosition: { xs: "top center", sm: "top right" },
@@ -829,7 +863,7 @@ export default function WhyEduvasityPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
           }}
         >
@@ -841,14 +875,14 @@ export default function WhyEduvasityPage() {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
-              gap: { xs: "8px", sm: "16px" },
+              gap: 2,
             }}
           >
             <Typography
               variant="h4"
               sx={{
                 font: {
-                  xs: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                  xs: `normal normal 600 normal 25px/36px ${Fonts.Demi}`,
                   md: `normal normal 600 normal 36px/44px ${Fonts.Demi}`,
                 },
                 color: Colors.dark,
@@ -886,7 +920,7 @@ export default function WhyEduvasityPage() {
                 world.
               </Typography>
             </Box>
-            <Box sx={{ width: "100%", height: { xs: 200, sm: "100%" } }}>
+            <Box sx={{ width: "100%", height: { xs: 200, sm: "100%" }, mt: 2 }}>
               <Image
                 src={digitalLeraning}
                 alt="ipad landscape photo"
@@ -939,7 +973,10 @@ export default function WhyEduvasityPage() {
                   variant="h4"
                   component="div"
                   sx={{
-                    font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    font: {
+                      xs: `normal normal 600 normal 25px/36px ${Fonts.Demi}`,
+                      sm: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                    },
                     color: Colors.dark,
                     letterSpacing: "-0.02em",
                   }}
@@ -1065,13 +1102,16 @@ export default function WhyEduvasityPage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
           }}
         >
           <Typography
             variant="h6"
             sx={{
-              font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
+              font: {
+                xs: `normal normal 600 normal 25px/36px ${Fonts.Demi}`,
+                sm: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
+              },
               color: Colors.light,
               mt: -3,
               p: 0,

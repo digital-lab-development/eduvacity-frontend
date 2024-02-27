@@ -28,32 +28,32 @@ const StyledList = styled(List)({
     justifyContent: "flex-start",
     alignItems: "center",
     font: `normal normal normal 500 16px/24px ${Fonts.primaryMedium}`,
-    color: Colors.secondary,
+    color: Colors.offWhite,
     padding: "10px 16px",
     "&:focused": {
-      backgroundColor: "#FFFFFF14",
-      color: Colors.primary,
+      backgroundColor: "transparent",
+      color: Colors.offWhite,
       borderRadius: 8,
       font: `normal normal normal 500 16px/24px ${Fonts.primaryExtraBold}`,
     },
     "&:hover": {
-      backgroundColor: "#FFFFFF14",
-      color: Colors.primary,
+      backgroundColor: "transparent",
+      color: Colors.offWhite,
       borderRadius: 8,
     },
   },
   "& .Mui-selected": {
-    backgroundColor: "#FFFFFF14",
+    backgroundColor: "transparent",
     color: Colors.primary,
     borderRadius: 8,
     font: `normal normal normal 500 16px/24px ${Fonts.primaryExtraBold}`,
     "&:focused": {
-      backgroundColor: "#FFFFFF14",
+      backgroundColor: "transparent",
       color: Colors.primary,
       borderRadius: 8,
     },
     "&:hover": {
-      backgroundColor: "#FFFFFF14",
+      backgroundColor: "transparent",
       color: Colors.primary,
       borderRadius: 8,
     },
@@ -120,12 +120,14 @@ export default function MenuDropdown({ item, selected }) {
           >
             <StyledList>
               {item.children.map((child, index) => {
+                const selectedItem = content?.name === child.name
                 return (
                   <ListItemButton
+                    disableRipple
                     alignItems="flex-start"
                     key={`item-${index}`}
                     onClick={() => setContent(child)}
-                    selected={content?.name === child.name}
+                    selected={selectedItem}
                   >
                     <ListItemText
                       primary={child.name}
@@ -136,7 +138,7 @@ export default function MenuDropdown({ item, selected }) {
                         letterSpacing: "0em",
                         textAlign: "left",
                         fontFamily: Fonts.primary,
-                        color: "#9BA5A8",
+                        color: selectedItem ? Colors.primary : Colors.offWhite,
                       }}
                     />
 
@@ -210,7 +212,10 @@ export default function MenuDropdown({ item, selected }) {
                                       "0px 3.104477643966675px 4.656716346740723px -1.5522388219833374px #10182808, 0px 3.104477643966675px 4.656716346740723px -1.5522388219833374px #10182808,0px 9.313432693481445px 12.4179105758667px -3.104477643966675px #10182814",
                                     cursor: "pointer",
                                   }}
-                                  onClick={() => router.push(cont.link)}
+                                  onClick={() => {
+                                    router.push(cont.link)
+                                    setAnchorEl(null)
+                                  }}
                                 >
                                   <CardHeader
                                     action={
@@ -287,12 +292,13 @@ export default function MenuDropdown({ item, selected }) {
       }
     >
       <ListItemButton
-        disableTouchRipple
+        disableRipple
         onMouseEnter={handlePopoverOpen}
         onMouseLeave={handlePopoverClose}
         sx={{
           p: 0,
           m: 0,
+          background: "transparent",
         }}
       >
         <Typography
@@ -302,7 +308,7 @@ export default function MenuDropdown({ item, selected }) {
             display: "flex",
             font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
             gap: "10px",
-            color: selected ? Colors.primary : "#FFFFFF99",
+            color: selected ? Colors.primary : Colors.offWhite,
             cursor: "pointer",
             "&:hover": {
               background: "transparent",

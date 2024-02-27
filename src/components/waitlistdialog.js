@@ -87,7 +87,6 @@ function JoinWaitlistDialog({ handleClose, open }) {
         throw new Error(`API request failed with status ${response.status}`)
       }
     } catch (error) {
-      console.error(error)
       setIsSubmissionSuccessful(false)
       setOpenToast(true)
       setErrorMsg("An error occurred. Please try again later.")

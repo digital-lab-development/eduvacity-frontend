@@ -36,30 +36,31 @@ const StyledList = styled(List)({
     font: `normal normal normal 500 16px/24px ${Fonts.primaryMedium}`,
     color: Colors.secondary,
     padding: "10px 16px",
+    backgroundColor: "transparent",
     "&:focused": {
-      backgroundColor: "#FFFFFF14",
+      backgroundColor: "transparent",
       color: Colors.primary,
       borderRadius: 8,
       font: `normal normal normal 500 16px/24px ${Fonts.primaryExtraBold}`,
     },
     "&:hover": {
-      backgroundColor: "#FFFFFF14",
+      backgroundColor: "transparent",
       color: Colors.primary,
       borderRadius: 8,
     },
   },
   "& .Mui-selected": {
-    backgroundColor: "red",
+    backgroundColor: "transparent",
     color: Colors.primary,
     borderRadius: 8,
     font: `normal normal normal 500 16px/24px ${Fonts.primaryExtraBold}`,
     "&:focused": {
-      backgroundColor: "#FFFFFF14",
+      backgroundColor: "transparent",
       color: Colors.primary,
       borderRadius: 8,
     },
     "&:hover": {
-      backgroundColor: "#FFFFFF14",
+      backgroundColor: "transparent",
       color: Colors.primary,
       borderRadius: 8,
     },
@@ -115,7 +116,7 @@ export default function MenuLists({ menu }) {
   const containerRef = React.useRef(null)
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [content, setContent] = React.useState(null)
-  const [openNest, setOpenNest] = React.useState(false)
+  const [openNest, setOpenNest] = React.useState(-1)
 
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget)
@@ -130,9 +131,8 @@ export default function MenuLists({ menu }) {
 
   const handleClick = (item, index) => {
     setContent(item)
-    item.children && openNest === index ? setOpenNest("") : setOpenNest(index)
+    setOpenNest((prevIndex) => (prevIndex === index ? -1 : index))
   }
-  console.log("content", content)
   return (
     <div>
       <motion.nav
@@ -153,7 +153,7 @@ export default function MenuLists({ menu }) {
           <Box
             sx={{
               background: "rgba(1, 27, 35, 1)",
-              border: "1px 0px 0px 0px",
+              borderTop: "1px",
               padding: "16px 0px 16px 0px",
               display: "flex",
               gap: 24,
@@ -182,10 +182,9 @@ export default function MenuLists({ menu }) {
                     {item.children && item.children.length !== 0 ? (
                       <>
                         <ListItemButton
-                          id="demo-customized-button"
-                          aria-controls={
-                            open ? "demo-customized-menu" : undefined
-                          }
+                          disableRipple
+                          id="popover-button"
+                          aria-controls={open ? "popover-menu" : undefined}
                           aria-haspopup="true"
                           aria-expanded={open ? "true" : undefined}
                           onClick={handleOpen}
@@ -219,9 +218,9 @@ export default function MenuLists({ menu }) {
                           </Box>
                         </ListItemButton>
                         <StyledMenu
-                          id="demo-customized-menu"
+                          id="popover-menu"
                           MenuListProps={{
-                            "aria-labelledby": "demo-customized-button",
+                            "aria-labelledby": "popover-button",
                           }}
                           anchorEl={anchorEl}
                           open={open}
@@ -233,8 +232,8 @@ export default function MenuLists({ menu }) {
                               return (
                                 <Box key={`item-${index}`}>
                                   <ListItemButton
+                                    disableRipple
                                     onClick={() => handleClick(child, index)}
-                                    disableTouchRipple
                                     alignItems="flex-start"
                                     selected={selectedItem}
                                   >
@@ -328,7 +327,7 @@ export default function MenuLists({ menu }) {
                                                                 display: "flex",
                                                                 flexDirection:
                                                                   "column",
-                                                                gap: "7.4px",
+                                                                gap: "8px",
                                                                 boxShadow:
                                                                   "0px 4.9352521896362305px 7.4028778076171875px -2.4676260948181152px rgba(16, 24, 40, 0.03),0px 14.805755615234375px 19.741008758544922px -4.9352521896362305px rgba(16, 24, 40, 0.08)",
                                                                 cursor:
@@ -336,11 +335,12 @@ export default function MenuLists({ menu }) {
                                                                 backgroundColor:
                                                                   "#FFF !important",
                                                               }}
-                                                              onClick={() =>
+                                                              onClick={() => {
                                                                 router.push(
                                                                   sub.link
                                                                 )
-                                                              }
+                                                                toggleOpen()
+                                                              }}
                                                             >
                                                               <Box
                                                                 sx={{
@@ -449,11 +449,12 @@ export default function MenuLists({ menu }) {
                     ) : (
                       <>
                         <ListItemButton
-                          onClick={() =>
+                          onClick={() => {
                             router.push(
                               `/${updateKey(item.name.toLocaleLowerCase())}`
                             )
-                          }
+                            toggleOpen()
+                          }}
                           key={item.label}
                           sx={{
                             py: 0,

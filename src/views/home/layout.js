@@ -14,7 +14,7 @@ import React from "react"
 import { UserIcon } from "../../components/svg"
 import { Colors } from "../../components/themes/colors"
 import { Fonts } from "../../components/themes/fonts"
-import PorgramPopover from "./dropdown"
+import MenuDropdown from "./dropdown"
 import FooterPage from "./footer"
 import MenuLists from "./popover"
 
@@ -415,13 +415,14 @@ export default function HomeLayout({ children }) {
                   return (
                     <Box key={i} sx={{ width: "100%" }}>
                       {item && item.children ? (
-                        <PorgramPopover
+                        <MenuDropdown
                           name={item.name}
                           item={item}
                           selected={selected}
                         />
                       ) : (
                         <ListItemButton
+                          disableRipple
                           sx={{
                             p: 0,
                             m: 0,
@@ -431,7 +432,6 @@ export default function HomeLayout({ children }) {
                               `/${updateKey(item.name.toLocaleLowerCase())}`
                             )
                           }
-                          selected={selected}
                         >
                           <Typography
                             sx={{
