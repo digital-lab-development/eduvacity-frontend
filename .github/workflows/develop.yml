@@ -1,4 +1,4 @@
-name: CI Build for Eduvacity-FRONTEND
+name: CI Build for Eduvacity-Frontend Development Branch
 
 on:
   push:
@@ -42,6 +42,7 @@ jobs:
             docker run -d  -p 3001:3000 \
             --restart always \
             --name eduvacity-frontend \
+            -e "STRIPE_PUBLIC_KEY=${{ secrets.STRIPE_PUBLIC_KEY }}" \
             eduv/eduvacity-frontend:latest
 
        # Notify Slack on success
