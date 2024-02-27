@@ -1,9 +1,9 @@
-name: CI Build for Eduvacity-Frontend Development Branch
+name: CI Build for Eduvacity-Frontend Production Branch
 
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       - name: Build the Docker image
-        run: docker build --build-arg STRIPE_PUBLIC_KEY=${{secrets.STRIPE_PUBLIC_KEY}} -t eduv/eduvacity-frontend:latest .
+        run: docker build --build-arg STRIPE_PUBLIC_KEY=${{secrets.PRODUCTION_STRIPE_PUBLIC_KEY}} -t eduv/eduvacity-frontend:latest .
 
       - name: Docker Push
         run: docker push eduv/eduvacity-frontend:latest
@@ -30,9 +30,9 @@ jobs:
       - name: Sign in to Droplet and execute commands
         uses: appleboy/ssh-action@master
         with:
-          host: ${{secrets.DROPLET_HOST}}
+          host: ${{secrets.PRODUCTION_DROPLET_HOST}}
           username: abdulreal
-          password: ${{secrets.DROPLET_PASSWORD}}
+          password: ${{secrets.PRODUCTION_DROPLET_PASSWORD}}
           script: |
             docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }} 
             docker stop eduvacity-frontend
@@ -42,7 +42,7 @@ jobs:
             docker run -d  -p 3001:3000 \
             --restart always \
             --name eduvacity-frontend \
-            -e "STRIPE_PUBLIC_KEY=${{ secrets.STRIPE_PUBLIC_KEY }}" \
+            -e "STRIPE_PUBLIC_KEY=${{ secrets.PRODUCTION_STRIPE_PUBLIC_KEY }}" \
             eduv/eduvacity-frontend:latest
 
        # Notify Slack on success
