@@ -1,66 +1,61 @@
-import { Box, CssBaseline, Typography } from "@mui/material"
-import { useRouter } from "next/router"
-import React from "react"
-import { ArrowUp } from "../src/components/svg"
-import { Colors } from "../src/components/themes/colors"
-import { Fonts } from "../src/components/themes/fonts"
-import InstructorsCards from "../src/views/become-an-instructor"
-import EthicsCard from "../src/views/become-an-instructor/ethics"
-import PositionsCards from "../src/views/become-an-instructor/positions"
-import HomePageLayout from "../src/views/home/layout"
+import { Box, CssBaseline, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { ArrowUp } from '../src/components/svg';
+import { Colors } from '../src/components/themes/colors';
+import { Fonts } from '../src/components/themes/fonts';
+import InstructorsCards from '../src/views/become-an-instructor';
+import EthicsCard from '../src/views/become-an-instructor/ethics';
+import PositionsCards from '../src/views/become-an-instructor/positions';
+import HomePageLayout from '../src/views/home/layout';
 
 export default function BecomeAnInstructor() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <Box
       sx={{
-        width: "100%",
-        display: "flex",
+        width: '100%',
+        display: 'flex',
         flexGrow: 1,
-        flexDirection: "column",
-      }}
-    >
+        flexDirection: 'column',
+      }}>
       <CssBaseline />
       <Box
         component="section"
         id="hero-section"
         sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
           backgroundColor: Colors.secondary,
           pt: { xs: 4, md: 15.5 },
           pb: { xs: 4, md: 6.5 },
-        }}
-      >
+        }}>
         <Box
           sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, xl: 12.5 },
             py: { xs: 4, sm: 3, xl: 4 },
-            gap: { xs: "32px", sm: "64px" },
-          }}
-        >
+            gap: { xs: '32px', sm: '64px' },
+          }}>
           <Box
             sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
-            }}
-          >
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: { xs: '40px', sm: '80px' },
+            }}>
             <Box
               sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                gap: "16px",
-              }}
-            >
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+              }}>
               <Typography
                 variant="h1"
                 sx={{
@@ -71,28 +66,26 @@ export default function BecomeAnInstructor() {
                   color: Colors.primary,
                   m: 0,
                   p: 0,
-                  letterSpacing: "0em",
-                  textTransform: "uppercase",
-                  textAlign: "left",
-                }}
-              >
+                  letterSpacing: '0em',
+                  textTransform: 'uppercase',
+                  textAlign: 'left',
+                }}>
                 Work At Eduvacity
               </Typography>
               <Box
                 sx={{
-                  width: "100%",
+                  width: '100%',
                   maxWidth: 1216,
-                  display: "flex",
-                  flexDirection: { xs: "column", lg: "row" },
-                  gap: { xs: "12px", sm: "64px" },
-                }}
-              >
-                <Box sx={{ width: "100%" }}>
+                  display: 'flex',
+                  flexDirection: { xs: 'column', lg: 'row' },
+                  gap: { xs: '12px', sm: '64px' },
+                }}>
+                <Box sx={{ width: '100%' }}>
                   <Typography
                     variant="h4"
                     sx={{
-                      width: "100%",
-                      maxWidth: { xs: "100%", sm: 570, md: 672 },
+                      width: '100%',
+                      maxWidth: { xs: '100%', sm: 570, md: 672 },
                       font: {
                         xs: `normal normal 700 normal 30px/40px ${Fonts.inter}`,
                         md: `normal normal 700 normal 40px/56px ${Fonts.inter}`,
@@ -101,10 +94,9 @@ export default function BecomeAnInstructor() {
                       color: Colors.light,
                       m: 0,
                       p: 0,
-                      letterSpacing: "-0.02em",
-                      textAlign: "left",
-                    }}
-                  >
+                      letterSpacing: '-0.02em',
+                      textAlign: 'left',
+                    }}>
                     Make quality education accessible, become an Instructor on
                     Eduvacity
                   </Typography>
@@ -112,7 +104,7 @@ export default function BecomeAnInstructor() {
                 <Typography
                   variant="p"
                   sx={{
-                    width: "100%",
+                    width: '100%',
                     maxWidth: { xs: 343, sm: 570, md: 480 },
                     font: {
                       xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
@@ -121,9 +113,8 @@ export default function BecomeAnInstructor() {
                     color: Colors.textColor,
                     m: 0,
                     p: 0,
-                    letterSpacing: { xs: "0em" },
-                  }}
-                >
+                    letterSpacing: { xs: '0em' },
+                  }}>
                   Join a team of goal-driven talents, passionately bridging the
                   gaps in African tertiary education.
                 </Typography>
@@ -137,52 +128,47 @@ export default function BecomeAnInstructor() {
         component="section"
         id="access-section"
         sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
           pt: { xs: 6, md: 15.5 },
           pb: { xs: 2, md: 15.5 },
-          gap: { xs: "30px", sm: "64px" },
+          gap: { xs: '30px', sm: '64px' },
           backgroundColor: Colors.light,
-        }}
-      >
+        }}>
         <Box
           sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
-          }}
-        >
+          }}>
           <Box
             sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
-            }}
-          >
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: { xs: '40px', sm: '80px' },
+            }}>
             <Box
               sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: { xs: "column", lg: "row" },
-                gap: { xs: "30px", sm: "64px" },
-              }}
-            >
+                width: '100%',
+                display: 'flex',
+                flexDirection: { xs: 'column', lg: 'row' },
+                gap: { xs: '30px', sm: '64px' },
+              }}>
               <Box
                 sx={{
                   maxWidth: 705,
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: "12px",
-                }}
-              >
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '12px',
+                }}>
                 <Box>
                   <Typography
                     sx={{
@@ -193,20 +179,18 @@ export default function BecomeAnInstructor() {
                       color: Colors.dark,
                       m: 0,
                       p: 0,
-                      letterSpacing: "-0.02em",
-                      textAlign: "left",
-                    }}
-                  >
-                    We&apos;re a fast-growing team
+                      letterSpacing: '-0.02em',
+                      textAlign: 'left',
+                    }}>
+                    SHAPE THE FUTURE OF AFRICAN EDUCATION
                   </Typography>
                   <Box
                     component="span"
                     sx={{
                       maxWidth: 840,
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
+                      display: 'flex',
+                      flexDirection: 'column',
+                    }}>
                     <Typography
                       variant="span"
                       sx={{
@@ -215,121 +199,113 @@ export default function BecomeAnInstructor() {
                           sm: `normal normal 500 normal 20px/28px ${Fonts.primary}`,
                         },
                         color: Colors.grey,
-                        letterSpacing: "0em",
-                      }}
-                    >
-                      We&apos;re always on the lookout for passionate, dynamic,
-                      and talented individuals.
+                        letterSpacing: '0em',
+                      }}>
+                      We&apos;re searching for passionate and experienced
+                      instructors like you to join our growing community and
+                      contribute to this exciting journey.
                     </Typography>
                   </Box>
                 </Box>
               </Box>
               <Box
                 sx={{
-                  width: "100%",
-                  maxWidth: { xs: "100%", sm: 470 },
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  alignItems: "center",
+                  width: '100%',
+                  maxWidth: { xs: '100%', sm: 470 },
+                  display: 'flex',
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  alignItems: 'center',
                   gap: 2,
-                }}
-              >
+                }}>
                 <Box
-                  onClick={() => router.push("/signup")}
+                  onClick={() => router.push('#ethics')}
                   sx={{
-                    width: { xs: "100%", sm: 300 },
+                    width: { xs: '100%', sm: 300 },
                     height: 48,
-                    padding: "12px 20px 12px 20px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    padding: '12px 20px 12px 20px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     font: `normal normal 600 normal 16px/24px ${Fonts.primary}`,
-                    cursor: "pointer",
-                    color: "#344054",
-                    border: "1px solid #D0D5DD",
-                    boxShadow: "0px 1px 2px 0px #1018280D",
-                    borderRadius: "46px",
+                    cursor: 'pointer',
+                    color: '#344054',
+                    border: '1px solid #D0D5DD',
+                    boxShadow: '0px 1px 2px 0px #1018280D',
+                    borderRadius: '46px',
                     background: Colors.light,
-                    "&:hover": {
+                    '&:hover': {
                       background: Colors.light,
                     },
-                  }}
-                >
+                  }}>
                   Read our core values
                 </Box>
                 <Box
-                  onClick={() => router.push("/signup")}
+                  onClick={() => router.push('#position')}
                   sx={{
-                    width: { xs: "100%", sm: 300 },
-                    padding: "12px 20px 12px 20px",
+                    width: { xs: '100%', sm: 300 },
+                    padding: '12px 20px 12px 20px',
                     height: 48,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     font: `normal normal 500 normal 16px/19.2px ${Fonts.primary}`,
-                    cursor: "pointer",
-                    color: "rgba(230, 244, 237, 1)",
-                    borderRadius: "46px",
+                    cursor: 'pointer',
+                    color: 'rgba(230, 244, 237, 1)',
+                    borderRadius: '46px',
                     background: Colors.primary,
-                    "&:hover": {
+                    '&:hover': {
                       background: Colors.primary,
                     },
-                  }}
-                >
+                  }}>
                   View open positions <ArrowUp />
                 </Box>
               </Box>
             </Box>
           </Box>
         </Box>
-        <Box
+        {/* <Box
           sx={{
             pl: { xs: 1, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
-          }}
-        >
+          }}>
           <InstructorsCards />
-        </Box>
+        </Box> */}
       </Box>
       <Box
         component="section"
-        id="feature-section"
+        id="position"
         sx={{
-          width: "100%",
-          display: "flex",
+          width: '100%',
+          display: 'flex',
 
-          flexDirection: "column",
-          pt: { xs: 8, md: 15.5 },
+          flexDirection: 'column',
+          pt: { xs: 6, md: 15.5 },
           pb: { xs: 8, md: 6.5 },
           backgroundColor: Colors.light,
-        }}
-      >
+        }}>
         <Box
           sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, xl: 15.5 },
             gap: 8,
-          }}
-        >
+          }}>
           <Box
             sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
-            }}
-          >
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: { xs: '40px', sm: '80px' },
+            }}>
             <Box
               sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                gap: "16px",
-              }}
-            >
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+              }}>
               <Typography
                 variant="h2"
                 sx={{
@@ -337,11 +313,10 @@ export default function BecomeAnInstructor() {
                   color: Colors.primary,
                   m: 0,
                   p: 0,
-                  letterSpacing: "1%",
-                  textTransform: "uppercase",
-                }}
-              >
-                Open positions
+                  letterSpacing: '1%',
+                  textTransform: 'uppercase',
+                }}>
+                OPEN INSTRUCTOR POSITIONS
               </Typography>
               <Typography
                 variant="h2"
@@ -354,11 +329,10 @@ export default function BecomeAnInstructor() {
                   color: Colors.dark,
                   m: 0,
                   p: 0,
-                  letterSpacing: { xs: "-0.02em", sm: "-2%" },
-                  textAlign: "left",
-                }}
-              >
-                We’re looking for talented individuals
+                  letterSpacing: { xs: '-0.02em', sm: '-2%' },
+                  textAlign: 'left',
+                }}>
+                Join us to transform the education landscape in Africa
               </Typography>
               <Typography
                 variant="span"
@@ -368,57 +342,52 @@ export default function BecomeAnInstructor() {
                     sm: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
                   },
                   color: Colors.grey,
-                  textAlign: "left",
-                }}
-              >
-                We operate in a hybrid setting spread all across the world. Join
-                us!
+                  textAlign: 'left',
+                }}>
+                We offer a streamlined process and provide ongoing support to
+                help you succeed as an instructor.
               </Typography>
             </Box>
-            <EthicsCard />
+            <PositionsCards />
           </Box>
         </Box>
       </Box>
       <Box
         component="section"
-        id="feature-section"
+        id="ethics"
         sx={{
-          width: "100%",
-          display: "flex",
+          width: '100%',
+          display: 'flex',
 
-          flexDirection: "column",
-          pt: { xs: 8, md: 12.5 },
+          flexDirection: 'column',
+          pt: { xs: 2, md: 12.5 },
           pb: { xs: 8, md: 12.5 },
           backgroundColor: Colors.light,
-        }}
-      >
+        }}>
         <Box
           sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            px: { xs: 4, sm: 6.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
-          }}
-        >
+          }}>
           <Box
             sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
-            }}
-          >
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: { xs: '40px', sm: '60px' },
+            }}>
             <Box
               sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                gap: "16px",
-              }}
-            >
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+              }}>
               <Typography
                 variant="h2"
                 sx={{
@@ -426,11 +395,10 @@ export default function BecomeAnInstructor() {
                   color: Colors.primary,
                   m: 0,
                   p: 0,
-                  letterSpacing: "1%",
-                  textTransform: "uppercase",
-                }}
-              >
-                Our ethics
+                  letterSpacing: '1%',
+                  textTransform: 'uppercase',
+                }}>
+                OUR ETHICS
               </Typography>
               <Typography
                 variant="h2"
@@ -443,10 +411,9 @@ export default function BecomeAnInstructor() {
                   color: Colors.dark,
                   m: 0,
                   p: 0,
-                  letterSpacing: { xs: "-0.02em", sm: "-2%" },
-                  textAlign: "left",
-                }}
-              >
+                  letterSpacing: { xs: '-0.02em', sm: '-2%' },
+                  textAlign: 'left',
+                }}>
                 Ready to make an impact?
               </Typography>
               <Typography
@@ -457,39 +424,37 @@ export default function BecomeAnInstructor() {
                     sm: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
                   },
                   color: Colors.grey,
-                  textAlign: "left",
-                }}
-              >
+                  textAlign: 'left',
+                }}>
                 Our ethics keep us connected and guide us as one team.
               </Typography>
             </Box>
-            <PositionsCards />
+            {/* <PositionsCards /> */}
+            <EthicsCard />
           </Box>
         </Box>
       </Box>
       <Box
         sx={{
-          width: "100%",
-          height: { xs: 850, sm: "100%" },
-          padding: "96px 0 96px 0",
+          width: '100%',
+          height: { xs: 850, sm: '100%' },
+          padding: '96px 0 96px 0',
           backgroundImage: {
             xs: "url('/images/graduate-sm.svg')",
             sm: "url('/images/graduate.svg')",
           },
-          backgroundSize: { xs: "cover", sm: "cover" },
-          backgroundRepeat: "no-repeat",
-          gap: { xs: "48px", sm: "64px" },
-        }}
-      >
+          backgroundSize: { xs: 'cover', sm: 'cover' },
+          backgroundRepeat: 'no-repeat',
+          gap: { xs: '48px', sm: '64px' },
+        }}>
         <Box
           sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            gap: { xs: "8px", sm: "16px" },
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: { xs: '8px', sm: '16px' },
             px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
-          }}
-        >
+          }}>
           <Typography
             variant="h6"
             sx={{
@@ -497,10 +462,9 @@ export default function BecomeAnInstructor() {
               color: Colors.light,
               mt: -3,
               p: 0,
-              letterSpacing: "2%",
-              textAlign: { xs: "center", sm: "left" },
-            }}
-          >
+              letterSpacing: '2%',
+              textAlign: { xs: 'center', sm: 'left' },
+            }}>
             Eduvacity
           </Typography>
           <Typography
@@ -511,49 +475,46 @@ export default function BecomeAnInstructor() {
                 xs: `normal normal 400 normal 14px/20px ${Fonts.primary}`,
                 md: `normal normal 400 normal 16px/24px ${Fonts.primary}`,
               },
-              color: "#87A0A8",
-              textAlign: { xs: "center", sm: "left" },
-            }}
-          >
+              color: '#87A0A8',
+              textAlign: { xs: 'center', sm: 'left' },
+            }}>
             Engage in hands-on learning through cutting-edge simulations
             designed to replicate industry challenges. Sharpen your skills and
             apply theoretical knowledge in a practical, risk-free environment.
           </Typography>
           <Box
             sx={{
-              width: "100%",
+              width: '100%',
               mt: 3,
-              display: "flex",
-              justifyContent: { xs: "center", sm: "flex-start" },
-            }}
-          >
+              display: 'flex',
+              justifyContent: { xs: 'center', sm: 'flex-start' },
+            }}>
             <Box
-              onClick={() => router.push("/signup")}
+              onClick={() => router.push('/signup')}
               sx={{
                 width: { xs: 159, sm: 159 },
-                padding: "12px 20px 12px 20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                padding: '12px 20px 12px 20px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
                 font: `normal normal 500 normal 14px/19.2px ${Fonts.primary}`,
-                cursor: "pointer",
-                color: "rgba(230, 244, 237, 1)",
-                borderRadius: "46px",
+                cursor: 'pointer',
+                color: 'rgba(230, 244, 237, 1)',
+                borderRadius: '46px',
                 background: Colors.primary,
-                "&:hover": {
+                '&:hover': {
                   background: Colors.primary,
                 },
-              }}
-            >
+              }}>
               Get started <ArrowUp />
             </Box>
           </Box>
         </Box>
       </Box>
     </Box>
-  )
+  );
 }
 
 BecomeAnInstructor.getLayout = function getLayout(page) {
-  return <HomePageLayout>{page}</HomePageLayout>
-}
+  return <HomePageLayout>{page}</HomePageLayout>;
+};
