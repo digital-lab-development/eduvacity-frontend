@@ -79,7 +79,7 @@ export default function FeaturesCard() {
                     component="div"
                     sx={{
                       font: {
-                        xs: `normal normal 700 normal 18px/30px ${Fonts.secondary}`,
+                        xs: `normal normal 700 normal 20px/30px ${Fonts.secondary}`,
                         sm: `normal normal 700 normal 20px/30px ${Fonts.secondary}`,
                         textTransform: 'capitalize',
                       },
@@ -91,7 +91,7 @@ export default function FeaturesCard() {
                     variant="p"
                     sx={{
                       width: 341,
-                      font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                      font: `normal normal 400 normal 16px/24px ${Fonts.primary}`,
                       color: Colors.textColor,
                     }}>
                     {card.description}

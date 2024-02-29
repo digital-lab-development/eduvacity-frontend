@@ -6,10 +6,10 @@ import * as React from 'react';
 import { ABULogo, SchoolLogo } from '../../../components/svg/index.js';
 import { Colors } from '../../../components/themes/colors';
 import { Fonts } from '../../../components/themes/fonts';
-import AllAcademicsCards from './allAcademics.js';
 import BootscampCards from './bootscamp/index.js';
 import DegreeCards from './degree/index.js';
 import DiplomaCards from './diploma/index.js';
+import ProgramCard from './program-card.js';
 
 const StyledTabs = styled(Tabs)({
   borderBottom: '1px solid #EAECF0',
@@ -240,16 +240,16 @@ export default function AcademicTabs({ handleClick }) {
       </Box>
       <Box sx={{ mt: { xs: 2, sm: 4 } }}>
         <TabPanel value={value} index={0}>
-          <AllAcademicsCards cards={cards} handleClick={handleClick} />
+          <ProgramCard cards={cards} handleClick={handleClick} />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <DiplomaCards cards={diploma} handleClick={handleClick} />
+          <ProgramCard cards={diploma} handleClick={handleClick} />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <BootscampCards cards={bootscamp} handleClick={handleClick} />
+          <ProgramCard cards={bootscamp} handleClick={handleClick} />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <DegreeCards cards={degree} handleClick={handleClick} />
+          <ProgramCard cards={degree} handleClick={handleClick} />
         </TabPanel>
       </Box>
     </Box>
