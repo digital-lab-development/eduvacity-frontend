@@ -10,14 +10,14 @@ import InstructorApplicationDialog from '../../components/instructor-form-dialog
 const cards = [
   {
     id: 1,
-    title: 'Soft Engineering',
+    title: 'Software Engineering',
     category: 'instructor',
     location: 'remote',
     type: 'Full-time',
   },
   {
     id: 2,
-    title: 'Engineering Manager',
+    title: 'Product Design',
     category: 'Product Design',
     location: 'remote',
     type: 'Full-time',
