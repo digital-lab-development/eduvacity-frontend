@@ -1,4 +1,12 @@
-import { Box, CssBaseline, Typography } from '@mui/material';
+import {
+  Box,
+  CssBaseline,
+  List,
+  ListItem,
+  ListItemText,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { ArrowUp } from '../src/components/svg';
@@ -8,6 +16,20 @@ import InstructorsCards from '../src/views/become-an-instructor';
 import EthicsCard from '../src/views/become-an-instructor/ethics';
 import PositionsCards from '../src/views/become-an-instructor/positions';
 import HomePageLayout from '../src/views/home/layout';
+
+const instructorPoints1 = [
+  'You will be contributing to shaping the future of African education by equipping learners with the skills they need to succeed in the job market.',
+  'Inspire and guide the next generation of professionals by sharing your expertise in a dynamic online learning environment.',
+  'Work on your own terms and create a teaching schedule that fits your lifestyle.',
+  'Join a network of passionate educators and industry experts who share your commitment to excellence.',
+  'Earn competitive rates for your contributions and enjoy access to benefit packages.',
+];
+
+const instructorPoints2 = [
+  'A genuine enthusiasm for sharing knowledge and inspiring learners.',
+  'The ability to clearly and effectively communicate complex concepts in a way that resonates with diverse learners.',
+  'Familiarity with online learning platforms and comfortable creating engaging content.',
+];
 
 export default function BecomeAnInstructor() {
   const router = useRouter();
@@ -182,7 +204,7 @@ export default function BecomeAnInstructor() {
                       letterSpacing: '-0.02em',
                       textAlign: 'left',
                     }}>
-                    SHAPE THE FUTURE OF AFRICAN EDUCATION
+                    Shape The Future of African Education
                   </Typography>
                   <Box
                     component="span"
@@ -269,6 +291,77 @@ export default function BecomeAnInstructor() {
           }}>
           <InstructorsCards />
         </Box> */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 4,
+            px: { xs: 1, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+          }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              backgroundColor: '#f7f7f7',
+              borderRadius: 4,
+              maxWidth: { xs: '100%', lg: '60%' },
+              alignSelf: 'start',
+              p: 4,
+            }}>
+            <Typography
+              sx={{
+                font: `normal normal 700 normal 24px/24px ${Fonts.primary}`,
+              }}>
+              Why you should join us?
+            </Typography>
+            <Box component="ul" sx={{ mt: 4 }}>
+              {instructorPoints1.map((point, i) => (
+                <Box
+                  key={`why_join_${i}`}
+                  component="li"
+                  sx={{
+                    pb: 1,
+                    font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                    color: '#788B8F',
+                  }}>
+                  {point}
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              backgroundColor: '#f7f7f7',
+              borderRadius: 4,
+              maxWidth: { xs: '100%', lg: '60%' },
+              alignSelf: { xs: 'start', lg: 'end' },
+              p: 4,
+            }}>
+            <Typography
+              sx={{
+                font: `normal normal 700 normal 24px/24px ${Fonts.primary}`,
+              }}>
+              We are looking for leaders with proven experience in their field
+              and with
+            </Typography>
+            <Box component="ul" sx={{ mt: 4 }}>
+              {instructorPoints2.map((point, i) => (
+                <Box
+                  key={`why_join_${i}`}
+                  component="li"
+                  sx={{
+                    pb: 1,
+                    font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                    color: '#788B8F',
+                  }}>
+                  {point}
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
       </Box>
       <Box
         component="section"
@@ -278,7 +371,7 @@ export default function BecomeAnInstructor() {
           display: 'flex',
 
           flexDirection: 'column',
-          pt: { xs: 6, md: 15.5 },
+          // pt: { xs: 6, md: 15.5 },
           pb: { xs: 8, md: 6.5 },
           backgroundColor: Colors.light,
         }}>

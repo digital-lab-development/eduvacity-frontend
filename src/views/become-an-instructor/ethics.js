@@ -100,21 +100,21 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }));
 
 const ethics = [
-  {
-    title: 'Welcome to the team!',
-    topics:
-      'We are an online platform for higher education that works with leading African universities to offer programs that are relevant to the industry.',
-  },
-  {
-    title: 'Vision',
-    topics:
-      "To be the leading force in transforming Africa's education landscape, creating a future where every individual has the opportunity to thrive, through the power of knowledge and skills",
-  },
-  {
-    title: 'Mission',
-    topics:
-      'To unlock the potential of every African by democratizing access to high-quality, industry-relevant education and fostering a generation of empowered learners who drive innovation and economic growth.',
-  },
+  // {
+  //   title: 'Welcome to the team!',
+  //   topics:
+  //     'We are an online platform for higher education that works with leading African universities to offer programs that are relevant to the industry.',
+  // },
+  // {
+  //   title: 'Vision',
+  //   topics:
+  //     "To be the leading force in transforming Africa's education landscape, creating a future where every individual has the opportunity to thrive, through the power of knowledge and skills",
+  // },
+  // {
+  //   title: 'Mission',
+  //   topics:
+  //     'To unlock the potential of every African by democratizing access to high-quality, industry-relevant education and fostering a generation of empowered learners who drive innovation and economic growth.',
+  // },
   {
     title: 'Our Core Values',
     topics: [
@@ -124,31 +124,31 @@ const ethics = [
       'Integrity: We hold ourselves to the highest moral standards and act with honesty and transparency.',
     ],
   },
-  {
-    title: 'Transparent Communication',
-    topics:
-      'To guarantee that everyone feels heard and respected, the company maintains open-door policies, regular forums, and active feedback mechanisms.',
-  },
-  {
-    title: 'Recognition',
-    topics:
-      'We celebrate individual and team achievements, both big and small, that uphold the core values and contribute to the bigger mission.',
-  },
-  {
-    title: 'Professional Development ',
-    topics:
-      'We offer training programs, mentorship opportunities, and access to industry experts to support continuous learning and career growth.',
-  },
-  {
-    title: 'Social Impact',
-    topics:
-      'We encourage team member engagement in volunteer projects and partnerships with NGOs, fostering a sense of social responsibility and community impact.',
-  },
-  {
-    title: 'Work-life balance & well-being',
-    topics:
-      'We support initiatives that enhance general well-being, flexible work schedules, and healthy lifestyle choices.',
-  },
+  // {
+  //   title: 'Transparent Communication',
+  //   topics:
+  //     'To guarantee that everyone feels heard and respected, the company maintains open-door policies, regular forums, and active feedback mechanisms.',
+  // },
+  // {
+  //   title: 'Recognition',
+  //   topics:
+  //     'We celebrate individual and team achievements, both big and small, that uphold the core values and contribute to the bigger mission.',
+  // },
+  // {
+  //   title: 'Professional Development ',
+  //   topics:
+  //     'We offer training programs, mentorship opportunities, and access to industry experts to support continuous learning and career growth.',
+  // },
+  // {
+  //   title: 'Social Impact',
+  //   topics:
+  //     'We encourage team member engagement in volunteer projects and partnerships with NGOs, fostering a sense of social responsibility and community impact.',
+  // },
+  // {
+  //   title: 'Work-life balance & well-being',
+  //   topics:
+  //     'We support initiatives that enhance general well-being, flexible work schedules, and healthy lifestyle choices.',
+  // },
 ];
 
 export default function EthicsCard() {
@@ -171,9 +171,10 @@ export default function EthicsCard() {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              expandIcon={
-                expanded === `panel${i + 1}` ? <MinusIcon /> : <PlusIcon />
-              }>
+              // expandIcon={
+              //   expanded === `panel${i + 1}` ? <MinusIcon /> : <PlusIcon />
+              // }
+            >
               {ethic.title}
             </AccordionSummary>
             <AccordionDetails>

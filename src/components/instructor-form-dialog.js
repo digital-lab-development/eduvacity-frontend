@@ -23,6 +23,7 @@ import { Fonts } from './themes/fonts';
 import { Colors } from './themes/colors';
 import { truncateText } from '../utils';
 import { countryRegionData } from '../utils/countryRegionData';
+import ResponseToast from './response-toast';
 
 const schema = yup.object({
   firstName: yup.string().required('Required'),
@@ -41,7 +42,19 @@ const schema = yup.object({
   dob: yup.string().required('Required'),
   gender: yup.string().required('Required'),
   academicLevel: yup.string().required('Required'),
-  resume: yup.string().required('Required'),
+  country: yup.string().required('Required'),
+  state: yup.string().required('Required'),
+  city: yup.string().required('Required'),
+  resume: yup
+    .mixed()
+    .test('fileType', 'Only PDF files allowed!', (value) => {
+      const acceptedTypes = ['application/pdf'];
+      return value && acceptedTypes.includes(value.type);
+    })
+    .test('fileSize', 'The file size is above 1mb', (value) => {
+      return value && value.size < 10 * 1024 * 1024;
+    })
+    .required('Required'),
 });
 
 const countries = countryRegionData.map((countryRegion) => ({
@@ -53,22 +66,19 @@ const InstructorApplicationDialog = ({
   selectedPosition,
   handleSelectPosition,
 }) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    experienceLevel: '',
-    resume: null,
-    additionalInfo: '',
-  });
   const [open, setOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
+  const [openToast, setOpenToast] = useState(false);
 
   const {
     control,
     handleSubmit,
     reset,
     watch,
+    register,
+    setValue,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
@@ -79,11 +89,6 @@ const InstructorApplicationDialog = ({
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-    setFormData({ ...formData, resume: event.target.files[0] });
   };
 
   const getCountryRegions = (countryName) => {
@@ -105,19 +110,14 @@ const InstructorApplicationDialog = ({
   };
 
   const onSubmit = async (data) => {
-    const firstName = data.name.split(' ')[0];
-    const lastName = data.name.substring(firstName.length)?.trim();
+    const formData = new FormData();
+
+    for (const key in data) {
+      formData.append(key, data[key]);
+    }
 
     setIsSubmitting(true);
     setErrorMsg(null);
-
-    const formData = {
-      firstName,
-      lastName,
-      phoneNumber: data.phone,
-      email: data.email,
-      type: data.role,
-    };
 
     try {
       const response = await axios.post(
@@ -129,12 +129,7 @@ const InstructorApplicationDialog = ({
         setIsSubmissionSuccessful(true);
         setOpenToast(true);
         handleClose();
-        reset({
-          name: '',
-          role: '',
-          phone: '',
-          email: '',
-        });
+        reset();
       } else {
         throw new Error(`API request failed with status ${response.status}`);
       }
@@ -146,12 +141,6 @@ const InstructorApplicationDialog = ({
       setIsSubmitting(false);
     }
   };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log('Form submitted:', formData);
-  //   handleClose();
-  // };
 
   return (
     <>
@@ -232,6 +221,23 @@ const InstructorApplicationDialog = ({
                 )}
               />
               <Controller
+                name="gender"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <TextField
+                    {...field}
+                    fullWidth
+                    select
+                    label="Gender"
+                    error={!!errors.gender?.message}
+                    helperText={errors.gender?.message}>
+                    <MenuItem value="female">Female</MenuItem>
+                    <MenuItem value="male">Male</MenuItem>
+                  </TextField>
+                )}
+              />
+              <Controller
                 name="academicLevel"
                 control={control}
                 defaultValue=""
@@ -239,9 +245,8 @@ const InstructorApplicationDialog = ({
                   <TextField
                     {...field}
                     fullWidth
-                    required
                     select
-                    label="Join as"
+                    label="Academic Level"
                     error={!!errors.academicLevel?.message}
                     helperText={errors.academicLevel?.message}>
                     <MenuItem value="PHD">PHD</MenuItem>
@@ -250,15 +255,6 @@ const InstructorApplicationDialog = ({
                   </TextField>
                 )}
               />
-              <Button
-                variant="contained"
-                component="label"
-                fullWidth
-                sx={{ backgroundColor: Colors.primary }}>
-                <input type="file" hidden onChange={handleFileChange} />
-                <AttachFileIcon sx={{ mr: 1 }} />
-                {selectedFile ? selectedFile.name : 'Upload Resume'}
-              </Button>
               <Controller
                 name="dob"
                 control={control}
@@ -267,6 +263,7 @@ const InstructorApplicationDialog = ({
                   <TextField
                     {...field}
                     label="DOB"
+                    type="date"
                     fullWidth
                     error={!!errors.dob?.message}
                     helperText={errors.dob?.message}
@@ -294,13 +291,13 @@ const InstructorApplicationDialog = ({
                 )}
               />
               <Controller
-                name="State"
+                name="state"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
                   <TextField
                     {...field}
-                    label="state"
+                    label="State"
                     fullWidth
                     select
                     error={!!errors.state?.message}
@@ -329,20 +326,75 @@ const InstructorApplicationDialog = ({
                   />
                 )}
               />
+              <Controller
+                name="resume"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <TextField
+                    label="Resume"
+                    fullWidth
+                    error={!!errors.resume?.message}
+                    helperText={errors.resume?.message}
+                    InputProps={{
+                      readOnly: true,
+                      startAdornment: (
+                        <InputAdornment>
+                          <label style={{ width: '100%' }}>
+                            <AttachFileIcon />
+                            <input
+                              {...register}
+                              style={{ display: 'none', width: '100%' }}
+                              type="file"
+                              hidden
+                              onChange={(e) => {
+                                setValue('resume', e.target.files[0], {
+                                  shouldValidate: true,
+                                });
+                              }}
+                            />
+                          </label>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                )}
+              />
+              {watch('resume')?.name ? watch('resume').name : 'Upload Resume'}
             </Stack>
           </form>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button
-            // type="submit"
+            type="submit"
             variant="contained"
-            // onClick={handleSubmit(onSubmit)}
-            sx={{ backgroundColor: Colors.primary }}>
+            onClick={handleSubmit(onSubmit)}
+            sx={{
+              backgroundColor: Colors.primary,
+              padding: '12px 30px 12px 30px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
+              color: 'rgba(230, 244, 237, 1)',
+              borderRadius: '46px',
+              '&:hover': {
+                background: Colors.primary,
+              },
+            }}>
             Apply
           </Button>
         </DialogActions>
       </Dialog>
+      <ResponseToast
+        open={openToast}
+        handleClose={() => setOpenToast(false)}
+        isSubmissionSuccessful={isSubmissionSuccessful}
+        responseMsg={
+          isSubmissionSuccessful ? "You've successfully applied" : errorMsg
+        }
+      />
     </>
   );
 };
