@@ -786,7 +786,7 @@ export default function CloudComputingPage() {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
+            px: { xs: '1rem', sm: '1rem', md: '5rem' },
             gap: 8,
           }}>
           <Box
@@ -848,7 +848,7 @@ export default function CloudComputingPage() {
             height: { xs: 850, sm: 560 },
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+            px: { xs: '1rem', sm: '1rem', md: '5rem' },
             gap: { xs: 4, sm: 8 },
           }}>
           <Box
