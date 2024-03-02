@@ -6,7 +6,6 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import {
-  TextField,
   Button,
   MenuItem,
   InputAdornment,
@@ -18,7 +17,12 @@ import {
   Stack,
   Box,
   CircularProgress,
+  FormControl,
+  InputLabel,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import MuiTextField from '@mui/material/TextField';
+
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { ArrowUp } from './svg';
 import { Fonts } from './themes/fonts';
@@ -26,6 +30,25 @@ import { Colors } from './themes/colors';
 import { truncateText } from '../utils';
 import { countryRegionData } from '../utils/countryRegionData';
 import ResponseToast from './response-toast';
+
+const TextField = styled(MuiTextField)({
+  '& label.Mui-focused': {
+    color: 'green',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'green',
+  },
+  '& .MuiOutlinedInput-root': {
+    color: '#505F79',
+    backgroundColor: '#F5F6F7',
+    borderRadius: '1rem',
+    borderColor: 'transparent',
+    outline: 'none',
+    '&.Mui-focused fieldset': {
+      borderColor: '#41A36E',
+    },
+  },
+});
 
 const schema = yup.object({
   firstName: yup.string().required('Required'),
@@ -166,7 +189,7 @@ const InstructorApplicationDialog = ({
         <DialogTitle sx={{ fontSize: 'h5' }}>
           {`Apply for ${truncateText(selectedPosition.title, 25)}`}
         </DialogTitle>
-        <DialogContent dividers sx={{ backgroundColor: '#f5f5f5' }}>
+        <DialogContent dividers sx={{ backgroundColor: '#fff' }}>
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
               <Controller
@@ -174,13 +197,16 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="First Name"
-                    fullWidth
-                    error={!!errors.firstName?.message}
-                    helperText={errors.firstName?.message}
-                  />
+                  <FormControl>
+                    <label>First Name</label>
+                    <TextField
+                      {...field}
+                      // label="First Name"
+                      fullWidth
+                      error={!!errors.firstName?.message}
+                      helperText={errors.firstName?.message}
+                    />
+                  </FormControl>
                 )}
               />
               <Controller
@@ -188,13 +214,16 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Last Name"
-                    fullWidth
-                    error={!!errors.lastName?.message}
-                    helperText={errors.lastName?.message}
-                  />
+                  <FormControl>
+                    <label>Last Name</label>
+                    <TextField
+                      {...field}
+                      // label="Last Name"
+                      fullWidth
+                      error={!!errors.lastName?.message}
+                      helperText={errors.lastName?.message}
+                    />
+                  </FormControl>
                 )}
               />
               <Controller
@@ -202,13 +231,16 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Email"
-                    fullWidth
-                    error={!!errors.email?.message}
-                    helperText={errors.email?.message}
-                  />
+                  <FormControl>
+                    <label>Email</label>
+                    <TextField
+                      {...field}
+                      // label="Email"
+                      fullWidth
+                      error={!!errors.email?.message}
+                      helperText={errors.email?.message}
+                    />
+                  </FormControl>
                 )}
               />
               <Controller
@@ -216,14 +248,17 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Phone"
-                    fullWidth
-                    type="tel"
-                    error={!!errors.phoneNumber?.message}
-                    helperText={errors.phoneNumber?.message}
-                  />
+                  <FormControl>
+                    <label>Phone</label>
+                    <TextField
+                      {...field}
+                      // label="Phone"
+                      fullWidth
+                      type="tel"
+                      error={!!errors.phoneNumber?.message}
+                      helperText={errors.phoneNumber?.message}
+                    />
+                  </FormControl>
                 )}
               />
               <Controller
@@ -231,16 +266,19 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    fullWidth
-                    select
-                    label="Gender"
-                    error={!!errors.gender?.message}
-                    helperText={errors.gender?.message}>
-                    <MenuItem value="female">Female</MenuItem>
-                    <MenuItem value="male">Male</MenuItem>
-                  </TextField>
+                  <FormControl>
+                    <label>Gender</label>
+                    <TextField
+                      {...field}
+                      fullWidth
+                      select
+                      // label="Gender"
+                      error={!!errors.gender?.message}
+                      helperText={errors.gender?.message}>
+                      <MenuItem value="female">Female</MenuItem>
+                      <MenuItem value="male">Male</MenuItem>
+                    </TextField>
+                  </FormControl>
                 )}
               />
               <Controller
@@ -248,19 +286,22 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    fullWidth
-                    select
-                    label="Experience Level"
-                    error={!!errors.experienceLevel?.message}
-                    helperText={errors.experienceLevel?.message}>
-                    <MenuItem value="1-3">1-3</MenuItem>
-                    <MenuItem value="4-6">4-6</MenuItem>
-                    <MenuItem value="6-8">6-8</MenuItem>
-                    <MenuItem value="8-10">8-10</MenuItem>
-                    <MenuItem value="10+">10+</MenuItem>
-                  </TextField>
+                  <FormControl>
+                    <label>Experience Level</label>
+                    <TextField
+                      {...field}
+                      fullWidth
+                      select
+                      // label="Experience Level"
+                      error={!!errors.experienceLevel?.message}
+                      helperText={errors.experienceLevel?.message}>
+                      <MenuItem value="1-3">1-3</MenuItem>
+                      <MenuItem value="4-6">4-6</MenuItem>
+                      <MenuItem value="6-8">6-8</MenuItem>
+                      <MenuItem value="8-10">8-10</MenuItem>
+                      <MenuItem value="10+">10+</MenuItem>
+                    </TextField>
+                  </FormControl>
                 )}
               />
               <Controller
@@ -268,17 +309,20 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    fullWidth
-                    select
-                    label="Academic Level"
-                    error={!!errors.academicLevel?.message}
-                    helperText={errors.academicLevel?.message}>
-                    <MenuItem value="PHD">PHD</MenuItem>
-                    <MenuItem value="BSC">BSC</MenuItem>
-                    <MenuItem value="MASTERS">MASTERS</MenuItem>
-                  </TextField>
+                  <FormControl>
+                    <label>Academic Level</label>
+                    <TextField
+                      {...field}
+                      fullWidth
+                      select
+                      // label="Academic Level"
+                      error={!!errors.academicLevel?.message}
+                      helperText={errors.academicLevel?.message}>
+                      <MenuItem value="PHD">PHD</MenuItem>
+                      <MenuItem value="BSC">BSC</MenuItem>
+                      <MenuItem value="MASTERS">MASTERS</MenuItem>
+                    </TextField>
+                  </FormControl>
                 )}
               />
               <Controller
@@ -286,19 +330,22 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Age Range"
-                    fullWidth
-                    select
-                    error={!!errors.age?.message}
-                    helperText={errors.age?.message}>
-                    <MenuItem value="18-24">18-24</MenuItem>
-                    <MenuItem value="24-30">25-30</MenuItem>
-                    <MenuItem value="30-35">30-35</MenuItem>
-                    <MenuItem value="35-40">35-40</MenuItem>
-                    <MenuItem value="40+">40+</MenuItem>
-                  </TextField>
+                  <FormControl>
+                    <label>Age Range</label>
+                    <TextField
+                      {...field}
+                      // label="Age Range"
+                      fullWidth
+                      select
+                      error={!!errors.age?.message}
+                      helperText={errors.age?.message}>
+                      <MenuItem value="18-24">18-24</MenuItem>
+                      <MenuItem value="24-30">25-30</MenuItem>
+                      <MenuItem value="30-35">30-35</MenuItem>
+                      <MenuItem value="35-40">35-40</MenuItem>
+                      <MenuItem value="40+">40+</MenuItem>
+                    </TextField>
+                  </FormControl>
                 )}
               />
               <Controller
@@ -306,19 +353,22 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Country"
-                    fullWidth
-                    select
-                    error={!!errors.country?.message}
-                    helperText={errors.country?.message}>
-                    {countries.map((country) => (
-                      <MenuItem key={country.value} value={country.value}>
-                        {country.label}
-                      </MenuItem>
-                    ))}
-                  </TextField>
+                  <FormControl>
+                    <label>Country</label>
+                    <TextField
+                      {...field}
+                      // label="Country"
+                      fullWidth
+                      select
+                      error={!!errors.country?.message}
+                      helperText={errors.country?.message}>
+                      {countries.map((country) => (
+                        <MenuItem key={country.value} value={country.value}>
+                          {country.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </FormControl>
                 )}
               />
               <Controller
@@ -326,21 +376,24 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="State"
-                    fullWidth
-                    select
-                    error={!!errors.state?.message}
-                    helperText={errors.state?.message}>
-                    {getCountryRegions(watch('country')).map((region, i) => (
-                      <MenuItem
-                        key={`${region.value}_${i}`}
-                        value={region.value}>
-                        {region.label}
-                      </MenuItem>
-                    ))}
-                  </TextField>
+                  <FormControl>
+                    <label>State</label>
+                    <TextField
+                      {...field}
+                      // label="State"
+                      fullWidth
+                      select
+                      error={!!errors.state?.message}
+                      helperText={errors.state?.message}>
+                      {getCountryRegions(watch('country')).map((region, i) => (
+                        <MenuItem
+                          key={`${region.value}_${i}`}
+                          value={region.value}>
+                          {region.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </FormControl>
                 )}
               />
               <Controller
@@ -348,13 +401,16 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="City"
-                    fullWidth
-                    error={!!errors.city?.message}
-                    helperText={errors.city?.message}
-                  />
+                  <FormControl>
+                    <label>City</label>
+                    <TextField
+                      {...field}
+                      // label="City"
+                      fullWidth
+                      error={!!errors.city?.message}
+                      helperText={errors.city?.message}
+                    />
+                  </FormControl>
                 )}
               />
               <Controller
@@ -362,13 +418,16 @@ const InstructorApplicationDialog = ({
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Address"
-                    fullWidth
-                    error={!!errors.address?.message}
-                    helperText={errors.address?.message}
-                  />
+                  <FormControl>
+                    <label>Address</label>
+                    <TextField
+                      {...field}
+                      // label="Address"
+                      fullWidth
+                      error={!!errors.address?.message}
+                      helperText={errors.address?.message}
+                    />
+                  </FormControl>
                 )}
               />
               <Controller
