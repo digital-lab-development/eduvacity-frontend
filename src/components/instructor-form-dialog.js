@@ -17,6 +17,7 @@ import {
   DialogActions,
   Stack,
   Box,
+  CircularProgress,
 } from '@mui/material';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { ArrowUp } from './svg';
@@ -40,13 +41,14 @@ const schema = yup.object({
     .min(10, 'Phone number not valid')
     .max(14, 'Phone number not valid'),
   email: yup.string().email('Invalid email').required('Required'),
-  dob: yup.string().required('Required'),
+  age: yup.string().required('Required'),
   gender: yup.string().required('Required'),
   experienceLevel: yup.string().required('Required'),
   academicLevel: yup.string().required('Required'),
   country: yup.string().required('Required'),
   state: yup.string().required('Required'),
   city: yup.string().required('Required'),
+  address: yup.string().required('Required'),
   resume: yup
     .mixed()
     .test('fileType', 'Only PDF files allowed!', (value) => {
@@ -114,12 +116,14 @@ const InstructorApplicationDialog = ({
   const onSubmit = async (data) => {
     const formData = new FormData();
 
+    setIsSubmitting(true);
+    setErrorMsg(null);
+
     for (const key in data) {
       formData.append(key, data[key]);
     }
 
-    setIsSubmitting(true);
-    setErrorMsg(null);
+    formData.append('courseId', selectedPosition.id);
 
     try {
       const response = await axios.post(
@@ -248,10 +252,10 @@ const InstructorApplicationDialog = ({
                     {...field}
                     fullWidth
                     select
-                    label="Academic Level"
+                    label="Experience Level"
                     error={!!errors.experienceLevel?.message}
                     helperText={errors.experienceLevel?.message}>
-                    <MenuItem value="0-3">0-3</MenuItem>
+                    <MenuItem value="1-3">1-3</MenuItem>
                     <MenuItem value="4-6">4-6</MenuItem>
                     <MenuItem value="6-8">6-8</MenuItem>
                     <MenuItem value="8-10">8-10</MenuItem>
@@ -278,19 +282,23 @@ const InstructorApplicationDialog = ({
                 )}
               />
               <Controller
-                name="dob"
+                name="age"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
                   <TextField
                     {...field}
-                    label="DOB"
-                    type="date"
+                    label="Age Range"
                     fullWidth
-                    InputLabelProps={{ shrink: true }}
-                    error={!!errors.dob?.message}
-                    helperText={errors.dob?.message}
-                  />
+                    select
+                    error={!!errors.age?.message}
+                    helperText={errors.age?.message}>
+                    <MenuItem value="18-24">18-24</MenuItem>
+                    <MenuItem value="24-30">25-30</MenuItem>
+                    <MenuItem value="30-35">30-35</MenuItem>
+                    <MenuItem value="35-40">35-40</MenuItem>
+                    <MenuItem value="40+">40+</MenuItem>
+                  </TextField>
                 )}
               />
               <Controller
@@ -350,40 +358,59 @@ const InstructorApplicationDialog = ({
                 )}
               />
               <Controller
-                name="resume"
+                name="address"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
                   <TextField
-                    label="Resume"
+                    {...field}
+                    label="Address"
                     fullWidth
-                    error={!!errors.resume?.message}
-                    helperText={errors.resume?.message}
-                    InputProps={{
-                      readOnly: true,
-                      startAdornment: (
-                        <InputAdornment>
-                          <label style={{ width: '100%' }}>
-                            <AttachFileIcon />
-                            <input
-                              {...register}
-                              style={{ display: 'none', width: '100%' }}
-                              type="file"
-                              hidden
-                              onChange={(e) => {
-                                setValue('resume', e.target.files[0], {
-                                  shouldValidate: true,
-                                });
-                              }}
-                            />
-                          </label>
-                        </InputAdornment>
-                      ),
-                    }}
+                    error={!!errors.address?.message}
+                    helperText={errors.address?.message}
                   />
                 )}
               />
-              {watch('resume')?.name ? watch('resume').name : 'Upload Resume'}
+              <Controller
+                name="resume"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <label
+                    style={{ width: '100%' }}
+                    onClick={() =>
+                      document.getElementById('fileInput').click()
+                    }>
+                    <TextField
+                      label="Resume"
+                      fullWidth
+                      error={!!errors.resume?.message}
+                      helperText={errors.resume?.message}
+                      InputProps={{
+                        readOnly: true,
+                        startAdornment: (
+                          <InputAdornment>
+                            <AttachFileIcon />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    <input
+                      {...register}
+                      id="fileInput"
+                      style={{ display: 'none', width: '100%' }}
+                      type="file"
+                      hidden
+                      onChange={(e) => {
+                        setValue('resume', e.target.files[0], {
+                          shouldValidate: true,
+                        });
+                      }}
+                    />
+                  </label>
+                )}
+              />
+              {watch('resume')?.name && watch('resume').name}
             </Stack>
           </form>
         </DialogContent>
@@ -406,7 +433,7 @@ const InstructorApplicationDialog = ({
                 background: Colors.primary,
               },
             }}>
-            Apply
+            {isSubmitting ? 'Loading...' : 'Apply'}
           </Button>
         </DialogActions>
       </Dialog>

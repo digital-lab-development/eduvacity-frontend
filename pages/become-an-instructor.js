@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowUp, CheckCircled } from '../src/components/svg';
 import { Colors } from '../src/components/themes/colors';
 import { Fonts } from '../src/components/themes/fonts';
@@ -16,6 +16,7 @@ import InstructorsCards from '../src/views/become-an-instructor';
 import EthicsCard from '../src/views/become-an-instructor/ethics';
 import PositionsCards from '../src/views/become-an-instructor/positions';
 import HomePageLayout from '../src/views/home/layout';
+import axios from 'axios';
 
 const instructorPoints1 = [
   'You will be contributing to shaping the future of African education by equipping learners with the skills they need to succeed in the job market.',
@@ -33,6 +34,28 @@ const instructorPoints2 = [
 
 export default function BecomeAnInstructor() {
   const router = useRouter();
+  const [courses, setCourses] = useState(null);
+  const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://test-api.eduvacity.com/api/v1/courses/'
+        );
+        setCourses(response.data);
+        setLoading(false);
+      } catch (error) {
+        // setError(error);
+        console.log(error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <Box
       sx={{
@@ -453,7 +476,7 @@ export default function BecomeAnInstructor() {
                 help you succeed as an instructor.
               </Typography>
             </Box>
-            <PositionsCards />
+            <PositionsCards courses={courses} />
           </Box>
         </Box>
       </Box>
