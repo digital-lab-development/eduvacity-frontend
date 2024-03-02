@@ -82,7 +82,7 @@ export default function PositionsCards() {
                     width: '100%',
                     display: 'flex',
                     justifyContent: 'space-between',
-                    alignItems: 'flex-start',
+                    alignItems: 'center',
                     gap: '24px',
                   }}>
                   <Box
