@@ -287,6 +287,7 @@ const InstructorApplicationDialog = ({
                     label="DOB"
                     type="date"
                     fullWidth
+                    InputLabelProps={{ shrink: true }}
                     error={!!errors.dob?.message}
                     helperText={errors.dob?.message}
                   />
