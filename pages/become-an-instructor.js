@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { ArrowUp } from '../src/components/svg';
+import { ArrowUp, CheckCircled } from '../src/components/svg';
 import { Colors } from '../src/components/themes/colors';
 import { Fonts } from '../src/components/themes/fonts';
 import InstructorsCards from '../src/views/become-an-instructor';
@@ -323,8 +323,14 @@ export default function BecomeAnInstructor() {
                     pb: 1,
                     font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                     color: '#788B8F',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
                   }}>
-                  {point}
+                  <Box>
+                    <CheckCircled />
+                  </Box>
+                  <Typography>{point}</Typography>
                 </Box>
               ))}
             </Box>
@@ -355,8 +361,14 @@ export default function BecomeAnInstructor() {
                     pb: 1,
                     font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                     color: '#788B8F',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
                   }}>
-                  {point}
+                  <Box>
+                    <CheckCircled />
+                  </Box>
+                  <Typography>{point}</Typography>
                 </Box>
               ))}
             </Box>

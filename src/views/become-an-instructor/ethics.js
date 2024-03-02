@@ -115,40 +115,40 @@ const ethics = [
   //   topics:
   //     'To unlock the potential of every African by democratizing access to high-quality, industry-relevant education and fostering a generation of empowered learners who drive innovation and economic growth.',
   // },
+  // {
+  //   title: 'Our Core Values',
+  //   topics: [
+  //     'Collaborative Spirit: We believe in the power of teamwork, open communication, and diverse perspectives to achieve shared goals and build a stronger community.',
+  //     'Inclusion: We champion diversity and inclusion, fostering a welcoming environment where everyone feels valued, respected, and encouraged to contribute their unique talents.',
+  //     'Lifelong Growth: We cultivate a culture of continuous learning and personal development, encouraging both employees and students to embrace new challenges and expand their horizons.',
+  //     'Integrity: We hold ourselves to the highest moral standards and act with honesty and transparency.',
+  //   ],
+  // },
   {
-    title: 'Our Core Values',
-    topics: [
-      'Collaborative Spirit: We believe in the power of teamwork, open communication, and diverse perspectives to achieve shared goals and build a stronger community.',
-      'Inclusion: We champion diversity and inclusion, fostering a welcoming environment where everyone feels valued, respected, and encouraged to contribute their unique talents.',
-      'Lifelong Growth: We cultivate a culture of continuous learning and personal development, encouraging both employees and students to embrace new challenges and expand their horizons.',
-      'Integrity: We hold ourselves to the highest moral standards and act with honesty and transparency.',
-    ],
+    title: 'Transparent Communication',
+    topics:
+      'To guarantee that everyone feels heard and respected, the company maintains open-door policies, regular forums, and active feedback mechanisms.',
   },
-  // {
-  //   title: 'Transparent Communication',
-  //   topics:
-  //     'To guarantee that everyone feels heard and respected, the company maintains open-door policies, regular forums, and active feedback mechanisms.',
-  // },
-  // {
-  //   title: 'Recognition',
-  //   topics:
-  //     'We celebrate individual and team achievements, both big and small, that uphold the core values and contribute to the bigger mission.',
-  // },
-  // {
-  //   title: 'Professional Development ',
-  //   topics:
-  //     'We offer training programs, mentorship opportunities, and access to industry experts to support continuous learning and career growth.',
-  // },
-  // {
-  //   title: 'Social Impact',
-  //   topics:
-  //     'We encourage team member engagement in volunteer projects and partnerships with NGOs, fostering a sense of social responsibility and community impact.',
-  // },
-  // {
-  //   title: 'Work-life balance & well-being',
-  //   topics:
-  //     'We support initiatives that enhance general well-being, flexible work schedules, and healthy lifestyle choices.',
-  // },
+  {
+    title: 'Recognition',
+    topics:
+      'We celebrate individual and team achievements, both big and small, that uphold the core values and contribute to the bigger mission.',
+  },
+  {
+    title: 'Professional Development ',
+    topics:
+      'We offer training programs, mentorship opportunities, and access to industry experts to support continuous learning and career growth.',
+  },
+  {
+    title: 'Social Impact',
+    topics:
+      'We encourage team member engagement in volunteer projects and partnerships with NGOs, fostering a sense of social responsibility and community impact.',
+  },
+  {
+    title: 'Work-life balance & well-being',
+    topics:
+      'We support initiatives that enhance general well-being, flexible work schedules, and healthy lifestyle choices.',
+  },
 ];
 
 export default function EthicsCard() {
@@ -171,10 +171,9 @@ export default function EthicsCard() {
             <AccordionSummary
               aria-controls="panel1d-content"
               id="panel1d-header"
-              // expandIcon={
-              //   expanded === `panel${i + 1}` ? <MinusIcon /> : <PlusIcon />
-              // }
-            >
+              expandIcon={
+                expanded === `panel${i + 1}` ? <MinusIcon /> : <PlusIcon />
+              }>
               {ethic.title}
             </AccordionSummary>
             <AccordionDetails>

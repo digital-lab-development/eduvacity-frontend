@@ -16,6 +16,7 @@ import {
   DialogTitle,
   DialogActions,
   Stack,
+  Box,
 } from '@mui/material';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { ArrowUp } from './svg';
@@ -41,6 +42,7 @@ const schema = yup.object({
   email: yup.string().email('Invalid email').required('Required'),
   dob: yup.string().required('Required'),
   gender: yup.string().required('Required'),
+  experienceLevel: yup.string().required('Required'),
   academicLevel: yup.string().required('Required'),
   country: yup.string().required('Required'),
   state: yup.string().required('Required'),
@@ -143,7 +145,7 @@ const InstructorApplicationDialog = ({
   };
 
   return (
-    <>
+    <Box>
       <Button
         onClick={handleClickOpen}
         endIcon={<ArrowUp />}
@@ -234,6 +236,26 @@ const InstructorApplicationDialog = ({
                     helperText={errors.gender?.message}>
                     <MenuItem value="female">Female</MenuItem>
                     <MenuItem value="male">Male</MenuItem>
+                  </TextField>
+                )}
+              />
+              <Controller
+                name="experienceLevel"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <TextField
+                    {...field}
+                    fullWidth
+                    select
+                    label="Academic Level"
+                    error={!!errors.experienceLevel?.message}
+                    helperText={errors.experienceLevel?.message}>
+                    <MenuItem value="0-3">0-3</MenuItem>
+                    <MenuItem value="4-6">4-6</MenuItem>
+                    <MenuItem value="6-8">6-8</MenuItem>
+                    <MenuItem value="8-10">8-10</MenuItem>
+                    <MenuItem value="10+">10+</MenuItem>
                   </TextField>
                 )}
               />
@@ -395,7 +417,7 @@ const InstructorApplicationDialog = ({
           isSubmissionSuccessful ? "You've successfully applied" : errorMsg
         }
       />
-    </>
+    </Box>
   );
 };
 
