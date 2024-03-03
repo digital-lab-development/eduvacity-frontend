@@ -186,7 +186,7 @@ const InstructorApplicationDialog = ({
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle sx={{ fontSize: 'h5' }}>
-          {`Apply for ${truncateText(selectedPosition.title, 25)}`}
+          {`Apply for ${truncateText(selectedPosition.courseName, 25)}`}
         </DialogTitle>
         <DialogContent dividers sx={{ backgroundColor: '#fff' }}>
           <form onSubmit={handleSubmit}>
