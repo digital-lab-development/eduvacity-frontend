@@ -7,7 +7,7 @@
   --primary-light: #e6f3ed;
   --primary-dark: rgba(1, 27, 35, 1);
   --text-color: #757575;
-  --primary-font: Helvetica, "sans-serif";
+  --primary-font: Helvetica, 'sans-serif';
   --secondary-font: Inter, sans;
 }
 html,
@@ -72,7 +72,7 @@ input::-webkit-calendar-picker-indicator:hover {
 }
 
 ::-webkit-calendar-picker-indicator {
-  background: url("/images/svgs/calender-alt.svg") no-repeat right #fff;
+  background: url('/images/svgs/calender-alt.svg') no-repeat right #fff;
   -webkit-appearance: none;
   background-position: right 0px top 50%;
 }
@@ -93,36 +93,36 @@ input::-webkit-calendar-picker-indicator:hover {
 }
 
 @font-face {
-  font-family: "AvantPro";
-  src: url("/fonts/ITCAvantGardePro-Md.ttf");
+  font-family: 'AvantPro';
+  src: url('/fonts/ITCAvantGardePro-Md.ttf');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "Habibi";
-  src: url("/fonts/Habibi-Regular.ttf");
+  font-family: 'Habibi';
+  src: url('/fonts/Habibi-Regular.ttf');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "Helvetica";
-  src: url("/fonts/Helvetica.ttf");
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica.ttf');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-Regular.ttf");
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.ttf');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: "AvantDemi";
-  src: url("/fonts/ITCAvantGardePro-Demi.otf");
+  font-family: 'AvantDemi';
+  src: url('/fonts/ITCAvantGardePro-Demi.otf');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -135,13 +135,13 @@ input::-webkit-calendar-picker-indicator:hover {
 .swiper-slide {
   width: 100%;
   height: 100%;
-  padding: "0px 20px 20px";
+  padding: '0px 20px 20px';
 }
 
 @media only screen and (max-width: 600px) {
   .swiper-slide {
     width: 100%;
     height: 100%;
-    padding: "20px 0px";
+    padding: '20px 0px';
   }
 }
