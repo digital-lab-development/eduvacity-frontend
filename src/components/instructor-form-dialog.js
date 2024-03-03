@@ -149,7 +149,7 @@ const InstructorApplicationDialog = ({
 
     try {
       const response = await axios.post(
-        'https://test-api.eduvacity.com/api/v1/applications/instructors',
+        'https://api.eduvacity.com/api/v1/applications/instructors',
         formData
       );
 
@@ -186,7 +186,7 @@ const InstructorApplicationDialog = ({
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle sx={{ fontSize: 'h5' }}>
-          {`Apply for ${truncateText(selectedPosition.title, 25)}`}
+          {`Apply for ${truncateText(selectedPosition.courseName, 25)}`}
         </DialogTitle>
         <DialogContent dividers sx={{ backgroundColor: '#fff' }}>
           <form onSubmit={handleSubmit}>
