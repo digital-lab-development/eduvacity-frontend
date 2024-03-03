@@ -71,7 +71,6 @@ const schema = yup.object({
   country: yup.string().required('Required'),
   state: yup.string().required('Required'),
   city: yup.string().required('Required'),
-  address: yup.string().required('Required'),
   resume: yup
     .mixed()
     .test('fileType', 'Only PDF files allowed!', (value) => {
@@ -409,23 +408,6 @@ const InstructorApplicationDialog = ({
                       fullWidth
                       error={!!errors.city?.message}
                       helperText={errors.city?.message}
-                    />
-                  </FormControl>
-                )}
-              />
-              <Controller
-                name="address"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <FormControl>
-                    <label>Address</label>
-                    <TextField
-                      {...field}
-                      // label="Address"
-                      fullWidth
-                      error={!!errors.address?.message}
-                      helperText={errors.address?.message}
                     />
                   </FormControl>
                 )}
