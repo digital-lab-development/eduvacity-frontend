@@ -149,7 +149,7 @@ const InstructorApplicationDialog = ({
 
     try {
       const response = await axios.post(
-        'https://test-api.eduvacity.com/api/v1/applications/instructors',
+        'https://api.eduvacity.com/api/v1/applications/instructors',
         formData
       );
 
