@@ -1,8 +1,8 @@
-import { useState } from "react"
-import axios from "axios"
-import * as yup from "yup"
-import { useForm, Controller } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
+import { useState } from 'react';
+import axios from 'axios';
+import * as yup from 'yup';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import {
   Button,
@@ -17,47 +17,48 @@ import {
   MenuItem,
   TextField,
   Typography,
-} from "@mui/material"
-import ResponseToast from "./response-toast"
+} from '@mui/material';
+import ResponseToast from './response-toast';
+import { apiEndpoint } from '../utils';
 
 const schema = yup.object({
   name: yup
     .string()
-    .required("Full name is required")
-    .matches(/^[a-zA-Z]+ [a-zA-Z]+$/, "Please enter first and last name"),
+    .required('Full name is required')
+    .matches(/^[a-zA-Z]+ [a-zA-Z]+$/, 'Please enter first and last name'),
   phone: yup
     .string()
-    .required("Phone number is required")
-    .typeError("Phone number not valid")
+    .required('Phone number is required')
+    .typeError('Phone number not valid')
     .matches(
       /^[\+]?[(]?[0-9]{3}[)]?[-\s\./0-9]*$/,
-      "Invalid phone number format"
+      'Invalid phone number format'
     )
-    .min(10, "Phone number not valid")
-    .max(14, "Phone number not valid"),
-  email: yup.string().email("Invalid email").required("Email is required"),
-  role: yup.string().required("Please select your role"),
-})
+    .min(10, 'Phone number not valid')
+    .max(14, 'Phone number not valid'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  role: yup.string().required('Please select your role'),
+});
 
 function JoinWaitlistDialog({ handleClose, open }) {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [errorMsg, setErrorMsg] = useState(null)
-  const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false)
-  const [openToast, setOpenToast] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
+  const [openToast, setOpenToast] = useState(false);
 
   const {
     control,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) })
+  } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (data) => {
-    const firstName = data.name.split(" ")[0]
-    const lastName = data.name.substring(firstName.length)?.trim()
+    const firstName = data.name.split(' ')[0];
+    const lastName = data.name.substring(firstName.length)?.trim();
 
-    setIsSubmitting(true)
-    setErrorMsg(null)
+    setIsSubmitting(true);
+    setErrorMsg(null);
 
     const formData = {
       firstName,
@@ -65,35 +66,35 @@ function JoinWaitlistDialog({ handleClose, open }) {
       phoneNumber: data.phone,
       email: data.email,
       type: data.role,
-    }
+    };
 
     try {
       const response = await axios.post(
-        "https://api.eduvacity.com/api/v1/applications/waiting-list",
+        `${apiEndpoint}/applications/waiting-list`,
         formData
-      )
+      );
 
       if (response.status === 200 || response.status === 201) {
-        setIsSubmissionSuccessful(true)
-        setOpenToast(true)
-        handleClose()
+        setIsSubmissionSuccessful(true);
+        setOpenToast(true);
+        handleClose();
         reset({
-          name: "",
-          role: "",
-          phone: "",
-          email: "",
-        })
+          name: '',
+          role: '',
+          phone: '',
+          email: '',
+        });
       } else {
-        throw new Error(`API request failed with status ${response.status}`)
+        throw new Error(`API request failed with status ${response.status}`);
       }
     } catch (error) {
-      setIsSubmissionSuccessful(false)
-      setOpenToast(true)
-      setErrorMsg("An error occurred. Please try again later.")
+      setIsSubmissionSuccessful(false);
+      setOpenToast(true);
+      setErrorMsg('An error occurred. Please try again later.');
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div>
@@ -172,8 +173,7 @@ function JoinWaitlistDialog({ handleClose, open }) {
                     // id="role-select"
                     label="Join as"
                     error={!!errors.role?.message}
-                    helperText={errors.role?.message}
-                  >
+                    helperText={errors.role?.message}>
                     <MenuItem value="student">Student</MenuItem>
                     <MenuItem value="instructor">Instructor</MenuItem>
                   </TextField>
@@ -191,7 +191,7 @@ function JoinWaitlistDialog({ handleClose, open }) {
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button variant="contained" onClick={handleSubmit(onSubmit)}>
-            {isSubmitting ? <CircularProgress /> : "Join Waitlist"}
+            {isSubmitting ? <CircularProgress /> : 'Join Waitlist'}
           </Button>
         </DialogActions>
       </Dialog>
@@ -206,7 +206,7 @@ function JoinWaitlistDialog({ handleClose, open }) {
         }
       />
     </div>
-  )
+  );
 }
 
-export default JoinWaitlistDialog
+export default JoinWaitlistDialog;
