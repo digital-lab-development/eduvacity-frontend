@@ -27,7 +27,7 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import { ArrowUp } from './svg';
 import { Fonts } from './themes/fonts';
 import { Colors } from './themes/colors';
-import { truncateText } from '../utils';
+import { apiEndpoint, truncateText } from '../utils';
 import { countryRegionData } from '../utils/countryRegionData';
 import ResponseToast from './response-toast';
 
@@ -149,7 +149,7 @@ const InstructorApplicationDialog = ({
 
     try {
       const response = await axios.post(
-        'https://api.eduvacity.com/api/v1/applications/instructors',
+        `${apiEndpoint}/applications/instructors`,
         formData
       );
 
