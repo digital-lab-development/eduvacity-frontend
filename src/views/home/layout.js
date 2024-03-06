@@ -17,6 +17,7 @@ import { Fonts } from '../../components/themes/fonts';
 import MenuDropdown from './dropdown';
 import FooterPage from './footer';
 import MenuLists from './popover';
+import JoinWaitlistDialog from '../../components/waitlistdialog';
 
 const appHeight = 95;
 
@@ -319,6 +320,7 @@ export default function HomeLayout({ children }) {
   }, []);
 
   const handleClickOpen = () => setOpenWaitlistDialog(true);
+  const handleClose = () => setOpenWaitlistDialog(false);
 
   const isProduction = process.env.NODE_ENV === 'production';
   const baseUrl = isProduction
@@ -455,7 +457,7 @@ export default function HomeLayout({ children }) {
                 gap: '20px',
               }}>
               <Box
-                onClick={handleSignIn}
+                onClick={handleClickOpen}
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',
@@ -504,7 +506,7 @@ export default function HomeLayout({ children }) {
         </Box>
       </motion.div>
 
-      {/* <JoinWaitlistDialog open={openWaitlistDialog} handleClose={handleClose} /> */}
+      <JoinWaitlistDialog open={openWaitlistDialog} handleClose={handleClose} />
     </div>
   );
 }
