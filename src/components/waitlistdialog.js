@@ -22,10 +22,8 @@ import ResponseToast from './response-toast';
 import { apiEndpoint } from '../utils';
 
 const schema = yup.object({
-  name: yup
-    .string()
-    .required('Full name is required')
-    .matches(/^[a-zA-Z]+ [a-zA-Z]+$/, 'Please enter first and last name'),
+  firstName: yup.string().required('First name is required'),
+  lastName: yup.string().required('Last name is required'),
   phone: yup
     .string()
     .required('Phone number is required')
@@ -54,15 +52,12 @@ function JoinWaitlistDialog({ handleClose, open }) {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (data) => {
-    const firstName = data.name.split(' ')[0];
-    const lastName = data.name.substring(firstName.length)?.trim();
-
     setIsSubmitting(true);
     setErrorMsg(null);
 
     const formData = {
-      firstName,
-      lastName,
+      firstName: data.firstName,
+      lastName: data.lastName,
       phoneNumber: data.phone,
       email: data.email,
       type: data.role,
@@ -79,7 +74,8 @@ function JoinWaitlistDialog({ handleClose, open }) {
         setOpenToast(true);
         handleClose();
         reset({
-          name: '',
+          firstName: '',
+          lastName: '',
           role: '',
           phone: '',
           email: '',
@@ -107,18 +103,34 @@ function JoinWaitlistDialog({ handleClose, open }) {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Controller
-                name="name"
+                name="firstName"
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
                   <TextField
                     {...field}
-                    autoFocus
                     fullWidth
-                    label="Full Name"
+                    label="First Name"
                     margin="normal"
-                    error={!!errors.name?.message}
-                    helperText={errors.name?.message}
+                    error={!!errors.firstName?.message}
+                    helperText={errors.firstName?.message}
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                name="lastName"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <TextField
+                    {...field}
+                    fullWidth
+                    label="Last Name"
+                    margin="normal"
+                    error={!!errors.lastName?.message}
+                    helperText={errors.lastName?.message}
                   />
                 )}
               />
