@@ -48,19 +48,19 @@ const cards = [
       'Banking and finance are essential for economic advancement and stability. Our Banking and Finance program course is created to empower students with the expertise and abilities essential for excelling in this dynamic field, ensuring their readiness for success in the intricate realm of finance.',
     duration: '16 months',
     type: 'diploma',
-    image: '/images/business-school.png',
+    image: '/images/banking-finance.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
-  {
-    name: '',
-    program: 'Diploma in Computer Science',
-    description:
-      'Our Marketing program is tailored to furnish students with the strategies and proficiencies crucial for thriving in this fast-paced domain, positioning them for success in marketing profession.',
-    duration: '16 months',
-    type: 'diploma',
-    image: '/images/senatebuilding.png',
-    icon: '/images/eduvacity-logo.svg',
-  },
+  // {
+  //   name: '',
+  //   program: 'Diploma in Computer Science',
+  //   description:
+  //     'Our Marketing program is tailored to furnish students with the strategies and proficiencies crucial for thriving in this fast-paced domain, positioning them for success in marketing profession.',
+  //   duration: '16 months',
+  //   type: 'diploma',
+  //   image: '/images/senatebuilding.png',
+  //   icon: '/images/eduvacity-logo.svg',
+  // },
   {
     name: '',
     program: 'Diploma in Computer Science',
@@ -68,7 +68,7 @@ const cards = [
       "Computer science stands as the backbone of innovation and technological advancement in today's digital era. This program is design to equip students with the theoretical knowledge and practical skills necessary to empower  them to excel in various computing domains and contribute meaningfully to the technological landscape.",
     duration: '16 months',
     type: 'diploma',
-    image: '/images/welcome-to-abu.png',
+    image: '/images/computer-science.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
   {
@@ -78,7 +78,7 @@ const cards = [
       'Computer engineering plays a vital role in shaping the technological landscape and driving innovation. These course equip students with the necessary theoretical foundations and hands-on skills to excel.',
     duration: '16 months',
     type: 'diploma',
-    image: '/images/welcome-to-abu.png',
+    image: '/images/computer-engineering.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
   {
@@ -88,7 +88,7 @@ const cards = [
       'Eduvacity business administration is designed to provide students with a comprehensive understanding of business principles and practices, preparing them to succeed in diverse corporate environments.',
     duration: '16 months',
     type: 'diploma',
-    image: '/images/welcome-to-abu.png',
+    image: '/images/business-admin.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
   //degree
@@ -120,7 +120,7 @@ const cards = [
       'Frontend development is pivotal in shaping user experiences and interfaces across digital platforms this Bootcamp program equips students with the latest tools and techniques in web development and responsive design principles.',
     duration: '6 weeks',
     type: 'bootscamp',
-    image: '/images/castle-school.png',
+    image: '/images/front-end.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
   {
@@ -130,7 +130,7 @@ const cards = [
       'Backend development serves as the foundation of dynamic and data-driven web applications. Our program is designed to provide students with a deep understanding of server-side programming languages, databases, and frameworks essential for building scalable and secure systems.',
     duration: '6 weeks',
     type: 'bootscamp',
-    image: '/images/castle-school.png',
+    image: '/images/back-end.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
   {
@@ -140,7 +140,7 @@ const cards = [
       'Cloud computing is revolutionizing the way businesses manage and deliver IT services. Our program is tailored to provide students with a comprehensive understanding of cloud technologies, including infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS).',
     duration: '6 weeks',
     type: 'bootscamp',
-    image: '/images/castle-school.png',
+    image: '/images/cloud-computing.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
   {
@@ -150,7 +150,7 @@ const cards = [
       'UI/UX design plays a crucial role in creating engaging and intuitive user experiences for digital products and services. Our program focuses on user-centered design principles, information architecture, user interface, and interactive prototyping techniques.',
     duration: '6 weeks',
     type: 'bootscamp',
-    image: '/images/castle-school.png',
+    image: '/images/ui-ux.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
   {
@@ -160,7 +160,7 @@ const cards = [
       'Data science is at the forefront of leveraging data to extract insights and drive decision-making across industries. Our program is designed to equip students with the essential skills in statistical analysis, machine learning, and data visualization.',
     duration: '6 weeks',
     type: 'bootscamp',
-    image: '/images/castle-school.png',
+    image: '/images/data-science.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
 ];

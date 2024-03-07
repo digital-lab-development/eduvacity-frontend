@@ -73,6 +73,30 @@ export default function FooterPage() {
             }}>
             {FOOTER_NOTE}
           </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: 'left',
+              mt: { xs: 2, lg: 8 },
+              color: Colors.primary,
+              font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+            }}>
+            Address
+          </Typography>
+          <Typography
+            variant="span"
+            sx={{
+              maxWidth: '100%',
+              font: {
+                xs: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
+                md: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+              },
+              color: '#87A0A8',
+              textAlign: { xs: 'left', sm: 'left' },
+            }}>
+            No 56 Labito crescent wuse 2 federal capital Territory Abuja,
+            Nigeria
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -246,7 +270,7 @@ export default function FooterPage() {
                 </Link>
                 <Link
                   underline="hover"
-                  href="#"
+                  href="https://ocw.mit.edu"
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
