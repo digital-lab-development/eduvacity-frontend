@@ -164,7 +164,20 @@ const InstructorApplicationDialog = ({
     } catch (error) {
       setIsSubmissionSuccessful(false);
       setOpenToast(true);
-      setErrorMsg('An error occurred. Please try again later.');
+      setErrorMsg(() => {
+        if (error.response) {
+          if (error.response.status === 500) {
+            error.message = 'Network error please try again';
+          } else
+            error.message = error?.response?.data?.message || error.message;
+        } else error.message = error.message || 'Error occurred';
+
+        const err = Array.isArray(error.message)
+          ? error.message.join(', ')
+          : error.message;
+
+        return err;
+      });
     } finally {
       setIsSubmitting(false);
     }
