@@ -127,8 +127,11 @@ export default function HomePage() {
                   Educating
                 </Typography>
                 <br />
-                <Typography variant="span" sx={{ display: "initial" }}>
-                  Africa`s
+                <Typography
+                  variant="span"
+                  sx={{ display: "initial", paddingRight: "16px" }}
+                >
+                  Africa&apos;s
                 </Typography>
                 <Typography variant="span" sx={{ color: Colors.primary }}>
                   Next Billion Workforce
@@ -544,7 +547,7 @@ export default function HomePage() {
                 width: "100%",
                 display: "flex",
                 flexDirection: "column",
-                gap: "16px",
+                gap: "14px",
                 px: { xs: "1rem", sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
               }}
             >
@@ -555,7 +558,7 @@ export default function HomePage() {
                   color: Colors.primary,
                   m: 0,
                   p: 0,
-                  letterSpacing: "1%",
+
                   textTransform: "uppercase",
                 }}
               >
@@ -598,8 +601,9 @@ export default function HomePage() {
                 </Typography>
               </Box>
             </Box>
-
-            <AcademicTabs handleClick={handleClickOpen} />
+            <Box>
+              <AcademicTabs handleClick={handleClickOpen} />
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -1459,7 +1463,7 @@ export default function HomePage() {
                   letterSpacing: "-2%",
                 }}
               >
-                Frequently asked questions
+                Questions students ask us
               </Typography>
             </Box>
             <Box

@@ -83,7 +83,7 @@ const cards = [
   },
   {
     name: "Business School ABU, Zaria",
-    program: "Diploma in Business Administration",
+    program: "Diploma in Accounting",
     description:
       "Eduvacity business administration is designed to provide students with a comprehensive understanding of business principles and practices, preparing them to succeed in diverse corporate environments.",
     duration: "3 months",

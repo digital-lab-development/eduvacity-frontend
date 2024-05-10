@@ -60,7 +60,7 @@ const StyledList = styled(List)({
   },
   "& .MuiListItemIcon-root": {
     minWidth: 0,
-    marginRight: 2,
+    marginRight: 0,
   },
   "& .MuiSvgIcon-root": {
     fontSize: "20px",
@@ -119,7 +119,7 @@ export default function MenuDropdown({ item, selected }) {
               flexDirection: "column",
               backgroundColor: Colors.secondary,
               padding: "24px 20px",
-              gap: "24px",
+              gap: "2px",
               boxShadow: "0px 0px 16px 0px #41A36E29",
             }}
           >
@@ -146,8 +146,6 @@ export default function MenuDropdown({ item, selected }) {
                         color: selectedItem ? Colors.primary : Colors.offWhite,
                       }}
                     />
-
-                    <AngleForward />
                   </ListItemButton>
                 );
               })}
@@ -309,10 +307,10 @@ export default function MenuDropdown({ item, selected }) {
         <Typography
           sx={{
             maxWidth: 150,
-            width: 300,
+
             display: "flex",
             font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-            gap: "10px",
+            gap: "6px",
             color:
               selected && isAboutPage
                 ? Colors.primary

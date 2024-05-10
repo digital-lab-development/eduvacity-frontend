@@ -14,9 +14,9 @@ const testimonials = [
   {
     image: "/images/testimonial-img.svg",
     comment:
-      "Eduvacity removed financial barriers and empowered me as a learner",
-    name: "Michelle Ademola",
-    course: "Diploma in Data Analysis",
+      "Studying at Eduvacity allows me to earn my B.sc while balancing my busy work schedule",
+    name: "-Hassan Rufa",
+    course: "BSc, Business Administration",
   },
 ];
 export default function Testimonial() {
