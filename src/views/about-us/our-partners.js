@@ -11,12 +11,12 @@ export default function OurPartnerss() {
       desc: "Eduvacity collaborates with industry leaders to improve our online degrees. These companies offer internships and mentoring to give students real-world experience and boost their careers.",
     },
     {
-      name: "Academic partners",
-      desc: "Eduvacity collaborates with renowned global universities to offer our students exceptional opportunities. These partnerships enrich our online degrees with high-quality educational programs and research.",
+      name: "Corporate partners",
+      desc: "Eduvacity collaborates with industry leaders to improve our online degrees. These companies offer internships and mentoring to give students real-world experience and boost their careers.",
     },
     {
-      name: "Charitable partners",
-      desc: "Eduvacity collaborates with leading foundations to advance our mission of delivering higher education online, anytime, anywhere. These partnerships provide students with financial support to complete their degrees and expand access to our programs.",
+      name: "Corporate partners",
+      desc: "Eduvacity collaborates with industry leaders to improve our online degrees. These companies offer internships and mentoring to give students real-world experience and boost their careers.",
     },
   ];
   return (

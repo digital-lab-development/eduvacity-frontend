@@ -371,11 +371,10 @@ export default function HomeLayout({ children }) {
             width: "100%",
             display: "flex",
             alignItems: "center",
-
             backgroundColor: isAboutPage ? Colors.light : Colors.secondary,
             height: appHeight,
             boxShadow: "none",
-            px: { xs: "1rem", sm: "1rem", md: "1rem", lg: "1rem", xl: "6rem" },
+            px: { xs: "1rem", sm: "1rem", lg: "5rem" },
             py: { xs: 2, sm: 3, lg: "18px" },
           }}
         >
@@ -388,7 +387,7 @@ export default function HomeLayout({ children }) {
               gap: "12px",
             }}
           >
-            <Link underline="none" href="/" sx={{ width: 200, height: 32 }}>
+            <Link underline="none" href="/" sx={{ width: 300, height: 32 }}>
               <Image
                 src={
                   isAboutPage
@@ -419,15 +418,13 @@ export default function HomeLayout({ children }) {
             >
               <Box
                 sx={{
-                  display: "flex",
                   width: "100%",
+                  display: "flex",
                   gap: "8px",
                   height: "59px",
                   borderRadius: "47px",
-                  border: isAboutPage
-                    ? "1px solid #EAECF0"
-                    : "1.5px solid rgba(27, 49, 57, 1)",
-                  padding: "21px 28px 21px 35px",
+                  border: "1.5px solid rgba(27, 49, 57, 1)",
+                  padding: "21px 35px 21px 35px",
                 }}
               >
                 {menu?.map((item, i) => {
@@ -446,8 +443,6 @@ export default function HomeLayout({ children }) {
                         <ListItemButton
                           disableRipple
                           sx={{
-                            whiteSpace: "nowrap",
-
                             p: 0,
                             m: 0,
                           }}
@@ -459,9 +454,9 @@ export default function HomeLayout({ children }) {
                         >
                           <Typography
                             sx={{
-                              paddingRight: "7px",
-                              paddingLeft: "7px",
-                              textAlign: "left",
+                              maxWidth: 150,
+                              width: 500,
+                              textAlign: "",
                               font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
                               color:
                                 selected && isAboutPage
@@ -473,7 +468,6 @@ export default function HomeLayout({ children }) {
                               cursor: "pointer",
                               "&:hover": {
                                 color: Colors.primary,
-                                whiteSpace: "nowrap",
                               },
                             }}
                           >
@@ -489,8 +483,9 @@ export default function HomeLayout({ children }) {
             <Box
               component="div"
               sx={{
+                width: 309,
                 display: { xs: "none", lg: "flex" },
-                gap: "12px",
+                gap: "20px",
               }}
             >
               <Box
@@ -500,12 +495,13 @@ export default function HomeLayout({ children }) {
                   justifyContent: "center",
                   alignItems: "center",
                   font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                  gap: "4px",
-                  padding: "12px 2px 12px 2px",
+                  gap: "8px",
+                  padding: "12px 20px 12px 20px",
                   color: `${
                     isAboutPage ? Colors.primary : "rgba(230, 244, 237, 1)"
                   }`,
                   cursor: "pointer",
+                  gap: "10px",
                   "&:hover": {
                     background: "transparent",
                   },
