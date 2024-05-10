@@ -38,7 +38,6 @@ export default function AcademicPrograms() {
       >
         {programs.map((program, index) => (
           <Box
-            key={index}
             sx={{
               width: "100%",
               display: "flex",

@@ -48,7 +48,6 @@ export default function ProgramCard({ cards, handleClick }) {
         const [number, unit] = duration.split(" ");
         return (
           <Card
-            key={i}
             variant="none"
             sx={{
               padding: "16px 24px 16px 16px",
