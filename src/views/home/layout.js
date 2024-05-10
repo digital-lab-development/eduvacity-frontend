@@ -375,7 +375,7 @@ export default function HomeLayout({ children }) {
             backgroundColor: isAboutPage ? Colors.light : Colors.secondary,
             height: appHeight,
             boxShadow: "none",
-            px: { xs: "1rem", sm: "1rem", lg: "4rem" },
+            px: { xs: "1rem", sm: "1rem", md: "1rem", lg: "1rem", xl: "6rem" },
             py: { xs: 2, sm: 3, lg: "18px" },
           }}
         >
