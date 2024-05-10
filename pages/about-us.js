@@ -56,16 +56,16 @@ export default function AboutUs() {
           sx={{
             width: { xs: "100%", sm: "100%" },
             display: "flex",
-            flexDirection: "row",
+            flexDirection: { xs: "column", sm: "row" },
             gap: { xs: "8px", sm: "10px" },
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 2, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
           }}
         >
           <Typography
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 700 normal 16px/24px ${Fonts.secondary}`,
+                xs: `normal normal 500 normal 26px/30px ${Fonts.secondary}`,
                 md: `normal normal 700 normal 48px/72px ${Fonts.secondary}`,
               },
               color: Colors.darkBlue,
@@ -77,7 +77,7 @@ export default function AboutUs() {
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 700 normal 16px/24px ${Fonts.secondary}`,
+                xs: `normal normal 500 normal 26px/30px ${Fonts.secondary}`,
                 md: `normal normal 700 normal 48px/72px ${Fonts.secondary}`,
               },
               color: Colors.primary,
@@ -119,13 +119,14 @@ export default function AboutUs() {
                   display: "flex",
                   flexDirection: "column",
                   gap: "26px",
+                  mt: 2,
                 }}
               >
                 <Typography
                   variant="h1"
                   sx={{
                     font: {
-                      xs: `normal normal 400 normal 30px/36px ${Fonts.arial}`,
+                      xs: `normal normal 400 normal 22px/24px ${Fonts.arial}`,
                       md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
                     },
                     color: Colors.darkBlue,
@@ -148,7 +149,7 @@ export default function AboutUs() {
                     variant="span"
                     sx={{
                       font: {
-                        xs: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
+                        xs: `normal normal 400 normal 16px/24px ${Fonts.secondary}`,
                         sm: `normal normal 400 normal 16px/24px ${Fonts.secondary}`,
                       },
                       color: Colors.grey,
@@ -177,7 +178,7 @@ export default function AboutUs() {
                   variant="h1"
                   sx={{
                     font: {
-                      xs: `normal normal 400 normal 30px/36px ${Fonts.arial}`,
+                      xs: `normal normal 400 normal 22px/24px ${Fonts.arial}`,
                       md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
                     },
                     color: Colors.darkBlue,
@@ -200,7 +201,7 @@ export default function AboutUs() {
                     variant="span"
                     sx={{
                       font: {
-                        xs: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
+                        xs: `normal normal 400 normal 16px/24px ${Fonts.secondary}`,
                         sm: `normal normal 400 normal 16px/24px ${Fonts.secondary}`,
                       },
                       color: Colors.grey,
@@ -226,7 +227,7 @@ export default function AboutUs() {
       <Box
         sx={{
           width: "100%",
-          height: { xs: 850, sm: 350 },
+          height: { xs: 400, sm: 350 },
           padding: "96px 0",
           backgroundColor: "#011B23",
           backgroundSize: "cover",
@@ -243,8 +244,8 @@ export default function AboutUs() {
           sx={{
             width: { xs: "100%", sm: "100%" },
             display: "flex",
-            flexDirection: "row",
-            gap: { xs: "8px", sm: "0px" },
+            flexDirection: { xs: "column", sm: "row" },
+            gap: { xs: "22px", sm: "0px" },
             px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
             alignItems: { xs: "center", sm: "flex-start" },
           }}
@@ -262,7 +263,7 @@ export default function AboutUs() {
               variant="span"
               sx={{
                 font: {
-                  xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                  xs: `normal normal 400 normal 28px/24px ${Fonts.arial}`,
                   md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
                 },
                 color: Colors.light,
@@ -275,7 +276,7 @@ export default function AboutUs() {
               onClick={() => router.push("/signup")}
               sx={{
                 padding: "12px 20px 12px 20px",
-                display: "flex",
+                display: { xs: "none", sm: "flex" },
                 justifyContent: "center",
                 alignItems: "center",
                 font: `normal normal 500 normal 14px/19.2px ${Fonts.primary}`,
@@ -308,6 +309,25 @@ export default function AboutUs() {
             need them most. We're here to propel people forward in their careers
             and personal journeys.
           </Typography>
+          <Box
+            onClick={() => router.push("/signup")}
+            sx={{
+              padding: "12px 20px 12px 20px",
+              display: { xs: "flex", sm: "none" },
+              justifyContent: "center",
+              alignItems: "center",
+              font: `normal normal 500 normal 14px/19.2px ${Fonts.primary}`,
+              cursor: "pointer",
+              color: "rgba(230, 244, 237, 1)",
+              borderRadius: "46px",
+              background: Colors.primary,
+              "&:hover": {
+                background: Colors.primary,
+              },
+            }}
+          >
+            Join The Program <ArrowUp />
+          </Box>
         </Box>
       </Box>
 
@@ -418,7 +438,7 @@ export default function AboutUs() {
                     key={`why_join_${i}`}
                     component="li"
                     sx={{
-                      pl: 4,
+                      pl: { xs: 0, sm: 4 },
                       pb: 2,
                       font: `normal normal 400 normal 20px/24px ${Fonts.arial}`,
                       color: "#505F79",
@@ -532,7 +552,7 @@ export default function AboutUs() {
           sx={{
             width: "100%",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: { xs: "column", sm: "row" },
             justifyContent: "center",
             alignItems: "center",
             px: { xs: "1rem", sm: "1rem", md: 5.5, lg: 7.2, xl: 15.5 },
@@ -615,7 +635,7 @@ export default function AboutUs() {
       <Box
         sx={{
           width: "100%",
-          height: { xs: 850, sm: 350 },
+          height: { xs: 100, sm: 350 },
           padding: "70px 0",
           // backgroundColor: "#F6F7F7",
           backgroundSize: "cover",
@@ -642,7 +662,7 @@ export default function AboutUs() {
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                xs: `normal normal 400 normal 20px/24px ${Fonts.arial}`,
                 md: `normal normal 400 normal 20px/28px ${Fonts.arial}`,
               },
               color: "#505F79",
@@ -674,7 +694,7 @@ export default function AboutUs() {
               sx={{
                 width: 60,
                 height: {
-                  xs: 240,
+                  xs: 40,
                   sm: 44,
                 },
                 backgroundImage: {
@@ -727,9 +747,9 @@ export default function AboutUs() {
           <Typography
             variant="span"
             sx={{
-              pb: { xs: 8, md: 6.5 },
+              pb: { xs: 2, md: 6.5 },
               font: {
-                xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                xs: `normal normal 400 normal 20px/36px ${Fonts.arial}`,
                 md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
               },
               color: Colors.darkBlue,
@@ -743,8 +763,8 @@ export default function AboutUs() {
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
-            gap: { xs: "8px", sm: "20px" },
+            flexDirection: { xs: "column", sm: "row" },
+            gap: { xs: "22px", sm: "20px" },
             justifyContent: "space-between",
             px: { xs: "1rem", sm: "1rem", md: 5.5, lg: 7.2, xl: 15.5 },
           }}
@@ -762,7 +782,7 @@ export default function AboutUs() {
                 variant="span"
                 sx={{
                   font: {
-                    xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                    xs: `normal normal 400 normal 24px/24px ${Fonts.arial}`,
                     md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
                   },
                   color: Colors.darkBlue,
@@ -776,7 +796,7 @@ export default function AboutUs() {
                 sx={{
                   letterSpacing: "-2%",
                   font: {
-                    xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                    xs: `normal normal 400 normal 20px/24px ${Fonts.arial}`,
                     md: `normal normal 400 normal 20px/44px ${Fonts.arial}`,
                   },
                   color: Colors.grey,
@@ -794,7 +814,7 @@ export default function AboutUs() {
       <Box
         sx={{
           width: "100%",
-          height: { xs: 850, sm: 350 },
+          height: { xs: 290, sm: 350 },
           padding: "96px 0",
           backgroundColor: "#FFD993",
           backgroundSize: "cover",
@@ -831,7 +851,7 @@ export default function AboutUs() {
               variant="span"
               sx={{
                 font: {
-                  xs: `normal normal 400 normal 16px/24px ${Fonts.inter}`,
+                  xs: `normal normal 400 normal 24px/24px ${Fonts.inter}`,
                   md: `normal normal 600 normal 36px/44px ${Fonts.inter}`,
                 },
                 color: "#000000",
@@ -844,7 +864,7 @@ export default function AboutUs() {
               variant="span"
               sx={{
                 font: {
-                  xs: `normal normal 300 normal 16px/24px ${Fonts.inter}`,
+                  xs: `normal normal 300 normal 18px/24px ${Fonts.inter}`,
                   md: `normal normal 300 normal 20px/28px ${Fonts.inter}`,
                 },
                 color: "#101828",
@@ -866,7 +886,7 @@ export default function AboutUs() {
               component="div"
               sx={{
                 backgroundColor: "#ffffff",
-                width: 500,
+                width: { xs: 350, sm: 500 },
                 display: "flex",
                 borderRadius: "46px",
                 padding: "6px",
