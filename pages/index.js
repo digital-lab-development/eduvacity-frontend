@@ -128,7 +128,7 @@ export default function HomePage() {
                 </Typography>
                 <br />
                 <Typography variant="span" sx={{ display: "initial" }}>
-                  Africa's{" "}
+                  Africa`s
                 </Typography>
                 <Typography variant="span" sx={{ color: Colors.primary }}>
                   Next Billion Workforce
