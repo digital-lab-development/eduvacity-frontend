@@ -39,7 +39,7 @@ export default function ProgramCard({ cards, handleClick }) {
         width: "100%",
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        gap: { xs: "32px", sm: "64px" },
+        gap: { xs: "32px", sm: "16px" },
         flexWrap: "wrap",
       }}
     >
@@ -51,43 +51,33 @@ export default function ProgramCard({ cards, handleClick }) {
             key={i}
             variant="none"
             sx={{
-              padding: "16px 24px 16px 16px",
               width: { xs: "100%", sm: "30%" },
-              height: { xs: 100, sm: 138 },
-              m: { xs: "20px 0px", sm: "20px 0" },
+              height: { xs: 100, sm: 120 },
+              m: { xs: "20px 0px", sm: "16px 0" },
               display: "flex",
               flexDirection: "row",
+              gap: "18px",
             }}
           >
             <Box
               sx={{
                 border: "1px solid #EAECF0",
                 width: "106px",
-                width: "106px",
+                height: "106px",
                 borderRadius: "7px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <Box
-                sx={{
-                  width: "65px",
-                  padding: "8px",
-                }}
-              >
+              <Box>
                 <CardMedia component="img" image={card.image} alt={card.name} />
               </Box>
             </Box>
 
-            <CardContent
+            <Box
               sx={{
-                width: "100%",
-                maxWidth: { xs: 330, sm: 450 },
-                display: "flex",
-                flexDirection: "column",
-                gap: { xs: "6.33px", sm: "6px" },
-                // px: { xs: 1, sm: 2, md: 2, lg: 2.5, xl: 3 },
+                gap: "6px",
               }}
             >
               <Box
@@ -100,7 +90,7 @@ export default function ProgramCard({ cards, handleClick }) {
                 <Box
                   sx={{
                     display: "flex",
-                    alignItems: "center",
+
                     gap: 1,
                     // mt: { xs: '6.33px', sm: '20px' },
                   }}
@@ -121,7 +111,7 @@ export default function ProgramCard({ cards, handleClick }) {
                   sx={{
                     font: {
                       xs: `normal normal 700 normal 12.67px/25.33px ${Fonts.secondary}`,
-                      sm: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
+                      sm: `normal normal 700 normal 16px/16px ${Fonts.secondary}`,
                     },
                     color: Colors.dark,
                   }}
@@ -131,6 +121,7 @@ export default function ProgramCard({ cards, handleClick }) {
               </Box>
               <Box
                 sx={{
+                  mt: "3px",
                   width: "100%",
                   display: "flex",
                   flexDirection: "column",
@@ -193,11 +184,12 @@ export default function ProgramCard({ cards, handleClick }) {
                   onClick={handleClick}
                   endIcon={<ArrowForward />}
                   sx={{
-                    width: { xs: 160, sm: 140 },
                     display: "flex",
+
                     alignItems: "center",
+                    justifyContent: "flex-start",
                     gap: 1,
-                    font: `normal normal 700 normal 16px/24px ${Fonts.secondary}`,
+                    font: `normal normal 700 normal 14px/24px ${Fonts.secondary}`,
                     textTransform: "none",
                     color: Colors.primary,
                     cursor: "pointer",
@@ -209,7 +201,7 @@ export default function ProgramCard({ cards, handleClick }) {
                   View courses
                 </Button>
               </Box>
-            </CardContent>
+            </Box>
           </Card>
         );
       })}

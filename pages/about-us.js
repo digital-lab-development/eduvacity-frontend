@@ -439,7 +439,7 @@ export default function AboutUs() {
                     key={`why_join_${i}`}
                     component="li"
                     sx={{
-                      pl: { xs: 0, sm: 4 },
+                      pl: { xs: 0, sm: "16px" },
                       pb: 2,
                       font: `normal normal 400 normal 20px/24px ${Fonts.arial}`,
                       color: "#505F79",
@@ -454,26 +454,29 @@ export default function AboutUs() {
                     <Typography>{point}</Typography>
                   </Box>
                 ))}
-                <Box
-                  onClick={() => router.push("/signup")}
-                  sx={{
-                    mt: "28px",
-                    width: "200px",
-                    padding: "12px 20px 12px 20px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    font: `normal normal 500 normal 14px/19.2px ${Fonts.primary}`,
-                    cursor: "pointer",
-                    color: "rgba(230, 244, 237, 1)",
-                    borderRadius: "46px",
-                    background: Colors.primary,
-                    "&:hover": {
+                <Box sx={{ pl: { xs: 0, sm: "16px" } }}>
+                  <Box
+                    onClick={() => router.push("/signup")}
+                    sx={{
+                      mt: "28px",
+                      width: "200px",
+
+                      padding: "12px 20px 12px 20px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      font: `normal normal 500 normal 14px/19.2px ${Fonts.primary}`,
+                      cursor: "pointer",
+                      color: "rgba(230, 244, 237, 1)",
+                      borderRadius: "46px",
                       background: Colors.primary,
-                    },
-                  }}
-                >
-                  Join Program <ArrowUp />
+                      "&:hover": {
+                        background: Colors.primary,
+                      },
+                    }}
+                  >
+                    Join Program <ArrowUp />
+                  </Box>
                 </Box>
               </Box>
             </Box>
