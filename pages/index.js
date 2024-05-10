@@ -1334,7 +1334,7 @@ export default function HomePage() {
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                xs: `normal normal 400 normal 22px/24px ${Fonts.arial}`,
                 md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
               },
               color: Colors.darkBlue,
@@ -1346,7 +1346,7 @@ export default function HomePage() {
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 700 normal 16px/24px ${Fonts.arial}`,
+                xs: `normal normal 700 normal 22px/24px ${Fonts.arial}`,
                 md: `normal normal 700 normal 36px/44px ${Fonts.arial}`,
               },
               color: Colors.primary,
@@ -1358,7 +1358,7 @@ export default function HomePage() {
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                xs: `normal normal 400 normal 22px/24px ${Fonts.arial}`,
                 md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
               },
               color: Colors.darkBlue,
