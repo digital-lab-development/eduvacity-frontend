@@ -306,9 +306,10 @@ export default function AboutUs() {
             We are empowering 1,000,000,000 people in Africa with the tools and
             opportunities to become world-class. Eduvacity is where individuals
             from around Africa acquire the skills they need precisely when they
-            need them most. We're here to propel people forward in their careers
-            and personal journeys.
+            need them most. We are here to propel people forward in their
+            careers and personal journeys.
           </Typography>
+
           <Box
             onClick={() => router.push("/signup")}
             sx={{
@@ -587,10 +588,11 @@ export default function AboutUs() {
                 p: 0,
               }}
             >
-              We're here to prepare you for the future workplace, not the past,
+              We are here to prepare you for the future workplace, not the past,
               focusing on industries with the most growth potential. Stand out
               with Eduvacity.
             </Typography>
+
             <Box component="ul" sx={{ mt: 4 }}>
               {learningExperience.map((point, i) => (
                 <Box
@@ -756,7 +758,7 @@ export default function AboutUs() {
               textAlign: "flex-start",
             }}
           >
-            The world is changing. Shouldn't universities in Africa change too?
+            The world is changing. Shouldn`t universities in Africa change too?
           </Typography>
         </Box>
 
@@ -769,8 +771,9 @@ export default function AboutUs() {
             px: { xs: "1rem", sm: "1rem", md: 5.5, lg: 7.2, xl: 15.5 },
           }}
         >
-          {stat.map((stats) => (
+          {stat.map((stats, index) => (
             <Box
+              key={index}
               sx={{
                 display: "flex",
                 width: "320px",
