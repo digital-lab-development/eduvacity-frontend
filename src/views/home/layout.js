@@ -10,7 +10,7 @@ import { Box } from "@mui/system";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import Router, { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { UserIcon } from "../../components/svg";
 import { Colors } from "../../components/themes/colors";
 import { Fonts } from "../../components/themes/fonts";
@@ -37,6 +37,12 @@ export default function HomeLayout({ children }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [openWaitlistDialog, setOpenWaitlistDialog] = React.useState(false);
   const open = Boolean(anchorEl);
+
+  const [isAboutPage, setIsAboutPage] = useState(false);
+
+  useEffect(() => {
+    setIsAboutPage(router.pathname === "/about-us");
+  }, [router.pathname]);
 
   const menu = [
     {
@@ -298,7 +304,6 @@ export default function HomeLayout({ children }) {
     },
     {
       name: "About Us",
-      children: [],
     },
     {
       name: "For Organisations",
@@ -366,7 +371,7 @@ export default function HomeLayout({ children }) {
             width: "100%",
             display: "flex",
             alignItems: "center",
-            backgroundColor: Colors.secondary,
+            backgroundColor: isAboutPage ? Colors.light : Colors.secondary,
             height: appHeight,
             boxShadow: "none",
             px: { xs: "1rem", sm: "1rem", lg: "5rem" },
@@ -382,9 +387,13 @@ export default function HomeLayout({ children }) {
               gap: "12px",
             }}
           >
-            <Link underline="none" href="/" sx={{ width: 200 }}>
+            <Link underline="none" href="/" sx={{ width: 300, height: 32 }}>
               <Image
-                src="/images/logo.png"
+                src={
+                  isAboutPage
+                    ? "/images/eduvacity-logo2.svg"
+                    : "/images/logo.png"
+                }
                 width={150}
                 height={28}
                 alt="logo"
@@ -449,9 +458,13 @@ export default function HomeLayout({ children }) {
                               width: 500,
                               textAlign: "",
                               font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                              color: selected
-                                ? Colors.primary
-                                : Colors.offWhite,
+                              color:
+                                selected && isAboutPage
+                                  ? Colors.primary
+                                  : isAboutPage
+                                  ? Colors.primary
+                                  : Colors.offWhite,
+
                               cursor: "pointer",
                               "&:hover": {
                                 color: Colors.primary,
@@ -484,7 +497,9 @@ export default function HomeLayout({ children }) {
                   font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
                   gap: "8px",
                   padding: "12px 20px 12px 20px",
-                  color: "rgba(230, 244, 237, 1)",
+                  color: `${
+                    isAboutPage ? Colors.primary : "rgba(230, 244, 237, 1)"
+                  }`,
                   cursor: "pointer",
                   gap: "10px",
                   "&:hover": {

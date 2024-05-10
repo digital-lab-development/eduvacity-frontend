@@ -16,10 +16,9 @@ export const COMMUNITY_DESC =
   "Eduvacity's online courses, certificates, and degrees for leaders, not followers. In today's digital world, your education should prepare you for the future, not the past. It should enhance your employability and unlock opportunities.";
 
 //PROGRAM
-export const PROGRAM_TITLE =
-  "Achieve certification and progress through our programs.";
+export const PROGRAM_TITLE = "Universities you can study from";
 export const PROGRAM_DESC =
-  "We partner with the Universities of your choice to make quality education accessible for anyone, from anywhere.";
+  "We partner with the Universities of your choice to make quality education accessible for anyone, from anywhere";
 
 //EMPOWERMENT
 

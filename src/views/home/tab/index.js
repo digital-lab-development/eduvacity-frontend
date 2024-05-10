@@ -1,55 +1,55 @@
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import { styled } from '@mui/material/styles';
-import * as React from 'react';
-import { ABULogo, SchoolLogo } from '../../../components/svg/index.js';
-import { Colors } from '../../../components/themes/colors';
-import { Fonts } from '../../../components/themes/fonts';
-import BootscampCards from './bootscamp/index.js';
-import DegreeCards from './degree/index.js';
-import DiplomaCards from './diploma/index.js';
-import ProgramCard from './program-card.js';
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import { styled } from "@mui/material/styles";
+import * as React from "react";
+import { ABULogo, SchoolLogo } from "../../../components/svg/index.js";
+import { Colors } from "../../../components/themes/colors";
+import { Fonts } from "../../../components/themes/fonts";
+import BootscampCards from "./bootscamp/index.js";
+import DegreeCards from "./degree/index.js";
+import DiplomaCards from "./diploma/index.js";
+import ProgramCard from "./program-card.js";
 
 const StyledTabs = styled(Tabs)({
-  borderBottom: '1px solid #EAECF0',
-  '& .MuiTabs-indicator': {
+  borderBottom: "1px solid #EAECF0",
+  "& .MuiTabs-indicator": {
     backgroundColor: Colors.primary,
   },
 });
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
-    textTransform: 'none',
+    textTransform: "none",
     minWidth: 0,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       minWidth: 0,
     },
     marginRight: 8,
-    color: '#667085',
+    color: "#667085",
     gap: 8,
     font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-    '&:hover': {
+    "&:hover": {
       color: Colors.primary,
       opacity: 1,
     },
-    '&.Mui-selected': {
+    "&.Mui-selected": {
       color: Colors.primary,
     },
-    '&.Mui-focusVisible': {
+    "&.Mui-focusVisible": {
       backgroundColor: Colors.primary,
     },
   })
 );
 const cards = [
   {
-    name: '',
-    program: 'Diploma in Banking & Finance ',
+    name: "Business School ABU, Zaria",
+    program: "Diploma in Banking & Finance ",
     description:
-      'Banking and finance are essential for economic advancement and stability. Our Banking and Finance program course is created to empower students with the expertise and abilities essential for excelling in this dynamic field, ensuring their readiness for success in the intricate realm of finance.',
-    duration: '16 months',
-    type: 'diploma',
-    image: '/images/banking-finance.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "Banking and finance are essential for economic advancement and stability. Our Banking and Finance program course is created to empower students with the expertise and abilities essential for excelling in this dynamic field, ensuring their readiness for success in the intricate realm of finance.",
+    duration: "3 months",
+    type: "diploma",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   // {
   //   name: '',
@@ -62,111 +62,111 @@ const cards = [
   //   icon: '/images/eduvacity-logo.svg',
   // },
   {
-    name: '',
-    program: 'Diploma in Computer Science',
+    name: "Business School ABU, Zaria",
+    program: "Diploma in Computer Science",
     description:
       "Computer science stands as the backbone of innovation and technological advancement in today's digital era. This program is design to equip students with the theoretical knowledge and practical skills necessary to empower  them to excel in various computing domains and contribute meaningfully to the technological landscape.",
-    duration: '16 months',
-    type: 'diploma',
-    image: '/images/computer-science.jpg',
-    icon: '/images/eduvacity-logo.svg',
+    duration: "3 months",
+    type: "diploma",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   {
-    name: '',
-    program: 'Diploma in Computer Engineering',
+    name: "Business School ABU, Zaria",
+    program: "Diploma in Computer Engineering",
     description:
-      'Computer engineering plays a vital role in shaping the technological landscape and driving innovation. These course equip students with the necessary theoretical foundations and hands-on skills to excel.',
-    duration: '16 months',
-    type: 'diploma',
-    image: '/images/computer-engineering.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "Computer engineering plays a vital role in shaping the technological landscape and driving innovation. These course equip students with the necessary theoretical foundations and hands-on skills to excel.",
+    duration: "3 months",
+    type: "diploma",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   {
-    name: '',
-    program: 'Diploma in Business Administration',
+    name: "Business School ABU, Zaria",
+    program: "Diploma in Business Administration",
     description:
-      'Eduvacity business administration is designed to provide students with a comprehensive understanding of business principles and practices, preparing them to succeed in diverse corporate environments.',
-    duration: '16 months',
-    type: 'diploma',
-    image: '/images/business-admin.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "Eduvacity business administration is designed to provide students with a comprehensive understanding of business principles and practices, preparing them to succeed in diverse corporate environments.",
+    duration: "3 months",
+    type: "diploma",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   //degree
-  // {
-  //   name: 'University of Lagos',
-  //   program: 'Diploma in Computer Engineering',
-  //   description:
-  //     'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-  //   duration: '3 months',
-  //   type: 'degree',
-  //   image: '/images/castle-school.png',
-  //   icon: '/images/eduvacity-logo.svg',
-  // },
-  // {
-  //   name: 'University of Lagos',
-  //   program: 'Diploma in Computer Engineering',
-  //   description:
-  //     'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-  //   duration: '3 months',
-  //   type: 'degree',
-  //   image: '/images/castle-school.png',
-  //   icon: '/images/eduvacity-logo.svg',
-  // },
+  {
+    name: "Business School ABU, Zaria",
+    program: "Diploma in Computer Engineering",
+    description:
+      "The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.",
+    duration: "3 months",
+    type: "degree",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
+  },
+  {
+    name: "Business School ABU, Zaria",
+    program: "Diploma in Computer Engineering",
+    description:
+      "The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.",
+    duration: "3 months",
+    type: "degree",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
+  },
   //bootcamp
   {
-    name: '',
-    program: 'Frontend Development',
+    name: "Business School ABU, Zaria",
+    program: "Frontend Development",
     description:
-      'Frontend development is pivotal in shaping user experiences and interfaces across digital platforms this Bootcamp program equips students with the latest tools and techniques in web development and responsive design principles.',
-    duration: '6 weeks',
-    type: 'bootscamp',
-    image: '/images/front-end.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "Frontend development is pivotal in shaping user experiences and interfaces across digital platforms this Bootcamp program equips students with the latest tools and techniques in web development and responsive design principles.",
+    duration: "3 months",
+    type: "bootscamp",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   {
-    name: '',
-    program: 'Backend Development',
+    name: "Business School ABU, Zaria",
+    program: "Backend Development",
     description:
-      'Backend development serves as the foundation of dynamic and data-driven web applications. Our program is designed to provide students with a deep understanding of server-side programming languages, databases, and frameworks essential for building scalable and secure systems.',
-    duration: '6 weeks',
-    type: 'bootscamp',
-    image: '/images/back-end.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "Backend development serves as the foundation of dynamic and data-driven web applications. Our program is designed to provide students with a deep understanding of server-side programming languages, databases, and frameworks essential for building scalable and secure systems.",
+    duration: "3 months",
+    type: "bootscamp",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   {
-    name: '',
-    program: 'Cloud Computing',
+    name: "Business School ABU, Zaria",
+    program: "Cloud Computing",
     description:
-      'Cloud computing is revolutionizing the way businesses manage and deliver IT services. Our program is tailored to provide students with a comprehensive understanding of cloud technologies, including infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS).',
-    duration: '6 weeks',
-    type: 'bootscamp',
-    image: '/images/cloud-computing.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "Cloud computing is revolutionizing the way businesses manage and deliver IT services. Our program is tailored to provide students with a comprehensive understanding of cloud technologies, including infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS).",
+    duration: "3 months",
+    type: "bootscamp",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   {
-    name: '',
-    program: 'UI/UX Design',
+    name: "Business School ABU, Zaria",
+    program: "UI/UX Design",
     description:
-      'UI/UX design plays a crucial role in creating engaging and intuitive user experiences for digital products and services. Our program focuses on user-centered design principles, information architecture, user interface, and interactive prototyping techniques.',
-    duration: '6 weeks',
-    type: 'bootscamp',
-    image: '/images/ui-ux.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "UI/UX design plays a crucial role in creating engaging and intuitive user experiences for digital products and services. Our program focuses on user-centered design principles, information architecture, user interface, and interactive prototyping techniques.",
+    duration: "3 months",
+    type: "bootscamp",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
   {
-    name: '',
-    program: 'Data Science',
+    name: "Business School ABU, Zaria",
+    program: "Data Science",
     description:
-      'Data science is at the forefront of leveraging data to extract insights and drive decision-making across industries. Our program is designed to equip students with the essential skills in statistical analysis, machine learning, and data visualization.',
-    duration: '6 weeks',
-    type: 'bootscamp',
-    image: '/images/data-science.jpg',
-    icon: '/images/eduvacity-logo.svg',
+      "Data science is at the forefront of leveraging data to extract insights and drive decision-making across industries. Our program is designed to equip students with the essential skills in statistical analysis, machine learning, and data visualization.",
+    duration: "3 months",
+    type: "bootscamp",
+    image: "/images/abu-logo.png",
+    icon: "/images/eduvacity-logo.svg",
   },
 ];
-const degree = cards.filter((item) => item.type === 'degree');
-const diploma = cards.filter((item) => item.type === 'diploma');
-const bootscamp = cards.filter((item) => item.type === 'bootscamp');
+const degree = cards.filter((item) => item.type === "degree");
+const diploma = cards.filter((item) => item.type === "diploma");
+const bootscamp = cards.filter((item) => item.type === "bootscamp");
 
 export function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -177,7 +177,8 @@ export function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}>
+      {...other}
+    >
       {value === index && <Box component="div">{children}</Box>}
     </div>
   );
@@ -186,7 +187,7 @@ export function TabPanel(props) {
 export function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 export default function AcademicTabs({ handleClick }) {
@@ -199,20 +200,23 @@ export default function AcademicTabs({ handleClick }) {
   return (
     <Box
       sx={{
-        width: '100%',
+        width: "100%",
         pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
         pr: { xs: 2, sm: 0 },
-      }}>
+      }}
+    >
       <Box>
         <StyledTabs
           value={value}
           onChange={handleChange}
           variant="scrollable"
           scrollButtons="auto"
-          aria-label="ant example">
+          aria-label="ant example"
+        >
           <StyledTab label="All" />
           <StyledTab label="Diplomas" />
           <StyledTab label="Bootcamps" />
+          <StyledTab label="Degree" />
           {/* <StyledTab
             label="Degree"
             icon={

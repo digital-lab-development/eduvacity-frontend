@@ -9,13 +9,13 @@ import {
   ListItemText,
   Typography,
   styled,
-} from "@mui/material"
-import { useRouter } from "next/router"
-import React from "react"
-import { AngleDownWard, AngleForward } from "../../components/svg"
-import { Colors } from "../../components/themes/colors"
-import { Fonts } from "../../components/themes/fonts"
-import { StyledMenuTooltip } from "../../components/tooltip"
+} from "@mui/material";
+import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
+import { AngleDownWard, AngleForward } from "../../components/svg";
+import { Colors } from "../../components/themes/colors";
+import { Fonts } from "../../components/themes/fonts";
+import { StyledMenuTooltip } from "../../components/tooltip";
 
 const StyledList = styled(List)({
   display: "flex",
@@ -65,21 +65,26 @@ const StyledList = styled(List)({
   "& .MuiSvgIcon-root": {
     fontSize: "20px",
   },
-})
+});
 
 export default function MenuDropdown({ item, selected }) {
-  const router = useRouter()
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const open = Boolean(anchorEl)
-  const [content, setContent] = React.useState(null)
+  const router = useRouter();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const [content, setContent] = React.useState(null);
+  const [isAboutPage, setIsAboutPage] = useState(false);
+
+  useEffect(() => {
+    setIsAboutPage(router.pathname === "/about-us");
+  }, [router.pathname]);
 
   const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
+    setAnchorEl(event.currentTarget);
+  };
 
   const handlePopoverClose = () => {
-    setAnchorEl(null)
-  }
+    setAnchorEl(null);
+  };
   return (
     <StyledMenuTooltip
       disableFocusListener
@@ -120,7 +125,7 @@ export default function MenuDropdown({ item, selected }) {
           >
             <StyledList>
               {item.children.map((child, index) => {
-                const selectedItem = content?.name === child.name
+                const selectedItem = content?.name === child.name;
                 return (
                   <ListItemButton
                     disableRipple
@@ -144,7 +149,7 @@ export default function MenuDropdown({ item, selected }) {
 
                     <AngleForward />
                   </ListItemButton>
-                )
+                );
               })}
             </StyledList>
           </Box>
@@ -213,8 +218,8 @@ export default function MenuDropdown({ item, selected }) {
                                     cursor: "pointer",
                                   }}
                                   onClick={() => {
-                                    router.push(cont.link)
-                                    setAnchorEl(null)
+                                    router.push(cont.link);
+                                    setAnchorEl(null);
                                   }}
                                 >
                                   <CardHeader
@@ -279,11 +284,11 @@ export default function MenuDropdown({ item, selected }) {
                                   </Box>
                                 </Card>
                               </Grid>
-                            )
+                            );
                           })}
                         </Grid>
                       </Box>
-                    )
+                    );
                   })
                 : null}
             </Box>
@@ -308,7 +313,12 @@ export default function MenuDropdown({ item, selected }) {
             display: "flex",
             font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
             gap: "10px",
-            color: selected ? Colors.primary : Colors.offWhite,
+            color:
+              selected && isAboutPage
+                ? Colors.primary
+                : isAboutPage
+                ? Colors.primary
+                : Colors.offWhite,
             cursor: "pointer",
             "&:hover": {
               background: "transparent",
@@ -328,5 +338,5 @@ export default function MenuDropdown({ item, selected }) {
         </Typography>
       </ListItemButton>
     </StyledMenuTooltip>
-  )
+  );
 }

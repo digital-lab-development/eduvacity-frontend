@@ -413,7 +413,7 @@ export default function HomePage() {
           width: "100%",
           height: { xs: 850, sm: 450 },
           padding: "0 0 96px 0",
-
+          backgroundColor: "#F6F7F7",
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
           justifyContent: "center",
@@ -508,12 +508,108 @@ export default function HomePage() {
         </Grid>
       </Box>
 
+      {/* ----------------UNIVERSITIES YOU CAN STUDY FROM-------------- */}
+      <Box
+        component="section"
+        id="academy-section"
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          pt: { xs: 10, md: 15.5 },
+          pb: { xs: 4, md: 6.5 },
+          backgroundColor: Colors.light,
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: { xs: 4, sm: 8 },
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              gap: { xs: "16px", sm: "32px" },
+            }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+                px: { xs: "1rem", sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  font: `normal normal 500 normal 16px/24px ${Fonts.arial}`,
+                  color: Colors.primary,
+                  m: 0,
+                  p: 0,
+                  letterSpacing: "1%",
+                  textTransform: "uppercase",
+                }}
+              >
+                Academic Programs
+              </Typography>
+              <Typography
+                variant="h1"
+                sx={{
+                  font: {
+                    xs: `normal normal 400 normal 30px/36px ${Fonts.arial}`,
+                    md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
+                  },
+                  color: Colors.dark,
+                  m: 0,
+                  p: 0,
+                  letterSpacing: "-2%",
+                }}
+              >
+                {PROGRAM_TITLE}
+              </Typography>
+              <Box
+                component="span"
+                sx={{
+                  maxWidth: 840,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Typography
+                  variant="span"
+                  sx={{
+                    font: {
+                      xs: `normal normal 400 normal 14px/28px ${Fonts.arial}`,
+                      sm: `normal normal 400 normal 20px/28px ${Fonts.arial}`,
+                    },
+                    color: Colors.grey,
+                  }}
+                >
+                  {PROGRAM_DESC}
+                </Typography>
+              </Box>
+            </Box>
+
+            <AcademicTabs handleClick={handleClickOpen} />
+          </Box>
+        </Box>
+      </Box>
+
       {/* -------------------YOUR FUTURE IN YOUR HANDS -----------------------------*/}
       <Box
         sx={{
           width: "100%",
           height: { xs: 850, sm: 456 },
-          padding: "96px 0",
+          padding: { xs: "70px 0", sm: "96px 0" },
           backgroundImage: {
             xs: "url('/images/graduate-sm.svg')",
             sm: "url('/images/graduate.svg')",
@@ -842,7 +938,7 @@ export default function HomePage() {
       <Box
         sx={{
           width: "100%",
-          height: { xs: 850, sm: 350 },
+          height: { xs: 400, sm: 350 },
           padding: "96px 0",
           backgroundColor: "#F6F7F7",
           backgroundSize: "cover",
@@ -861,7 +957,7 @@ export default function HomePage() {
             display: "flex",
             flexDirection: "column",
             gap: { xs: "8px", sm: "16px" },
-            px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
+            px: { xs: 2, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
             alignItems: { xs: "center", sm: "flex-start" },
           }}
         >
@@ -869,7 +965,7 @@ export default function HomePage() {
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                xs: `normal normal 500 normal 20px/24px ${Fonts.arial}`,
                 md: `normal normal 400 normal 20px/28px ${Fonts.arial}`,
               },
               color: "#505F79",
@@ -884,10 +980,11 @@ export default function HomePage() {
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: { xs: "column", sm: "row" },
             gap: { xs: "8px", sm: "26px" },
             px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
-            alignItems: { xs: "center", sm: "flex-start" },
+            alignItems: { xs: "flex-start", sm: "flex-start" },
+            mt: 2,
           }}
         >
           <Box
@@ -902,7 +999,7 @@ export default function HomePage() {
               sx={{
                 width: 60,
                 height: {
-                  xs: 240,
+                  xs: 50,
                   sm: 44,
                 },
                 backgroundImage: {
@@ -917,7 +1014,7 @@ export default function HomePage() {
               variant="span"
               sx={{
                 font: {
-                  xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                  xs: `normal normal 500 normal 16px/24px ${Fonts.arial}`,
                   md: `normal normal 700 normal 28px/24px ${Fonts.arial}`,
                 },
                 color: "#000000",
@@ -933,15 +1030,15 @@ export default function HomePage() {
               display: "flex",
               flexDirection: "row",
               gap: { xs: "8px", sm: "7px" },
-              alignItems: { xs: "center", sm: "flex-start" },
+              alignItems: { xs: "flex-start", sm: "flex-start" },
             }}
           >
             <Box
               sx={{
-                width: 44,
+                width: 59,
                 height: {
-                  xs: 240,
-                  sm: 44,
+                  xs: 57,
+                  sm: 59,
                 },
                 backgroundImage: {
                   xs: "url(/images/abu-logo.png)",
@@ -959,7 +1056,7 @@ export default function HomePage() {
                   md: `normal normal 700 normal 28px/24px ${Fonts.arial}`,
                 },
                 color: "#000000",
-                textAlign: { xs: "center", sm: "left" },
+                textAlign: { xs: "left", sm: "left" },
                 alignSelf: "center",
               }}
             >
@@ -972,7 +1069,7 @@ export default function HomePage() {
       <Box
         sx={{
           width: "100%",
-          height: { xs: 850, sm: 350 },
+          height: { xs: 300, sm: 350 },
           padding: "96px 0",
           backgroundColor: "#011B23",
           backgroundSize: "cover",
@@ -990,7 +1087,7 @@ export default function HomePage() {
             width: { xs: "100%", sm: "100%" },
             display: "flex",
             flexDirection: "column",
-            gap: { xs: "8px", sm: "16px" },
+            gap: { xs: "16px", sm: "16px" },
             px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, xl: 15.5 },
             alignItems: { xs: "center", sm: "flex-start" },
           }}
@@ -999,7 +1096,7 @@ export default function HomePage() {
             variant="span"
             sx={{
               font: {
-                xs: `normal normal 400 normal 16px/24px ${Fonts.arial}`,
+                xs: `normal normal 400 normal 26px/24px ${Fonts.arial}`,
                 md: `normal normal 400 normal 36px/44px ${Fonts.arial}`,
               },
               color: Colors.light,
@@ -1141,7 +1238,7 @@ export default function HomePage() {
                 <Box
                   sx={{
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: { xs: "column", sm: "row" },
                     gap: "20px",
                   }}
                 >

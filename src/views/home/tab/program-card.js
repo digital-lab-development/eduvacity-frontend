@@ -1,22 +1,22 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import Box from '@mui/material/Box';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 
-import { Colors } from '../../../components/themes/colors';
-import { Fonts } from '../../../components/themes/fonts';
-import 'swiper/css';
+import { Colors } from "../../../components/themes/colors";
+import { Fonts } from "../../../components/themes/fonts";
+import "swiper/css";
 import {
   ArrowBackward,
   ArrowForward,
   ClockIcon,
-} from '../../../components/svg';
-import Image from 'next/image';
+} from "../../../components/svg";
+import Image from "next/image";
 
 export default function ProgramCard({ cards, handleClick }) {
   const swiperRef = React.useRef(null);
@@ -34,246 +34,184 @@ export default function ProgramCard({ cards, handleClick }) {
   };
 
   return (
-    <div
-      style={{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: { xs: '32px', sm: '64px' },
-      }}>
-      <Swiper
-        ref={swiperRef}
-        spaceBetween={15}
-        slidesPerView={1}
-        navigation
-        breakpoints={{
-          540: {
-            slidesPerView: 1.4,
-            spaceBetween: 20,
-          },
-          640: {
-            slidesPerView: 2.2,
-            spaceBetween: 20,
-          },
-          700: {
-            slidesPerView: 1.35,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1.4,
-            spaceBetween: 20,
-          },
-          900: {
-            slidesPerView: 1.7,
-            spaceBetween: 32,
-          },
-          1024: {
-            slidesPerView: 1.9,
-            spaceBetween: 32,
-          },
-          1280: {
-            slidesPerView: 2.4,
-            spaceBetween: 32,
-          },
-          1500: {
-            slidesPerView: 3.1,
-            spaceBetween: 32,
-          },
-        }}
-        className="swiper"
-        style={{ margin: 0, padding: 0 }}>
-        {cards.map((card, i) => {
-          const duration = card.duration;
-          const [number, unit] = duration.split(' ');
-          return (
-            <SwiperSlide key={`card-${i}`} style={{ margin: 0, padding: 0 }}>
-              <Card
+    <Box
+      sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: { xs: "column", sm: "row" },
+        gap: { xs: "32px", sm: "64px" },
+        flexWrap: "wrap",
+      }}
+    >
+      {cards.map((card, i) => {
+        const duration = card.duration;
+        const [number, unit] = duration.split(" ");
+        return (
+          <Card
+            variant="none"
+            sx={{
+              padding: "16px 24px 16px 16px",
+              width: { xs: "100%", sm: "30%" },
+              height: { xs: 100, sm: 138 },
+              m: { xs: "20px 0px", sm: "20px 0" },
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Box
+              sx={{
+                border: "1px solid #EAECF0",
+                width: "106px",
+                width: "106px",
+                borderRadius: "7px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Box
                 sx={{
-                  padding: '0 0 24px 0',
-                  borderRadius: '16px',
-                  width: '100%',
-                  height: { xs: 405.42, sm: 510 },
-                  boxShadow: '0px 16px 16px 0px #0000000D',
-                  m: { xs: '20px 0px', sm: '20px 0' },
-                  border: `1px solid #0000000D`,
-                }}>
-                <CardMedia
-                  sx={{ height: { xs: 190, sm: 240 } }}
-                  image={card.image}
-                  title={card.name}
-                />
-                <CardContent
+                  width: "65px",
+                  padding: "8px",
+                }}
+              >
+                <CardMedia component="img" image={card.image} alt={card.name} />
+              </Box>
+            </Box>
+
+            <CardContent
+              sx={{
+                width: "100%",
+                maxWidth: { xs: 330, sm: 450 },
+                display: "flex",
+                flexDirection: "column",
+                gap: { xs: "6.33px", sm: "6px" },
+                // px: { xs: 1, sm: 2, md: 2, lg: 2.5, xl: 3 },
+              }}
+            >
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Box
                   sx={{
-                    // width: '100%',
-                    // maxWidth: { xs: 330, sm: 450 },
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: { xs: '6.33px', sm: '8px' },
-                    // px: { xs: 1, sm: 2, md: 2, lg: 2.5, xl: 3 },
-                  }}>
-                  <Box
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    // mt: { xs: '6.33px', sm: '20px' },
+                  }}
+                >
+                  <Typography
+                    variant="h5"
                     sx={{
-                      width: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                    }}>
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 1,
-                        // mt: { xs: '6.33px', sm: '20px' },
-                      }}>
-                      <Box>
-                        <Image
-                          src={card.icon}
-                          alt={card.program}
-                          width={24}
-                          height={24}
-                        />
-                      </Box>
-                      <Typography
-                        variant="h5"
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 1,
-                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                          color: Colors.greyText,
-                        }}>{`${card.name}`}</Typography>
-                    </Box>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        font: {
-                          xs: `normal normal 700 normal 12.67px/25.33px ${Fonts.secondary}`,
-                          sm: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
-                        },
-                        color: Colors.dark,
-                      }}>
-                      {card.program}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      width: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
+                      display: "flex",
+                      alignItems: "center",
                       gap: 1,
-                    }}>
-                    <Typography
+                      font: `normal normal 500 normal 16px/24px ${Fonts.arial}`,
+                      color: Colors.greyText,
+                    }}
+                  >{`${card.name}`}</Typography>
+                </Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    font: {
+                      xs: `normal normal 700 normal 12.67px/25.33px ${Fonts.secondary}`,
+                      sm: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
+                    },
+                    color: Colors.dark,
+                  }}
+                >
+                  {card.program}
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1,
+                }}
+              >
+                {/* <Typography
                       variant="p"
                       sx={{
-                        hyphens: 'auto',
+                        hyphens: "auto",
                         font: {
                           xs: `normal normal 500 normal 14px/19px ${Fonts.primary}`,
                           sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                         },
                         color: Colors.textPrimaryDark,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
                         WebkitLineClamp: 4,
-                        WebkitBoxOrient: 'vertical',
-                      }}>
+                        WebkitBoxOrient: "vertical",
+                      }}
+                    >
                       {card.description}
-                    </Typography>
+                    </Typography> */}
 
-                    <Box
-                      sx={{
-                        width: '100%',
-                        display: 'flex',
-                        gap: 1,
-                      }}>
-                      <Box sx={{ mt: 0.8 }}>
-                        <ClockIcon />{' '}
-                      </Box>
-                      <Box
-                        sx={{
-                          font: {
-                            xs: `normal normal 500 normal 11.08px/19px ${Fonts.tertiary}`,
-                            sm: `normal normal 500 normal 14px/24px ${Fonts.tertiary}`,
-                          },
-                          color: Colors.textPrimaryDark,
-                          mt: 0.45,
-                        }}>
-                        <span
-                          style={{
-                            display: 'inline-flex',
-                            color: Colors.secondary,
-                            font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
-                          }}>
-                          {number}
-                        </span>{' '}
-                        {unit}
-                      </Box>
-                    </Box>
-                    <Button
-                      size="small"
-                      onClick={handleClick}
-                      endIcon={<ArrowForward />}
-                      sx={{
-                        width: { xs: 160, sm: 140 },
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 1,
-                        font: `normal normal 700 normal 16px/24px ${Fonts.secondary}`,
-                        textTransform: 'none',
-                        color: Colors.primary,
-                        cursor: 'pointer',
-                        '&:hover': {
-                          background: 'transparent',
-                        },
-                      }}>
-                      View courses
-                    </Button>
+                <Box
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    gap: 1,
+                  }}
+                >
+                  <Box sx={{ mt: 0.8 }}>
+                    <ClockIcon />{" "}
                   </Box>
-                </CardContent>
-              </Card>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      <Box
-        sx={{
-          width: '100%',
-          display: 'flex',
-          gap: '12px',
-          mt: 2,
-        }}>
-        <Button
-          disableElevation
-          disableRipple
-          onClick={goPrev}
-          sx={{
-            width: 56,
-            height: 56,
-            borderRadius: '9999px',
-            border: '2px solid #EAECF0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '12px',
-            color: '#667085',
-          }}>
-          <ArrowBackward />
-        </Button>
-        <Button
-          onClick={goNext}
-          sx={{
-            width: 56,
-            height: 56,
-            borderRadius: '9999px',
-            border: '2px solid #EAECF0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '12px',
-            color: '#667085',
-          }}>
-          <ArrowForward />
-        </Button>
-      </Box>
-    </div>
+                  <Box
+                    sx={{
+                      font: {
+                        xs: `normal normal 500 normal 11.08px/19px ${Fonts.tertiary}`,
+                        sm: `normal normal 500 normal 14px/24px ${Fonts.tertiary}`,
+                      },
+                      color: Colors.textPrimaryDark,
+                      mt: 0.45,
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        color: Colors.secondary,
+                        font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
+                      }}
+                    >
+                      {number}
+                    </span>{" "}
+                    {unit}
+                  </Box>
+                </Box>
+                <Button
+                  size="small"
+                  onClick={handleClick}
+                  endIcon={<ArrowForward />}
+                  sx={{
+                    width: { xs: 160, sm: 140 },
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    font: `normal normal 700 normal 16px/24px ${Fonts.secondary}`,
+                    textTransform: "none",
+                    color: Colors.primary,
+                    cursor: "pointer",
+                    "&:hover": {
+                      background: "transparent",
+                    },
+                  }}
+                >
+                  View courses
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        );
+      })}
+    </Box>
   );
 }
