@@ -662,6 +662,17 @@ export default function HomePage() {
               color: '#505F79',
               fontSize: ['18px', '20px'],
             }}>
+            Backed by
+          </Typography>
+          <Typography
+            sx={{
+              textAlign: 'center',
+              maxWidth: { lg: '750px' },
+              mx: 'auto',
+              mt: '20px',
+              color: '#505F79',
+              fontSize: ['18px', '20px'],
+            }}>
             Proudly collaborating with academic institutions and innovative
             organisations to foster excellence and drive positive impact.
           </Typography>
