@@ -6,12 +6,28 @@ export function truncateText(str, maxLength) {
   }
 }
 
-const isProduction = process.env.NODE_ENV === 'production';
+const getUrlLocation = () => {
+  if (typeof window !== 'undefined') {
+    const currentUrl = window.location.href;
+    if (
+      currentUrl.startsWith('https://test.eduvacity.com') ||
+      currentUrl.startsWith('https://test.eduvacity.com/')
+    ) {
+      return 'test';
+    } else if (currentUrl.startsWith('https://eduvacity.com')) {
+      return 'production';
+    } else {
+      return 'test';
+    }
+  }
+};
+
+const isProduction = getUrlLocation() === 'production' ? true : false;
 
 export const apiEndpoint = isProduction
   ? 'https://api.eduvacity.com/api/v1'
   : 'https://test-api.eduvacity.com/api/v1';
 
 export const goToPortal = isProduction
-  ? 'https://test-portal.eduvacity.com'
-  : 'http://portal.localhost:3000';
+  ? 'https://portal.eduvacity.com'
+  : 'https://test-portal.eduvacity.com';

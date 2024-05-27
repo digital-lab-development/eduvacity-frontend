@@ -5,8 +5,7 @@ export function UserIcon() {
       height="19"
       viewBox="0 0 19 19"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M9.50033 9.50016C11.6865 9.50016 13.4587 7.72796 13.4587 5.54183C13.4587 3.3557 11.6865 1.5835 9.50033 1.5835C7.3142 1.5835 5.54199 3.3557 5.54199 5.54183C5.54199 7.72796 7.3142 9.50016 9.50033 9.50016Z"
         stroke="#E6F4ED"
@@ -22,7 +21,7 @@ export function UserIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ArrowUp() {
   return (
@@ -31,8 +30,7 @@ export function ArrowUp() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M18.0148 14.5737L18.0148 5.9894L9.43052 5.9894"
         stroke="currentcolor"
@@ -50,7 +48,7 @@ export function ArrowUp() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function CommentIcon() {
   return (
@@ -59,8 +57,7 @@ export function CommentIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="white"
@@ -85,7 +82,7 @@ export function CommentIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function OpenedBookIcon() {
   return (
@@ -94,8 +91,7 @@ export function OpenedBookIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="white"
@@ -134,7 +130,7 @@ export function OpenedBookIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function SparkIcon() {
   return (
@@ -143,8 +139,7 @@ export function SparkIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.333984 10C0.333984 4.47715 4.81114 0 10.334 0H38.334C43.8568 0 48.334 4.47715 48.334 10V38C48.334 43.5229 43.8568 48 38.334 48H10.334C4.81114 48 0.333984 43.5228 0.333984 38V10Z"
         fill="white"
@@ -162,7 +157,7 @@ export function SparkIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ClipBoardIcon() {
   return (
@@ -171,8 +166,7 @@ export function ClipBoardIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.666016 10C0.666016 4.47715 5.14317 0 10.666 0H38.666C44.1889 0 48.666 4.47715 48.666 10V38C48.666 43.5229 44.1889 48 38.666 48H10.666C5.14317 48 0.666016 43.5228 0.666016 38V10Z"
         fill="white"
@@ -215,7 +209,7 @@ export function ClipBoardIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ArewaIcon() {
   return (
@@ -224,8 +218,7 @@ export function ArewaIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="white"
@@ -271,7 +264,7 @@ export function ArewaIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function PieIcon() {
   return (
@@ -280,8 +273,7 @@ export function PieIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.333984 10C0.333984 4.47715 4.81114 0 10.334 0H38.334C43.8568 0 48.334 4.47715 48.334 10V38C48.334 43.5229 43.8568 48 38.334 48H10.334C4.81114 48 0.333984 43.5228 0.333984 38V10Z"
         fill="white"
@@ -306,7 +298,7 @@ export function PieIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function AngleUpwardIcon() {
   return (
@@ -315,8 +307,7 @@ export function AngleUpwardIcon() {
       height="20"
       viewBox="0 0 20 20"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M15 12.5L10 7.5L5 12.5"
         stroke="#667085"
@@ -325,7 +316,7 @@ export function AngleUpwardIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function AngleDownWard(props) {
   return (
@@ -335,8 +326,7 @@ export function AngleDownWard(props) {
       viewBox="0 0 19 19"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={props.style}
-    >
+      style={props.style}>
       <path
         d="M4.56543 7.25L9.06543 11.75L13.5654 7.25"
         stroke="currentcolor"
@@ -345,7 +335,7 @@ export function AngleDownWard(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ComingSoonIcon() {
   return (
@@ -354,8 +344,7 @@ export function ComingSoonIcon() {
       height="116"
       viewBox="0 0 160 116"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <circle cx="80" cy="57.9375" r="57.8125" fill="#EAEFF0" />
       <circle cx="19.2969" cy="14.5781" r="5.78125" fill="#F2F6F7" />
       <circle cx="143.594" cy="91.1797" r="4.33594" fill="#F2F6F7" />
@@ -431,8 +420,7 @@ export function ComingSoonIcon() {
           width="154.648"
           height="100.759"
           filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
+          colorInterpolationFilters="sRGB">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
@@ -496,8 +484,7 @@ export function ComingSoonIcon() {
           width="52.0312"
           height="52.0312"
           filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
+          colorInterpolationFilters="sRGB">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="2.89062" />
           <feComposite
@@ -518,8 +505,7 @@ export function ComingSoonIcon() {
           y1="35.8095"
           x2="75.3337"
           y2="83.5402"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#D0DADD" />
           <stop offset="0.350715" stopColor="white" stopOpacity="0" />
         </linearGradient>
@@ -529,8 +515,7 @@ export function ComingSoonIcon() {
           y1="23.8768"
           x2="118.444"
           y2="83.5401"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#D0DADD" />
           <stop offset="0.350715" stopColor="white" stopOpacity="0" />
         </linearGradient>
@@ -540,14 +525,13 @@ export function ComingSoonIcon() {
           y1="41.7758"
           x2="143.594"
           y2="83.5401"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#D0DADD" />
           <stop offset="0.350715" stopColor="white" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
-  )
+  );
 }
 export function AccreditationIcon() {
   return (
@@ -556,8 +540,7 @@ export function AccreditationIcon() {
       height="39"
       viewBox="0 0 38 39"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.173828 8.7869C0.173828 4.44209 3.69599 0.919922 8.0408 0.919922H30.0683C34.4131 0.919922 37.9353 4.44209 37.9353 8.7869V30.8144C37.9353 35.1592 34.4131 38.6814 30.0683 38.6814H8.0408C3.69599 38.6814 0.173828 35.1592 0.173828 30.8144V8.7869Z"
         fill="#ECF6F0"
@@ -584,7 +567,7 @@ export function AccreditationIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 //FEATURES ICONS
 export function BadgeIcon() {
@@ -594,8 +577,7 @@ export function BadgeIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="white"
@@ -627,7 +609,7 @@ export function BadgeIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function MarkIcon() {
   return (
@@ -636,8 +618,7 @@ export function MarkIcon() {
       height="28"
       viewBox="0 0 28 28"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14Z"
         fill="#ECF6F0"
@@ -649,7 +630,7 @@ export function MarkIcon() {
         fill="#41A36E"
       />
     </svg>
-  )
+  );
 }
 export function MarkedUser() {
   return (
@@ -658,8 +639,7 @@ export function MarkedUser() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <rect width="48" height="48" rx="10" fill="#ECF6F0" />
       <path
         d="M24 24C26.7614 24 29 21.7614 29 19C29 16.2386 26.7614 14 24 14C21.2386 14 19 16.2386 19 19C19 21.7614 21.2386 24 24 24Z"
@@ -691,7 +671,7 @@ export function MarkedUser() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function BroomIcon() {
   return (
@@ -700,8 +680,7 @@ export function BroomIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <rect width="48" height="48" rx="10" fill="#ECF6F0" />
       <path
         d="M14 34H34"
@@ -765,7 +744,7 @@ export function BroomIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function PeopleAvarter() {
   return (
@@ -774,8 +753,7 @@ export function PeopleAvarter() {
       height="40"
       viewBox="0 0 40 40"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
         fill="#788B8F"
@@ -816,7 +794,7 @@ export function PeopleAvarter() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function PeopleCommunityAvater() {
   return (
@@ -825,8 +803,7 @@ export function PeopleCommunityAvater() {
       height="40"
       viewBox="0 0 40 40"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
         fill="#788B8F"
@@ -880,7 +857,7 @@ export function PeopleCommunityAvater() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function MonitorIcon() {
   return (
@@ -889,8 +866,7 @@ export function MonitorIcon() {
       height="40"
       viewBox="0 0 40 40"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
         fill="#788B8F"
@@ -930,7 +906,7 @@ export function MonitorIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function StackBookAvatar() {
   return (
@@ -939,8 +915,7 @@ export function StackBookAvatar() {
       height="40"
       viewBox="0 0 40 40"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
         fill="#788B8F"
@@ -1000,7 +975,7 @@ export function StackBookAvatar() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function StackedCard() {
   return (
@@ -1009,8 +984,7 @@ export function StackedCard() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.333008 10C0.333008 4.47715 4.81016 0 10.333 0H38.333C43.8559 0 48.333 4.47715 48.333 10V38C48.333 43.5229 43.8559 48 38.333 48H10.333C4.81016 48 0.333008 43.5228 0.333008 38V10Z"
         fill="white"
@@ -1069,7 +1043,7 @@ export function StackedCard() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function AcademyCap() {
   return (
@@ -1078,8 +1052,7 @@ export function AcademyCap() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.666992 10C0.666992 4.47715 5.14414 0 10.667 0H38.667C44.1898 0 48.667 4.47715 48.667 10V38C48.667 43.5229 44.1898 48 38.667 48H10.667C5.14414 48 0.666992 43.5228 0.666992 38V10Z"
         fill="white"
@@ -1111,7 +1084,7 @@ export function AcademyCap() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function CheckCircled() {
   return (
@@ -1120,8 +1093,7 @@ export function CheckCircled() {
       height="28"
       viewBox="0 0 28 28"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14Z"
         fill="#ECF6F0"
@@ -1133,7 +1105,7 @@ export function CheckCircled() {
         fill="#41A36E"
       />
     </svg>
-  )
+  );
 }
 export function PersonCheckedIcon() {
   return (
@@ -1142,8 +1114,7 @@ export function PersonCheckedIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <rect width="48" height="48" rx="10" fill="#ECF6F0" />
       <path
         d="M24 24C26.7614 24 29 21.7614 29 19C29 16.2386 26.7614 14 24 14C21.2386 14 19 16.2386 19 19C19 21.7614 21.2386 24 24 24Z"
@@ -1175,7 +1146,7 @@ export function PersonCheckedIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function InstitutionIcon() {
   return (
@@ -1184,8 +1155,7 @@ export function InstitutionIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <rect width="48" height="48" rx="10" fill="#ECF6F0" />
       <path
         d="M14 34H34"
@@ -1249,7 +1219,7 @@ export function InstitutionIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function PeopleIcon() {
   return (
@@ -1258,8 +1228,7 @@ export function PeopleIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="white"
@@ -1298,7 +1267,7 @@ export function PeopleIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function LaptopIcon() {
   return (
@@ -1307,8 +1276,7 @@ export function LaptopIcon() {
       height="38"
       viewBox="0 0 38 38"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.173828 8.08963C0.173828 3.74482 3.69599 0.222656 8.0408 0.222656H30.0683C34.4131 0.222656 37.9353 3.74482 37.9353 8.08963V30.1171C37.9353 34.462 34.4131 37.9841 30.0683 37.9841H8.0408C3.69599 37.9841 0.173828 34.462 0.173828 30.1172V8.08963Z"
         fill="#ECF6F0"
@@ -1342,7 +1310,7 @@ export function LaptopIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ComputerIcon() {
   return (
@@ -1351,8 +1319,7 @@ export function ComputerIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.333008 10C0.333008 4.47715 4.81016 0 10.333 0H38.333C43.8559 0 48.333 4.47715 48.333 10V38C48.333 43.5229 43.8559 48 38.333 48H10.333C4.81016 48 0.333008 43.5228 0.333008 38V10Z"
         fill="white"
@@ -1403,7 +1370,7 @@ export function ComputerIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function AnchorIcon() {
   return (
@@ -1412,8 +1379,7 @@ export function AnchorIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.666992 10C0.666992 4.47715 5.14414 0 10.667 0H38.667C44.1898 0 48.667 4.47715 48.667 10V38C48.667 43.5229 44.1898 48 38.667 48H10.667C5.14414 48 0.666992 43.5228 0.666992 38V10Z"
         fill="white"
@@ -1438,7 +1404,7 @@ export function AnchorIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 // PROGRAMS ICON
@@ -1449,8 +1415,7 @@ export function BootscampPeopleicon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="#41A36E"
@@ -1504,7 +1469,7 @@ export function BootscampPeopleicon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function DiplomaIcon() {
   return (
@@ -1513,8 +1478,7 @@ export function DiplomaIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.333008 10C0.333008 4.47715 4.81016 0 10.333 0H38.333C43.8559 0 48.333 4.47715 48.333 10V38C48.333 43.5229 43.8559 48 38.333 48H10.333C4.81016 48 0.333008 43.5228 0.333008 38V10Z"
         fill="#ECF6F0"
@@ -1553,7 +1517,7 @@ export function DiplomaIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function CardIcon() {
   return (
@@ -1562,8 +1526,7 @@ export function CardIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="#ECF6F0"
@@ -1600,7 +1563,7 @@ export function CardIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function CertificationIcon() {
   return (
@@ -1609,8 +1572,7 @@ export function CertificationIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="#ECF6F0"
@@ -1637,7 +1599,7 @@ export function CertificationIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function LearningModeIcon() {
   return (
@@ -1646,8 +1608,7 @@ export function LearningModeIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="#ECF6F0"
@@ -1681,7 +1642,7 @@ export function LearningModeIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ApplicationFeeIcon() {
   return (
@@ -1690,8 +1651,7 @@ export function ApplicationFeeIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="#ECF6F0"
@@ -1728,7 +1688,7 @@ export function ApplicationFeeIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function Accreditation() {
   return (
@@ -1737,8 +1697,7 @@ export function Accreditation() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="#ECF6F0"
@@ -1765,7 +1724,7 @@ export function Accreditation() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function DegreeIcon() {
   return (
@@ -1774,8 +1733,7 @@ export function DegreeIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.666992 10C0.666992 4.47715 5.14414 0 10.667 0H38.667C44.1898 0 48.667 4.47715 48.667 10V38C48.667 43.5229 44.1898 48 38.667 48H10.667C5.14414 48 0.666992 43.5228 0.666992 38V10Z"
         fill="#ECF6F0"
@@ -1807,7 +1765,7 @@ export function DegreeIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function MastersIcon() {
   return (
@@ -1816,8 +1774,7 @@ export function MastersIcon() {
       height="48"
       viewBox="0 0 48 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"
         fill="#41A36E"
@@ -1850,7 +1807,7 @@ export function MastersIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function DectorateIcon() {
   return (
@@ -1859,8 +1816,7 @@ export function DectorateIcon() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M0.333008 10C0.333008 4.47715 4.81016 0 10.333 0H38.333C43.8559 0 48.333 4.47715 48.333 10V38C48.333 43.5229 43.8559 48 38.333 48H10.333C4.81016 48 0.333008 43.5228 0.333008 38V10Z"
         fill="#41A36E"
@@ -1886,7 +1842,7 @@ export function DectorateIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function MinusIcon() {
   return (
@@ -1895,8 +1851,7 @@ export function MinusIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
         stroke="#98A2B3"
@@ -1905,7 +1860,7 @@ export function MinusIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function PlusIcon() {
   return (
@@ -1914,8 +1869,7 @@ export function PlusIcon() {
       height="26"
       viewBox="0 0 24 26"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M12 10V18M8 14H16M22 14C22 19.5228 17.5228 24 12 24C6.47715 24 2 19.5228 2 14C2 8.47715 6.47715 4 12 4C17.5228 4 22 8.47715 22 14Z"
         stroke="#98A2B3"
@@ -1924,7 +1878,7 @@ export function PlusIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function PlayButton() {
   return (
@@ -1933,8 +1887,7 @@ export function PlayButton() {
       height="84"
       viewBox="0 0 84 84"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_b_1091_29077)">
         <path
           fillRule="evenodd"
@@ -1952,8 +1905,7 @@ export function PlayButton() {
           width="117.6"
           height="117.6"
           filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
+          colorInterpolationFilters="sRGB">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="8.4" />
           <feComposite
@@ -1970,7 +1922,7 @@ export function PlayButton() {
         </filter>
       </defs>
     </svg>
-  )
+  );
 }
 export function ABULogo() {
   return (
@@ -1980,8 +1932,7 @@ export function ABULogo() {
       viewBox="0 0 36 36"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
+      xmlnsXlink="http://www.w3.org/1999/xlink">
       <rect width="36" height="36" rx="7" fill="white" />
       <rect width="36" height="36" rx="7" fill="url(#pattern0)" />
       <rect
@@ -1998,8 +1949,7 @@ export function ABULogo() {
           id="pattern0"
           patternContentUnits="objectBoundingBox"
           width="1"
-          height="1"
-        >
+          height="1">
           <use
             xlinkHref="#image0_437_2272"
             transform="matrix(0.00208333 0 0 0.00240741 0.0862104 0.145025)"
@@ -2013,7 +1963,7 @@ export function ABULogo() {
         />
       </defs>
     </svg>
-  )
+  );
 }
 export function AngleForward(props) {
   return (
@@ -2023,8 +1973,7 @@ export function AngleForward(props) {
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={props.style}
-    >
+      style={props.style}>
       <g opacity="0.9">
         <path
           d="M7.5 15L12.5 10L7.5 5"
@@ -2035,7 +1984,7 @@ export function AngleForward(props) {
         />
       </g>
     </svg>
-  )
+  );
 }
 export function ArrowForward() {
   return (
@@ -2044,8 +1993,7 @@ export function ArrowForward() {
       height="14"
       viewBox="0 0 14 14"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M1.16699 7.00008H12.8337M12.8337 7.00008L7.00033 1.16675M12.8337 7.00008L7.00033 12.8334"
         stroke="currentcolor"
@@ -2054,7 +2002,7 @@ export function ArrowForward() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ArrowBackward() {
   return (
@@ -2063,8 +2011,7 @@ export function ArrowBackward() {
       height="16"
       viewBox="0 0 16 16"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M15 8H1M1 8L8 15M1 8L8 1"
         stroke="currentcolor"
@@ -2073,7 +2020,7 @@ export function ArrowBackward() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function Locationicon() {
   return (
@@ -2082,8 +2029,7 @@ export function Locationicon() {
       height="20"
       viewBox="0 0 20 20"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M10.0007 10.4167C11.3814 10.4167 12.5007 9.29746 12.5007 7.91675C12.5007 6.53604 11.3814 5.41675 10.0007 5.41675C8.61994 5.41675 7.50065 6.53604 7.50065 7.91675C7.50065 9.29746 8.61994 10.4167 10.0007 10.4167Z"
         stroke="#98A2B3"
@@ -2099,7 +2045,7 @@ export function Locationicon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function ClockIcon() {
   return (
@@ -2108,8 +2054,7 @@ export function ClockIcon() {
       height="18"
       viewBox="0 0 18 18"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5C13.14 1.5 16.5 4.86 16.5 9Z"
         stroke="#788B8F"
@@ -2125,7 +2070,7 @@ export function ClockIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 export function SchoolLogo() {
   return (
@@ -2135,8 +2080,7 @@ export function SchoolLogo() {
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
+      xmlnsXlink="http://www.w3.org/1999/xlink">
       <rect
         x="0.666992"
         y="0.833496"
@@ -2168,8 +2112,7 @@ export function SchoolLogo() {
           id="pattern0"
           patternContentUnits="objectBoundingBox"
           width="1"
-          height="1"
-        >
+          height="1">
           <use
             xlinkHref="#image0_484_1209"
             transform="matrix(0.000641026 0 0 0.000656566 0.0862104 0.145025)"
@@ -2183,7 +2126,7 @@ export function SchoolLogo() {
         />
       </defs>
     </svg>
-  )
+  );
 }
 export function Instagram() {
   return (
@@ -2192,14 +2135,13 @@ export function Instagram() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM12 15.88C9.86 15.88 8.12 14.14 8.12 12C8.12 9.86 9.86 8.12 12 8.12C14.14 8.12 15.88 9.86 15.88 12C15.88 14.14 14.14 15.88 12 15.88ZM17.92 6.88C17.87 7 17.8 7.11 17.71 7.21C17.61 7.3 17.5 7.37 17.38 7.42C17.26 7.47 17.13 7.5 17 7.5C16.73 7.5 16.48 7.4 16.29 7.21C16.2 7.11 16.13 7 16.08 6.88C16.03 6.76 16 6.63 16 6.5C16 6.37 16.03 6.24 16.08 6.12C16.13 5.99 16.2 5.89 16.29 5.79C16.52 5.56 16.87 5.45 17.19 5.52C17.26 5.53 17.32 5.55 17.38 5.58C17.44 5.6 17.5 5.63 17.56 5.67C17.61 5.7 17.66 5.75 17.71 5.79C17.8 5.89 17.87 5.99 17.92 6.12C17.97 6.24 18 6.37 18 6.5C18 6.63 17.97 6.76 17.92 6.88Z"
         fill="#9BA5A8"
       />
     </svg>
-  )
+  );
 }
 
 export function Facebook() {
@@ -2209,8 +2151,7 @@ export function Facebook() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_437_2823)">
         <path
           d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z"
@@ -2223,7 +2164,7 @@ export function Facebook() {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
 export function Youtube() {
   return (
@@ -2232,14 +2173,13 @@ export function Youtube() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M17 4H7C4 4 2 6 2 9V15C2 18 4 20 7 20H17C20 20 22 18 22 15V9C22 6 20 4 17 4ZM13.89 13.03L11.42 14.51C10.42 15.11 9.59998 14.65 9.59998 13.48V10.51C9.59998 9.34001 10.42 8.88001 11.42 9.48001L13.89 10.96C14.84 11.54 14.84 12.46 13.89 13.03Z"
         fill="#9BA5A8"
       />
     </svg>
-  )
+  );
 }
 export function Twitter() {
   return (
@@ -2248,8 +2188,7 @@ export function Twitter() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -2257,7 +2196,7 @@ export function Twitter() {
         fill="#9BA5A8"
       />
     </svg>
-  )
+  );
 }
 export function WhatsApp() {
   return (
@@ -2266,8 +2205,7 @@ export function WhatsApp() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M6.9 20.6C8.4 21.5 10.2 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 13.8 2.5 15.5 3.3 17L2.44044 20.306C2.24572 21.0549 2.93892 21.7317 3.68299 21.5191L6.9 20.6Z"
         stroke="#41A36E"
@@ -2283,7 +2221,7 @@ export function WhatsApp() {
         strokeMiterlimit="10"
       />
     </svg>
-  )
+  );
 }
 export function WhiteLinkedIn() {
   return (
@@ -2292,8 +2230,7 @@ export function WhiteLinkedIn() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_932_40328)">
         <path
           d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5562 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2937 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516Z"
@@ -2306,7 +2243,7 @@ export function WhiteLinkedIn() {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
 export function LinkedIn() {
   return (
@@ -2315,8 +2252,7 @@ export function LinkedIn() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_437_2822)">
         <path
           d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5562 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2937 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516Z"
@@ -2329,5 +2265,336 @@ export function LinkedIn() {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
+}
+export function StudentRatioIcon() {
+  return (
+    <svg
+      width="48"
+      height="49"
+      viewBox="0 0 48 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 10.8604C0 5.3375 4.47715 0.860352 10 0.860352H38C43.5229 0.860352 48 5.3375 48 10.8604V38.8604C48 44.3832 43.5228 48.8604 38 48.8604H10C4.47715 48.8604 0 44.3832 0 38.8604V10.8604Z"
+        fill="#ECF6F0"
+      />
+      <path
+        d="M24 35C29.5228 35 34 30.5228 34 25C34 19.4772 29.5228 15 24 15C18.4772 15 14 19.4772 14 25C14 30.5228 18.4772 35 24 35Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21 28L27 22"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M26.4945 27.5H26.5035"
+        stroke="#41A36E"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21.4945 22.5H21.5035"
+        stroke="#41A36E"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function HourLiveSessionIcon() {
+  return (
+    <svg
+      width="48"
+      height="49"
+      viewBox="0 0 48 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 10.8604C0 5.3375 4.47715 0.860352 10 0.860352H38C43.5229 0.860352 48 5.3375 48 10.8604V38.8604C48 44.3832 43.5228 48.8604 38 48.8604H10C4.47715 48.8604 0 44.3832 0 38.8604V10.8604Z"
+        fill="#ECF6F0"
+      />
+      <path
+        d="M24.53 33.4201H18.21C15.05 33.4201 14 31.3201 14 29.2101V20.7901C14 17.6301 15.05 16.5801 18.21 16.5801H24.53C27.69 16.5801 28.74 17.6301 28.74 20.7901V29.2101C28.74 32.3701 27.68 33.4201 24.53 33.4201Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M31.5202 30.1001L28.7402 28.1501V21.8401L31.5202 19.8901C32.8802 18.9401 34.0002 19.5201 34.0002 21.1901V28.8101C34.0002 30.4801 32.8802 31.0601 31.5202 30.1001Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M23.5 24C24.3284 24 25 23.3284 25 22.5C25 21.6716 24.3284 21 23.5 21C22.6716 21 22 21.6716 22 22.5C22 23.3284 22.6716 24 23.5 24Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function LiveSessionIcon() {
+  return (
+    <svg
+      width="48"
+      height="49"
+      viewBox="0 0 48 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 10.8604C0 5.3375 4.47715 0.860352 10 0.860352H38C43.5229 0.860352 48 5.3375 48 10.8604V38.8604C48 44.3832 43.5228 48.8604 38 48.8604H10C4.47715 48.8604 0 44.3832 0 38.8604V10.8604Z"
+        fill="#ECF6F0"
+      />
+      <path
+        d="M34 25C34 30.52 29.52 35 24 35C18.48 35 14 30.52 14 25C14 19.48 18.48 15 24 15C29.52 15 34 19.48 34 25Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M27.7099 28.1798L24.6099 26.3298C24.0699 26.0098 23.6299 25.2398 23.6299 24.6098V20.5098"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function ChatIcon() {
+  return (
+    <svg
+      width="48"
+      height="49"
+      viewBox="0 0 48 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 10.3594C0 4.83653 4.47715 0.359375 10 0.359375H38C43.5229 0.359375 48 4.83653 48 10.3594V38.3594C48 43.8822 43.5228 48.3594 38 48.3594H10C4.47715 48.3594 0 43.8822 0 38.3594V10.3594Z"
+        fill="white"
+      />
+      <path
+        d="M0.5 10.3594C0.5 5.11267 4.75329 0.859375 10 0.859375H38C43.2467 0.859375 47.5 5.11267 47.5 10.3594V38.3594C47.5 43.6061 43.2467 47.8594 38 47.8594H10C4.75329 47.8594 0.5 43.6061 0.5 38.3594V10.3594Z"
+        stroke="black"
+        strokeOpacity="0.05"
+      />
+      <path
+        d="M30.4698 29.1894L30.8598 32.3494C30.9598 33.1794 30.0698 33.7593 29.3598 33.3293L25.1698 30.8394C24.7098 30.8394 24.2599 30.8094 23.8199 30.7494C24.5599 29.8794 24.9998 28.7794 24.9998 27.5894C24.9998 24.7494 22.5398 22.4494 19.4998 22.4494C18.3398 22.4494 17.2699 22.7794 16.3799 23.3594C16.3499 23.1094 16.3398 22.8594 16.3398 22.5994C16.3398 18.0494 20.2898 14.3594 25.1698 14.3594C30.0498 14.3594 33.9998 18.0494 33.9998 22.5994C33.9998 25.2994 32.6098 27.6894 30.4698 29.1894Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M25 27.5892C25 28.7792 24.56 29.8792 23.82 30.7492C22.83 31.9492 21.26 32.7192 19.5 32.7192L16.89 34.2692C16.45 34.5392 15.89 34.1692 15.95 33.6592L16.2 31.6892C14.86 30.7592 14 29.2692 14 27.5892C14 25.8292 14.94 24.2792 16.38 23.3592C17.27 22.7792 18.34 22.4492 19.5 22.4492C22.54 22.4492 25 24.7492 25 27.5892Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function ZapIcon() {
+  return (
+    <svg
+      width="49"
+      height="49"
+      viewBox="0 0 49 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.333008 10.3594C0.333008 4.83653 4.81016 0.359375 10.333 0.359375H38.333C43.8559 0.359375 48.333 4.83653 48.333 10.3594V38.3594C48.333 43.8822 43.8559 48.3594 38.333 48.3594H10.333C4.81016 48.3594 0.333008 43.8822 0.333008 38.3594V10.3594Z"
+        fill="white"
+      />
+      <path
+        d="M0.833008 10.3594C0.833008 5.11267 5.0863 0.859375 10.333 0.859375H38.333C43.5797 0.859375 47.833 5.11267 47.833 10.3594V38.3594C47.833 43.6061 43.5797 47.8594 38.333 47.8594H10.333C5.0863 47.8594 0.833008 43.6061 0.833008 38.3594V10.3594Z"
+        stroke="black"
+        strokeOpacity="0.05"
+      />
+      <path
+        d="M24.9989 14.3594L16.0923 25.0472C15.7435 25.4658 15.5691 25.6751 15.5665 25.8518C15.5641 26.0055 15.6326 26.1517 15.7521 26.2483C15.8896 26.3594 16.1621 26.3594 16.7069 26.3594H23.9989L22.9989 34.3594L31.9054 23.6715C32.2542 23.253 32.4286 23.0437 32.4313 22.8669C32.4336 22.7133 32.3652 22.5671 32.2456 22.4705C32.1081 22.3594 31.8357 22.3594 31.2909 22.3594H23.9989L24.9989 14.3594Z"
+        stroke="#41A36E"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function ListIcon() {
+  return (
+    <svg
+      width="49"
+      height="49"
+      viewBox="0 0 49 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.666992 10.3594C0.666992 4.83653 5.14414 0.359375 10.667 0.359375H38.667C44.1898 0.359375 48.667 4.83653 48.667 10.3594V38.3594C48.667 43.8822 44.1898 48.3594 38.667 48.3594H10.667C5.14414 48.3594 0.666992 43.8822 0.666992 38.3594V10.3594Z"
+        fill="white"
+      />
+      <path
+        d="M1.16699 10.3594C1.16699 5.11267 5.42029 0.859375 10.667 0.859375H38.667C43.9137 0.859375 48.167 5.11267 48.167 10.3594V38.3594C48.167 43.6061 43.9137 47.8594 38.667 47.8594H10.667C5.42029 47.8594 1.16699 43.6061 1.16699 38.3594V10.3594Z"
+        stroke="black"
+        strokeOpacity="0.05"
+      />
+      <path
+        d="M20.667 24.5586H27.667"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M20.667 28.5586H25.047"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.667 18.3594H26.667C28.667 18.3594 28.667 17.3594 28.667 16.3594C28.667 14.3594 27.667 14.3594 26.667 14.3594H22.667C21.667 14.3594 20.667 14.3594 20.667 16.3594C20.667 18.3594 21.667 18.3594 22.667 18.3594Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M28.667 16.3789C31.997 16.5589 33.667 17.7889 33.667 22.3589V28.3589C33.667 32.3589 32.667 34.3589 27.667 34.3589H21.667C16.667 34.3589 15.667 32.3589 15.667 28.3589V22.3589C15.667 17.7989 17.337 16.5589 20.667 16.3789"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function CommandIcon() {
+  return (
+    <svg
+      width="48"
+      height="49"
+      viewBox="0 0 48 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 10.3594C0 4.83653 4.47715 0.359375 10 0.359375H38C43.5229 0.359375 48 4.83653 48 10.3594V38.3594C48 43.8822 43.5228 48.3594 38 48.3594H10C4.47715 48.3594 0 43.8822 0 38.3594V10.3594Z"
+        fill="white"
+      />
+      <path
+        d="M0.5 10.3594C0.5 5.11267 4.75329 0.859375 10 0.859375H38C43.2467 0.859375 47.5 5.11267 47.5 10.3594V38.3594C47.5 43.6061 43.2467 47.8594 38 47.8594H10C4.75329 47.8594 0.5 43.6061 0.5 38.3594V10.3594Z"
+        stroke="black"
+        strokeOpacity="0.05"
+      />
+      <path
+        d="M28 20.3594H20V28.3594H28V20.3594Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17 34.3594C18.65 34.3594 20 33.0094 20 31.3594V28.3594H17C15.35 28.3594 14 29.7094 14 31.3594C14 33.0094 15.35 34.3594 17 34.3594Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17 20.3594H20V17.3594C20 15.7094 18.65 14.3594 17 14.3594C15.35 14.3594 14 15.7094 14 17.3594C14 19.0094 15.35 20.3594 17 20.3594Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M28 20.3594H31C32.65 20.3594 34 19.0094 34 17.3594C34 15.7094 32.65 14.3594 31 14.3594C29.35 14.3594 28 15.7094 28 17.3594V20.3594Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M31 34.3594C32.65 34.3594 34 33.0094 34 31.3594C34 29.7094 32.65 28.3594 31 28.3594H28V31.3594C28 33.0094 29.35 34.3594 31 34.3594Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function GraphIcon() {
+  return (
+    <svg
+      width="49"
+      height="49"
+      viewBox="0 0 49 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.333008 10.3594C0.333008 4.83653 4.81016 0.359375 10.333 0.359375H38.333C43.8559 0.359375 48.333 4.83653 48.333 10.3594V38.3594C48.333 43.8822 43.8559 48.3594 38.333 48.3594H10.333C4.81016 48.3594 0.333008 43.8822 0.333008 38.3594V10.3594Z"
+        fill="white"
+      />
+      <path
+        d="M0.833008 10.3594C0.833008 5.11267 5.0863 0.859375 10.333 0.859375H38.333C43.5797 0.859375 47.833 5.11267 47.833 10.3594V38.3594C47.833 43.6061 43.5797 47.8594 38.333 47.8594H10.333C5.0863 47.8594 0.833008 43.6061 0.833008 38.3594V10.3594Z"
+        stroke="black"
+        strokeOpacity="0.05"
+      />
+      <path
+        d="M30.653 24.3586C33.253 24.3586 34.333 23.3586 33.373 20.0786C32.723 17.8686 30.823 15.9686 28.613 15.3186C25.333 14.3586 24.333 15.4386 24.333 18.0386V20.9186C24.333 23.3586 25.333 24.3586 27.333 24.3586H30.653Z"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M32.3334 27.0591C31.4034 31.6891 26.9634 35.0491 21.9134 34.2291C18.1234 33.6191 15.0734 30.5691 14.4534 26.7791C13.6434 21.7491 16.9834 17.3091 21.5934 16.3691"
+        stroke="#41A36E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function GhostCheckIcon() {
+  return (
+    <svg
+      width="28"
+      height="29"
+      viewBox="0 0 28 29"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 14.3594C0 6.62739 6.26801 0.359375 14 0.359375C21.732 0.359375 28 6.62739 28 14.3594C28 22.0914 21.732 28.3594 14 28.3594C6.26801 28.3594 0 22.0914 0 14.3594Z"
+        fill="white"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M19.9457 8.98033L11.5923 17.042L9.37568 14.6737C8.96734 14.2887 8.32568 14.2653 7.85901 14.592C7.40401 14.9303 7.27568 15.5253 7.55568 16.0037L10.1807 20.2737C10.4373 20.6703 10.8807 20.9153 11.3823 20.9153C11.8607 20.9153 12.3157 20.6703 12.5723 20.2737C12.9923 19.7253 21.0073 10.1703 21.0073 10.1703C22.0573 9.097 20.7857 8.152 19.9457 8.96867V8.98033Z"
+        fill="#41A36E"
+      />
+    </svg>
+  );
 }
