@@ -10,11 +10,11 @@ const getUrlLocation = () => {
   if (typeof window !== 'undefined') {
     const currentUrl = window.location.href;
     if (
-      currentUrl.startsWith('https://test-portal.eduvacity.com') ||
-      currentUrl.startsWith('https://test-portal.eduvacity.com/')
+      currentUrl.startsWith('https://test.eduvacity.com') ||
+      currentUrl.startsWith('https://test.eduvacity.com/')
     ) {
       return 'test';
-    } else if (currentUrl.startsWith('https://test-portal.eduvacity.com')) {
+    } else if (currentUrl.startsWith('https://eduvacity.com')) {
       return 'production';
     } else {
       return 'test';
