@@ -38,6 +38,13 @@ const partners = [
   // { name: 'Ahmadu Bello University', logo: '/images/abu-logo.png' },
 ];
 
+const communityImages = [
+  '/images/community1.jpeg',
+  '/images/community2.jpeg',
+  ['/images/michelle.jpeg', '/images/hassan.jpeg'], // max 2 images
+  '/images/community3.jpeg',
+]; // max 4 items (images or an array of 2 images)
+
 export default function HomePage() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -208,14 +215,17 @@ export default function HomePage() {
                 height: {
                   xs: 240,
                   sm: 516,
+                  lg: 600,
                   borderRadius: '12px',
                 },
                 backgroundImage: {
-                  xs: 'url(/images/hero-pic.png)',
-                  sm: 'url(/images/hero-pic.png)',
+                  xs: 'url(/images/hero-pic.jpg)',
+                  sm: 'url(/images/hero-pic.jpg)',
                 },
                 backgroundSize: { xs: 'cover', sm: 'cover' },
                 backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                backgroundPosition: 'center',
               }}
             />
           </Box>
@@ -364,7 +374,7 @@ export default function HomePage() {
             enhance your employability and unlock opportunities.
           </Typography>
           <Typography
-            // onClick={}
+            // onClick={() => router.push('/signup')}
             sx={{
               textAlign: { xs: 'center', lg: 'start' },
               width: { lg: '768px' },
@@ -380,17 +390,73 @@ export default function HomePage() {
             Join us to pave your path to success.
           </Typography>
         </Box>
-        <Box
-          sx={{ position: 'relative', height: { xs: '150px', lg: '314px' } }}
-        >
-          <Image
-            src="/images/community.png"
-            alt="community"
-            layout="fill"
-            style={{
-              objectFit: 'cover', // cover, contain, none
-            }}
-          />
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid
+            container
+            spacing={{ sx: 0.75, md: 1, lg: 2 }}
+            justifyContent="space-between"
+          >
+            {communityImages.map((item, ind) => {
+              if (Array.isArray(item)) {
+                return (
+                  <Box
+                    key={`img${ind}`}
+                    sx={{
+                      width: {
+                        xs: 'calc(25% - 8px)',
+                        md: 'calc(25% - 12px)',
+                        lg: 'calc(25% - 16px)',
+                      },
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: { xs: '6px', md: '12px', lg: '16px' },
+                    }}
+                  >
+                    {item.map((subItem, i) => (
+                      <Box
+                        key={`subImg${i}`}
+                        component="img"
+                        src={subItem}
+                        sx={{
+                          width: '100%',
+                          height: '50%',
+                          objectFit: 'cover',
+                        }}
+                      ></Box>
+                    ))}
+                  </Box>
+                );
+              }
+              return (
+                <Grid
+                  item
+                  sx={{
+                    position: 'relative',
+                    width: {
+                      xs: 'calc(25% - 8px)',
+                      md: 'calc(25% - 12px)',
+                      lg: 'calc(25% - 16px)',
+                    },
+                    background: 'red',
+                    paddingBottom: '25%',
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={item}
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  ></Box>
+                </Grid>
+              );
+            })}
+          </Grid>
         </Box>
       </Box>
       <Box sx={{ px: { xs: 4, sm: 3, lg: 12.5, xl: 16 } }}>
