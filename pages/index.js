@@ -58,7 +58,8 @@ export default function HomePage() {
         display: 'flex',
         flexGrow: 1,
         flexDirection: 'column',
-      }}>
+      }}
+    >
       <CssBaseline />
       <Box
         component="section"
@@ -76,7 +77,8 @@ export default function HomePage() {
           backgroundRepeat: 'repeat',
           backgroundSize: 'cover',
           backgroundColor: Colors.secondary,
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -86,21 +88,24 @@ export default function HomePage() {
             alignItems: 'center',
             px: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
             gap: { xs: 4, sm: 8 },
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '40px', sm: '80px' },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-              }}>
+              }}
+            >
               <Typography
                 variant="h1"
                 sx={{
@@ -113,7 +118,8 @@ export default function HomePage() {
                   m: 0,
                   p: 0,
                   letterSpacing: '-2%',
-                }}>
+                }}
+              >
                 Achieve top 1% status{' '}
                 <Typography variant="span" sx={{ color: Colors.primary }}>
                   with programs that ensures
@@ -126,7 +132,8 @@ export default function HomePage() {
                   maxWidth: 1050,
                   display: 'flex',
                   flexDirection: 'column',
-                }}>
+                }}
+              >
                 <Typography
                   variant="span"
                   sx={{
@@ -135,7 +142,8 @@ export default function HomePage() {
                       sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
                     },
                     color: Colors.offWhite,
-                  }}>
+                  }}
+                >
                   {HERO_TEXT.secondary}
                 </Typography>
                 <Box
@@ -146,7 +154,8 @@ export default function HomePage() {
                     flexDirection: { xs: 'column', sm: 'row' },
                     gap: '24px',
                     mt: { xs: 4, md: 12 },
-                  }}>
+                  }}
+                >
                   <Box
                     onClick={handleClickOpen}
                     sx={{
@@ -163,7 +172,8 @@ export default function HomePage() {
                       '&:hover': {
                         background: Colors.primary,
                       },
-                    }}>
+                    }}
+                  >
                     See All Courses <ArrowUp />
                   </Box>
                   <Box
@@ -183,7 +193,8 @@ export default function HomePage() {
                       '&:hover': {
                         background: 'transparent',
                       },
-                    }}>
+                    }}
+                  >
                     <WhatsApp />
                     Get a one-on-one consultation
                   </Box>
@@ -200,8 +211,8 @@ export default function HomePage() {
                   borderRadius: '12px',
                 },
                 backgroundImage: {
-                  xs: 'url(/images/hero-section-img-xs.svg)',
-                  sm: 'url(/images/hero-pic.svg)',
+                  xs: 'url(/images/hero-pic.png)',
+                  sm: 'url(/images/hero-pic.png)',
                 },
                 backgroundSize: { xs: 'cover', sm: 'cover' },
                 backgroundRepeat: 'no-repeat',
@@ -221,7 +232,8 @@ export default function HomePage() {
           pt: { xs: 10, md: 15.5 },
           pb: { xs: 4, md: 6.5 },
           backgroundColor: Colors.light,
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -230,14 +242,16 @@ export default function HomePage() {
             justifyContent: 'center',
             alignItems: 'center',
             gap: { xs: 4, sm: 8 },
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '16px', sm: '32px' },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 width: '100%',
@@ -245,7 +259,8 @@ export default function HomePage() {
                 flexDirection: 'column',
                 gap: '16px',
                 px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
-              }}>
+              }}
+            >
               <Typography
                 variant="h4"
                 sx={{
@@ -255,7 +270,8 @@ export default function HomePage() {
                   p: 0,
                   letterSpacing: '1%',
                   textTransform: 'uppercase',
-                }}>
+                }}
+              >
                 Academic Programs
               </Typography>
               <Typography
@@ -269,7 +285,8 @@ export default function HomePage() {
                   m: 0,
                   p: 0,
                   letterSpacing: '-2%',
-                }}>
+                }}
+              >
                 {PROGRAM_TITLE}
               </Typography>
               <Box
@@ -278,7 +295,8 @@ export default function HomePage() {
                   maxWidth: 840,
                   display: 'flex',
                   flexDirection: 'column',
-                }}>
+                }}
+              >
                 <Typography
                   variant="span"
                   sx={{
@@ -287,7 +305,8 @@ export default function HomePage() {
                       sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
                     },
                     color: Colors.grey,
-                  }}>
+                  }}
+                >
                   {PROGRAM_DESC}
                 </Typography>
               </Box>
@@ -315,7 +334,8 @@ export default function HomePage() {
           },
           backgroundPosition: 'top right',
           backgroundRepeat: 'no-repeat',
-        }}>
+        }}
+      >
         <Box
           sx={{
             // mt: -3,
@@ -324,7 +344,8 @@ export default function HomePage() {
             letterSpacing: '2%',
             font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
             px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
-          }}>
+          }}
+        >
           <Typography variant="h4" sx={{ color: '#173927' }}>
             Join our Growing Community
           </Typography>
@@ -335,25 +356,33 @@ export default function HomePage() {
               mt: '20px',
               color: '#505F79',
               fontSize: ['18px', '20px'],
-            }}>
+            }}
+          >
             Eduvacity&apos;s online courses, certificates, and degrees for
             leaders, not followers. In today&apos;s digital world, your
             education should prepare you for the future, not the past. It should
             enhance your employability and unlock opportunities.
           </Typography>
           <Typography
+            // onClick={}
             sx={{
               textAlign: { xs: 'center', lg: 'start' },
               width: { lg: '768px' },
               mt: ['40px', '60px'],
               color: '#505F79',
               fontSize: ['18px', '20px'],
-            }}>
+              cursor: 'pointer',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
             Join us to pave your path to success.
           </Typography>
         </Box>
         <Box
-          sx={{ position: 'relative', height: { xs: '150px', lg: '314px' } }}>
+          sx={{ position: 'relative', height: { xs: '150px', lg: '314px' } }}
+        >
           <Image
             src="/images/community.png"
             alt="community"
@@ -381,7 +410,8 @@ export default function HomePage() {
           pt: { xs: 8, md: 15.5 },
           pb: { xs: 8, md: 6.5 },
           backgroundColor: Colors.light,
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -391,21 +421,24 @@ export default function HomePage() {
             alignItems: 'center',
             px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, lg: 15.5 },
             gap: 8,
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '40px', sm: '80px' },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-              }}>
+              }}
+            >
               <Typography
                 variant="h2"
                 sx={{
@@ -419,7 +452,8 @@ export default function HomePage() {
                   p: 0,
                   letterSpacing: { xs: '-0.02em', sm: '-2%' },
                   textAlign: 'left',
-                }}>
+                }}
+              >
                 We are transforming the accessibility of tertiary education in
                 Africa.
               </Typography>
@@ -439,7 +473,8 @@ export default function HomePage() {
           pt: { xs: 8, md: 15.5 },
           pb: { xs: 8, md: 6.5 },
           backgroundColor: '#F6F7F7',
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -449,21 +484,24 @@ export default function HomePage() {
             alignItems: 'center',
             px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, lg: 15.5 },
             gap: { xs: '32px', sm: 8 },
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '40px', sm: '80px' },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-              }}>
+              }}
+            >
               <Typography
                 variant="h1"
                 sx={{
@@ -475,7 +513,8 @@ export default function HomePage() {
                   m: 0,
                   p: 0,
                   letterSpacing: '-2%',
-                }}>
+                }}
+              >
                 {EMPOWERMENT_TITLE}
               </Typography>
               <Box
@@ -483,7 +522,8 @@ export default function HomePage() {
                 sx={{
                   display: 'flex',
                   flexDirection: 'column',
-                }}>
+                }}
+              >
                 <Typography
                   variant="span"
                   sx={{
@@ -492,7 +532,8 @@ export default function HomePage() {
                       sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
                     },
                     color: Colors.grey,
-                  }}>
+                  }}
+                >
                   {EMPOWERMENT_DESC}
                 </Typography>
               </Box>
@@ -500,7 +541,8 @@ export default function HomePage() {
                 style={{
                   position: 'relative',
                   width: '100%',
-                }}>
+                }}
+              >
                 {showCover && (
                   <Box
                     sx={{
@@ -510,7 +552,8 @@ export default function HomePage() {
                       cursor: 'pointer',
                       top: '20px',
                     }}
-                    onClick={handleVideoClick}>
+                    onClick={handleVideoClick}
+                  >
                     <Box
                       sx={{
                         width: '100%',
@@ -536,7 +579,8 @@ export default function HomePage() {
                         },
                         display: 'flex',
                         justifyContent: 'center',
-                      }}>
+                      }}
+                    >
                       <PlayButton />
                     </Box>
                   </Box>
@@ -547,14 +591,16 @@ export default function HomePage() {
                       xs: showCover ? 0 : 240,
                       sm: showCover ? 0 : 516,
                     },
-                  }}>
+                  }}
+                >
                   <div
                     style={{
                       position: 'relative',
                       width: '100%',
                       height: '0px',
                       paddingBottom: '56.250%',
-                    }}>
+                    }}
+                  >
                     <iframe
                       title="How to be a school teacher"
                       allow="fullscreen"
@@ -573,7 +619,8 @@ export default function HomePage() {
                         top: '0px',
                         overflow: 'hidden',
                         cursor: 'pointer',
-                      }}></iframe>
+                      }}
+                    ></iframe>
                   </div>
                   {/* <iframe
                     title="How to be a school teacher"
@@ -607,7 +654,8 @@ export default function HomePage() {
                 flexDirection: 'column',
                 gap: '16px',
                 // my: 8,
-              }}>
+              }}
+            >
               <Typography
                 variant="h2"
                 sx={{
@@ -617,7 +665,8 @@ export default function HomePage() {
                   p: 0,
                   letterSpacing: '1%',
                   textTransform: 'uppercase',
-                }}>
+                }}
+              >
                 Programs
               </Typography>
               <Typography
@@ -631,7 +680,8 @@ export default function HomePage() {
                   m: 0,
                   p: 0,
                   letterSpacing: '-2%',
-                }}>
+                }}
+              >
                 Programs from leading universities.
               </Typography>
             </Box>
@@ -645,14 +695,16 @@ export default function HomePage() {
       <Box
         sx={{
           bgcolor: '#fff',
-        }}>
+        }}
+      >
         <Box
           sx={{
             letterSpacing: '2%',
             font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
             px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 15.5 },
             py: { xs: '40px', xl: '96px' },
-          }}>
+          }}
+        >
           <Typography
             sx={{
               textAlign: 'center',
@@ -661,7 +713,9 @@ export default function HomePage() {
               mt: '20px',
               color: '#505F79',
               fontSize: ['18px', '20px'],
-            }}>
+              fontWeight: 'bold',
+            }}
+          >
             Backed by
           </Typography>
           <Typography
@@ -672,7 +726,9 @@ export default function HomePage() {
               mt: '20px',
               color: '#505F79',
               fontSize: ['18px', '20px'],
-            }}>
+              fontWeight: 300,
+            }}
+          >
             Proudly collaborating with academic institutions and innovative
             organisations to foster excellence and drive positive impact.
           </Typography>
@@ -683,7 +739,8 @@ export default function HomePage() {
               justifyContent: 'center',
               gap: '16px',
               mt: '32px',
-            }}>
+            }}
+          >
             {partners.map((partner, index) => (
               <Box
                 key={`partner_${index}`}
@@ -692,8 +749,9 @@ export default function HomePage() {
                   alignItems: 'center',
                   gap: '10px',
                   fontSize: '28px',
-                  fontWeight: 700,
-                }}>
+                  fontWeight: 500,
+                }}
+              >
                 <Image
                   src={partner.logo}
                   alt={partner.name}
@@ -707,15 +765,17 @@ export default function HomePage() {
         </Box>
       </Box>
 
-      <Box
+      {/* <Box
         sx={{
           bgcolor: '#011B23',
-        }}>
+        }}
+      >
         <Box
           sx={{
             px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 15.5 },
             py: { xs: '40px', lg: '96px' },
-          }}>
+          }}
+        >
           <Typography
             variant="h6"
             sx={{
@@ -725,7 +785,8 @@ export default function HomePage() {
               p: 0,
               letterSpacing: '2%',
               textAlign: { xs: 'center', sm: 'left' },
-            }}>
+            }}
+          >
             Eduvacity Masterclasses
           </Typography>
           <Typography
@@ -736,7 +797,8 @@ export default function HomePage() {
                 md: `normal normal 400 normal 20px/30px ${Fonts.primary}`,
               },
               color: '#FAFBFB',
-            }}>
+            }}
+          >
             Our Masterclasses offer an unparalleled opportunity for students to
             learn from industry experts, bridging the gap between academic
             theory and real-world practice.
@@ -759,11 +821,12 @@ export default function HomePage() {
               '&:hover': {
                 background: Colors.primary,
               },
-            }}>
+            }}
+          >
             Watch More <ArrowUp />
-          </Box>
+          </Box> */}
 
-          <Grid container spacing={'16px'} sx={{ mt: '64px' }}>
+      {/* <Grid container spacing={'16px'} sx={{ mt: '64px' }}>
             <Grid item xs={12} md={6} lg={4}>
               <Box sx={{ height: '320px', bgcolor: '#D9D9D9' }}></Box>
             </Grid>
@@ -775,7 +838,7 @@ export default function HomePage() {
             </Grid>
           </Grid>
         </Box>
-      </Box>
+      </Box> */}
 
       <Box
         sx={{
@@ -789,7 +852,8 @@ export default function HomePage() {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           gap: { xs: '48px', sm: '64px' },
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -797,7 +861,8 @@ export default function HomePage() {
             flexDirection: 'column',
             gap: { xs: '8px', sm: '16px' },
             px: { xs: 4, sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
-          }}>
+          }}
+        >
           <Typography
             variant="h6"
             sx={{
@@ -807,7 +872,8 @@ export default function HomePage() {
               p: 0,
               letterSpacing: '2%',
               textAlign: { xs: 'center', sm: 'left' },
-            }}>
+            }}
+          >
             Eduvacity
           </Typography>
           <Typography
@@ -820,7 +886,8 @@ export default function HomePage() {
               },
               color: '#B9C8CD',
               textAlign: { xs: 'center', sm: 'left' },
-            }}>
+            }}
+          >
             {EDUVACITY_VALUE}
           </Typography>
           <Box
@@ -829,7 +896,8 @@ export default function HomePage() {
               mt: 3,
               display: 'flex',
               justifyContent: { xs: 'center', sm: 'flex-start' },
-            }}>
+            }}
+          >
             <Box
               onClick={() => router.push('/signup')}
               sx={{
@@ -846,7 +914,8 @@ export default function HomePage() {
                 '&:hover': {
                   background: Colors.primary,
                 },
-              }}>
+              }}
+            >
               Get started <ArrowUp />
             </Box>
           </Box>
@@ -868,7 +937,8 @@ export default function HomePage() {
           pt: { xs: 8, md: 15.5 },
           pb: { xs: 4, md: 6.5 },
           backgroundColor: Colors.light,
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -878,14 +948,16 @@ export default function HomePage() {
             alignItems: 'center',
             px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, lg: 15.5 },
             gap: 8,
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '40px', sm: '80px' },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 width: '100%',
@@ -894,7 +966,8 @@ export default function HomePage() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: '16px',
-              }}>
+              }}
+            >
               <Typography
                 variant="h2"
                 sx={{
@@ -904,7 +977,8 @@ export default function HomePage() {
                   p: 0,
                   letterSpacing: '1%',
                   textTransform: 'uppercase',
-                }}>
+                }}
+              >
                 Faqs
               </Typography>
               <Typography
@@ -919,7 +993,8 @@ export default function HomePage() {
                   m: 0,
                   p: 0,
                   letterSpacing: '-2%',
-                }}>
+                }}
+              >
                 Frequently asked questions
               </Typography>
             </Box>
@@ -932,7 +1007,8 @@ export default function HomePage() {
                 alignItems: 'center',
                 gap: '16px',
                 px: 1,
-              }}>
+              }}
+            >
               <FrequentlyAskQuestions />
             </Box>
             <Box
@@ -949,7 +1025,8 @@ export default function HomePage() {
                 alignItems: 'center',
                 gap: '32px',
                 background: '#F6F7F7',
-              }}>
+              }}
+            >
               <AvatarGroup max={4}>
                 <Avatar alt="avatar 1" src="/images/Avatar1.png" />
                 <Avatar
@@ -974,7 +1051,8 @@ export default function HomePage() {
                   p: 0,
                   textTransform: 'capitalize',
                   alignItems: 'center',
-                }}>
+                }}
+              >
                 Do you have any inquiries?
               </Typography>
               <Typography
@@ -986,7 +1064,8 @@ export default function HomePage() {
                   },
                   color: Colors.grey,
                   textAlign: 'center',
-                }}>
+                }}
+              >
                 Feel free to get in touch with our Success Advisors for
                 assistance.
               </Typography>
@@ -1006,7 +1085,8 @@ export default function HomePage() {
                     '&:hover': {
                       background: Colors.primary,
                     },
-                  }}>
+                  }}
+                >
                   Get in touch
                 </Box>
               </Box>

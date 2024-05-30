@@ -301,6 +301,9 @@ export default function HomeLayout({ children }) {
     {
       name: 'Become an Instructor',
     },
+    {
+      name: 'About Us',
+    },
   ];
   React.useEffect(() => {
     if (isInView) {
@@ -338,7 +341,8 @@ export default function HomeLayout({ children }) {
         width: '100%',
         overflow: 'hidden',
         position: 'relative',
-      }}>
+      }}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -346,7 +350,8 @@ export default function HomeLayout({ children }) {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}>
+        transition={{ duration: 0.5, delay: 0.25 }}
+      >
         <CssBaseline />
         <MuiAppBar
           position="fixed"
@@ -360,7 +365,8 @@ export default function HomeLayout({ children }) {
             boxShadow: 'none',
             px: { xs: '1rem', sm: '1rem', lg: '5rem' },
             py: { xs: 2, sm: 3, lg: '18px' },
-          }}>
+          }}
+        >
           <Toolbar
             sx={{
               width: '100%',
@@ -368,7 +374,8 @@ export default function HomeLayout({ children }) {
               justifyContent: 'space-between',
               alignItems: 'center',
               gap: '12px',
-            }}>
+            }}
+          >
             <Link underline="none" href="/" sx={{ width: 200 }}>
               <Image
                 src="/images/logo.png"
@@ -384,7 +391,8 @@ export default function HomeLayout({ children }) {
                 position: 'relative',
                 top: -12,
                 right: 30,
-              }}>
+              }}
+            >
               <MenuLists menu={menu} />
             </Box>
             <Box
@@ -392,7 +400,8 @@ export default function HomeLayout({ children }) {
                 mt: 0,
                 display: { xs: 'none', lg: 'flex' },
                 width: 542,
-              }}>
+              }}
+            >
               <Box
                 sx={{
                   width: '100%',
@@ -402,7 +411,8 @@ export default function HomeLayout({ children }) {
                   borderRadius: '47px',
                   border: '1.5px solid rgba(27, 49, 57, 1)',
                   padding: '21px 35px 21px 35px',
-                }}>
+                }}
+              >
                 {menu?.map((item, i) => {
                   const selected = router.pathname.startsWith(
                     `/${updateKey(item.name.toLowerCase())}`
@@ -426,7 +436,8 @@ export default function HomeLayout({ children }) {
                             router.push(
                               `/${updateKey(item.name.toLocaleLowerCase())}`
                             )
-                          }>
+                          }
+                        >
                           <Typography
                             sx={{
                               maxWidth: 150,
@@ -439,7 +450,8 @@ export default function HomeLayout({ children }) {
                               '&:hover': {
                                 color: Colors.primary,
                               },
-                            }}>
+                            }}
+                          >
                             {item.name}
                           </Typography>
                         </ListItemButton>
@@ -455,7 +467,8 @@ export default function HomeLayout({ children }) {
                 width: 309,
                 display: { xs: 'none', lg: 'flex' },
                 gap: '20px',
-              }}>
+              }}
+            >
               <Box
                 onClick={handleClickOpen}
                 sx={{
@@ -471,7 +484,8 @@ export default function HomeLayout({ children }) {
                   '&:hover': {
                     background: 'transparent',
                   },
-                }}>
+                }}
+              >
                 <UserIcon /> Student portal
               </Box>
               <Box
@@ -489,7 +503,8 @@ export default function HomeLayout({ children }) {
                   '&:hover': {
                     background: Colors.primary,
                   },
-                }}>
+                }}
+              >
                 Apply now
               </Box>
             </Box>
@@ -499,7 +514,8 @@ export default function HomeLayout({ children }) {
           component="main"
           sx={{
             width: '100%',
-          }}>
+          }}
+        >
           <Toolbar />
           {children}
           <FooterPage />

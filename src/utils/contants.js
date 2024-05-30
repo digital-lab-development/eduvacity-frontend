@@ -53,3 +53,15 @@ export const WHY_EDUVACITY_VALUE =
   'Access industry-relevant experiences tailored to your career goals, regardless of your location.';
 export const WHY_EDUVACITY_VALUE_DESC =
   'Experience industry-specific opportunities tailored to your needs, regardless of your location, for a globally relevant skills and certification';
+
+// ABOUT US
+export const VISION_AND_MISSION = [
+  {
+    title: 'Our Vision',
+    text: 'At Eduvacity, we dream of a world where everyone can pursue higher education, no matter what. We believe in empowering individuals to upscale their skills and achieve their dreams through education that equips them for the global workforce.',
+  },
+  {
+    title: 'Our Mission',
+    text: "Eduvacity's is to give every African student a chance at a good education. We offer online degree programs that are flexible and affordable. We aim to empower graduates to build successful lives and positively impact society",
+  },
+];
