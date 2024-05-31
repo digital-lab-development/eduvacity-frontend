@@ -39,10 +39,10 @@ const partners = [
 ];
 
 const communityImages = [
-  '/images/community1.jpeg',
-  '/images/community2.jpeg',
-  ['/images/michelle.jpeg', '/images/hassan.jpeg'], // max 2 images
-  '/images/community3.jpeg',
+  '/images/community3.png',
+  '/images/hassan.jpeg',
+  ['/images/community1.png', '/images/community4.png'], // max 2 images
+  '/images/community2.png',
 ]; // max 4 items (images or an array of 2 images)
 
 export default function HomePage() {
@@ -211,26 +211,89 @@ export default function HomePage() {
 
             <Box
               sx={{
+                boxSizing: 'border-box',
                 width: '100%',
                 height: {
-                  xs: 240,
-                  sm: 516,
-                  lg: 600,
-                  borderRadius: '12px',
+                  xs: 280,
+                  sm: 400,
+                  md: 600,
+                  lg: 650,
                 },
-                backgroundImage: {
-                  xs: 'url(/images/hero-pic.jpg)',
-                  sm: 'url(/images/hero-pic.jpg)',
-                },
-                backgroundSize: { xs: 'cover', sm: 'cover' },
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                display: 'flex',
+                justifyContent: 'center',
               }}
-            />
+            >
+              <Box
+                component="img"
+                src="/images/hero-pic.jpg"
+                alt="hero"
+                sx={{
+                  width: { xs: '100%', sm: '90%', md: 'auto' },
+                  height: '100%',
+                  borderRadius: '20px',
+                  objectFit: { xs: 'cover', sm: 'cover', md: 'contain' },
+                }}
+              ></Box>
+            </Box>
           </Box>
         </Box>
       </Box>
+      <Box
+        component="section"
+        id="program-section"
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          pt: { xs: 10, md: 15.5 },
+          pb: { xs: 4, md: 6.5 },
+          px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
+          backgroundColor: Colors.light,
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px',
+            // my: 8,
+          }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+              color: Colors.primary,
+              m: 0,
+              p: 0,
+              letterSpacing: '1%',
+              textTransform: 'uppercase',
+            }}
+          >
+            Programs
+          </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              font: {
+                xs: `normal normal 600 normal 28.5px/36px ${Fonts.primary}`,
+                md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
+              },
+              color: Colors.dark,
+              m: 0,
+              mb: 4,
+              p: 0,
+              letterSpacing: '-2%',
+            }}
+          >
+            Programs from leading universities.
+          </Typography>
+          <ProgramsCard />
+        </Box>
+      </Box>
+
       {/* ACADEMY PROGRAMS */}
       <Box
         component="section"
@@ -350,10 +413,12 @@ export default function HomePage() {
           sx={{
             // mt: -3,
             pt: '97px',
-            height: '405px',
+            pb: { xs: 2, sm: 3, md: 4 },
+            // height: '405px',
             letterSpacing: '2%',
             font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
             px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
+            textAlign: 'start',
           }}
         >
           <Typography variant="h4" sx={{ color: '#173927' }}>
@@ -361,8 +426,8 @@ export default function HomePage() {
           </Typography>
           <Typography
             sx={{
-              textAlign: { xs: 'center', lg: 'start' },
-              width: { lg: '768px' },
+              textAlign: 'start',
+              width: { lg: '768px', md: '768px' },
               mt: '20px',
               color: '#505F79',
               fontSize: ['18px', '20px'],
@@ -376,8 +441,8 @@ export default function HomePage() {
           <Typography
             // onClick={() => router.push('/signup')}
             sx={{
-              textAlign: { xs: 'center', lg: 'start' },
-              width: { lg: '768px' },
+              textAlign: { xs: 'center', lg: 'start', md: 'start' },
+              width: { lg: '768px', md: '768px' },
               mt: ['40px', '60px'],
               color: '#505F79',
               fontSize: ['18px', '20px'],
@@ -422,7 +487,7 @@ export default function HomePage() {
                           height: '50%',
                           objectFit: 'cover',
                         }}
-                      ></Box>
+                      />
                     ))}
                   </Box>
                 );
@@ -437,7 +502,6 @@ export default function HomePage() {
                       md: 'calc(25% - 12px)',
                       lg: 'calc(25% - 16px)',
                     },
-                    background: 'red',
                     paddingBottom: '25%',
                   }}
                 >
@@ -452,7 +516,7 @@ export default function HomePage() {
                       height: '100%',
                       objectFit: 'cover',
                     }}
-                  ></Box>
+                  />
                 </Grid>
               );
             })}
@@ -714,45 +778,6 @@ export default function HomePage() {
                 }}
               />
             </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                // my: 8,
-              }}
-            >
-              <Typography
-                variant="h2"
-                sx={{
-                  font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                  color: Colors.primary,
-                  m: 0,
-                  p: 0,
-                  letterSpacing: '1%',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Programs
-              </Typography>
-              <Typography
-                variant="h4"
-                sx={{
-                  font: {
-                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.primary}`,
-                    md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
-                  },
-                  color: Colors.dark,
-                  m: 0,
-                  p: 0,
-                  letterSpacing: '-2%',
-                }}
-              >
-                Programs from leading universities.
-              </Typography>
-            </Box>
-
-            <ProgramsCard />
           </Box>
         </Box>
       </Box>
@@ -814,7 +839,7 @@ export default function HomePage() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px',
-                  fontSize: '28px',
+                  fontSize: { md: '28px', xs: '18px' },
                   fontWeight: 500,
                 }}
               >
@@ -824,7 +849,13 @@ export default function HomePage() {
                   width={44}
                   height={44}
                 />
-                {partner.name}
+                <Typography
+                  sx={{
+                    fontSize: { md: '28px', sm: '22px', xs: '17px' },
+                  }}
+                >
+                  {partner.name}
+                </Typography>
               </Box>
             ))}
           </Box>
