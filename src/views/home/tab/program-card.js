@@ -83,8 +83,8 @@ export default function ProgramCard({ cards, handleClick }) {
         className="swiper"
         style={{ margin: 0, padding: 0 }}>
         {cards.map((card, i) => {
-          const duration = card.duration;
-          const [number, unit] = duration.split(' ');
+          // const duration = card.duration;
+          // const [number, unit] = duration.split(' ');
           return (
             <SwiperSlide key={`card-${i}`} style={{ margin: 0, padding: 0 }}>
               <Card
@@ -99,7 +99,7 @@ export default function ProgramCard({ cards, handleClick }) {
                 }}>
                 <CardMedia
                   sx={{ height: { xs: 190, sm: 240 } }}
-                  image={card.image}
+                  image={card.thumbnail || ''}
                   title={card.name}
                 />
                 <CardContent
@@ -140,7 +140,7 @@ export default function ProgramCard({ cards, handleClick }) {
                           gap: 1,
                           font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                           color: Colors.greyText,
-                        }}>{`${card.name}`}</Typography>
+                        }}>{`${card.programName}`}</Typography>
                     </Box>
                     <Typography
                       variant="h6"
@@ -176,7 +176,7 @@ export default function ProgramCard({ cards, handleClick }) {
                         WebkitLineClamp: 4,
                         WebkitBoxOrient: 'vertical',
                       }}>
-                      {card.description}
+                      {card.programDescription}
                     </Typography>
 
                     <Box
@@ -203,9 +203,12 @@ export default function ProgramCard({ cards, handleClick }) {
                             color: Colors.secondary,
                             font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
                           }}>
-                          {number}
+                          {/* {number} */}
+                          {card.programType === 'diploma'
+                            ? '16 months'
+                            : '3 months'}
                         </span>{' '}
-                        {unit}
+                        {/* {unit} */}
                       </Box>
                     </Box>
                     <Button
