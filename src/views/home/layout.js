@@ -10,7 +10,7 @@ import { Box } from '@mui/system';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Router, { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { UserIcon } from '../../components/svg';
 import { Colors } from '../../components/themes/colors';
 import { Fonts } from '../../components/themes/fonts';
@@ -18,6 +18,12 @@ import MenuDropdown from './dropdown';
 import FooterPage from './footer';
 import MenuLists from './popover';
 import JoinWaitlistDialog from '../../components/waitlistdialog';
+import { apiEndpoint } from '../../utils';
+import axios from 'axios';
+import dayjs from 'dayjs';
+
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+dayjs.extend(advancedFormat);
 
 const appHeight = 95;
 
@@ -38,6 +44,49 @@ export default function HomeLayout({ children }) {
   const [openWaitlistDialog, setOpenWaitlistDialog] = React.useState(false);
   const open = Boolean(anchorEl);
 
+  const [subpages, setSubpages] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const res = await axios.get(`${apiEndpoint}/website/courses`);
+        const data = res.data;
+
+        const groupedPrograms = data.programs.reduce((acc, program) => {
+          const programType =
+            program.programType.charAt(0).toUpperCase() +
+            program.programType.slice(1);
+          if (!acc[programType]) {
+            acc[programType] = {
+              name: programType,
+              content: [],
+            };
+          }
+
+          acc[programType].content.push({
+            title: program.programName,
+            starts: dayjs(program.startDate).format('Do MMM, YYYY'),
+            duration: program.programDuration || '16 months',
+            active: true, // Assuming you have an `active` field
+            link: `/programs/technology/${program.programId}`,
+          });
+
+          return acc;
+        }, {});
+
+        // console.log('==>>', Object.values(groupedPrograms));
+
+        setSubpages(Object.values(groupedPrograms));
+      } catch (error) {
+        setError('Failed to load programs');
+        console.error(error);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
   const menu = [
     {
       name: 'Why eduvacity',
@@ -47,254 +96,133 @@ export default function HomeLayout({ children }) {
       children: [
         {
           name: 'Technology',
-          subpages: [
-            {
-              name: 'Diploma in Technology',
-              content: [
-                {
-                  title: 'Computer sciences',
-                  starts: '15 Feb, 2024',
-                  duration: '6 months',
-                  active: true,
-                  link: '/programs/technology/computer-science',
-                },
-                {
-                  title: 'Computer engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: true,
-                  link: '/programs/technology/computer-engineering',
-                },
-                {
-                  title: 'Product design',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/product-design',
-                },
-                {
-                  title: 'Frontend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/frontend-engineering',
-                },
-                {
-                  title: 'Backend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/backend-engineering',
-                },
-              ],
-            },
-            {
-              name: 'Degree',
-              content: [
-                {
-                  title: 'Computer sciences',
-                  starts: '15 Feb, 2024',
-                  duration: '6 months',
-                  active: true,
-                  link: '/programs/technology/computer-science',
-                },
-                {
-                  title: 'Computer engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: true,
-                  link: '/programs/technology/computer-engineering',
-                },
-                {
-                  title: 'Product design',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: true,
-                  link: '/programs/technology/product-design',
-                },
-                {
-                  title: 'Frontend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/frontend-engineering',
-                },
-                {
-                  title: 'Backend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/backend-engineering',
-                },
-              ],
-            },
-            {
-              name: 'Bootcamps',
-              content: [
-                {
-                  title: 'Computer sciences',
-                  starts: '15 Feb, 2024',
-                  duration: '6 months',
-                  active: false,
-                  link: '/programs/technology/computer-science',
-                },
-                {
-                  title: 'Computer engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: true,
-                  link: '/programs/technology/computer-engineering',
-                },
-                {
-                  title: 'Product design',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/product-design',
-                },
-                {
-                  title: 'Frontend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/frontend-engineering',
-                },
-                {
-                  title: 'Backend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/technology/backend-engineering',
-                },
-              ],
-            },
-          ],
+          subpages: subpages || [],
         },
-        {
-          name: 'Business',
-          subpages: [
-            {
-              name: 'Diploma in Technology',
-              content: [
-                {
-                  title: 'Content marketing',
-                  starts: '15 Feb, 2024',
-                  duration: '6 months',
-                  active: true,
-                  link: '/programs/business/content-marketing',
-                },
-                {
-                  title: 'Cloud computing',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/cloud-computing',
-                },
-                {
-                  title: 'Product design',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: true,
-                  link: '/programs/business/product-design',
-                },
-                {
-                  title: 'Frontend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/frontend-engineering',
-                },
-                {
-                  title: 'Backend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/backend-engineering',
-                },
-              ],
-            },
-            {
-              name: 'Degree',
-              content: [
-                {
-                  title: 'Content marketing',
-                  starts: '15 Feb, 2024',
-                  duration: '6 months',
-                  active: true,
-                  link: '/programs/business/content-marketing',
-                },
-                {
-                  title: 'Cloud computing',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/cloud-computing',
-                },
-                {
-                  title: 'Product design',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: true,
-                  link: '/programs/business/product-design',
-                },
-                {
-                  title: 'Frontend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/frontend-engineering',
-                },
-                {
-                  title: 'Backend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/backend-engineering',
-                },
-              ],
-            },
-            {
-              name: 'Bootcamps',
-              content: [
-                {
-                  title: 'Content marketing',
-                  starts: '15 Feb, 2024',
-                  duration: '6 months',
-                  active: true,
-                  link: '/programs/business/content-marketing',
-                },
-                {
-                  title: 'Cloud computing',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/cloud-computing',
-                },
-                {
-                  title: 'Product design',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: true,
-                  link: '/programs/business/product-design',
-                },
-                {
-                  title: 'Frontend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/frontend-engineering',
-                },
-                {
-                  title: 'Backend engineering',
-                  starts: '15 Feb, 2024',
-                  duration: '4 months',
-                  active: false,
-                  link: '/programs/business/backend-engineering',
-                },
-              ],
-            },
-          ],
-        },
+        // {
+        //   name: 'Business',
+        //   subpages: [
+        //     {
+        //       name: 'Diploma in Technology',
+        //       content: [
+        //         {
+        //           title: 'Content marketing',
+        //           starts: '15 Feb, 2024',
+        //           duration: '6 months',
+        //           active: true,
+        //           link: '/programs/business/content-marketing',
+        //         },
+        //         {
+        //           title: 'Cloud computing',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/cloud-computing',
+        //         },
+        //         {
+        //           title: 'Product design',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: true,
+        //           link: '/programs/business/product-design',
+        //         },
+        //         {
+        //           title: 'Frontend engineering',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/frontend-engineering',
+        //         },
+        //         {
+        //           title: 'Backend engineering',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/backend-engineering',
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       name: 'Degree',
+        //       content: [
+        //         {
+        //           title: 'Content marketing',
+        //           starts: '15 Feb, 2024',
+        //           duration: '6 months',
+        //           active: true,
+        //           link: '/programs/business/content-marketing',
+        //         },
+        //         {
+        //           title: 'Cloud computing',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/cloud-computing',
+        //         },
+        //         {
+        //           title: 'Product design',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: true,
+        //           link: '/programs/business/product-design',
+        //         },
+        //         {
+        //           title: 'Frontend engineering',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/frontend-engineering',
+        //         },
+        //         {
+        //           title: 'Backend engineering',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/backend-engineering',
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       name: 'Bootcamps',
+        //       content: [
+        //         {
+        //           title: 'Content marketing',
+        //           starts: '15 Feb, 2024',
+        //           duration: '6 months',
+        //           active: true,
+        //           link: '/programs/business/content-marketing',
+        //         },
+        //         {
+        //           title: 'Cloud computing',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/cloud-computing',
+        //         },
+        //         {
+        //           title: 'Product design',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: true,
+        //           link: '/programs/business/product-design',
+        //         },
+        //         {
+        //           title: 'Frontend engineering',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/frontend-engineering',
+        //         },
+        //         {
+        //           title: 'Backend engineering',
+        //           starts: '15 Feb, 2024',
+        //           duration: '4 months',
+        //           active: false,
+        //           link: '/programs/business/backend-engineering',
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
       ],
     },
 

@@ -408,7 +408,7 @@ export default function FooterPage() {
             <IconButton>
               <Link
                 underline="none"
-                href="https://twitter.com/eduvasity"
+                href="https://x.com/eduvacity"
                 target="_blank">
                 <Twitter />
               </Link>
@@ -424,7 +424,7 @@ export default function FooterPage() {
             <IconButton>
               <Link
                 underline="none"
-                href="https://www.facebook.com/eduvasity/"
+                href="https://www.facebook.com/eduvacity/"
                 target="_blank">
                 <Facebook />
               </Link>
@@ -432,7 +432,7 @@ export default function FooterPage() {
             <IconButton>
               <Link
                 underline="none"
-                href="https://www.youtube.com/eduvasity/"
+                href="https://www.youtube.com/eduvacity/"
                 target="_blank">
                 <Youtube />
               </Link>
@@ -440,7 +440,7 @@ export default function FooterPage() {
             <IconButton>
               <Link
                 underline="none"
-                href="https://www.instagram.com/eduvasity/"
+                href="https://www.instagram.com/eduvacity/"
                 target="_blank">
                 <Instagram />
               </Link>

@@ -31,3 +31,12 @@ export const apiEndpoint = isProduction
 export const goToPortal = isProduction
   ? 'https://portal.eduvacity.com'
   : 'https://test-portal.eduvacity.com';
+
+export const ngnCurrencyFormatter = (value) => {
+  let formattedAmount = new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+  }).format(value);
+
+  return formattedAmount.replace('NGN', '₦');
+};
