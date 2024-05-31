@@ -56,7 +56,8 @@ export default function HomePage() {
     setShowCover(!showCover);
   };
 
-  const handleClickOpen = () => setOpen(true);
+  // const handleClickOpen = () => setOpen(true);
+  const handleClickOpen = () => router.push(`${goToPortal}/signup`);
   const handleClose = () => setOpen(false);
 
   return (
@@ -185,7 +186,8 @@ export default function HomePage() {
                     See All Courses <ArrowUp />
                   </Box>
                   <Box
-                    onClick={() => router.push('https://wa.me/<number>')}
+                    // onClick={() => router.push('https://wa.me/<number>')}
+                    onClick={() => router.push(`${goToPortal}/signup`)}
                     sx={{
                       display: 'flex',
                       justifyContent: 'center',
