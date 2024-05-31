@@ -179,7 +179,8 @@ export function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}>
+      {...other}
+    >
       {value === index && <Box component="div">{children}</Box>}
     </div>
   );
@@ -238,16 +239,19 @@ export default function AcademicTabs({ handleClick }) {
     <Box
       sx={{
         width: '100%',
-        pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
+        // pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
+        pl: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
         pr: { xs: 2, sm: 0 },
-      }}>
+      }}
+    >
       <Box>
         <StyledTabs
           value={value}
           onChange={handleChange}
           variant="scrollable"
           scrollButtons="auto"
-          aria-label="ant example">
+          aria-label="ant example"
+        >
           <StyledTab label="All" />
           <StyledTab label="Diplomas" />
           <StyledTab label="Bootcamps" />

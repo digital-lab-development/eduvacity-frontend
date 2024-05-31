@@ -1,6 +1,7 @@
 import { Box, Card, CssBaseline, Divider, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import digitalLeraning from '../public/images/learntool.png';
 import {
   ArrowUp,
@@ -16,6 +17,7 @@ import {
 import { Colors } from '../src/components/themes/colors';
 import { Fonts } from '../src/components/themes/fonts';
 import JoinWaitlistDialog from '../src/components/waitlistdialog';
+import { goToPortal } from '../src/utils';
 import {
   EDUVACITY_VALUE,
   WHY_EDUVACITY_DESC,
@@ -26,6 +28,7 @@ import {
 import HomePageLayout from '../src/views/home/layout';
 
 export default function WhyEduvasityPage() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -43,7 +46,8 @@ export default function WhyEduvasityPage() {
         display: 'flex',
         flexGrow: 1,
         flexDirection: 'column',
-      }}>
+      }}
+    >
       <CssBaseline />
       <Box
         component="section"
@@ -55,7 +59,8 @@ export default function WhyEduvasityPage() {
           backgroundColor: Colors.secondary,
           pt: { xs: 4, md: 12.5 },
           pb: { xs: 4, md: 6.5 },
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -66,21 +71,24 @@ export default function WhyEduvasityPage() {
             px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             py: { xs: 4, sm: 3, xl: 4 },
             gap: { xs: '32px', sm: '64px' },
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '40px', sm: '80px' },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-              }}>
+              }}
+            >
               <Typography
                 variant="h1"
                 sx={{
@@ -94,7 +102,8 @@ export default function WhyEduvasityPage() {
                   letterSpacing: '0em',
                   textTransform: 'uppercase',
                   textAlign: 'left',
-                }}>
+                }}
+              >
                 Why Eduvacity
               </Typography>
               <Box
@@ -103,7 +112,8 @@ export default function WhyEduvasityPage() {
                   display: 'flex',
                   flexDirection: { xs: 'column', sm: 'row' },
                   gap: { xs: '12px', sm: '64px' },
-                }}>
+                }}
+              >
                 <Box sx={{ width: '100%', maxWidth: 672 }}>
                   <Typography
                     variant="h4"
@@ -119,7 +129,8 @@ export default function WhyEduvasityPage() {
                       p: 0,
                       letterSpacing: '-0.02em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     {WHY_EDUVACITY_TITLE}
                   </Typography>
                 </Box>
@@ -137,7 +148,8 @@ export default function WhyEduvasityPage() {
                     p: 0,
                     letterSpacing: '0em',
                     textAlign: 'left',
-                  }}>
+                  }}
+                >
                   {WHY_EDUVACITY_DESC}
                 </Typography>
               </Box>
@@ -156,7 +168,8 @@ export default function WhyEduvasityPage() {
           pt: { xs: 6.5, md: 12.5 },
           pb: { xs: 2, md: 12.5 },
           backgroundColor: Colors.light,
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -166,21 +179,24 @@ export default function WhyEduvasityPage() {
             alignItems: 'center',
             px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '40px', sm: '80px' },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'row' },
                 gap: { xs: '30px', sm: '64px' },
-              }}>
+              }}
+            >
               <Card
                 sx={{
                   width: '100%',
@@ -190,7 +206,8 @@ export default function WhyEduvasityPage() {
                   px: { xs: 2, sm: 5 },
                   py: { xs: 2, sm: 8 },
                   display: { xs: 'none', sm: 'block' },
-                }}>
+                }}
+              >
                 <Box
                   sx={{
                     maxWidth: '100%',
@@ -199,7 +216,8 @@ export default function WhyEduvasityPage() {
                     alignItems: 'center',
                     flexDirection: 'column',
                     gap: '16px',
-                  }}>
+                  }}
+                >
                   <Box
                     sx={{
                       width: '100%',
@@ -211,7 +229,8 @@ export default function WhyEduvasityPage() {
                       borderRadius: 1,
                       alignItems: 'center',
                       maxWidth: 560,
-                    }}>
+                    }}
+                  >
                     <Box>
                       <StackBookAvatar />
                     </Box>
@@ -222,7 +241,8 @@ export default function WhyEduvasityPage() {
                         color: Colors.light,
                         letterSpacing: { xs: '0em', sm: '-0.02em' },
                         textAlign: 'left',
-                      }}>
+                      }}
+                    >
                       Collaborates with experts institutions to offer courses
                       aligned with industry needs
                     </Typography>
@@ -238,7 +258,8 @@ export default function WhyEduvasityPage() {
                       borderRadius: 1,
                       alignItems: 'center',
                       maxWidth: 560,
-                    }}>
+                    }}
+                  >
                     <Box>
                       <MonitorIcon />
                     </Box>
@@ -251,7 +272,8 @@ export default function WhyEduvasityPage() {
                         m: 0,
                         p: 0,
                         letterSpacing: '-0.02em',
-                      }}>
+                      }}
+                    >
                       Leverage Convenience and Accessibility
                     </Typography>
                   </Box>
@@ -266,7 +288,8 @@ export default function WhyEduvasityPage() {
                       borderRadius: 1,
                       alignItems: 'center',
                       maxWidth: 560,
-                    }}>
+                    }}
+                  >
                     <Box>
                       <PeopleAvarter />
                     </Box>
@@ -279,7 +302,8 @@ export default function WhyEduvasityPage() {
                         m: 0,
                         p: 0,
                         letterSpacing: '-0.02em',
-                      }}>
+                      }}
+                    >
                       Get a Personalize Learning Experience Tailored for You
                     </Typography>
                   </Box>
@@ -294,7 +318,8 @@ export default function WhyEduvasityPage() {
                       borderRadius: 1,
                       alignItems: 'center',
                       maxWidth: 560,
-                    }}>
+                    }}
+                  >
                     <Box>
                       <PeopleCommunityAvater />
                     </Box>
@@ -306,7 +331,8 @@ export default function WhyEduvasityPage() {
                         m: 0,
                         p: 0,
                         letterSpacing: '-0.02em',
-                      }}>
+                      }}
+                    >
                       Enhanced Collaboration & Cost Effective Education
                     </Typography>
                   </Box>
@@ -321,7 +347,8 @@ export default function WhyEduvasityPage() {
                   alignItems: 'center',
                   gap: '16px',
                   mt: { xs: 0, sm: 5, md: 10 },
-                }}>
+                }}
+              >
                 <Typography
                   variant="h1"
                   sx={{
@@ -335,7 +362,8 @@ export default function WhyEduvasityPage() {
                     p: 0,
                     letterSpacing: '-0.02em',
                     textTransform: 'capitalize',
-                  }}>
+                  }}
+                >
                   {WHY_EDUVACITY_VALUE}
                 </Typography>
                 <Box
@@ -344,7 +372,8 @@ export default function WhyEduvasityPage() {
                     maxWidth: 840,
                     display: 'flex',
                     flexDirection: 'column',
-                  }}>
+                  }}
+                >
                   <Typography
                     variant="span"
                     sx={{
@@ -353,12 +382,13 @@ export default function WhyEduvasityPage() {
                         sm: `normal normal 400 normal 20px/30px ${Fonts.inter}`,
                       },
                       color: Colors.textPrimaryDark,
-                    }}>
+                    }}
+                  >
                     {WHY_EDUVACITY_VALUE_DESC}
                   </Typography>
                   <Box sx={{ width: 180, mt: 3 }}>
                     <Box
-                      onClick={handleClickOpen}
+                      onClick={() => router.push(`${goToPortal}/signup`)}
                       sx={{
                         padding: '12px 20px 12px 20px',
                         display: 'flex',
@@ -372,7 +402,8 @@ export default function WhyEduvasityPage() {
                         '&:hover': {
                           background: Colors.primary,
                         },
-                      }}>
+                      }}
+                    >
                       Get started <ArrowUp />
                     </Box>
                   </Box>
@@ -388,7 +419,8 @@ export default function WhyEduvasityPage() {
                   py: 4,
                   display: { xs: 'block', sm: 'none' },
                   my: 4,
-                }}>
+                }}
+              >
                 <Box
                   sx={{
                     maxWidth: '100%',
@@ -397,7 +429,8 @@ export default function WhyEduvasityPage() {
                     alignItems: 'center',
                     flexDirection: 'column',
                     gap: '16px',
-                  }}>
+                  }}
+                >
                   <Box
                     sx={{
                       width: '100%',
@@ -408,7 +441,8 @@ export default function WhyEduvasityPage() {
                       border: '1px solid rgba(255, 255, 255, 0.3)',
                       borderRadius: 1,
                       alignItems: 'center',
-                    }}>
+                    }}
+                  >
                     <Box>
                       <StackBookAvatar />
                     </Box>
@@ -419,7 +453,8 @@ export default function WhyEduvasityPage() {
                         color: Colors.light,
                         letterSpacing: { xs: '0em', sm: '-0.02em' },
                         textAlign: 'left',
-                      }}>
+                      }}
+                    >
                       Collaborates with experts institutions to offer courses
                       aligned with industry needs
                     </Typography>
@@ -434,7 +469,8 @@ export default function WhyEduvasityPage() {
                       border: '1px solid rgba(255, 255, 255, 0.3)',
                       borderRadius: 1,
                       alignItems: 'center',
-                    }}>
+                    }}
+                  >
                     <Box>
                       <MonitorIcon />
                     </Box>
@@ -447,7 +483,8 @@ export default function WhyEduvasityPage() {
                         m: 0,
                         p: 0,
                         letterSpacing: '-0.02em',
-                      }}>
+                      }}
+                    >
                       Leverage Convenience and Accessibility
                     </Typography>
                   </Box>
@@ -461,7 +498,8 @@ export default function WhyEduvasityPage() {
                       border: '1px solid rgba(255, 255, 255, 0.3)',
                       borderRadius: 1,
                       alignItems: 'center',
-                    }}>
+                    }}
+                  >
                     <Box>
                       <PeopleAvarter />
                     </Box>
@@ -474,7 +512,8 @@ export default function WhyEduvasityPage() {
                         m: 0,
                         p: 0,
                         letterSpacing: '-0.02em',
-                      }}>
+                      }}
+                    >
                       Get a Personalize Learning Experience Tailored for You
                     </Typography>
                   </Box>
@@ -488,7 +527,8 @@ export default function WhyEduvasityPage() {
                       border: '1px solid rgba(255, 255, 255, 0.3)',
                       borderRadius: 1,
                       alignItems: 'center',
-                    }}>
+                    }}
+                  >
                     <Box>
                       <PeopleCommunityAvater />
                     </Box>
@@ -500,7 +540,8 @@ export default function WhyEduvasityPage() {
                         m: 0,
                         p: 0,
                         letterSpacing: '-0.02em',
-                      }}>
+                      }}
+                    >
                       Enhanced Collaboration & Cost Effective Education
                     </Typography>
                   </Box>
@@ -528,7 +569,8 @@ export default function WhyEduvasityPage() {
           py: { xs: 2, md: 12.5 },
           backgroundColor: Colors.light,
           gap: { xs: 2, sm: 12 },
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -537,14 +579,16 @@ export default function WhyEduvasityPage() {
             flexDirection: { xs: 'column', md: 'row' },
             px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: { xs: 4, sm: 8 },
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: { xs: '100%', md: '55%' },
               pt: { xs: 6, md: 12.5 },
               display: 'flex',
               justifyContent: 'flex-start',
-            }}>
+            }}
+          >
             <Card
               sx={{
                 boxShadow: 'none',
@@ -554,7 +598,8 @@ export default function WhyEduvasityPage() {
                 flexDirection: 'column',
                 gap: '32px',
                 background: 'transparent',
-              }}>
+              }}
+            >
               <Box>
                 <InstitutionIcon />
               </Box>
@@ -570,7 +615,8 @@ export default function WhyEduvasityPage() {
                     },
                     color: Colors.dark,
                     letterSpacing: '-0.02em',
-                  }}>
+                  }}
+                >
                   Top Universities 
                 </Typography>
               </Box>
@@ -580,7 +626,8 @@ export default function WhyEduvasityPage() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '12px',
-                }}>
+                }}
+              >
                 <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
                   <Box>
                     <CheckCircled />
@@ -594,7 +641,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Learn concepts from the leading faculty in data, technology
                     and management
                   </Typography>
@@ -612,7 +660,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Become an alumni of one of the top universities recognized
                     across industries
                   </Typography>
@@ -630,7 +679,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Attend on-campus BaseCamps, hackathons and graduation
                     ceremonies
                   </Typography>
@@ -661,7 +711,8 @@ export default function WhyEduvasityPage() {
             flexDirection: { xs: 'column', md: 'row' },
             px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: { xs: 343, sm: '45%' },
@@ -675,7 +726,8 @@ export default function WhyEduvasityPage() {
             sx={{
               width: { xs: '100%', md: '50%' },
               pt: { xs: 0, md: 8.5 },
-            }}>
+            }}
+          >
             <Card
               sx={{
                 boxShadow: 'none',
@@ -684,7 +736,8 @@ export default function WhyEduvasityPage() {
                 flexDirection: 'column',
                 gap: '32px',
                 background: 'transparent',
-              }}>
+              }}
+            >
               <Box>
                 <PersonCheckedIcon />
               </Box>
@@ -700,7 +753,8 @@ export default function WhyEduvasityPage() {
                     },
                     color: Colors.dark,
                     letterSpacing: '-0.02em',
-                  }}>
+                  }}
+                >
                   Personalised Experience
                 </Typography>
                 <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
@@ -716,7 +770,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Stay on track with your dedicated personal student success
                     mentor
                   </Typography>
@@ -728,7 +783,8 @@ export default function WhyEduvasityPage() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '12px',
-                }}>
+                }}
+              >
                 <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
                   <Box>
                     <CheckCircled />
@@ -745,7 +801,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Get answers to every doubt through a network of academic
                     fellows via live sessions and discussion forum
                   </Typography>
@@ -766,7 +823,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Network, collaborate and learn together with your
                     batch-mates from your cohort
                   </Typography>
@@ -799,7 +857,8 @@ export default function WhyEduvasityPage() {
           py: { xs: 8, md: '64px' },
           backgroundColor: '#F6F7F7',
           gap: 12,
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -809,7 +868,8 @@ export default function WhyEduvasityPage() {
             alignItems: 'center',
             px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
             gap: 8,
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: '100%',
@@ -819,7 +879,8 @@ export default function WhyEduvasityPage() {
               alignItems: 'center',
               flexDirection: 'column',
               gap: 2,
-            }}>
+            }}
+          >
             <Typography
               variant="h4"
               sx={{
@@ -832,7 +893,8 @@ export default function WhyEduvasityPage() {
                 p: 0,
                 letterSpacing: '-0.02em',
                 textAlign: 'center',
-              }}>
+              }}
+            >
               Digital Learning Tools
             </Typography>
             <Box
@@ -840,7 +902,8 @@ export default function WhyEduvasityPage() {
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
-              }}>
+              }}
+            >
               <Typography
                 variant="span"
                 sx={{
@@ -851,7 +914,8 @@ export default function WhyEduvasityPage() {
                   color: Colors.textPrimaryDark,
                   letterSpacing: '0em',
                   textAlign: { xs: 'left', sm: 'center' },
-                }}>
+                }}
+              >
                 Experience a transformative approach to education with the power
                 of technology and digital tools. Enhance your learning journey
                 through interactive resources, personalized feedback, and
@@ -883,13 +947,15 @@ export default function WhyEduvasityPage() {
             flexDirection: { xs: 'column', md: 'row' },
             px: { xs: 4, sm: 3, lg: 5, xl: 16 },
             gap: 8,
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: { xs: '100%', md: '50%' },
               display: 'flex',
               justifyContent: 'center',
-            }}>
+            }}
+          >
             <Card
               sx={{
                 boxShadow: 'none',
@@ -899,7 +965,8 @@ export default function WhyEduvasityPage() {
                 flexDirection: 'column',
                 gap: '32px',
                 background: 'transparent',
-              }}>
+              }}
+            >
               <Box>
                 <PeopleIcon />
               </Box>
@@ -915,7 +982,8 @@ export default function WhyEduvasityPage() {
                     },
                     color: Colors.dark,
                     letterSpacing: '-0.02em',
-                  }}>
+                  }}
+                >
                   Career Support
                 </Typography>
                 <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
@@ -928,7 +996,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Get personalized career advice through 1-1 sessions with
                     industry mentors
                   </Typography>
@@ -940,7 +1009,8 @@ export default function WhyEduvasityPage() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '12px',
-                }}>
+                }}
+              >
                 <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
                   <Box>
                     <CheckCircled />
@@ -954,7 +1024,8 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Get interview ready via resume reviews, practice employment
                     tests and mock interviews
                   </Typography>
@@ -972,13 +1043,14 @@ export default function WhyEduvasityPage() {
                       color: '#475467',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                    }}>
+                    }}
+                  >
                     Access to exclusive job opportunities through our partner
                     companies and hiring drives
                   </Typography>
                 </Box>
                 <Box
-                  onClick={handleClickOpen}
+                  onClick={() => router.push(`${goToPortal}/signup`)}
                   sx={{
                     height: 48,
                     width: 160,
@@ -995,7 +1067,8 @@ export default function WhyEduvasityPage() {
                     '&:hover': {
                       background: Colors.primary,
                     },
-                  }}>
+                  }}
+                >
                   Get started <ArrowUp />
                 </Box>
               </Box>
@@ -1024,7 +1097,8 @@ export default function WhyEduvasityPage() {
           backgroundSize: { xs: 'cover', sm: 'cover' },
           backgroundRepeat: 'no-repeat',
           gap: { xs: '48px', sm: '64px' },
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -1032,7 +1106,8 @@ export default function WhyEduvasityPage() {
             flexDirection: 'column',
             gap: { xs: '8px', sm: '16px' },
             px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
-          }}>
+          }}
+        >
           <Typography
             variant="h6"
             sx={{
@@ -1045,7 +1120,8 @@ export default function WhyEduvasityPage() {
               p: 0,
               letterSpacing: '2%',
               textAlign: { xs: 'center', sm: 'left' },
-            }}>
+            }}
+          >
             Eduvacity
           </Typography>
           <Typography
@@ -1058,7 +1134,8 @@ export default function WhyEduvasityPage() {
               },
               color: '#87A0A8',
               textAlign: { xs: 'center', sm: 'left' },
-            }}>
+            }}
+          >
             {EDUVACITY_VALUE}
           </Typography>
           <Box
@@ -1067,9 +1144,10 @@ export default function WhyEduvasityPage() {
               mt: 3,
               display: 'flex',
               justifyContent: { xs: 'center', sm: 'flex-start' },
-            }}>
+            }}
+          >
             <Box
-              onClick={handleClickOpen}
+              onClick={() => router.push(`${goToPortal}/signup`)}
               sx={{
                 width: { xs: 159, sm: 159 },
                 padding: '12px 20px 12px 20px',
@@ -1084,7 +1162,8 @@ export default function WhyEduvasityPage() {
                 '&:hover': {
                   background: Colors.primary,
                 },
-              }}>
+              }}
+            >
               Get started <ArrowUp />
             </Box>
           </Box>
