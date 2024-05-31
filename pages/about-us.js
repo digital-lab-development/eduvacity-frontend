@@ -13,8 +13,7 @@ export default function AboutUs() {
         display: 'flex',
         flexGrow: '1',
         flexDirection: 'column',
-      }}
-    >
+      }}>
       <CssBaseline />
       <Box
         component="section"
@@ -26,8 +25,7 @@ export default function AboutUs() {
           backgroundColor: Colors.light,
           pt: { xs: 4, md: 15.5 },
           pb: { xs: 4, md: 6.5 },
-        }}
-      >
+        }}>
         <Box
           sx={{
             width: '100%',
@@ -38,24 +36,21 @@ export default function AboutUs() {
             px: { xs: '1rem', sm: '1rem', md: 5.5, lg: 7.2, xl: 12.5 },
             py: { xs: 4, sm: 3, xl: 4 },
             gap: { xs: '32px', sm: '64px' },
-          }}
-        >
+          }}>
           <Box
             sx={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: { xs: '40px', sm: '80px' },
-            }}
-          >
+            }}>
             <Box
               sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-              }}
-            >
+              }}>
               <Typography
                 variant="h1"
                 sx={{
@@ -69,15 +64,13 @@ export default function AboutUs() {
                   m: 0,
                   p: 0,
                   letterSpacing: '-2%',
-                }}
-              >
+                }}>
                 Redefining Higher Education:{' '}
                 <Typography
                   variant="span"
                   sx={{
                     color: Colors.primary,
-                  }}
-                >
+                  }}>
                   Shifting Paradigms!
                 </Typography>
               </Typography>
@@ -85,17 +78,16 @@ export default function AboutUs() {
                 sx={{
                   display: 'flex',
                   flexDirection: 'column',
-                }}
-              >
+                }}>
                 {VISION_AND_MISSION.map((item, i) => (
                   <Box
+                    key={`about_${i}`}
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
                       pl: 4,
                       mt: 4,
-                    }}
-                  >
+                    }}>
                     <Typography
                       variant="h2"
                       sx={{
@@ -105,8 +97,7 @@ export default function AboutUs() {
                           xs: `normal normal 400 normal 28px/38px ${Fonts.inter}`,
                           md: `normal normal 400 normal 40px/50px ${Fonts.inter}`,
                         },
-                      }}
-                    >
+                      }}>
                       {item.title}
                     </Typography>
                     <Box
@@ -117,8 +108,7 @@ export default function AboutUs() {
                         borderLeft: 4,
                         borderColor: Colors.primary,
                         borderRadius: 6,
-                      }}
-                    >
+                      }}>
                       <Typography
                         variant="p"
                         sx={{
@@ -129,8 +119,7 @@ export default function AboutUs() {
                             md: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
                           },
                           color: Colors.textColor,
-                        }}
-                      >
+                        }}>
                         {item.text}
                       </Typography>
                     </Box>
@@ -141,8 +130,7 @@ export default function AboutUs() {
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',
-                }}
-              >
+                }}>
                 <Grid container spacing={2}>
                   <Grid item></Grid>
                   <Grid item></Grid>
