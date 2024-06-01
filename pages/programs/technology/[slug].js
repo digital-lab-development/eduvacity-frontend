@@ -1537,24 +1537,7 @@ export default function CloudComputingPage() {
                         letterSpacing: '0em',
                         textAlign: 'left',
                       }}>
-                      Economics
-                    </Typography>
-                  </Box>
-                  <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
-                    <Box>
-                      <CheckCircled />
-                    </Box>{' '}
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="div"
-                      sx={{
-                        font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
-                        color: '#475467',
-                        letterSpacing: '0em',
-                        textAlign: 'left',
-                      }}>
-                      Two other social science-related subjects
+                      Three other related subjects
                     </Typography>
                   </Box>
                 </Box>
