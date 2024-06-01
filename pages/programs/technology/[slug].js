@@ -281,7 +281,7 @@ export default function CloudComputingPage() {
               mt: { xs: 4, md: 4 },
             }}>
             <Box
-              onClick={() => router.push(goToPortal + 'signup')}
+              onClick={() => router.push(goToPortal + '/signup')}
               sx={{
                 padding: '12px 20px 12px 20px',
                 display: 'flex',
