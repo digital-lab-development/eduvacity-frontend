@@ -146,7 +146,7 @@ export default function DataAnalysis({ course }) {
                           letterSpacing: '0em',
                           color: '#788B8F',
                         }}>
-                        {topic}
+                        {topic.lessonName}
                       </Box>
                     );
                   })}
