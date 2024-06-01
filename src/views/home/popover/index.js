@@ -24,6 +24,7 @@ import { Colors } from '../../../components/themes/colors';
 import { Fonts } from '../../../components/themes/fonts';
 import { MenuToggle } from '../sidebar/menuToggle';
 import JoinWaitlistDialog from '../../../components/waitlistdialog';
+import { goToPortal } from '../../../utils';
 
 const StyledList = styled(List)({
   display: 'flex',
@@ -143,11 +144,13 @@ export default function MenuLists({ menu }) {
       <motion.nav
         initial={false}
         animate={isOpen ? 'open' : 'closed'}
-        ref={containerRef}>
+        ref={containerRef}
+      >
         <Box
           sx={{
             position: 'absolute',
-          }}>
+          }}
+        >
           <MenuToggle toggle={() => toggleOpen()} />
         </Box>
       </motion.nav>
@@ -164,7 +167,8 @@ export default function MenuLists({ menu }) {
               top: 60,
               left: 'auto',
               right: -70,
-            }}>
+            }}
+          >
             <List
               component="nav"
               disablePadding
@@ -173,7 +177,8 @@ export default function MenuLists({ menu }) {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '10px',
-              }}>
+              }}
+            >
               {menu?.map((item, i) => {
                 const selected = router.pathname.startsWith(
                   `/${updateKey(item.name.toLowerCase())}`
@@ -194,7 +199,8 @@ export default function MenuLists({ menu }) {
                             py: 0,
                             minHeight: 48,
                           }}
-                          selected={selected}>
+                          selected={selected}
+                        >
                           <Box
                             sx={{
                               width: '100%',
@@ -204,7 +210,8 @@ export default function MenuLists({ menu }) {
                               gap: '10px',
                               color: Colors.offWhite,
                               '&:hover': { background: 'transparent' },
-                            }}>
+                            }}
+                          >
                             {item.name}{' '}
                             <AngleDownWard
                               style={{
@@ -223,7 +230,8 @@ export default function MenuLists({ menu }) {
                           }}
                           anchorEl={anchorEl}
                           open={open}
-                          onClose={handleClose}>
+                          onClose={handleClose}
+                        >
                           <StyledList>
                             {item.children.map((child, index) => {
                               const selectedItem = content?.name === child.name;
@@ -233,7 +241,8 @@ export default function MenuLists({ menu }) {
                                     disableRipple
                                     onClick={() => handleClick(child, index)}
                                     alignItems="flex-start"
-                                    selected={selectedItem}>
+                                    selected={selectedItem}
+                                  >
                                     <ListItemText
                                       primary={child.name}
                                       primaryTypographyProps={{
@@ -257,7 +266,8 @@ export default function MenuLists({ menu }) {
                                   <Collapse
                                     in={openNest === index}
                                     timeout="auto"
-                                    unmountOnExit>
+                                    unmountOnExit
+                                  >
                                     {content !== null ? (
                                       <Box
                                         sx={{
@@ -267,7 +277,8 @@ export default function MenuLists({ menu }) {
                                           display: 'flex',
                                           flexDirection: 'column',
                                           gap: '16px',
-                                        }}>
+                                        }}
+                                      >
                                         <Box
                                           sx={{
                                             width: '100%',
@@ -275,7 +286,8 @@ export default function MenuLists({ menu }) {
                                             display: 'flex',
                                             flexDirection: 'column',
                                             gap: '24px',
-                                          }}>
+                                          }}
+                                        >
                                           {content?.subpages?.map(
                                             (cont, index) => {
                                               return (
@@ -287,7 +299,8 @@ export default function MenuLists({ menu }) {
                                                       color: Colors.dark,
                                                       padding: '14px 0',
                                                       textAlign: 'left',
-                                                    }}>
+                                                    }}
+                                                  >
                                                     {cont.name}
                                                   </Typography>
 
@@ -299,14 +312,16 @@ export default function MenuLists({ menu }) {
                                                   <Grid
                                                     container
                                                     spacing={2}
-                                                    sx={{ mt: 2 }}>
+                                                    sx={{ mt: 2 }}
+                                                  >
                                                     {cont?.content?.map(
                                                       (sub, index) => {
                                                         return (
                                                           <Grid
                                                             item
                                                             xs={12}
-                                                            key={`{sub - ${index}}`}>
+                                                            key={`{sub - ${index}}`}
+                                                          >
                                                             <Card
                                                               sx={{
                                                                 width: '100%',
@@ -331,7 +346,8 @@ export default function MenuLists({ menu }) {
                                                                   sub.link
                                                                 );
                                                                 toggleOpen();
-                                                              }}>
+                                                              }}
+                                                            >
                                                               <Box
                                                                 sx={{
                                                                   width: '100%',
@@ -341,7 +357,8 @@ export default function MenuLists({ menu }) {
                                                                     'flex-end',
                                                                   alignItems:
                                                                     'flex-end',
-                                                                }}>
+                                                                }}
+                                                              >
                                                                 {sub.active ===
                                                                 true ? (
                                                                   ''
@@ -359,7 +376,8 @@ export default function MenuLists({ menu }) {
                                                                       color:
                                                                         '#E3A229',
                                                                       font: `normal normal 500 normal 12/16px ${Fonts.inter}`,
-                                                                    }}>
+                                                                    }}
+                                                                  >
                                                                     Coming
                                                                     soon...
                                                                   </Box>
@@ -373,7 +391,8 @@ export default function MenuLists({ menu }) {
                                                                     '0em',
                                                                   color:
                                                                     Colors.dark,
-                                                                }}>
+                                                                }}
+                                                              >
                                                                 {sub.title}
                                                               </Box>
                                                               <Box
@@ -383,7 +402,8 @@ export default function MenuLists({ menu }) {
                                                                     'flex',
                                                                   gap: 0.5,
                                                                   mt: 3,
-                                                                }}>
+                                                                }}
+                                                              >
                                                                 <Typography
                                                                   sx={{
                                                                     font: `normal normal 500 normal 11px/14px ${Fonts.primary}`,
@@ -394,7 +414,8 @@ export default function MenuLists({ menu }) {
                                                                     pr: 1,
                                                                     borderRight:
                                                                       '1px solid #D7DEE0',
-                                                                  }}>
+                                                                  }}
+                                                                >
                                                                   Cohort starts:{' '}
                                                                   {sub.starts}
                                                                 </Typography>
@@ -405,7 +426,8 @@ export default function MenuLists({ menu }) {
                                                                       'left',
                                                                     letterSpacing:
                                                                       '0em',
-                                                                  }}>
+                                                                  }}
+                                                                >
                                                                   {sub.duration}
                                                                 </Typography>
                                                               </Box>
@@ -443,13 +465,15 @@ export default function MenuLists({ menu }) {
                           sx={{
                             py: 0,
                             minHeight: 48,
-                          }}>
+                          }}
+                        >
                           <Typography
                             sx={{
                               width: 320,
                               font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
                               color: Colors.offWhite,
-                            }}>
+                            }}
+                          >
                             {item.name}
                           </Typography>
                         </ListItemButton>
@@ -461,7 +485,7 @@ export default function MenuLists({ menu }) {
               <Divider sx={{ borderColor: 'rgba(27, 49, 57, 1)', my: 0.5 }} />
               <MenuItem disableRipple>
                 <Box
-                  onClick={handleClickOpen}
+                  onClick={() => router.push(`${goToPortal}/signup`)}
                   sx={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -475,13 +499,14 @@ export default function MenuLists({ menu }) {
                     '&:hover': {
                       background: 'transparent',
                     },
-                  }}>
+                  }}
+                >
                   <UserIcon /> Student portal
                 </Box>
               </MenuItem>
               <MenuItem onClick={handleClose} disableRipple>
                 <Box
-                  onClick={handleClickOpen}
+                  onClick={() => router.push(`${goToPortal}/signup`)}
                   sx={{
                     width: '100%',
                     padding: '12px 20px 12px 20px',
@@ -495,7 +520,8 @@ export default function MenuLists({ menu }) {
                     '&:hover': {
                       background: Colors.primary,
                     },
-                  }}>
+                  }}
+                >
                   Apply now
                 </Box>
               </MenuItem>

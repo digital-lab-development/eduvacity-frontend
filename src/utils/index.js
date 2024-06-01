@@ -22,12 +22,20 @@ const getUrlLocation = () => {
   }
 };
 
-const isProduction = getUrlLocation() === 'production' ? true : false;
+const isProduction = process.env.NODE_ENV || 'production';
 
-export const apiEndpoint = isProduction
-  ? 'https://api.eduvacity.com/api/v1'
-  : 'https://test-api.eduvacity.com/api/v1';
+export const apiEndpoint = 'https://api.eduvacity.com/api/v1';
 
-export const goToPortal = isProduction
-  ? 'https://portal.eduvacity.com'
-  : 'https://test-portal.eduvacity.com';
+export const goToPortal =
+  isProduction === 'production'
+    ? 'https://portal.eduvacity.com'
+    : 'https://test-portal.eduvacity.com';
+
+export const ngnCurrencyFormatter = (value) => {
+  let formattedAmount = new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+  }).format(value);
+
+  return formattedAmount.replace('NGN', '₦');
+};

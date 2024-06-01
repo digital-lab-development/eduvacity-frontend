@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ABULogo,
   Accreditation,
@@ -39,8 +39,17 @@ import AdmissionProcessCard from '../../../src/views/programs/admission-process'
 import BillingProcessCard from '../../../src/views/programs/billing';
 import DataAnalysis from '../../../src/views/programs/data-analysis';
 import KeyFeaturesCard from '../../../src/views/programs/key-features';
-import { goToPortal } from '../../../src/utils';
+import {
+  apiEndpoint,
+  goToPortal,
+  ngnCurrencyFormatter,
+} from '../../../src/utils';
 import Image from 'next/image';
+import axios from 'axios';
+import dayjs from 'dayjs';
+
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+dayjs.extend(advancedFormat);
 
 const overview = [
   {
@@ -146,6 +155,11 @@ export default function CloudComputingPage() {
   const scrollableDivRef = React.useRef(null);
   const videoId = 'qqMrLuVI3d0';
 
+  const { slug } = router.query;
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const handleVideoClick = () => {
     setShowCover(!showCover);
   };
@@ -160,6 +174,46 @@ export default function CloudComputingPage() {
       scrollableDiv.scrollTo(0, scrollableDiv.scrollHeight);
     }
   }, []);
+
+  useEffect(() => {
+    if (slug) {
+      const fetchCourse = async () => {
+        try {
+          const programId = router.query.slug; // Extract the programId from the query parameters
+          if (!programId) {
+            setError('Program ID is missing');
+            setLoading(false);
+            return;
+          }
+
+          const res = await axios.get(
+            `${apiEndpoint}/website/courses/${programId}`
+          );
+          console.log('res', res.data);
+          setCourse(res.data);
+        } catch (error) {
+          console.error(error);
+          setError('Failed to load course data');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchCourse();
+    }
+  }, [slug, router]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!course) {
+    return <div>No course found</div>;
+  }
 
   return (
     <Box
@@ -200,7 +254,7 @@ export default function CloudComputingPage() {
                 color: Colors.light,
                 letterSpacing: '-2%',
               }}>
-              A.B.U school of SICT: Diploma in Backend engineering
+              A.B.U school of ICT: {course.programName}
             </Typography>
             <Typography
               variant="p"
@@ -245,26 +299,29 @@ export default function CloudComputingPage() {
               }}>
               Enroll now <ArrowUp />
             </Box>
-            <Box
-              onClick={() => router.push(goToPortal + 'signup')}
-              sx={{
-                padding: '12px 20px 12px 20px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
-                cursor: 'pointer',
-                color: '#fff',
-                borderRadius: '46px',
-                border: '1px solid #fff',
+            {course.syllabus && (
+              <Box
+                sx={{
+                  padding: '12px 20px 12px 20px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
+                  cursor: 'pointer',
+                  color: '#fff',
+                  borderRadius: '46px',
+                  border: '1px solid #fff',
 
-                // background: Colors.primary,
-                // '&:hover': {
-                //   background: Colors.primary,
-                // },
-              }}>
-              Download Syllabus
-            </Box>
+                  // background: Colors.primary,
+                  // '&:hover': {
+                  //   background: Colors.primary,
+                  // },
+                }}>
+                <a href={course.syllabus} target="_blank" rel="noreferrer">
+                  Download Syllabus
+                </a>
+              </Box>
+            )}
           </Box>
         </Box>
         <Box sx={{ flex: '1 1 50%' }}>
@@ -303,12 +360,13 @@ export default function CloudComputingPage() {
                   title="YouTube video player"
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/x0v53kt1lSE?si=bsc8zteQZJdxbS87"
+                  src={course.programClip || ''}
                   allowFullScreen
                   style={{
                     display: showCover ? 'none' : 'block',
                     border: 'none',
                     borderRadius: '12px',
+                    aspectRatio: 'video',
                   }}></iframe>
               </Box>
             )}
@@ -380,7 +438,8 @@ export default function CloudComputingPage() {
                   letterSpacing: '0em',
                   textAlign: 'center',
                 }}>
-                10th Dec, 2024
+                {/* 10th Dec, 2024 */}
+                {dayjs(course.startDate).format('Do MMM, YYYY')}
               </Typography>
               <Box
                 component="span"
@@ -634,8 +693,9 @@ export default function CloudComputingPage() {
                               color: Colors.dark,
                               letterSpacing: '0em',
                               textAlign: 'left',
+                              textTransform: 'capitalize',
                             }}>
-                            Diploma in product design
+                            {`${course.programType} in ${course.programName}`}
                           </Box>
                         }
                         sx={{ gap: 0, m: 0, p: 0 }}
@@ -693,7 +753,8 @@ export default function CloudComputingPage() {
                               letterSpacing: '0em',
                               textAlign: 'left',
                             }}>
-                            5,000 Naira
+                            {/* 5,000 Naira */}
+                            {ngnCurrencyFormatter(course.applicationFee)}
                           </Box>
                         }
                         sx={{ gap: 0, m: 0, p: 0 }}
@@ -1026,7 +1087,7 @@ export default function CloudComputingPage() {
                     color: Colors.dark,
                     letterSpacing: '-0.02em',
                   }}>
-                  Earn a certificate in Data Analysis
+                  {` Earn a certificate in ${course.courseName}`}
                 </Typography>
                 <Box
                   component="span"
@@ -1168,7 +1229,7 @@ export default function CloudComputingPage() {
                 </Box>
               </Box>
               <Box style={{}}>
-                <BillingProcessCard />
+                <BillingProcessCard price={course.coursePrice} />
               </Box>
             </Card>
           </Box>
@@ -1266,7 +1327,7 @@ export default function CloudComputingPage() {
               </Typography>
             </Box>
             {/* <DataAnalysis /> */}
-            <DataAnalysis />
+            <DataAnalysis course={course.learningPathModule || []} />
           </Box>
         </Box>
       </Box>
@@ -1476,24 +1537,7 @@ export default function CloudComputingPage() {
                         letterSpacing: '0em',
                         textAlign: 'left',
                       }}>
-                      Economics
-                    </Typography>
-                  </Box>
-                  <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
-                    <Box>
-                      <CheckCircled />
-                    </Box>{' '}
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="div"
-                      sx={{
-                        font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
-                        color: '#475467',
-                        letterSpacing: '0em',
-                        textAlign: 'left',
-                      }}>
-                      Two other social science-related subjects
+                      Three other related subjects
                     </Typography>
                   </Box>
                 </Box>

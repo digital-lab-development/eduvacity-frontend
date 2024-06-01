@@ -10,6 +10,8 @@ import BootscampCards from './bootscamp/index.js';
 import DegreeCards from './degree/index.js';
 import DiplomaCards from './diploma/index.js';
 import ProgramCard from './program-card.js';
+import axios from 'axios';
+import { apiEndpoint } from '../../../utils/index.js';
 
 const StyledTabs = styled(Tabs)({
   borderBottom: '1px solid #EAECF0',
@@ -164,9 +166,9 @@ const cards = [
     icon: '/images/eduvacity-logo.svg',
   },
 ];
-const degree = cards.filter((item) => item.type === 'degree');
-const diploma = cards.filter((item) => item.type === 'diploma');
-const bootscamp = cards.filter((item) => item.type === 'bootscamp');
+// const degree = cards.filter((item) => item.type === 'degree');
+// const diploma = cards.filter((item) => item.type === 'diploma');
+// const bootscamp = cards.filter((item) => item.type === 'bootcamp');
 
 export function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -177,7 +179,8 @@ export function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}>
+      {...other}
+    >
       {value === index && <Box component="div">{children}</Box>}
     </div>
   );
@@ -192,24 +195,63 @@ export function a11yProps(index) {
 export default function AcademicTabs({ handleClick }) {
   const [value, setValue] = React.useState(0);
 
+  const [programs, setPrograms] = React.useState();
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    const fetchPrograms = async () => {
+      try {
+        const res = await axios.get(`${apiEndpoint}/website/courses/`);
+        console.log('res', res.data);
+        setPrograms(res.data.programs);
+      } catch (error) {
+        console.error(error);
+        setError('Failed to load course data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPrograms();
+  }, []);
+
+  const degree =
+    programs && programs.filter((item) => item.programType === 'degree');
+  const diploma =
+    programs && programs.filter((item) => item.programType === 'diploma');
+  const bootscamp =
+    programs && programs.filter((item) => item.programType === 'bootcamp');
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <Box
       sx={{
         width: '100%',
-        pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
+        // pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
+        pl: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
         pr: { xs: 2, sm: 0 },
-      }}>
+      }}
+    >
       <Box>
         <StyledTabs
           value={value}
           onChange={handleChange}
           variant="scrollable"
           scrollButtons="auto"
-          aria-label="ant example">
+          aria-label="ant example"
+        >
           <StyledTab label="All" />
           <StyledTab label="Diplomas" />
           <StyledTab label="Bootcamps" />
@@ -240,7 +282,7 @@ export default function AcademicTabs({ handleClick }) {
       </Box>
       <Box sx={{ mt: { xs: 2, sm: 4 } }}>
         <TabPanel value={value} index={0}>
-          <ProgramCard cards={cards} handleClick={handleClick} />
+          <ProgramCard cards={programs || []} handleClick={handleClick} />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <ProgramCard cards={diploma} handleClick={handleClick} />

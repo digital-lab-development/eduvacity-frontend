@@ -4,16 +4,17 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import { Colors } from '../../components/themes/colors';
 import { Fonts } from '../../components/themes/fonts';
+import { ngnCurrencyFormatter } from '../../utils';
 
 const cards = [
-  {
-    title: 'Choose your Program',
-    description: 'Vorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    type: 'quarterly',
-    benefit: 'All available benefits',
-    popular: true,
-    price: '70,000',
-  },
+  // {
+  //   title: 'Choose your Program',
+  //   description: 'Vorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  //   type: 'quarterly',
+  //   benefit: 'All available benefits',
+  //   popular: true,
+  //   price: '70,000',
+  // },
   {
     title: 'Start your application',
     description:
@@ -24,7 +25,7 @@ const cards = [
     price: '210,000',
   },
 ];
-export default function BillingProcessCard() {
+export default function BillingProcessCard({ price }) {
   return (
     <Box sx={{ width: '100%', display: 'flex' }}>
       <Grid container spacing={'20px'}>
@@ -66,7 +67,7 @@ export default function BillingProcessCard() {
                           textAlign: 'left',
                           textTransform: 'capitalize',
                         }}>
-                        {card.type === 'once' ? 'Upfront' : card.type}
+                        {/* {card.type === 'once' ? 'Upfront' : card.type} */}
                       </Typography>
                     }
                     action={
@@ -110,7 +111,7 @@ export default function BillingProcessCard() {
                         textAlign: 'left',
                         color: '#fff',
                       }}>
-                      N{card.price}{' '}
+                      {ngnCurrencyFormatter(price || 0)}
                       {card.type === 'once' ? null : (
                         <Box
                           component="span"
