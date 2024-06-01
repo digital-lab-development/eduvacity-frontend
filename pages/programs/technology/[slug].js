@@ -254,7 +254,7 @@ export default function CloudComputingPage() {
                 color: Colors.light,
                 letterSpacing: '-2%',
               }}>
-              A.B.U school of SICT: {course.programName}
+              A.B.U school of ICT: {course.programName}
             </Typography>
             <Typography
               variant="p"
@@ -360,12 +360,13 @@ export default function CloudComputingPage() {
                   title="YouTube video player"
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/x0v53kt1lSE?si=bsc8zteQZJdxbS87"
+                  src={course.programClip || ''}
                   allowFullScreen
                   style={{
                     display: showCover ? 'none' : 'block',
                     border: 'none',
                     borderRadius: '12px',
+                    aspectRatio: 'video',
                   }}></iframe>
               </Box>
             )}
