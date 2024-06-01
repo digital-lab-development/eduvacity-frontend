@@ -18,7 +18,7 @@ import MenuDropdown from './dropdown';
 import FooterPage from './footer';
 import MenuLists from './popover';
 import JoinWaitlistDialog from '../../components/waitlistdialog';
-import { apiEndpoint } from '../../utils';
+import { apiEndpoint, goToPortal } from '../../utils';
 import axios from 'axios';
 import dayjs from 'dayjs';
 
@@ -327,13 +327,18 @@ export default function HomeLayout({ children }) {
               sx={{
                 mt: 0,
                 display: { xs: 'none', lg: 'flex' },
-                width: 542,
+                justifyContent: 'center',
+                textAlign: 'center',
+                alignItems: 'center',
+                minWidth: 650,
+                boxSizing: 'border-box',
               }}
             >
               <Box
                 sx={{
                   width: '100%',
                   display: 'flex',
+                  justifyContent: 'space-between',
                   gap: '12px',
                   height: '59px',
                   borderRadius: '47px',
@@ -346,7 +351,14 @@ export default function HomeLayout({ children }) {
                     `/${updateKey(item.name.toLowerCase())}`
                   );
                   return (
-                    <Box key={i} sx={{ width: '100%' }}>
+                    <Box
+                      key={i}
+                      sx={
+                        {
+                          // width: '100%',
+                        }
+                      }
+                    >
                       {item && item.children ? (
                         <MenuDropdown
                           name={item.name}
@@ -354,6 +366,7 @@ export default function HomeLayout({ children }) {
                           selected={selected}
                         />
                       ) : (
+                        // <div></div>
                         <ListItemButton
                           disableRipple
                           sx={{
@@ -368,8 +381,9 @@ export default function HomeLayout({ children }) {
                         >
                           <Typography
                             sx={{
-                              maxWidth: 150,
-                              width: 300,
+                              // maxWidth: 150,
+                              // width: 300,
+                              whiteSpace: 'no-wrap',
                               font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
                               color: selected
                                 ? Colors.primary
@@ -398,7 +412,7 @@ export default function HomeLayout({ children }) {
               }}
             >
               <Box
-                onClick={handleClickOpen}
+                onClick={() => router.push(`${goToPortal}/signup`)}
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',
@@ -417,7 +431,7 @@ export default function HomeLayout({ children }) {
                 <UserIcon /> Student portal
               </Box>
               <Box
-                onClick={handleClickOpen}
+                onClick={() => router.push(`${goToPortal}/signup`)}
                 sx={{
                   padding: '12px 20px 12px 20px',
                   display: 'flex',

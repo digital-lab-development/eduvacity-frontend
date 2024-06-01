@@ -25,7 +25,8 @@ export default function Testimony() {
     <Box sx={{ background: '#F6F7F7' }}>
       <Box
         sx={{
-          px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 15.5 },
+          // px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 15.5 },
+          px: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
           py: { xs: '40px', lg: '96px' },
         }}
       >
@@ -68,7 +69,7 @@ export default function Testimony() {
                       width={180}
                       loading="lazy"
                       srcSet="..."
-                      objectFit="center"
+                      objectFit="cover"
                       borderRadius="20px"
                     />
                   </Box>
