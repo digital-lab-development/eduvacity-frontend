@@ -107,7 +107,7 @@ const learningPath = [
     topics: [],
   },
 ];
-export default function DataAnalysis({ course }) {
+export default function LearningPath({ course }) {
   const [expanded, setExpanded] = useState('panel1');
 
   const handleChange = (panel) => (event, newExpanded) => {

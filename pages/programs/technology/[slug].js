@@ -37,7 +37,7 @@ import { Fonts } from '../../../src/components/themes/fonts';
 import HomePageLayout from '../../../src/views/home/layout';
 import AdmissionProcessCard from '../../../src/views/programs/admission-process';
 import BillingProcessCard from '../../../src/views/programs/billing';
-import DataAnalysis from '../../../src/views/programs/data-analysis';
+import LearningPath from '../../../src/views/programs/learning-path';
 import KeyFeaturesCard from '../../../src/views/programs/key-features';
 import {
   apiEndpoint,
@@ -189,7 +189,7 @@ export default function CloudComputingPage() {
           const res = await axios.get(
             `${apiEndpoint}/website/courses/${programId}`
           );
-          console.log('res', res.data);
+          // console.log('res', res.data);
           setCourse(res.data);
         } catch (error) {
           console.error(error);
@@ -242,7 +242,14 @@ export default function CloudComputingPage() {
               flexDirection: 'column',
               gap: { xs: '1rem', md: '2rem' },
             }}>
-            <ABULogo />
+            <Box>
+              <Image
+                src={course.schoolLogo}
+                alt="school logo"
+                height={36}
+                width={36}
+              />
+            </Box>
             <Typography
               sx={{
                 width: '100%',
@@ -1022,9 +1029,9 @@ export default function CloudComputingPage() {
                       },
                       color: Colors.grey,
                     }}>
-                    Vorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    {/* Vorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis.
+                    mattis. */}
                   </Typography>
                 </Box>
               </Box>
@@ -1202,13 +1209,14 @@ export default function CloudComputingPage() {
                     font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
                     color: '#fff',
                     letterSpacing: '-0.02em',
+                    textAlign: 'center',
                   }}>
                   Affordable Quality Education
                 </Typography>
                 <Box
                   component="span"
                   sx={{
-                    maxWidth: 840,
+                    // maxWidth: 840,
                     display: 'flex',
                     flexDirection: 'column',
                     mt: '24px',
@@ -1221,6 +1229,7 @@ export default function CloudComputingPage() {
                         sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
                       },
                       color: Colors.textColor,
+                      textAlign: 'center',
                     }}>
                     We offer cost effective programs, financial aid options, and
                     uncompromising standards of excellence, ensuring
@@ -1287,15 +1296,17 @@ export default function CloudComputingPage() {
                   m: 0,
                   p: 0,
                   letterSpacing: '-0.02em',
+                  textAlign: { xs: 'center', md: 'start' },
                 }}>
                 What will you learn
               </Typography>
               <Box
                 component="span"
                 sx={{
-                  maxWidth: 840,
+                  // maxWidth: 840,
                   display: 'flex',
                   flexDirection: 'column',
+                  mb: '20px',
                 }}>
                 <Typography
                   variant="span"
@@ -1305,6 +1316,7 @@ export default function CloudComputingPage() {
                       sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
                     },
                     color: Colors.grey,
+                    textAlign: { xs: 'justify', md: 'start' },
                   }}>
                   Upon successful completion of the Diploma in Computer Science
                   program at Ahmadu Bello University, Zaria, students will be
@@ -1326,8 +1338,7 @@ export default function CloudComputingPage() {
                 Learning Path
               </Typography>
             </Box>
-            {/* <DataAnalysis /> */}
-            <DataAnalysis course={course.learningPathModule || []} />
+            <LearningPath course={course.learningPathModule || []} />
           </Box>
         </Box>
       </Box>

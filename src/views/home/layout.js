@@ -229,9 +229,9 @@ export default function HomeLayout({ children }) {
     {
       name: 'Become an Instructor',
     },
-    {
-      name: 'About Us',
-    },
+    // {
+    //   name: 'About Us',
+    // },
   ];
   React.useEffect(() => {
     if (isInView) {
