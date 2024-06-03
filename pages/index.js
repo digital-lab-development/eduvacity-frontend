@@ -50,7 +50,6 @@ export default function HomePage() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [showCover, setShowCover] = useState(true);
-  const videoId = 'qqMrLuVI3d0';
 
   const handleVideoClick = () => {
     setShowCover(!showCover);
@@ -217,7 +216,7 @@ export default function HomePage() {
                 position: 'relative',
               }}>
               <Image
-                src="/images/hero-pix.png"
+                src="/images/hero-pix.jpg"
                 alt="hero"
                 layout="fill"
                 style={{

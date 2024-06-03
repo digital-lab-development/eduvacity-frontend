@@ -261,7 +261,7 @@ export default function CloudComputingPage() {
                 color: Colors.light,
                 letterSpacing: '-2%',
               }}>
-              A.B.U school of ICT: {course.programName}
+              A.B.U Institute of ICICT: {course.programName}
             </Typography>
             <Typography
               variant="p"
@@ -275,8 +275,9 @@ export default function CloudComputingPage() {
                 letterSpacing: { xs: '0em' },
                 maxWidth: 480,
               }}>
-              Powerful, self-serve product and growth analytics to help you
-              convert, engage, and retain more.
+              We provide an ideal opportunity for students that want to gain
+              expertise in computer science. You will gain practical experience
+              and acquire the skills that employers seek.
             </Typography>
           </Box>
           <Box
