@@ -1,4 +1,8 @@
 import React from 'react';
+
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Box from '@mui/material/Box';
@@ -16,9 +20,9 @@ import {
   ArrowForward,
   ClockIcon,
 } from '../../../components/svg';
-import Image from 'next/image';
 
 export default function ProgramCard({ cards, handleClick }) {
+  const router = useRouter();
   const swiperRef = React.useRef(null);
 
   const goNext = () => {
@@ -126,7 +130,7 @@ export default function ProgramCard({ cards, handleClick }) {
                       }}>
                       <Box>
                         <Image
-                          src={card.icon}
+                          src={card.schoolLogo}
                           alt={card.program}
                           width={24}
                           height={24}
@@ -213,7 +217,9 @@ export default function ProgramCard({ cards, handleClick }) {
                     </Box>
                     <Button
                       size="small"
-                      onClick={handleClick}
+                      onClick={() =>
+                        router.push(`/programs/technology/${card.programId}`)
+                      }
                       endIcon={<ArrowForward />}
                       sx={{
                         width: { xs: 160, sm: 140 },

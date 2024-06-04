@@ -25,6 +25,9 @@ const getUrlLocation = () => {
 const isProduction = process.env.NODE_ENV || 'production';
 
 export const apiEndpoint = 'https://api.eduvacity.com/api/v1';
+// isProduction === 'production'
+//   ? 'https://api.eduvacity.com/api/v1'
+//   : 'https://test-api.eduvacity.com/api/v1';
 
 export const goToPortal =
   isProduction === 'production'

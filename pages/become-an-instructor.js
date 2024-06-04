@@ -42,7 +42,7 @@ export default function BecomeAnInstructor() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://test-api.eduvacity.com/api/v1/courses/'
+          'https://api.eduvacity.com/api/v1/courses/'
         );
         setCourses(response.data);
         setLoading(false);
