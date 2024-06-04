@@ -7,28 +7,29 @@ import { Fonts } from '../../components/themes/fonts';
 import { ngnCurrencyFormatter } from '../../utils';
 
 const cards = [
-  // {
-  //   title: 'Choose your Program',
-  //   description: 'Vorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  //   type: 'quarterly',
-  //   benefit: 'All available benefits',
-  //   popular: true,
-  //   price: '70,000',
-  // },
   {
-    title: 'Start your application',
+    title: 'Choose your Program',
     description:
-      "Once you've chosen your ideal program, it's time to kick-start the application process. Access our user-friendly online application portal and provide the required information, including personal details, academic history, and any supporting documentation. ",
-    type: 'once',
+      "Once you've chosen your ideal program, it's time to kick-start the application process. Access our user-friendly online application portal and provide the required information, including personal details, academic history, and any supporting documentation.",
+    type: 'quarterly',
     benefit: 'All available benefits',
-    popular: false,
-    price: '210,000',
+    popular: true,
+    price: 70000,
   },
+  // {
+  //   title: 'Start your application',
+  //   description:
+  //     "Once you've chosen your ideal program, it's time to kick-start the application process. Access our user-friendly online application portal and provide the required information, including personal details, academic history, and any supporting documentation. ",
+  //   type: 'once',
+  //   benefit: 'All available benefits',
+  //   popular: false,
+  //   price: '210,000',
+  // },
 ];
 export default function BillingProcessCard({ price }) {
   return (
     <Box sx={{ width: '100%', display: 'flex' }}>
-      <Grid container spacing={'20px'}>
+      <Grid container spacing={'20px'} sx={{ justifyContent: 'center' }}>
         {cards.map((card, index) => {
           return (
             <Grid item xs={12} sm={6} key={`card-index-${index}`}>
@@ -67,7 +68,7 @@ export default function BillingProcessCard({ price }) {
                           textAlign: 'left',
                           textTransform: 'capitalize',
                         }}>
-                        {/* {card.type === 'once' ? 'Upfront' : card.type} */}
+                        {card.type === 'once' ? 'Upfront' : card.type}
                       </Typography>
                     }
                     action={
@@ -111,7 +112,7 @@ export default function BillingProcessCard({ price }) {
                         textAlign: 'left',
                         color: '#fff',
                       }}>
-                      {ngnCurrencyFormatter(price || 0)}
+                      {ngnCurrencyFormatter(card.price)}
                       {card.type === 'once' ? null : (
                         <Box
                           component="span"
@@ -122,7 +123,7 @@ export default function BillingProcessCard({ price }) {
                             color: Colors.textPrimaryDark,
                             mt: 3,
                           }}>
-                          {/* per quarter */}
+                          per quarter
                         </Box>
                       )}
                     </Box>
