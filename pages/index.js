@@ -635,15 +635,15 @@ export default function HomePage() {
                     style={{
                       position: 'relative',
                       width: '100%',
-                      height: '0px',
-                      paddingBottom: '56.250%',
+                      height: 516,
+                      // paddingBottom: '56.250%',
                     }}>
                     <iframe
                       title="How to be a school teacher"
                       allow="fullscreen"
                       allowFullScreen
                       height="100%"
-                      src="https://streamable.com/e/m2a6rc"
+                      src="https://www.youtube.com/embed/la0ytnh7Gzg?si=sW7Yi9SqCjuOds4Y"
                       width="100%"
                       style={{
                         display: showCover ? 'none' : 'block',
@@ -651,11 +651,9 @@ export default function HomePage() {
                         border: 'none',
                         width: '100%',
                         height: '100%',
-                        position: 'absolute',
-                        left: '0px',
-                        top: '0px',
                         overflow: 'hidden',
                         cursor: 'pointer',
+                        aspectRatio: 'video',
                       }}></iframe>
                   </div>
                   {/* <iframe
