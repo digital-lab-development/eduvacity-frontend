@@ -65,12 +65,12 @@ const overview = [
   {
     title: 'Live Learning Sessions:',
     content:
-      "Engage in more than 25 live sessions, where you'll delve into industry-relevant topics such as business growth strategies, leadership skills, teamwork dynamics, problem-solving strategies and more",
+      'Our live learning sessions are interactive educational experiences led by expert instructors, these sessions provide real-time engagement, fostering dynamic discussions and immediate feedback.',
   },
   {
     title: 'Career Growth Opportunities:',
     content:
-      'Take advantage of the projected 5% growth in management occupations from 2019 to 2029, offering ample opportunities for career advancement and professional development.',
+      'Explore new horizons in your career journey with our dynamic growth opportunity. Whether scaling the corporate hierarchy, pivoting industries, or venturing into entrepreneurship, our program provides the essential tools and expertise for success.',
   },
   {
     title: 'Assessment:',
@@ -137,16 +137,15 @@ const advantages = [
 ];
 
 const careerPaths = [
-  'Software Developer/Engineer',
-  'Database Administrator',
-  'Data Scientist/Data Analyst',
-  'Machine Learning Engineer',
-  'Cybersecurity Specialist',
-  'Cloud Engineer/Architect',
-  'Network Engineer/Administrator',
-  'Product Manager',
-  'Systems Administrator',
-  'IT Consultant',
+  'Hardware Engineer',
+  'Network Engineer',
+  'Systems Analyst',
+  'Embedded Systems Engineer',
+  'Cybersecurity Analyst',
+  'Data Scientist',
+  'Artificial Intelligence/Machine Learning Engineer',
+  'Cloud Engineer',
+  'Robotics Engineer',
 ];
 export default function CloudComputingPage() {
   const router = useRouter();
@@ -1217,10 +1216,11 @@ export default function CloudComputingPage() {
                 <Box
                   component="span"
                   sx={{
-                    // maxWidth: 840,
+                    maxWidth: 840,
                     display: 'flex',
                     flexDirection: 'column',
                     mt: '24px',
+                    mx: 'auto',
                   }}>
                   <Typography
                     variant="span"
