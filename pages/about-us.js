@@ -344,8 +344,8 @@ export default function AboutUs() {
               We are empowering 1,000,000,000 people in Africa with the tools
               and opportunities to become world-class. Eduvacity is where
               individuals from around Africa acquire the skills they need
-              precisely when they need them most. We're here to propel people
-              forward in their careers and personal journeys.
+              precisely when they need them most. We&apos;re here to propel
+              people forward in their careers and personal journeys.
             </Typography>
           </Grid>
           <Grid
@@ -749,9 +749,9 @@ export default function AboutUs() {
                 color: Colors.textColor,
               }}
             >
-              We're here to prepare you for the future workplace, not the past,
-              focusing on industries with the most growth potential. Stand out
-              with Eduvacity.
+              We&apos;re here to prepare you for the future workplace, not the
+              past, focusing on industries with the most growth potential. Stand
+              out with Eduvacity.
             </Typography>
             <Box
               sx={{
@@ -897,7 +897,8 @@ export default function AboutUs() {
             textAlign: 'left',
           }}
         >
-          The world is changing. Shouldn't universities in Africa change too?
+          The world is changing. Shouldn&apos;t universities in Africa change
+          too?
         </Typography>
         <Grid
           container
