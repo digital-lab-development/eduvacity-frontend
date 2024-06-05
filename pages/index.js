@@ -30,6 +30,7 @@ import {
 import Image from 'next/image';
 import Testimony from '../src/components/testimony';
 import { goToPortal } from '../src/utils';
+import Link from 'next/link';
 
 const partners = [
   {
@@ -40,8 +41,8 @@ const partners = [
 ];
 
 const communityImages = [
-  '/images/community3.png',
-  '/images/hassan.jpeg',
+  '/images/community3.jpg',
+  '/images/community5.jpg',
   ['/images/community1.png', '/images/community4.png'], // max 2 images
   '/images/community2.png',
 ]; // max 4 items (images or an array of 2 images)
@@ -175,8 +176,10 @@ export default function HomePage() {
                     See All Courses <ArrowUp />
                   </Box>
                   <Box
-                    // onClick={() => router.push('https://wa.me/<number>')}
-                    onClick={() => router.push(`${goToPortal}/signup`)}
+                    component="a"
+                    target="_blank"
+                    href="https://wa.link/3xhcsh"
+                    // onClick={() => router.push(`https://wa.link/3xhcsh`)}
                     sx={{
                       display: 'flex',
                       justifyContent: 'center',
@@ -214,15 +217,19 @@ export default function HomePage() {
                 display: 'flex',
                 justifyContent: 'center',
                 position: 'relative',
+                background: 'url(/images/hero-pix.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
               }}>
-              <Image
+              {/* <Image
                 src="/images/hero-pix.jpg"
                 alt="hero"
                 layout="fill"
                 style={{
                   objectFit: { xs: 'cover', sm: 'cover', md: 'contain' },
                 }}
-              />
+              /> */}
             </Box>
           </Box>
         </Box>
@@ -363,21 +370,30 @@ export default function HomePage() {
             education should prepare you for the future, not the past. It should
             enhance your employability and unlock opportunities.
           </Typography>
-          <Typography
-            onClick={() => router.push(`${goToPortal}/signup`)}
+          <Box
+            component="a"
+            target="_blank"
+            href={'https://forms.gle/izxdJyWYmakCi8Fd6'}
             sx={{
-              textAlign: { xs: 'center', lg: 'start', md: 'start' },
-              width: { lg: '768px', md: '768px' },
-              mt: ['40px', '60px'],
-              color: '#505F79',
-              fontSize: ['18px', '20px'],
+              padding: '4px 20px 4px 20px',
+              mt: '16px',
+              display: 'flex',
+              justifyContent: 'center',
+              width: '150px',
+              alignItems: 'center',
+              fontSize: ['14px', '16px'],
+              font: `normal normal 400 normal 14px/[19.2px] ${Fonts.primary}`,
+              color: 'rgba(230, 244, 237, 1)',
+              borderRadius: '46px',
               cursor: 'pointer',
+              textWrap: 'nowrap',
+              background: '#00bb',
               '&:hover': {
-                textDecoration: 'underline',
+                background: 'blue',
               },
             }}>
-            Join us to pave your path to success.
-          </Typography>
+            Join us
+          </Box>
         </Box>
         <Box sx={{ flexGrow: 1 }}>
           <Grid
@@ -584,7 +600,7 @@ export default function HomePage() {
                   position: 'relative',
                   width: '100%',
                 }}>
-                {showCover && (
+                {/* {showCover && (
                   <Box
                     sx={{
                       position: 'relative',
@@ -623,12 +639,14 @@ export default function HomePage() {
                       <PlayButton />
                     </Box>
                   </Box>
-                )}
+                )} */}
                 <Box
                   sx={{
                     height: {
-                      xs: showCover ? 0 : 240,
-                      sm: showCover ? 0 : 516,
+                      xs: 240,
+                      sm: 516,
+                      // xs: showCover ? 0 : 240,
+                      // sm: showCover ? 0 : 516,
                     },
                   }}>
                   <div
@@ -646,7 +664,7 @@ export default function HomePage() {
                       src="https://www.youtube.com/embed/la0ytnh7Gzg?si=sW7Yi9SqCjuOds4Y"
                       width="100%"
                       style={{
-                        display: showCover ? 'none' : 'block',
+                        // display: showCover ? 'none' : 'block',
                         borderRadius: '24px',
                         border: 'none',
                         width: '100%',
@@ -754,7 +772,7 @@ export default function HomePage() {
               fontSize: ['18px', '20px'],
               fontWeight: 'bold',
             }}>
-            Backed by
+            Backed by the Best
           </Typography>
           <Typography
             sx={{
@@ -766,8 +784,8 @@ export default function HomePage() {
               fontSize: ['18px', '20px'],
               fontWeight: 300,
             }}>
-            Proudly collaborating with academic institutions and innovative
-            organisations to foster excellence and drive positive impact.
+            Our investors believe in the transformative power of education and
+            are committed to making a tangible impact.
           </Typography>
           <Box
             sx={{
