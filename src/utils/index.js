@@ -42,3 +42,19 @@ export const ngnCurrencyFormatter = (value) => {
 
   return formattedAmount.replace('NGN', '₦');
 };
+
+export function isImageOrVideo(link) {
+  // Regular expressions for image and video extensions
+  const imageExtensions = /\.(jpg|jpeg|png|gif|bmp|tiff|svg|webp)$/i;
+  const videoExtensions =
+    /\.(mp4|mov|avi|wmv|flv|mkv|webm|ogg|ogv|m4v|3gp|3g2)$/i;
+
+  // Check if the link matches any of the image or video extensions
+  if (imageExtensions.test(link)) {
+    return 'image';
+  } else if (videoExtensions.test(link)) {
+    return 'video';
+  } else {
+    return 'unknown';
+  }
+}
