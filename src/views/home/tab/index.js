@@ -221,6 +221,8 @@ export default function AcademicTabs({ handleClick }) {
     programs && programs.filter((item) => item.programType === 'diploma');
   const bootscamp =
     programs && programs.filter((item) => item.programType === 'bootcamp');
+  const scholarship =
+    programs && programs.filter((item) => item.programType === 'scholarship');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -252,6 +254,7 @@ export default function AcademicTabs({ handleClick }) {
           <StyledTab label="All" />
           <StyledTab label="Diplomas" />
           <StyledTab label="Bootcamps" />
+          <StyledTab label="Scholarship" />
           {/* <StyledTab
             label="Degree"
             icon={
@@ -288,7 +291,7 @@ export default function AcademicTabs({ handleClick }) {
           <ProgramCard cards={bootscamp} handleClick={handleClick} />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <ProgramCard cards={degree} handleClick={handleClick} />
+          <ProgramCard cards={scholarship} handleClick={handleClick} />
         </TabPanel>
       </Box>
     </Box>

@@ -42,6 +42,7 @@ import KeyFeaturesCard from '../../../src/views/programs/key-features';
 import {
   apiEndpoint,
   goToPortal,
+  isImageOrVideo,
   ngnCurrencyFormatter,
 } from '../../../src/utils';
 import Image from 'next/image';
@@ -260,7 +261,8 @@ export default function CloudComputingPage() {
                 color: Colors.light,
                 letterSpacing: '-2%',
               }}>
-              A.B.U Institute of ICICT: {course.programName}
+              {course.programType === 'diploma' && ' A.B.U Institute of ICICT:'}{' '}
+              <span>{course.programName}</span>
             </Typography>
             <Typography
               variant="p"
@@ -274,9 +276,9 @@ export default function CloudComputingPage() {
                 letterSpacing: { xs: '0em' },
                 maxWidth: 480,
               }}>
-              We provide an ideal opportunity for students that want to gain
-              expertise in computer science. You will gain practical experience
-              and acquire the skills that employers seek.
+              {`We provide an ideal opportunity for students that want to gain
+              expertise in ${course.courseName}. You will gain practical experience
+              and acquire the skills that employers seek.`}
             </Typography>
           </Box>
           <Box
@@ -342,7 +344,10 @@ export default function CloudComputingPage() {
               <Box
                 sx={{
                   height: { xs: '282.85px', md: '442px' },
-                  backgroundImage: 'url(/images/videogirl.png)',
+                  backgroundImage:
+                    isImageOrVideo(course?.programClip) === 'video'
+                      ? 'url(/images/videogirl.png)'
+                      : `url(${course.programClip})`,
                   backgroundBlendMode: 'overlay',
                   backgroundSize: '100%',
                   backgroundPosition: 'center',
@@ -356,9 +361,11 @@ export default function CloudComputingPage() {
                     justifyContent: 'center',
                     alignItems: 'center',
                   }}>
-                  <IconButton onClick={handleVideoClick}>
-                    <PlayButton />
-                  </IconButton>
+                  {isImageOrVideo(course?.programClip) === 'video' && (
+                    <IconButton onClick={handleVideoClick}>
+                      <PlayButton />
+                    </IconButton>
+                  )}
                 </Box>
               </Box>
             ) : (
@@ -490,7 +497,9 @@ export default function CloudComputingPage() {
                   letterSpacing: '0em',
                   textAlign: 'center',
                 }}>
-                16 Months
+                {course.programType === 'diploma'
+                  ? '16 Months'
+                  : `${course.programDuration} Weeks`}
               </Typography>
               <Box
                 component="span"
@@ -766,35 +775,37 @@ export default function CloudComputingPage() {
                         }
                         sx={{ gap: 0, m: 0, p: 0 }}
                       />
-                      <CardHeader
-                        avatar={<Accreditation />}
-                        title={
-                          <Box
-                            sx={{
-                              font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
-                              color: '#9BA1A3',
-                              letterSpacing: '0em',
-                              textAlign: 'left',
-                            }}>
-                            Accreditation
-                          </Box>
-                        }
-                        subheader={
-                          <Box
-                            sx={{
-                              font: {
-                                xs: `normal normal 500 normal 12px/18px ${Fonts.primary}`,
-                                sm: `normal normal 500 normal 18px/26px ${Fonts.primary}`,
-                              },
-                              color: Colors.dark,
-                              letterSpacing: '0em',
-                              textAlign: 'left',
-                            }}>
-                            Ahmadu Bello University
-                          </Box>
-                        }
-                        sx={{ gap: 0, m: 0, p: 0 }}
-                      />
+                      {course.programType === 'diploma' && (
+                        <CardHeader
+                          avatar={<Accreditation />}
+                          title={
+                            <Box
+                              sx={{
+                                font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
+                                color: '#9BA1A3',
+                                letterSpacing: '0em',
+                                textAlign: 'left',
+                              }}>
+                              Accreditation
+                            </Box>
+                          }
+                          subheader={
+                            <Box
+                              sx={{
+                                font: {
+                                  xs: `normal normal 500 normal 12px/18px ${Fonts.primary}`,
+                                  sm: `normal normal 500 normal 18px/26px ${Fonts.primary}`,
+                                },
+                                color: Colors.dark,
+                                letterSpacing: '0em',
+                                textAlign: 'left',
+                              }}>
+                              Ahmadu Bello University
+                            </Box>
+                          }
+                          sx={{ gap: 0, m: 0, p: 0 }}
+                        />
+                      )}
                       <CardHeader
                         avatar={<StudentRatioIcon />}
                         title={
@@ -967,86 +978,88 @@ export default function CloudComputingPage() {
         />
       </Box>
 
-      <Box
-        component="section"
-        id="admission-section"
-        sx={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          py: { xs: 2, md: 12.5 },
-          backgroundColor: Colors.light,
-          gap: { xs: 0, sm: 12 },
-        }}>
+      {course.programType === 'diploma' && (
         <Box
+          component="section"
+          id="admission-section"
           sx={{
             width: '100%',
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            px: { xs: '1rem', sm: '1rem', md: '5rem' },
-            gap: { xs: 4, sm: 8 },
+            flexDirection: 'column',
+            py: { xs: 2, md: 12.5 },
+            backgroundColor: Colors.light,
+            gap: { xs: 0, sm: 12 },
           }}>
           <Box
             sx={{
               width: '100%',
               display: 'flex',
-              justifyContent: 'flex-start',
+              flexDirection: { xs: 'column', md: 'row' },
+              px: { xs: '1rem', sm: '1rem', md: '5rem' },
+              gap: { xs: 4, sm: 8 },
             }}>
-            <Card
+            <Box
               sx={{
-                boxShadow: 'none',
                 width: '100%',
                 display: 'flex',
-                flexDirection: 'column',
-                gap: '32px',
-                background: 'transparent',
+                justifyContent: 'flex-start',
               }}>
-              <Box sx={{ width: '100%' }}>
-                <Typography
-                  gutterBottom
-                  variant="h4"
-                  component="div"
-                  sx={{
-                    font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
-                    color: Colors.dark,
-                    letterSpacing: '-0.02em',
-                  }}>
-                  How the admission process works
-                </Typography>
-                <Box
-                  component="span"
-                  sx={{
-                    maxWidth: 840,
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}>
+              <Card
+                sx={{
+                  boxShadow: 'none',
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '32px',
+                  background: 'transparent',
+                }}>
+                <Box sx={{ width: '100%' }}>
                   <Typography
-                    variant="span"
+                    gutterBottom
+                    variant="h4"
+                    component="div"
                     sx={{
-                      font: {
-                        xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                        sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
-                      },
-                      color: Colors.grey,
+                      font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                      color: Colors.dark,
+                      letterSpacing: '-0.02em',
                     }}>
-                    {/* Vorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    How the admission process works
+                  </Typography>
+                  <Box
+                    component="span"
+                    sx={{
+                      maxWidth: 840,
+                      display: 'flex',
+                      flexDirection: 'column',
+                    }}>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        font: {
+                          xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
+                          sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
+                        },
+                        color: Colors.grey,
+                      }}>
+                      {/* Vorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc vulputate libero et velit interdum, ac aliquet odio
                     mattis. */}
-                  </Typography>
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
-              <Box
-                style={{
-                  width: '100%',
-                }}>
-                <Box sx={{}}>
-                  <AdmissionProcessCard />
+                <Box
+                  style={{
+                    width: '100%',
+                  }}>
+                  <Box sx={{}}>
+                    <AdmissionProcessCard />
+                  </Box>
                 </Box>
-              </Box>
-            </Card>
+              </Card>
+            </Box>
           </Box>
         </Box>
-      </Box>
+      )}
       <Box
         component="section"
         id="certificate-section"
@@ -1112,11 +1125,7 @@ export default function CloudComputingPage() {
                       },
                       color: Colors.grey,
                     }}>
-                    Enroll in our program for in-depth training on AWS, AZ-104,
-                    AZ-305, and DevOps on AWS. Master cloud platforms,
-                    architecture, infrastructure design, administration, and
-                    automation. Gain industry-relevant practical skills, and
-                    advance your cloud computing and DevOps career.
+                    {course?.certificationDetails}
                   </Typography>
                 </Box>
               </Box>
@@ -1239,7 +1248,7 @@ export default function CloudComputingPage() {
                 </Box>
               </Box>
               <Box style={{}}>
-                <BillingProcessCard price={course.coursePrice} />
+                <BillingProcessCard price={course} />
               </Box>
             </Card>
           </Box>
@@ -1416,75 +1425,34 @@ export default function CloudComputingPage() {
         />
       </Box>
 
-      <Box
-        component="section"
-        id="admission-section"
-        sx={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          py: { xs: '65px', md: '96px' },
-          backgroundColor: '#FFD993',
-          gap: { xs: 0, sm: 12 },
-        }}>
+      {course.programType === 'diploma' && (
         <Box
+          component="section"
+          id="admission-section"
           sx={{
             width: '100%',
-            // height: { xs: 850, sm: 560 },
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            px: { xs: '1rem', sm: '1rem', md: '5rem' },
-            pb: 6,
-            gap: { xs: 4, sm: 8 },
+            flexDirection: 'column',
+            py: { xs: '65px', md: '96px' },
+            backgroundColor: '#FFD993',
+            gap: { xs: 0, sm: 12 },
           }}>
           <Box
             sx={{
               width: '100%',
+              // height: { xs: 850, sm: 560 },
               display: 'flex',
-              justifyContent: 'flex-start',
+              flexDirection: { xs: 'column', md: 'row' },
+              px: { xs: '1rem', sm: '1rem', md: '5rem' },
+              pb: 6,
+              gap: { xs: 4, sm: 8 },
             }}>
-            <Card
+            <Box
               sx={{
-                boxShadow: 'none',
                 width: '100%',
                 display: 'flex',
-                flexDirection: 'column',
-                gap: '32px',
-                background: 'transparent',
+                justifyContent: 'flex-start',
               }}>
-              <Box sx={{ width: '100%' }}>
-                <Typography
-                  gutterBottom
-                  variant="h4"
-                  component="div"
-                  sx={{
-                    font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
-                    color: Colors.dark,
-                    letterSpacing: '-0.02em',
-                  }}>
-                  Requirements
-                </Typography>
-                <Box
-                  component="span"
-                  sx={{
-                    maxWidth: 840,
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}>
-                  <Typography
-                    variant="span"
-                    sx={{
-                      font: {
-                        xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                        sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
-                      },
-                      color: Colors.grey,
-                    }}>
-                    The result must include a minimum of five credits in the
-                    following subjects in not more than two sittings:
-                  </Typography>
-                </Box>
-              </Box>
               <Card
                 sx={{
                   boxShadow: 'none',
@@ -1494,90 +1462,133 @@ export default function CloudComputingPage() {
                   gap: '32px',
                   background: 'transparent',
                 }}>
-                <Box
+                <Box sx={{ width: '100%' }}>
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="div"
+                    sx={{
+                      font: `normal normal 600 normal 30px/36px ${Fonts.Demi}`,
+                      color: Colors.dark,
+                      letterSpacing: '-0.02em',
+                    }}>
+                    Requirements
+                  </Typography>
+                  <Box
+                    component="span"
+                    sx={{
+                      maxWidth: 840,
+                      display: 'flex',
+                      flexDirection: 'column',
+                    }}>
+                    <Typography
+                      variant="span"
+                      sx={{
+                        font: {
+                          xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
+                          sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
+                        },
+                        color: Colors.grey,
+                      }}>
+                      The result must include a minimum of five credits in the
+                      following subjects in not more than two sittings:
+                    </Typography>
+                  </Box>
+                </Box>
+                <Card
                   sx={{
+                    boxShadow: 'none',
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '12px',
+                    gap: '32px',
+                    background: 'transparent',
                   }}>
-                  <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
-                    <Box>
-                      <CheckCircled />
-                    </Box>{' '}
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="div"
-                      sx={{
-                        font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
-                        color: '#475467',
-                        letterSpacing: '0em',
-                        textAlign: 'left',
-                      }}>
-                      English language
-                    </Typography>
+                  <Box
+                    sx={{
+                      width: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '12px',
+                    }}>
+                    <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
+                      <Box>
+                        <CheckCircled />
+                      </Box>{' '}
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                        sx={{
+                          font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                          color: '#475467',
+                          letterSpacing: '0em',
+                          textAlign: 'left',
+                        }}>
+                        English language
+                      </Typography>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
+                      <Box>
+                        <CheckCircled />
+                      </Box>{' '}
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                        sx={{
+                          font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                          color: '#475467',
+                          letterSpacing: '0em',
+                          textAlign: 'left',
+                        }}>
+                        Mathematics
+                      </Typography>
+                    </Box>
+                    <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
+                      <Box>
+                        <CheckCircled />
+                      </Box>{' '}
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                        sx={{
+                          font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                          color: '#475467',
+                          letterSpacing: '0em',
+                          textAlign: 'left',
+                        }}>
+                        Three other related subjects
+                      </Typography>
+                    </Box>
                   </Box>
-                  <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
-                    <Box>
-                      <CheckCircled />
-                    </Box>{' '}
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="div"
-                      sx={{
-                        font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
-                        color: '#475467',
-                        letterSpacing: '0em',
-                        textAlign: 'left',
-                      }}>
-                      Mathematics
-                    </Typography>
-                  </Box>
-                  <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
-                    <Box>
-                      <CheckCircled />
-                    </Box>{' '}
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="div"
-                      sx={{
-                        font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
-                        color: '#475467',
-                        letterSpacing: '0em',
-                        textAlign: 'left',
-                      }}>
-                      Three other related subjects
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  onClick={() => router.push(goToPortal + '/signup')}
-                  sx={{
-                    width: { xs: '100%', sm: 180 },
-                    padding: '12px 20px 12px 20px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
-                    cursor: 'pointer',
-                    color: 'rgba(230, 244, 237, 1)',
-                    borderRadius: '46px',
+                  <Box
+                    onClick={() => router.push(goToPortal + '/signup')}
+                    sx={{
+                      width: { xs: '100%', sm: 180 },
+                      padding: '12px 20px 12px 20px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
+                      cursor: 'pointer',
+                      color: 'rgba(230, 244, 237, 1)',
+                      borderRadius: '46px',
 
-                    background: Colors.primary,
-                    '&:hover': {
                       background: Colors.primary,
-                    },
-                  }}>
-                  Enroll Now <ArrowUp />
-                </Box>
+                      '&:hover': {
+                        background: Colors.primary,
+                      },
+                    }}>
+                    Enroll Now <ArrowUp />
+                  </Box>
+                </Card>
               </Card>
-            </Card>
+            </Box>
           </Box>
         </Box>
-      </Box>
+      )}
 
       <Box
         component="section"

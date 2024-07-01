@@ -210,7 +210,7 @@ export default function ProgramCard({ cards, handleClick }) {
                           {/* {number} */}
                           {card.programType === 'diploma'
                             ? '16 months'
-                            : '3 months'}
+                            : `6 weeks`}
                         </span>{' '}
                         {/* {unit} */}
                       </Box>
