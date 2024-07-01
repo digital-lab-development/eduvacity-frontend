@@ -67,7 +67,8 @@ export default function HomeLayout({ children }) {
           acc[programType].content.push({
             title: program.programName,
             starts: dayjs(program.startDate).format('Do MMM, YYYY'),
-            duration: program.programDuration || '16 months',
+            duration:
+              program.programType === 'diploma' ? '16 months' : '6 weeks',
             active: true, // Assuming you have an `active` field
             link: `/programs/technology/${program.programId}`,
           });

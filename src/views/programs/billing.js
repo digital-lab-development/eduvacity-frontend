@@ -26,7 +26,7 @@ const cards = [
   //   price: '210,000',
   // },
 ];
-export default function BillingProcessCard({ price }) {
+export default function BillingProcessCard({ course }) {
   return (
     <Box sx={{ width: '100%', display: 'flex' }}>
       <Grid container spacing={'20px'} sx={{ justifyContent: 'center' }}>
@@ -68,7 +68,7 @@ export default function BillingProcessCard({ price }) {
                           textAlign: 'left',
                           textTransform: 'capitalize',
                         }}>
-                        {card.type === 'once' ? 'Upfront' : card.type}
+                        {/* {card.type === 'once' ? 'Upfront' : card.type} */}
                       </Typography>
                     }
                     action={
@@ -112,22 +112,28 @@ export default function BillingProcessCard({ price }) {
                         textAlign: 'left',
                         color: '#fff',
                       }}>
-                      {ngnCurrencyFormatter(card.price)}
-                      {card.type === 'once' ? null : (
-                        <Box
-                          component="span"
-                          sx={{
-                            font: `normal normal 700 normal 16px/24px ${Fonts.inter}`,
-                            letterSpacing: '-0.02em',
-                            textAlign: 'left',
-                            color: Colors.textPrimaryDark,
-                            mt: 3,
-                          }}>
-                          per quarter
-                        </Box>
+                      {ngnCurrencyFormatter(
+                        course === 'diploma' ? card.price : 35000
+                      )}
+                      {course?.programType === 'diploma' && (
+                        <>
+                          {card.type === 'once' ? null : (
+                            <Box
+                              component="span"
+                              sx={{
+                                font: `normal normal 700 normal 16px/24px ${Fonts.inter}`,
+                                letterSpacing: '-0.02em',
+                                textAlign: 'left',
+                                color: Colors.textPrimaryDark,
+                                mt: 3,
+                              }}>
+                              per semester
+                            </Box>
+                          )}
+                        </>
                       )}
                     </Box>
-                    <Typography
+                    {/* <Typography
                       gutterBottom
                       variant="h6"
                       component="div"
@@ -141,7 +147,7 @@ export default function BillingProcessCard({ price }) {
                       {card.type === 'once'
                         ? 'Billed once.'
                         : 'Billed annually.'}
-                    </Typography>
+                    </Typography> */}
                   </Box>
                 </Box>
                 <Box
