@@ -113,7 +113,7 @@ export default function BillingProcessCard({ course }) {
                         color: '#fff',
                       }}>
                       {ngnCurrencyFormatter(
-                        course === 'diploma' ? card.price : 35000
+                        course?.programType === 'diploma' ? 70000 : 35000
                       )}
                       {course?.programType === 'diploma' && (
                         <>

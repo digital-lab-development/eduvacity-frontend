@@ -1248,7 +1248,7 @@ export default function CloudComputingPage() {
                 </Box>
               </Box>
               <Box style={{}}>
-                <BillingProcessCard price={course} />
+                <BillingProcessCard course={course} />
               </Box>
             </Card>
           </Box>
