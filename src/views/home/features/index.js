@@ -44,7 +44,7 @@ const cards = [
     icon: <ComputerIcon />,
   },
   {
-    name: 'Lifelong leaning',
+    name: 'Lifelong learning',
     description:
       'The learning journey is perpetual. Eduvacity empowers you with a wealth of knowledge and mentorship throughout your career journey, ensuring that your educational pursuit transcends industry relevance.',
     icon: <AnchorIcon />,
@@ -70,7 +70,8 @@ export default function FeaturesCard() {
                   gap: '64px',
                   boxShadow: 'none',
                   background: '#F6F7F7',
-                }}>
+                }}
+              >
                 <Box>{card.icon}</Box>
                 <Box sx={{ width: '100%' }}>
                   <Typography
@@ -84,7 +85,8 @@ export default function FeaturesCard() {
                         textTransform: 'capitalize',
                       },
                       color: Colors.dark,
-                    }}>
+                    }}
+                  >
                     {card.name}
                   </Typography>
                   <Typography
@@ -93,7 +95,8 @@ export default function FeaturesCard() {
                       width: 341,
                       font: `normal normal 400 normal 16px/24px ${Fonts.primary}`,
                       color: Colors.textColor,
-                    }}>
+                    }}
+                  >
                     {card.description}
                   </Typography>
                 </Box>

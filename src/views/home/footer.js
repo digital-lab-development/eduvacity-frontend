@@ -17,6 +17,7 @@ import {
   FOOTER_COURSES,
   FOOTER_NOTE,
 } from '../../utils/contants';
+import { capitalizeTitle } from '../../utils/capitalizeTitle';
 
 export default function FooterPage() {
   const today = new Date();
@@ -32,7 +33,8 @@ export default function FooterPage() {
         flexDirection: 'column',
         flexWrap: 'wrap',
         gap: 7.25,
-      }}>
+      }}
+    >
       <Box
         sx={{
           width: '100%',
@@ -42,7 +44,8 @@ export default function FooterPage() {
           pl: { xs: 4, sm: 3, lg: 5, xl: 16 },
           pr: { xs: 2, lg: 0, xl: 16 },
           py: { xs: 3, md: '56px' },
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -50,7 +53,8 @@ export default function FooterPage() {
             display: 'flex',
             flexDirection: 'column',
             gap: 2,
-          }}>
+          }}
+        >
           <Link underline="none" href="/" sx={{ width: 200 }}>
             <Image
               src="/images/logo.png"
@@ -70,7 +74,8 @@ export default function FooterPage() {
               },
               color: '#87A0A8',
               textAlign: { xs: 'left', sm: 'left' },
-            }}>
+            }}
+          >
             {FOOTER_NOTE}
           </Typography>
           <Typography
@@ -80,7 +85,8 @@ export default function FooterPage() {
               mt: { xs: 2, lg: 8 },
               color: Colors.primary,
               font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-            }}>
+            }}
+          >
             Address
           </Typography>
           <Typography
@@ -93,9 +99,11 @@ export default function FooterPage() {
               },
               color: '#87A0A8',
               textAlign: { xs: 'left', sm: 'left' },
-            }}>
-            No 56 Labito crescent wuse 2 federal capital Territory Abuja,
-            Nigeria
+            }}
+          >
+            {capitalizeTitle(
+              'No 56 Labito crescent wuse 2 federal capital Territory Abuja, Nigeria'
+            )}
           </Typography>
         </Box>
         <Box
@@ -106,7 +114,8 @@ export default function FooterPage() {
             display: 'flex',
             justifyContent: { xs: 'flex-start', sm: 'flex-end' },
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Grid container spacing={{ xs: 3, lg: 8 }}>
             <Grid item xs={8} sm={3} md={4} lg={2.4}>
               <Box
@@ -116,14 +125,16 @@ export default function FooterPage() {
                   flexDirection: 'column',
                   gap: '16px',
                   alignItems: 'flex-start',
-                }}>
+                }}
+              >
                 <Typography
                   variant="h4"
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
                     font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-                  }}>
+                  }}
+                >
                   Courses
                 </Typography>
                 {FOOTER_COURSES.map((course, index) => (
@@ -134,7 +145,8 @@ export default function FooterPage() {
                       color: '#E6F4ED',
                       font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                       letterSpacing: '0em',
-                    }}>
+                    }}
+                  >
                     {course}
                   </Box>
                 ))}
@@ -149,14 +161,16 @@ export default function FooterPage() {
                   gap: '16px',
                   alignItems: 'flex-start',
                   ml: { xs: 0, sm: 4, lg: 6, xl: 3 },
-                }}>
+                }}
+              >
                 <Typography
                   variant="h4"
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
                     font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-                  }}>
+                  }}
+                >
                   Company
                 </Typography>
                 {FOOTER_COMPANY.map((company, index) => (
@@ -169,8 +183,9 @@ export default function FooterPage() {
                       color: '#E6F4ED',
                       font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                       letterSpacing: '0em',
-                    }}>
-                    {company.title}
+                    }}
+                  >
+                    {capitalizeTitle(company.title)}
                   </Link>
                 ))}
               </Box>
@@ -183,14 +198,16 @@ export default function FooterPage() {
                   flexDirection: 'column',
                   gap: '16px',
                   alignItems: 'flex-start',
-                }}>
+                }}
+              >
                 <Typography
                   variant="h4"
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
                     font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-                  }}>
+                  }}
+                >
                   Academics
                 </Typography>
                 <Link
@@ -201,7 +218,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   Blogs
                 </Link>{' '}
                 <Link
@@ -212,8 +230,9 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
-                  Idea hubs
+                  }}
+                >
+                  Idea Hubs
                 </Link>
                 <Link
                   underline="hover"
@@ -223,8 +242,9 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
-                  Contact us
+                  }}
+                >
+                  Contact Us
                 </Link>
               </Box>
             </Grid>
@@ -236,14 +256,16 @@ export default function FooterPage() {
                   flexDirection: 'column',
                   gap: '16px',
                   alignItems: 'flex-start',
-                }}>
+                }}
+              >
                 <Typography
                   variant="h4"
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
                     font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-                  }}>
+                  }}
+                >
                   Resources
                 </Typography>
                 <Link
@@ -254,7 +276,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   Blogs
                 </Link>{' '}
                 <Link
@@ -265,8 +288,9 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
-                  Idea hubs
+                  }}
+                >
+                  Idea Hubs
                 </Link>
                 <Link
                   underline="hover"
@@ -276,7 +300,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   E-library
                 </Link>
                 <Link
@@ -287,7 +312,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   FAQs
                 </Link>
                 <Link
@@ -298,8 +324,9 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
-                  How to get started
+                  }}
+                >
+                  {capitalizeTitle('How to get started')}
                 </Link>
               </Box>
             </Grid>
@@ -311,14 +338,16 @@ export default function FooterPage() {
                   flexDirection: 'column',
                   gap: '16px',
                   alignItems: 'flex-start',
-                }}>
+                }}
+              >
                 <Typography
                   variant="h4"
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
                     font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-                  }}>
+                  }}
+                >
                   Legal
                 </Typography>
                 <Link
@@ -329,7 +358,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   Terms
                 </Link>{' '}
                 <Link
@@ -340,7 +370,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   Privacy
                 </Link>
                 <Link
@@ -351,7 +382,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   Cookies
                 </Link>
                 <Link
@@ -362,7 +394,8 @@ export default function FooterPage() {
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
-                  }}>
+                  }}
+                >
                   Licenses
                 </Link>
               </Box>
@@ -381,7 +414,8 @@ export default function FooterPage() {
           borderTop: `1px solid #1B3139`,
           background: Colors.secondary,
           mb: { xs: '45px', sm: 0 },
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '100%',
@@ -391,7 +425,8 @@ export default function FooterPage() {
             height: 24,
             px: { xs: 3, lg: 8, xl: 16 },
             gap: '10px',
-          }}>
+          }}
+        >
           <Typography
             variant="h4"
             sx={{
@@ -400,7 +435,8 @@ export default function FooterPage() {
               display: { xs: 'none', sm: 'flex' },
               font: `normal normal 400 normal 16px/24px ${Fonts.inter}`,
               letterSpacing: '0em',
-            }}>
+            }}
+          >
             © {year} eduvacity. All rights reserved.
           </Typography>
           <Box sx={{ maxWidth: 500, display: 'flex', gap: '24px' }}>
@@ -409,7 +445,8 @@ export default function FooterPage() {
               <Link
                 underline="none"
                 href="https://x.com/eduvacity"
-                target="_blank">
+                target="_blank"
+              >
                 <Twitter />
               </Link>
             </IconButton>
@@ -417,7 +454,8 @@ export default function FooterPage() {
               <Link
                 underline="none"
                 href="https://www.linkedin.com/eduvasity/"
-                target="_blank">
+                target="_blank"
+              >
                 <LinkedIn />
               </Link>
             </IconButton>
@@ -425,7 +463,8 @@ export default function FooterPage() {
               <Link
                 underline="none"
                 href="https://www.facebook.com/eduvacity/"
-                target="_blank">
+                target="_blank"
+              >
                 <Facebook />
               </Link>
             </IconButton>
@@ -433,7 +472,8 @@ export default function FooterPage() {
               <Link
                 underline="none"
                 href="https://www.youtube.com/eduvacity/"
-                target="_blank">
+                target="_blank"
+              >
                 <Youtube />
               </Link>
             </IconButton>
@@ -441,7 +481,8 @@ export default function FooterPage() {
               <Link
                 underline="none"
                 href="https://www.instagram.com/eduvacity/"
-                target="_blank">
+                target="_blank"
+              >
                 <Instagram />
               </Link>
             </IconButton>
@@ -454,7 +495,8 @@ export default function FooterPage() {
               display: { xs: 'flex', sm: 'none' },
               font: `normal normal 400 normal 16px/24px ${Fonts.inter}`,
               letterSpacing: '0em',
-            }}>
+            }}
+          >
             © {year} eduvacity. All rights reserved.
           </Typography>
         </Box>
