@@ -26,6 +26,7 @@ import {
   WHY_EDUVACITY_VALUE_DESC,
 } from '../src/utils/contants';
 import HomePageLayout from '../src/views/home/layout';
+import { capitalizeTitle } from '../src/utils/capitalizeTitle';
 
 export default function WhyEduvasityPage() {
   const router = useRouter();
@@ -243,8 +244,9 @@ export default function WhyEduvasityPage() {
                         textAlign: 'left',
                       }}
                     >
-                      Collaborates with experts institutions to offer courses
-                      aligned with industry needs
+                      {capitalizeTitle(
+                        'Collaborates with experts institutions to offer courses aligned with industry needs'
+                      )}
                     </Typography>
                   </Box>
                   <Box
@@ -455,8 +457,9 @@ export default function WhyEduvasityPage() {
                         textAlign: 'left',
                       }}
                     >
-                      Collaborates with experts institutions to offer courses
-                      aligned with industry needs
+                      {capitalizeTitle(
+                        'Collaborates with experts institutions to offer courses aligned with industry needs'
+                      )}
                     </Typography>
                   </Box>
                   <Box

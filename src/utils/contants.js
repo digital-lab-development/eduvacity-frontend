@@ -37,7 +37,7 @@ export const FOOTER_COMPANY = [
   { title: 'Why eduvacity', href: '/why-eduvacity' },
   { title: 'Careers', href: '#' },
   { title: 'Partners', href: '#' },
-  { title: 'Become an instructors', href: '#' },
+  { title: 'Become an instructor', href: '#' },
   { title: 'Scholarships', href: '#' },
 ];
 
