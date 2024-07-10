@@ -7,8 +7,7 @@ export const HERO_TEXT = {
 };
 
 //PROGRAMS
-export const PROGRAM_TITLE =
-  'Achieve certification and progress through our programs.';
+export const PROGRAM_TITLE = 'Making Quality Education Accessible';
 export const PROGRAM_DESC =
   'We partner with the universities of your choice to make quality education accessible for everyone, from anywhere.';
 

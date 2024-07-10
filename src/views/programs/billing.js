@@ -7,28 +7,29 @@ import { Fonts } from '../../components/themes/fonts';
 import { ngnCurrencyFormatter } from '../../utils';
 
 const cards = [
-  // {
-  //   title: 'Choose your Program',
-  //   description: 'Vorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  //   type: 'quarterly',
-  //   benefit: 'All available benefits',
-  //   popular: true,
-  //   price: '70,000',
-  // },
   {
-    title: 'Start your application',
+    title: 'Choose your Program',
     description:
-      "Once you've chosen your ideal program, it's time to kick-start the application process. Access our user-friendly online application portal and provide the required information, including personal details, academic history, and any supporting documentation. ",
-    type: 'once',
+      "Once you've chosen your ideal program, it's time to kick-start the application process. Access our user-friendly online application portal and provide the required information, including personal details, academic history, and any supporting documentation.",
+    type: 'quarterly',
     benefit: 'All available benefits',
-    popular: false,
-    price: '210,000',
+    popular: true,
+    price: 70000,
   },
+  // {
+  //   title: 'Start your application',
+  //   description:
+  //     "Once you've chosen your ideal program, it's time to kick-start the application process. Access our user-friendly online application portal and provide the required information, including personal details, academic history, and any supporting documentation. ",
+  //   type: 'once',
+  //   benefit: 'All available benefits',
+  //   popular: false,
+  //   price: '210,000',
+  // },
 ];
-export default function BillingProcessCard({ price }) {
+export default function BillingProcessCard({ course }) {
   return (
     <Box sx={{ width: '100%', display: 'flex' }}>
-      <Grid container spacing={'20px'}>
+      <Grid container spacing={'20px'} sx={{ justifyContent: 'center' }}>
         {cards.map((card, index) => {
           return (
             <Grid item xs={12} sm={6} key={`card-index-${index}`}>
@@ -111,22 +112,28 @@ export default function BillingProcessCard({ price }) {
                         textAlign: 'left',
                         color: '#fff',
                       }}>
-                      {ngnCurrencyFormatter(price || 0)}
-                      {card.type === 'once' ? null : (
-                        <Box
-                          component="span"
-                          sx={{
-                            font: `normal normal 700 normal 16px/24px ${Fonts.inter}`,
-                            letterSpacing: '-0.02em',
-                            textAlign: 'left',
-                            color: Colors.textPrimaryDark,
-                            mt: 3,
-                          }}>
-                          {/* per quarter */}
-                        </Box>
+                      {ngnCurrencyFormatter(
+                        course?.programType === 'diploma' ? 70000 : 35000
+                      )}
+                      {course?.programType === 'diploma' && (
+                        <>
+                          {card.type === 'once' ? null : (
+                            <Box
+                              component="span"
+                              sx={{
+                                font: `normal normal 700 normal 16px/24px ${Fonts.inter}`,
+                                letterSpacing: '-0.02em',
+                                textAlign: 'left',
+                                color: Colors.textPrimaryDark,
+                                mt: 3,
+                              }}>
+                              per semester
+                            </Box>
+                          )}
+                        </>
                       )}
                     </Box>
-                    <Typography
+                    {/* <Typography
                       gutterBottom
                       variant="h6"
                       component="div"
@@ -140,7 +147,7 @@ export default function BillingProcessCard({ price }) {
                       {card.type === 'once'
                         ? 'Billed once.'
                         : 'Billed annually.'}
-                    </Typography>
+                    </Typography> */}
                   </Box>
                 </Box>
                 <Box

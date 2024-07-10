@@ -179,8 +179,7 @@ export function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
+      {...other}>
       {value === index && <Box component="div">{children}</Box>}
     </div>
   );
@@ -203,7 +202,7 @@ export default function AcademicTabs({ handleClick }) {
     const fetchPrograms = async () => {
       try {
         const res = await axios.get(`${apiEndpoint}/website/courses/`);
-        console.log('res', res.data);
+        // console.log('res', res.data);
         setPrograms(res.data.programs);
       } catch (error) {
         console.error(error);
@@ -222,6 +221,8 @@ export default function AcademicTabs({ handleClick }) {
     programs && programs.filter((item) => item.programType === 'diploma');
   const bootscamp =
     programs && programs.filter((item) => item.programType === 'bootcamp');
+  const scholarship =
+    programs && programs.filter((item) => item.programType === 'scholarship');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -242,19 +243,18 @@ export default function AcademicTabs({ handleClick }) {
         // pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
         pl: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
         pr: { xs: 2, sm: 0 },
-      }}
-    >
+      }}>
       <Box>
         <StyledTabs
           value={value}
           onChange={handleChange}
           variant="scrollable"
           scrollButtons="auto"
-          aria-label="ant example"
-        >
+          aria-label="ant example">
           <StyledTab label="All" />
           <StyledTab label="Diplomas" />
           <StyledTab label="Bootcamps" />
+          <StyledTab label="Scholarship" />
           {/* <StyledTab
             label="Degree"
             icon={
@@ -291,7 +291,7 @@ export default function AcademicTabs({ handleClick }) {
           <ProgramCard cards={bootscamp} handleClick={handleClick} />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <ProgramCard cards={degree} handleClick={handleClick} />
+          <ProgramCard cards={scholarship} handleClick={handleClick} />
         </TabPanel>
       </Box>
     </Box>
