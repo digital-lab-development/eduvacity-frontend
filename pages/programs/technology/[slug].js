@@ -711,7 +711,28 @@ export default function CloudComputingPage() {
                               textAlign: 'left',
                               textTransform: 'capitalize',
                             }}>
-                            {`${course.programType} in ${course.programName}`}
+                            {/* this is to handle the mistake made while assigning program name */}
+                            {`${course.programType} in ${
+                              course.programName
+                                ?.toLowerCase()
+                                .endsWith('bootcamp ')
+                                ? course.programName
+                                    ?.toLowerCase()
+                                    .replace('bootcamp ', '')
+                                : course.programName
+                                    ?.toLowerCase()
+                                    .endsWith('bootcamp')
+                                ? course.programName
+                                    ?.toLowerCase()
+                                    .replace('bootcamp', '')
+                                : course.programName
+                                    ?.toLowerCase()
+                                    .startsWith('bootcamp in ')
+                                ? course.programName
+                                    ?.toLowerCase()
+                                    .replace('bootcamp in', '')
+                                : course.programName
+                            }`}
                           </Box>
                         }
                         sx={{ gap: 0, m: 0, p: 0 }}
@@ -1164,8 +1185,14 @@ export default function CloudComputingPage() {
               width: { xs: '100%', sm: '45%' },
               height: { xs: 342, sm: '100%' },
               backgroundImage: {
-                xs: 'url(/images/certificate.svg)',
-                sm: 'url(/images/certificate.svg)',
+                xs:
+                  course?.programType === 'diploma'
+                    ? 'url(/images/certificate.svg)'
+                    : 'url(/images/certificate-eduvacity.png)',
+                sm:
+                  course?.programType === 'diploma'
+                    ? 'url(/images/certificate.svg)'
+                    : 'url(/images/certificate-eduvacity.png)',
               },
               backgroundSize: 'contain',
               backgroundPosition: { xs: 'top right', sm: 'top right' },
