@@ -32,12 +32,13 @@ import Testimony from '../src/components/testimony';
 import { goToPortal } from '../src/utils';
 import Link from 'next/link';
 
-const partners = [
+
+
+export const partners = [
   {
     name: 'Assetium Capital Management Limited',
     logo: '/images/assetium-logo.png',
   },
-  // { name: 'Ahmadu Bello University', logo: '/images/abu-logo.png' },
 ];
 
 const communityImages = [
@@ -51,6 +52,9 @@ export default function HomePage() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [showCover, setShowCover] = useState(true);
+
+ 
+
 
   const handleVideoClick = () => {
     setShowCover(!showCover);
@@ -140,8 +144,8 @@ export default function HomePage() {
                   variant="span"
                   sx={{
                     font: {
-                      xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                      sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
+                      xs: `normal normal 500 normal 18px/28px ${Fonts.secondary}`,
+                      sm: `normal normal 500 normal 20px/30px ${Fonts.secondary}`,
                     },
                     color: Colors.offWhite,
                   }}>
@@ -163,17 +167,17 @@ export default function HomePage() {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
-                      font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
                       cursor: 'pointer',
                       color: 'rgba(230, 244, 237, 1)',
                       borderRadius: '46px',
-
+                      font: `normal normal 500 normal 14px/16.8px ${Fonts.secondary}`,
                       background: Colors.primary,
                       '&:hover': {
                         background: Colors.primary,
                       },
                     }}>
-                    See All Courses <ArrowUp />
+                    See All Courses
+                    <ArrowUp />
                   </Box>
                   <Box
                     component="a"
@@ -184,7 +188,7 @@ export default function HomePage() {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
-                      font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
+                      font: `normal normal 500 normal 14px/16.8px ${Fonts.secondary}`,
                       gap: '8px',
                       padding: '12px 20px 12px 20px',
                       color: Colors.primary,
@@ -222,14 +226,6 @@ export default function HomePage() {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
               }}>
-              {/* <Image
-                src="/images/hero-pix.jpg"
-                alt="hero"
-                layout="fill"
-                style={{
-                  objectFit: { xs: 'cover', sm: 'cover', md: 'contain' },
-                }}
-              /> */}
             </Box>
           </Box>
         </Box>
@@ -245,7 +241,8 @@ export default function HomePage() {
           flexDirection: 'column',
           pt: { xs: 10, md: 15.5 },
           pb: { xs: 4, md: 6.5 },
-          backgroundColor: Colors.light,
+          backgroundColor: "#011B23",
+
         }}>
         <Box
           sx={{
@@ -256,19 +253,12 @@ export default function HomePage() {
             alignItems: 'center',
             gap: { xs: 4, sm: 8 },
           }}>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: { xs: '16px', sm: '32px' },
-            }}>
             <Box
               sx={{
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '16px',
+                // gap: '16px',
                 // px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
                 px: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
               }}>
@@ -291,36 +281,15 @@ export default function HomePage() {
                     xs: `normal normal 400 normal 30px/36px ${Fonts.Demi}`,
                     md: `normal normal 600 normal 36px/44px ${Fonts.Demi}`,
                   },
-                  color: Colors.dark,
+                  color: Colors.primary,
                   m: 0,
                   p: 0,
                   letterSpacing: '-2%',
                 }}>
                 {PROGRAM_TITLE}
               </Typography>
-              <Box
-                component="span"
-                sx={{
-                  maxWidth: 840,
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}>
-                <Typography
-                  variant="span"
-                  sx={{
-                    font: {
-                      xs: `normal normal 400 normal 14px/28px ${Fonts.primary}`,
-                      sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
-                    },
-                    color: Colors.grey,
-                  }}>
-                  {PROGRAM_DESC}
-                </Typography>
-              </Box>
             </Box>
-
             <AcademicTabs handleClick={handleClickOpen} />
-          </Box>
         </Box>
       </Box>
       {/* FEATURES SESSION */}
@@ -331,143 +300,7 @@ export default function HomePage() {
           }}
         />
       </Box>
-      {/* JOIN OUR COMMUNITY */}
-      <Box
-        sx={{
-          bgcolor: '#F6F7F7',
-          backgroundImage: {
-            xs: 'none',
-            lg: 'url(/images/connected_world.svg)',
-          },
-          backgroundPosition: 'top right',
-          backgroundRepeat: 'no-repeat',
-        }}>
-        <Box
-          sx={{
-            // mt: -3,
-            pt: '97px',
-            pb: { xs: 2, sm: 3, md: 4 },
-            // height: '405px',
-            letterSpacing: '2%',
-            font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
-            // px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
-            px: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
-            textAlign: 'start',
-          }}>
-          <Typography variant="h4" sx={{ color: '#173927' }}>
-            Join our Growing Community
-          </Typography>
-          <Typography
-            sx={{
-              textAlign: 'start',
-              width: { lg: '768px', md: '768px' },
-              mt: '20px',
-              color: '#505F79',
-              fontSize: ['18px', '20px'],
-            }}>
-            Eduvacity&apos;s online courses, certificates, and degrees for
-            leaders, not followers. In today&apos;s digital world, your
-            education should prepare you for the future, not the past. It should
-            enhance your employability and unlock opportunities.
-          </Typography>
-          <Box
-            component="a"
-            target="_blank"
-            href={'https://forms.gle/izxdJyWYmakCi8Fd6'}
-            sx={{
-              padding: '4px 20px 4px 20px',
-              mt: '16px',
-              display: 'flex',
-              justifyContent: 'center',
-              width: '150px',
-              alignItems: 'center',
-              fontSize: ['14px', '16px'],
-              font: `normal normal 400 normal 14px/[19.2px] ${Fonts.primary}`,
-              color: 'rgba(230, 244, 237, 1)',
-              borderRadius: '46px',
-              cursor: 'pointer',
-              textWrap: 'nowrap',
-              background: '#00bb',
-              '&:hover': {
-                background: 'blue',
-              },
-            }}>
-            Join us
-          </Box>
-        </Box>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid
-            container
-            spacing={{ sx: 0.75, md: 1, lg: 2 }}
-            justifyContent="space-between">
-            {communityImages.map((item, ind) => {
-              if (Array.isArray(item)) {
-                return (
-                  <Box
-                    key={`img${ind}`}
-                    sx={{
-                      width: {
-                        xs: 'calc(25% - 8px)',
-                        md: 'calc(25% - 12px)',
-                        lg: 'calc(25% - 16px)',
-                      },
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: { xs: '6px', md: '12px', lg: '16px' },
-                    }}>
-                    {item.map((subItem, i) => (
-                      <Box
-                        key={`subImg${i}`}
-                        component="img"
-                        src={subItem}
-                        sx={{
-                          width: '100%',
-                          height: '50%',
-                          objectFit: 'cover',
-                        }}
-                      />
-                    ))}
-                  </Box>
-                );
-              }
-              return (
-                <Grid
-                  key={`community_${ind}`}
-                  item
-                  sx={{
-                    position: 'relative',
-                    width: {
-                      xs: 'calc(25% - 8px)',
-                      md: 'calc(25% - 12px)',
-                      lg: 'calc(25% - 16px)',
-                    },
-                    paddingBottom: '25%',
-                  }}>
-                  <Box
-                    component="img"
-                    src={item}
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Box>
-      </Box>
-      <Box sx={{ px: { xs: 4, sm: 3, lg: 12.5, xl: 16 } }}>
-        <Divider
-          sx={{
-            borderColor: '#EAECF0',
-          }}
-        />
-      </Box>
+
       <Box
         component="section"
         id="feature-section"
@@ -587,8 +420,8 @@ export default function HomePage() {
                   variant="span"
                   sx={{
                     font: {
-                      xs: `normal normal 400 normal 16px/28px ${Fonts.primary}`,
-                      sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
+                      xs: `normal normal 400 normal 16px/28px ${Fonts.secondary}`,
+                      sm: `normal normal 500 normal 20px/30px ${Fonts.secondary}`,
                     },
                     color: Colors.grey,
                   }}>
@@ -600,46 +433,7 @@ export default function HomePage() {
                   position: 'relative',
                   width: '100%',
                 }}>
-                {/* {showCover && (
-                  <Box
-                    sx={{
-                      position: 'relative',
-                      width: '100%',
-                      height: '100%',
-                      cursor: 'pointer',
-                      top: '20px',
-                    }}
-                    onClick={handleVideoClick}>
-                    <Box
-                      sx={{
-                        width: '100%',
-                        height: { xs: 240, sm: 516 },
-                        backgroundImage: {
-                          xs: 'url(/images/video-guy-xs.svg)',
-                          sm: 'url(/images/video-guy.svg)',
-                        },
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat',
-                        borderRadius: { md: '24px' },
-                      }}
-                    />
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        inset: {
-                          xs: '45px 0 0 0',
-                          sm: '133px 0 0 0',
-                          md: '173px 0 0 0',
-                          lg: '200px 0 0 0',
-                          xl: '250px 0 0 0',
-                        },
-                        display: 'flex',
-                        justifyContent: 'center',
-                      }}>
-                      <PlayButton />
-                    </Box>
-                  </Box>
-                )} */}
+                
                 <Box
                   sx={{
                     height: {
@@ -674,21 +468,7 @@ export default function HomePage() {
                         aspectRatio: 'video',
                       }}></iframe>
                   </div>
-                  {/* <iframe
-                    title="How to be a school teacher"
-                    width="100%"
-                    height="100%"
-                    src={`https://streamable.com/m2a6rc`}
-                    allowFullScreen
-                    style={{
-                      display: showCover ? 'none' : 'block',
-                      borderRadius: '24px',
-                      position: 'relative',
-                      width: '100%',
-                      cursor: 'pointer',
-                      top: '20px',
-                    }}
-                  /> */}
+
                 </Box>
               </div>
             </Box>
@@ -758,7 +538,6 @@ export default function HomePage() {
         <Box
           sx={{
             letterSpacing: '2%',
-            font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
             px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 15.5 },
             py: { xs: '40px', xl: '96px' },
           }}>
@@ -770,6 +549,7 @@ export default function HomePage() {
               mt: '20px',
               color: '#505F79',
               fontSize: ['18px', '20px'],
+              font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
               fontWeight: 'bold',
             }}>
             Backed by the Best
@@ -781,6 +561,7 @@ export default function HomePage() {
               mx: 'auto',
               mt: '20px',
               color: '#505F79',
+              font: `normal normal 600 normal 36px/44px ${Fonts.secondary}`,
               fontSize: ['18px', '20px'],
               fontWeight: 300,
             }}>
@@ -814,6 +595,7 @@ export default function HomePage() {
                 <Typography
                   sx={{
                     fontSize: { md: '28px', sm: '22px', xs: '17px' },
+                    font: `normal normal 600 normal 36px/44px ${Fonts.secondary}`,
                   }}>
                   {partner.name}
                 </Typography>
@@ -822,81 +604,6 @@ export default function HomePage() {
           </Box>
         </Box>
       </Box>
-
-      {/* <Box
-        sx={{
-          bgcolor: '#011B23',
-        }}
-      >
-        <Box
-          sx={{
-            px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 15.5 },
-            py: { xs: '40px', lg: '96px' },
-          }}
-        >
-          <Typography
-            variant="h6"
-            sx={{
-              font: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
-              color: Colors.light,
-              // mt: -3,
-              p: 0,
-              letterSpacing: '2%',
-              textAlign: { xs: 'center', sm: 'left' },
-            }}
-          >
-            Eduvacity Masterclasses
-          </Typography>
-          <Typography
-            sx={{
-              mt: '20px',
-              font: {
-                xs: `normal normal 400 normal 16px/24px ${Fonts.primary}`,
-                md: `normal normal 400 normal 20px/30px ${Fonts.primary}`,
-              },
-              color: '#FAFBFB',
-            }}
-          >
-            Our Masterclasses offer an unparalleled opportunity for students to
-            learn from industry experts, bridging the gap between academic
-            theory and real-world practice.
-          </Typography>
-          <Box
-            onClick={handleClickOpen}
-            sx={{
-              width: '158px',
-              mt: '32px',
-              padding: '12px 20px 12px 20px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
-              cursor: 'pointer',
-              color: 'rgba(230, 244, 237, 1)',
-              borderRadius: '46px',
-
-              background: Colors.primary,
-              '&:hover': {
-                background: Colors.primary,
-              },
-            }}
-          >
-            Watch More <ArrowUp />
-          </Box> */}
-
-      {/* <Grid container spacing={'16px'} sx={{ mt: '64px' }}>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box sx={{ height: '320px', bgcolor: '#D9D9D9' }}></Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box sx={{ height: '320px', bgcolor: '#D9D9D9' }}></Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box sx={{ height: '320px', bgcolor: '#D9D9D9' }}></Box>
-            </Grid>
-          </Grid>
-        </Box>
-      </Box> */}
 
       <Box
         sx={{
@@ -929,6 +636,7 @@ export default function HomePage() {
               p: 0,
               letterSpacing: '2%',
               textAlign: { xs: 'center', sm: 'left' },
+              textTransform: 'capitalize'
             }}>
             Eduvacity
           </Typography>
@@ -942,8 +650,9 @@ export default function HomePage() {
               },
               color: '#B9C8CD',
               textAlign: { xs: 'center', sm: 'left' },
+              textTransform: 'none',
             }}>
-            {EDUVACITY_VALUE}
+            {EDUVACITY_VALUE.charAt(0).toUpperCase() + EDUVACITY_VALUE.slice(1).toLowerCase()}
           </Typography>
           <Box
             sx={{
@@ -982,7 +691,7 @@ export default function HomePage() {
       {/* FREQUENTLY ASK QUESTION */}
       <Box
         component="section"
-        id="hero-section"
+        id="hero-section faqs "
         sx={{
           width: '100%',
           display: 'flex',
@@ -992,6 +701,7 @@ export default function HomePage() {
           backgroundColor: Colors.light,
         }}>
         <Box
+        id="faqs "
           sx={{
             width: '100%',
             display: 'flex',
@@ -1020,7 +730,7 @@ export default function HomePage() {
               <Typography
                 variant="h2"
                 sx={{
-                  font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                  font: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
                   color: Colors.primary,
                   m: 0,
                   p: 0,
@@ -1090,7 +800,7 @@ export default function HomePage() {
               <Typography
                 variant="p"
                 sx={{
-                  font: `normal normal 700 normal 20px/30px ${Fonts.primary}`,
+                  font: `normal normal 700 normal 20px/30px ${Fonts.secondary}`,
                   color: Colors.dark,
                   m: 0,
                   p: 0,
@@ -1103,8 +813,8 @@ export default function HomePage() {
                 variant="span"
                 sx={{
                   font: {
-                    xs: `normal normal 400 normal 18px/28px ${Fonts.primary}`,
-                    sm: `normal normal 400 normal 18px/28px ${Fonts.primary}`,
+                    xs: `normal normal 400 normal 18px/28px ${Fonts.secondary}`,
+                    sm: `normal normal 400 normal 18px/28px ${Fonts.secondary}`,
                   },
                   color: Colors.grey,
                   textAlign: 'center',
@@ -1120,7 +830,7 @@ export default function HomePage() {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    font: `normal normal 500 normal 14px/[19.2px] ${Fonts.primary}`,
+                    font: `normal normal 500 normal 14px/[19.2px] ${Fonts.secondary}`,
                     cursor: 'pointer',
                     color: '#E6F4ED',
                     borderRadius: '46px',

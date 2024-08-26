@@ -226,6 +226,9 @@ export default function HomeLayout({ children }) {
         // },
       ],
     },
+    {
+      name: 'Scholarship',
+    },
 
     {
       name: 'Become an Instructor',

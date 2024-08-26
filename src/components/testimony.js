@@ -85,7 +85,7 @@ export default function Testimony() {
                     <Typography
                       sx={{
                         mt: 'auto',
-                        font: `normal normal 600 normal 16px/19.2px ${Fonts.inter}`,
+                        font: `normal normal 600 normal 16px/19.2px ${Fonts.secondary}`,
                         color: '#091E42',
                       }}>
                       {testimony.comment}
@@ -93,7 +93,7 @@ export default function Testimony() {
                     <Typography
                       sx={{
                         mt: '18px',
-                        font: `normal normal 500 normal 16px/19.2px ${Fonts.inter}`,
+                        font: `normal normal 500 normal 16px/19.2px ${Fonts.secondary}`,
                         color: '#091E42',
                       }}>
                       {testimony.name}

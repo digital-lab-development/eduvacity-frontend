@@ -82,7 +82,7 @@ export default function ProgramsCard() {
                     variant="g"
                     component="div"
                     sx={{
-                      font: `normal normal 700 normal 20px/30px ${Fonts.secondary}`,
+                      font: `normal normal 700 normal 20px/30px ${Fonts.primary}`,
                       color: Colors.dark,
                     }}
                   >
@@ -92,7 +92,7 @@ export default function ProgramsCard() {
                     variant="p"
                     sx={{
                       width: '100%',
-                      font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                      font: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
                       color: Colors.textPrimaryDark,
                     }}
                   >
@@ -129,7 +129,7 @@ export default function ProgramsCard() {
                           padding: '4px 13px 4px 13px',
                           gap: '10px',
                           borderRadius: '36px',
-                          font: `normal normal 600 normal 16px/24px ${Fonts.inter}`,
+                          font: `normal normal 600 normal 16px/24px ${Fonts.secondary}`,
                           textTransform: 'none',
                           color: '#E3A229',
                           cursor: 'pointer',

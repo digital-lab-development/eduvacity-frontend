@@ -711,28 +711,7 @@ export default function CloudComputingPage() {
                               textAlign: 'left',
                               textTransform: 'capitalize',
                             }}>
-                            {/* this is to handle the mistake made while assigning program name */}
-                            {`${course.programType} in ${
-                              course.programName
-                                ?.toLowerCase()
-                                .endsWith('bootcamp ')
-                                ? course.programName
-                                    ?.toLowerCase()
-                                    .replace('bootcamp ', '')
-                                : course.programName
-                                    ?.toLowerCase()
-                                    .endsWith('bootcamp')
-                                ? course.programName
-                                    ?.toLowerCase()
-                                    .replace('bootcamp', '')
-                                : course.programName
-                                    ?.toLowerCase()
-                                    .startsWith('bootcamp in ')
-                                ? course.programName
-                                    ?.toLowerCase()
-                                    .replace('bootcamp in', '')
-                                : course.programName
-                            }`}
+                            {`${course.programType} in ${course.programName}`}
                           </Box>
                         }
                         sx={{ gap: 0, m: 0, p: 0 }}
@@ -1269,7 +1248,7 @@ export default function CloudComputingPage() {
                 </Box>
               </Box>
               <Box style={{}}>
-                <BillingProcessCard course={course} />
+                <BillingProcessCard price={course} />
               </Box>
             </Card>
           </Box>

@@ -3,12 +3,8 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
-import { ABULogo, SchoolLogo } from '../../../components/svg/index.js';
 import { Colors } from '../../../components/themes/colors';
 import { Fonts } from '../../../components/themes/fonts';
-import BootscampCards from './bootscamp/index.js';
-import DegreeCards from './degree/index.js';
-import DiplomaCards from './diploma/index.js';
 import ProgramCard from './program-card.js';
 import axios from 'axios';
 import { apiEndpoint } from '../../../utils/index.js';
@@ -17,6 +13,7 @@ const StyledTabs = styled(Tabs)({
   borderBottom: '1px solid #EAECF0',
   '& .MuiTabs-indicator': {
     backgroundColor: Colors.primary,
+    color: Colors.light
   },
 });
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
@@ -27,7 +24,7 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
       minWidth: 0,
     },
     marginRight: 8,
-    color: '#667085',
+    color: '#fff',
     gap: 8,
     font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
     '&:hover': {
@@ -53,16 +50,7 @@ const cards = [
     image: '/images/banking-finance.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
-  // {
-  //   name: '',
-  //   program: 'Diploma in Computer Science',
-  //   description:
-  //     'Our Marketing program is tailored to furnish students with the strategies and proficiencies crucial for thriving in this fast-paced domain, positioning them for success in marketing profession.',
-  //   duration: '16 months',
-  //   type: 'diploma',
-  //   image: '/images/senatebuilding.png',
-  //   icon: '/images/eduvacity-logo.svg',
-  // },
+ 
   {
     name: '',
     program: 'Diploma in Computer Science',
@@ -93,28 +81,7 @@ const cards = [
     image: '/images/business-admin.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
-  //degree
-  // {
-  //   name: 'University of Lagos',
-  //   program: 'Diploma in Computer Engineering',
-  //   description:
-  //     'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-  //   duration: '3 months',
-  //   type: 'degree',
-  //   image: '/images/castle-school.png',
-  //   icon: '/images/eduvacity-logo.svg',
-  // },
-  // {
-  //   name: 'University of Lagos',
-  //   program: 'Diploma in Computer Engineering',
-  //   description:
-  //     'The department of Business Administration has over the years developed a reputation for learning excellence, consistently producing excellent accounting graduates who are making notable contributions in both and private sectors of the Nigerian economy.',
-  //   duration: '3 months',
-  //   type: 'degree',
-  //   image: '/images/castle-school.png',
-  //   icon: '/images/eduvacity-logo.svg',
-  // },
-  //bootcamp
+  
   {
     name: '',
     program: 'Frontend Development',
@@ -165,10 +132,17 @@ const cards = [
     image: '/images/data-science.jpg',
     icon: '/images/eduvacity-logo.svg',
   },
+  {
+    name: '',
+    program: 'Assetium 100% Scholarship',
+    description:
+      'Frontend development is pivotal in shaping user experiences and interfaces across digital platforms this Bootcamp program equips students with the latest tools and techniques in web development and responsive design principles.',
+    duration: '6 weeks',
+    type: 'scholarship',
+    image: '/images/front-end.jpg',
+    icon: '/images/eduvacity-logo.svg',
+  },
 ];
-// const degree = cards.filter((item) => item.type === 'degree');
-// const diploma = cards.filter((item) => item.type === 'diploma');
-// const bootscamp = cards.filter((item) => item.type === 'bootcamp');
 
 export function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -243,6 +217,7 @@ export default function AcademicTabs({ handleClick }) {
         // pl: { xs: 2, sm: 7.8, md: 7.4, lg: 6.2, xl: 14.5 },
         pl: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
         pr: { xs: 2, sm: 0 },
+        color: "#fff"
       }}>
       <Box>
         <StyledTabs
@@ -255,29 +230,6 @@ export default function AcademicTabs({ handleClick }) {
           <StyledTab label="Diplomas" />
           <StyledTab label="Bootcamps" />
           <StyledTab label="Scholarship" />
-          {/* <StyledTab
-            label="Degree"
-            icon={
-              <Box
-                sx={{
-                  width: 42,
-                  height: 22,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: `1px solid ${Colors.primaryLight}`,
-                  borderRadius: '9999px',
-                  background: Colors.primaryLight,
-                  font: `normal normal 500 normal 12px/18px ${Fonts.primary}`,
-                  padding: '2px 8px 2px 8px',
-
-                  textAlign: 'center',
-                }}>
-                New
-              </Box>
-            }
-            iconPosition="end"
-          /> */}
         </StyledTabs>
       </Box>
       <Box sx={{ mt: { xs: 2, sm: 4 } }}>

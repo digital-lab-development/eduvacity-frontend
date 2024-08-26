@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import Image from 'next/image';
-import { useRouter } from 'next/router';
+import Image from "next/image";
+import { useRouter } from "next/router";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import Box from '@mui/material/Box';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 
-import { Colors } from '../../../components/themes/colors';
-import { Fonts } from '../../../components/themes/fonts';
-import 'swiper/css';
+import { Colors } from "../../../components/themes/colors";
+import { Fonts } from "../../../components/themes/fonts";
+import "swiper/css";
 import {
   ArrowBackward,
   ArrowForward,
   ClockIcon,
-} from '../../../components/svg';
+} from "../../../components/svg";
 
 export default function ProgramCard({ cards, handleClick }) {
   const router = useRouter();
@@ -40,11 +40,11 @@ export default function ProgramCard({ cards, handleClick }) {
   return (
     <div
       style={{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: { xs: '32px', sm: '64px' },
-      }}>
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Swiper
         ref={swiperRef}
         spaceBetween={15}
@@ -52,99 +52,79 @@ export default function ProgramCard({ cards, handleClick }) {
         navigation
         breakpoints={{
           540: {
-            slidesPerView: 1.4,
-            spaceBetween: 20,
+            slidesPerView:2,
+            
           },
-          640: {
-            slidesPerView: 2.2,
-            spaceBetween: 20,
-          },
+          
           700: {
-            slidesPerView: 1.35,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1.4,
-            spaceBetween: 20,
+            slidesPerView: 3,
+            spaceBetween: 2,
           },
           900: {
-            slidesPerView: 1.7,
-            spaceBetween: 32,
+            slidesPerView: 4,
+            spaceBetween: 2,
           },
           1024: {
-            slidesPerView: 1.9,
-            spaceBetween: 32,
+            slidesPerView: 4,
+            spaceBetween: 1,
           },
-          1280: {
-            slidesPerView: 2.4,
-            spaceBetween: 32,
-          },
-          1500: {
-            slidesPerView: 3.1,
-            spaceBetween: 32,
-          },
+          
         }}
         className="swiper"
-        style={{ margin: 0, padding: 0 }}>
+        style={{ margin: 0, padding: 0 }}
+      >
         {cards.map((card, i) => {
-          // const duration = card.duration;
-          // const [number, unit] = duration.split(' ');
           return (
             <SwiperSlide key={`card-${i}`} style={{ margin: 0, padding: 0 }}>
               <Card
                 sx={{
-                  padding: '0 0 24px 0',
-                  borderRadius: '16px',
-                  width: '100%',
-                  height: { xs: 405.42, sm: 510 },
-                  boxShadow: '0px 16px 16px 0px #0000000D',
-                  m: { xs: '20px 0px', sm: '20px 0' },
-                  border: `1px solid #0000000D`,
-                }}>
+                  padding: "10px",
+                  borderRadius: "16px",
+                  width: "80%",
+                  height: "410px",
+                  backgroundColor: "#011B23",
+                  boxShadow: "0px 16px 16px 0px #0000000D",
+                  border: `1px solid #ffffff`,
+                }}
+              >
                 <CardMedia
-                  sx={{ height: { xs: 190, sm: 240 } }}
-                  image={card.thumbnail || ''}
+                  sx={{ height: { xs: 190, sm: 240 }, borderRadius: 3 }}
+                  image={card.thumbnail || ""}
                   title={card.name}
                 />
                 <CardContent
                   sx={{
-                    // width: '100%',
-                    // maxWidth: { xs: 330, sm: 450 },
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: { xs: '6.33px', sm: '8px' },
-                    // px: { xs: 1, sm: 2, md: 2, lg: 2.5, xl: 3 },
-                  }}>
+                    display: "flex",
+                    flexDirection: "column",
+
+                    gap: 2,
+                  }}
+                >
                   <Box
                     sx={{
-                      width: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                    }}>
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
                     <Box
                       sx={{
-                        display: 'flex',
-                        alignItems: 'center',
+                        display: "flex",
+                        // alignItems: "flex-end",
                         gap: 1,
-                        // mt: { xs: '6.33px', sm: '20px' },
-                      }}>
-                      <Box>
-                        <Image
-                          src={card.schoolLogo}
-                          alt={card.program}
-                          width={24}
-                          height={24}
-                        />
-                      </Box>
+                      }}
+                    >
                       <Typography
-                        variant="h5"
+                        variant="h3"
                         sx={{
-                          display: 'flex',
-                          alignItems: 'center',
+                          display: "flex",
+                          alignItems: "center",
+                          color: "#fff",
                           gap: 1,
                           font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                          color: Colors.greyText,
-                        }}>{`${card.programName}`}</Typography>
+                          color: Colors.light,
+                        }}
+                      >{`${card.programName}`}</Typography>
                     </Box>
                     <Typography
                       variant="h6"
@@ -153,68 +133,88 @@ export default function ProgramCard({ cards, handleClick }) {
                           xs: `normal normal 700 normal 12.67px/25.33px ${Fonts.secondary}`,
                           sm: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
                         },
-                        color: Colors.dark,
-                      }}>
+                        color: "#fff",
+                      }}
+                    >
                       {card.program}
                     </Typography>
                   </Box>
-                  <Box
-                    sx={{
-                      width: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 1,
-                    }}>
-                    <Typography
-                      variant="p"
-                      sx={{
-                        hyphens: 'auto',
-                        font: {
-                          xs: `normal normal 500 normal 14px/19px ${Fonts.primary}`,
-                          sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                        },
-                        color: Colors.textPrimaryDark,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 4,
-                        WebkitBoxOrient: 'vertical',
-                      }}>
-                      {card.programDescription}
-                    </Typography>
 
+                  <div
+                    style={{
+                      display: "flex",
+                      flex: 1,
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      width: "100%",
+                    }}
+                  >
                     <Box
                       sx={{
-                        width: '100%',
-                        display: 'flex',
+                        display: "flex",
                         gap: 1,
-                      }}>
-                      <Box sx={{ mt: 0.8 }}>
-                        <ClockIcon />{' '}
-                      </Box>
-                      <Box
+                        flex: 1,
+                        alignItems: "center",
+                      }}
+                    >
+                      <Image
+                        src={card.schoolLogo}
+                        alt={card.program}
+                        width={24}
+                        height={24}
+                      />
+                      <Typography
+                        variant="h6"
                         sx={{
                           font: {
-                            xs: `normal normal 500 normal 11.08px/19px ${Fonts.tertiary}`,
-                            sm: `normal normal 500 normal 14px/24px ${Fonts.tertiary}`,
+                            xs: ` 400 normal 12px ${Fonts.secondary}`,
+                            sm: ` 400 normal  ${Fonts.secondary}`,
                           },
-                          color: Colors.textPrimaryDark,
-                          mt: 0.45,
-                        }}>
-                        <span
-                          style={{
-                            display: 'inline-flex',
-                            color: Colors.secondary,
-                            font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
-                          }}>
-                          {/* {number} */}
-                          {card.programType === 'diploma'
-                            ? '16 months'
-                            : `6 weeks`}
-                        </span>{' '}
-                        {/* {unit} */}
-                      </Box>
+                          color: "#fff",
+                        }}
+                      >
+                        {card.schoolName}
+                      </Typography>
                     </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        gap: 1,
+                        flex: 1,
+                        alignItems: "center",
+                        justifyContent: 'end'
+                      }}
+                    >
+                      <ClockIcon />
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          font: {
+                            xs: ` 400 normal 12px ${Fonts.secondary}`,
+                            sm: ` 400 normal  ${Fonts.secondary}`,
+                          },
+                          color: "#fff",
+                        }}
+                      >
+                        {card.programDuration} weeks
+                      </Typography>
+                    </Box>
+                  </div>
+
+                  <Box
+                    sx={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 1,
+                      backgroundColor: Colors.primary,
+                      borderRadius: 2,
+                      textAlign: "center",
+                      // justifyContent: "center",
+                      // justifyItems: "center",
+                      marginBottom: 0
+                    }}
+                  >
                     <Button
                       size="small"
                       onClick={() =>
@@ -222,18 +222,20 @@ export default function ProgramCard({ cards, handleClick }) {
                       }
                       endIcon={<ArrowForward />}
                       sx={{
-                        width: { xs: 160, sm: 140 },
-                        display: 'flex',
-                        alignItems: 'center',
+                        display: "flex",
+                        alignItems: "center",
                         gap: 1,
-                        font: `normal normal 700 normal 16px/24px ${Fonts.secondary}`,
-                        textTransform: 'none',
-                        color: Colors.primary,
-                        cursor: 'pointer',
-                        '&:hover': {
-                          background: 'transparent',
+                        font: `normal 400 16px/24px ${Fonts.secondary}`,
+                        textTransform: "none",
+                        color: Colors.light,
+                        justifyContent: "center",
+                        fontSize: 14,
+                        cursor: "pointer",
+                        "&:hover": {
+                          background: "transparent",
                         },
-                      }}>
+                      }}
+                    >
                       View courses
                     </Button>
                   </Box>
@@ -245,41 +247,44 @@ export default function ProgramCard({ cards, handleClick }) {
       </Swiper>
       <Box
         sx={{
-          width: '100%',
-          display: 'flex',
-          gap: '12px',
+          width: "100%",
+          display: "flex",
+          gap: "12px",
           mt: 2,
-        }}>
+        }}
+      >
         <Button
           disableElevation
           disableRipple
           onClick={goPrev}
           sx={{
-            width: 56,
-            height: 56,
-            borderRadius: '9999px',
-            border: '2px solid #EAECF0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '12px',
-            color: '#667085',
-          }}>
+            width: 36,
+            height: 36,
+            borderRadius: "50px",
+            border: "2px solid #EAECF0",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "12px",
+            color: "#667085",
+          }}
+        >
           <ArrowBackward />
         </Button>
         <Button
           onClick={goNext}
           sx={{
-            width: 56,
-            height: 56,
-            borderRadius: '9999px',
-            border: '2px solid #EAECF0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '12px',
-            color: '#667085',
-          }}>
+            width: 36,
+            height: 36,
+            borderRadius: "50px",
+            border: "2px solid #EAECF0",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "12px",
+            color: "#667085",
+          }}
+        >
           <ArrowForward />
         </Button>
       </Box>
