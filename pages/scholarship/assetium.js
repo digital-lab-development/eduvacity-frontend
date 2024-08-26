@@ -95,20 +95,19 @@ export default function Assetium() {
               <Box
                 sx={{
                   backgroundColor: Colors.primary,
-                  px: 1.7,
-                  py: 1,
+                  px: 1,
+                  py: 0.5,
                   borderRadius: "100%",
                 }}
               >
-                <EduLogo width="52" height="54" fill={Colors.light} />
+                <EduLogo width="22" height="24" fill={Colors.light} />
               </Box>
-
               <Box
                 sx={{
                   backgroundColor: Colors.light,
                   borderColor: Colors.primary,
-                  px: 1.5,
-                  py: 1,
+                  py: '2px',
+                  px: '5px',
                   borderRadius: "100%",
                   border: `solid 2px ${Colors.primary}`,
                   position: "relative",
@@ -118,8 +117,8 @@ export default function Assetium() {
                 <Image
                   src="/images/assetium-logo.png"
                   alt={"Assetium Capital Management Limited"}
-                  width={44}
-                  height={44}
+                  width={20}
+                  height={20}
                 />
               </Box>
             </Box>
@@ -571,14 +570,13 @@ export default function Assetium() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    pb: 1,
-                    px: 1,
-                    pt: 1.5,
-                    borderRadius: 3,
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
-                  <AllGenderIcon />
+                  <AllGenderIcon width="14px"/>
                 </Box>{" "}
                 <Typography
                   gutterBottom
@@ -610,14 +608,13 @@ export default function Assetium() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    pb: 1,
-                    px: 1,
-                    pt: 1.5,
-                    borderRadius: 3,
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
-                  <DocsIcon />
+                  <DocsIcon width="14px" />
                 </Box>{" "}
                 <Typography
                   gutterBottom
@@ -649,14 +646,13 @@ export default function Assetium() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    pb: 1,
-                    px: 1,
-                    pt: 1.5,
-                    borderRadius: 3,
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
-                  <BoltsIcon width="20" />
+                  <BoltsIcon width="14" />
                 </Box>{" "}
                 <Typography
                   gutterBottom

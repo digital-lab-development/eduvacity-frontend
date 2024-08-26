@@ -69,6 +69,13 @@ export default function Scholarship() {
               display: "flex",
               flexDirection: "column",
               gap: { xs: "40px", sm: "80px" },
+              backgroundColor: Colors.prim,
+              backgroundImage: {
+                xs: "url(/images/bacgroundpattern.svg)",
+                sm: "url(/images/bacgroundpattern.svg)",
+              },
+              backgroundRepeat: "repeat",
+            backgroundSize: "cover",
             }}
           >
             {/* logos */}
@@ -84,12 +91,12 @@ export default function Scholarship() {
               <Box
                 sx={{
                   backgroundColor: Colors.primary,
-                  px: 1.7,
-                  py: 1,
+                  px: 1.2,
+                  py: 0.7,
                   borderRadius: "100%",
                 }}
               >
-                <EduLogo width="52" height="54" fill={Colors.light} />
+                <EduLogo width="32" height="34" fill={Colors.light} />
               </Box>
 
               <Box
@@ -107,8 +114,8 @@ export default function Scholarship() {
                 <Image
                   src="/images/zen.png"
                   alt={"Zenith Bank PLC"}
-                  width={44}
-                  height={44}
+                  width={20}
+                  height={20}
                 />
               </Box>
             </Box>
@@ -155,8 +162,8 @@ export default function Scholarship() {
                   variant="span"
                   sx={{
                     font: {
-                      xs: `normal 400 18px/28px ${Fonts.secondary}`,
-                      sm: `normal 400 20px/30px ${Fonts.secondary}`,
+                      xs: `normal 400 normal 14px/29px ${Fonts.secondary}`,
+                      sm: `normal 400 normal 14px/28px ${Fonts.secondary}`,
                     },
                     color: Colors.secondary,
                   }}
@@ -171,13 +178,38 @@ export default function Scholarship() {
                     // maxWidth: 500,
                     display: "flex",
                     flexDirection: { xs: "row", sm: "row" },
-
+                    gap: 2,
                     mt: { xs: 5, md: 10 },
                     justifyContent: "center",
                     alignItems: "center",
                     mb: { xs: 4, sm: 1 },
                   }}
                 >
+                   <Box
+                    component="a"
+                    target="_blank"
+                    href="https://wa.link/3xhcsh"
+                    // onClick={() => router.push(`https://wa.link/3xhcsh`)}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
+                      gap: "8px",
+                      padding: "12px 20px 12px 20px",
+                      color: Colors.light,
+                      border: `1px solid ${Colors.primary}`,
+                      borderRadius: "46px",
+                      cursor: "pointer",
+                      gap: "10px",
+                      background: Colors.primary,
+                      "&:hover": {
+                        background: Colors.secondary,
+                      },
+                    }}
+                  >
+                    Apply Now
+                  </Box>
                   <Box
                     component="a"
                     target="_blank"
@@ -200,7 +232,6 @@ export default function Scholarship() {
                       },
                     }}
                   >
-                    <WhatsApp />
                     Learn more
                   </Box>
                 </Box>
@@ -217,41 +248,8 @@ export default function Scholarship() {
                 my: "auto",
               }}
             >
-              <Typography
-                variant="h1"
-                sx={{
-                  font: {
-                    xs: `normal normal 400 normal 30px/36px ${Fonts.primary}`,
-                    md: `normal normal 600 normal 36px/44px ${Fonts.primary}`,
-                  },
-                  color: Colors.secondary,
-                  m: 0,
-                  p: 0,
-                  letterSpacing: "-2%",
-                }}
-              >
-                {EMPOWERMENT_TITLE}
-              </Typography>
-              <Box
-                component="span"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  variant="span"
-                  sx={{
-                    font: {
-                      xs: `normal normal 400 normal 16px/28px ${Fonts.secondary}`,
-                      sm: `normal normal 500 normal 20px/30px ${Fonts.secondary}`,
-                    },
-                    color: Colors.secondary,
-                  }}
-                >
-                  {EMPOWERMENT_DESC}
-                </Typography>
-              </Box>
+             
+
               <div
                 style={{
                   position: "relative",
@@ -300,6 +298,8 @@ export default function Scholarship() {
             </Box>
           </Box>
         </Box>
+
+
 
         <Box
           component="section"
@@ -560,14 +560,13 @@ export default function Scholarship() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    pb: 1,
-                    px: 1,
-                    pt: 1.5,
-                    borderRadius: 3,
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
-                  <AllGenderIcon />
+                  <AllGenderIcon width="14px"/>
                 </Box>{" "}
                 <Typography
                   gutterBottom
@@ -599,14 +598,13 @@ export default function Scholarship() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    pb: 1,
-                    px: 1,
-                    pt: 1.5,
-                    borderRadius: 3,
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
-                  <DocsIcon />
+                  <DocsIcon width="14px" />
                 </Box>{" "}
                 <Typography
                   gutterBottom
@@ -638,14 +636,13 @@ export default function Scholarship() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    pb: 1,
-                    px: 1,
-                    pt: 1.5,
-                    borderRadius: 3,
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
-                  <BoltsIcon width="20" />
+                  <BoltsIcon width="14" />
                 </Box>{" "}
                 <Typography
                   gutterBottom
