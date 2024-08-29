@@ -1,28 +1,17 @@
 import { useRouter } from "next/router";
-import HomePageLayout from "../../src/views/home/layout";
+import HomePageLayout from "../src/views/home/layout";
 import {
   Avatar,
   AvatarGroup,
   Box,
-  Card,
   CssBaseline,
   Divider,
   Grid,
   Typography,
 } from "@mui/material";
-import {
-  AllGenderIcon,
-  ArrowUp,
-  BoltsIcon,
-  DocsIcon,
-  EduLogo,
-  PlayButton,
-  WhatsApp,
-  ZapIcon,
-} from "../../src/components/svg";
-// import { ArrowUp, PlayButton, WhatsApp, ZapIcon } from "../src/components/svg";
-import { Colors } from "../../src/components/themes/colors";
-import { Fonts } from "../../src/components/themes/fonts";
+import { AllGenderIcon, ArrowUp, BoltsIcon, DocsIcon, EduLogo, PlayButton, WhatsApp, ZapIcon } from "../src/components/svg";
+import { Colors } from "../src/components/themes/colors";
+import { Fonts } from "../src/components/themes/fonts";
 import {
   EDUVACITY_VALUE,
   EMPOWERMENT_DESC,
@@ -30,56 +19,22 @@ import {
   HERO_TEXT,
   PROGRAM_DESC,
   PROGRAM_TITLE,
-} from "../../src/utils/contants";
+} from "../src/utils/contants";
 
 import Intercom from "@intercom/messenger-js-sdk";
 import { ChildCareRounded, DocumentScannerRounded } from "@mui/icons-material";
 import Image from "next/image";
-import AppLogo from "../../src/components/svg/applogo";
-import ScholarshipProgramCard from "../../src/views/home/tab/scholarshipCard";
+import ScholarshipProgramCard from "../src/views/home/tab/scholarshipCard";
 
-export default function Assetium() {
+export default function ZenithScholarship() {
   const router = useRouter();
   Intercom({
     app_id: "y4ubjwyw",
   });
 
-  // CardData =  [
-  //   {
-  //     name: "Program Design, Data Analysis, Computer science",
-  //     value: "100",
-  //     program: "Bootcamp",
-  //     deadline: '30-04-2024'
-  //   },
-  //   {
-  //     name: "Program Design, Data Analysis, Computer science",
-  //     value: "100",
-  //     program: "Bootcamp",
-  //     deadline: '30-04-2024'
-  //   },
-  //   {
-  //     name: "Program Design, Data Analysis, Computer science",
-  //     value: "100",
-  //     program: "Bootcamp",
-  //     deadline: '30-04-2024'
-  //   },
-  //   {
-  //     name: "Program Design, Data Analysis, Computer science",
-  //     value: "100",
-  //     program: "Bootcamp",
-  //     deadline: '30-04-2024'
-  //   },
-  //   {
-  //     name: "Program Design, Data Analysis, Computer science",
-  //     value: "100",
-  //     program: "Bootcamp",
-  //     deadline: '30-04-2024'
-  //   },
-  // ]
-
   return (
     <div className="h-full  bg-white text-black">
-      <Box
+     <Box
         component="section"
         id="hero-section"
         sx={{
@@ -115,6 +70,13 @@ export default function Assetium() {
               display: "flex",
               flexDirection: "column",
               gap: { xs: "40px", sm: "80px" },
+              backgroundColor: Colors.prim,
+              backgroundImage: {
+                xs: "url(/images/bacgroundpattern.svg)",
+                sm: "url(/images/bacgroundpattern.svg)",
+              },
+              backgroundRepeat: "repeat",
+            backgroundSize: "cover",
             }}
           >
             {/* logos */}
@@ -124,35 +86,35 @@ export default function Assetium() {
                 display: "flex",
                 flexDirection: "row",
                 mx: "auto",
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: 'center', alignItems: 'center'
               }}
             >
               <Box
                 sx={{
                   backgroundColor: Colors.primary,
-                  px: 1,
-                  py: 0.5,
+                  px: 1.2,
+                  py: 0.7,
                   borderRadius: "100%",
                 }}
               >
-                <EduLogo width="22" height="24" fill={Colors.light} />
+                <EduLogo width="32" height="34" fill={Colors.light} />
               </Box>
+
               <Box
                 sx={{
                   backgroundColor: Colors.light,
                   borderColor: Colors.primary,
-                  py: "2px",
-                  px: "5px",
+                  px: 1.5,
+                  py: 1,
                   borderRadius: "100%",
                   border: `solid 2px ${Colors.primary}`,
                   position: "relative",
-                  left: "-10px",
+                  left: '-10px'
                 }}
               >
                 <Image
-                  src="/images/assetium-logo.png"
-                  alt={"Assetium Capital Management Limited"}
+                  src="/images/zen.png"
+                  alt={"Zenith Bank PLC"}
                   width={20}
                   height={20}
                 />
@@ -183,9 +145,9 @@ export default function Assetium() {
                   letterSpacing: "-2%",
                 }}
               >
-                Assetium{" "}
+                Zenith Bank Educate Her{" "}
                 <Typography variant="span" sx={{ color: Colors.primary }}>
-                  100% Scholarship
+                Scholarship
                 </Typography>{" "}
                 Program
               </Typography>
@@ -201,8 +163,8 @@ export default function Assetium() {
                   variant="span"
                   sx={{
                     font: {
-                      xs: `normal 400 18px/28px ${Fonts.secondary}`,
-                      sm: `normal 400 20px/30px ${Fonts.secondary}`,
+                      xs: `normal 400 normal 14px/29px ${Fonts.secondary}`,
+                      sm: `normal 400 normal 14px/28px ${Fonts.secondary}`,
                     },
                     color: Colors.secondary,
                   }}
@@ -217,17 +179,42 @@ export default function Assetium() {
                     // maxWidth: 500,
                     display: "flex",
                     flexDirection: { xs: "row", sm: "row" },
-
+                    gap: 2,
                     mt: { xs: 5, md: 10 },
                     justifyContent: "center",
                     alignItems: "center",
                     mb: { xs: 4, sm: 1 },
                   }}
                 >
-                  <Box
+                   <Box
                     component="a"
                     target="_blank"
                     href="https://wa.link/3xhcsh"
+                    // onClick={() => router.push(`https://wa.link/3xhcsh`)}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
+                      gap: "8px",
+                      padding: "12px 20px 12px 20px",
+                      color: Colors.light,
+                      border: `1px solid ${Colors.primary}`,
+                      borderRadius: "46px",
+                      cursor: "pointer",
+                      gap: "10px",
+                      background: Colors.primary,
+                      "&:hover": {
+                        background: Colors.secondary,
+                      },
+                    }}
+                  >
+                    Apply Now
+                  </Box>
+                  <Box
+                    component="a"
+                    target="_blank"
+                    
                     // onClick={() => router.push(`https://wa.link/3xhcsh`)}
                     sx={{
                       display: "flex",
@@ -246,7 +233,6 @@ export default function Assetium() {
                       },
                     }}
                   >
-                    <WhatsApp />
                     Learn more
                   </Box>
                 </Box>
@@ -263,6 +249,8 @@ export default function Assetium() {
                 my: "auto",
               }}
             >
+             
+
               <div
                 style={{
                   position: "relative",
@@ -312,6 +300,9 @@ export default function Assetium() {
           </Box>
         </Box>
 
+
+
+        
         {/* our Goal */}
         <Box
           component="section"
@@ -406,7 +397,7 @@ export default function Assetium() {
         {/* scholarship opp */}
         <Box
           sx={{
-            background: Colors.secondary,
+            background: Colors.secondary,  
             width: "100%",
             display: "flex",
             py: 10,
@@ -422,116 +413,94 @@ export default function Assetium() {
             },
           }}
         >
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              textAlign: "center",
-            }}
-          >
-            <Box
-              sx={{
-                border: "1px solid yellow ",
-                alignSelf: "center",
-                display: "flex",
-                width: "140px",
-                justifyContent: "center",
-                borderRadius: 5,
-                mb: "16px",
-              }}
-            >
-              <Typography
-                variant="h1"
-                sx={{
-                  fontFamily: Fonts.primary,
-                  fontSize: 16,
-                  py: 1,
-                  color: Colors.light,
-                }}
-              >
-                Our Courses
-              </Typography>
-            </Box>
-            <Typography
-              variant="h1"
-              sx={{
-                font: {
-                  xs: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
-                  sm: `normal normal 400 normal 28px ${Fonts.secondary}`,
-                },
-                color: Colors.light,
-                letterSpacing: "0em",
-                mb: "10px",
-              }}
-            >
-              Scholarship opportunities
-            </Typography>
-            <Typography
-              variant="h1"
-              sx={{
-                font: {
-                  xs: ` normal 200  14px/24px ${Fonts.secondary}`,
-                  sm: `  normal 200 14px/24px ${Fonts.secondary}`,
-                },
-                color: Colors.light,
-                width: "80%",
-                mx: "auto",
-              }}
-            >
-              Explore various scholarships designed to support your educational
-              journey. <br />
-              Find out if you qualify and learn how to apply today.
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              width: "70%",
-              mx: "auto",
-              display: "flex",
-              flexDirection: "column",
-              gap: 3,
-              mt: 5
-            }}
-          >
+          <Box sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            textAlign: 'center',
             
-            <Box
+          }}>
+          <Box
+            sx={{
+              border: "1px solid yellow ",
+              alignSelf: "center",
+              display: "flex",
+              width: "140px",
+              justifyContent: "center",
+              borderRadius: 5,
+              mb: "16px",
+            }}
+          >
+            <Typography
+              variant="h1"
               sx={{
-                width: "100%",
-                display: "flex",
+                fontFamily: Fonts.primary,
+                fontSize: 16,
+                py: 1,
+                color: Colors.light,
               }}
             >
-              <Grid container spacing={{ xs: 3, lg: 4 }} sx={{ width: "100%" }}>
-                <Grid item xs={12} sm={6} md={4}>
-                  <ScholarshipProgramCard />
-                </Grid>
-
-                <Grid item xs={12} sm={6} md={4}>
-                  <ScholarshipProgramCard />
-                </Grid>
-
-                
-                <Grid item xs={12} sm={6} md={4}>
-                  <ScholarshipProgramCard />
-                </Grid>
-
-                <Grid item xs={12} sm={6} md={4}>
-                  <ScholarshipProgramCard />
-                </Grid>
-
-                <Grid item xs={12} sm={6} md={4}>
-                  <ScholarshipProgramCard />
-                </Grid>
-
-                <Grid item xs={12} sm={6} md={4}>
-                  <ScholarshipProgramCard />
-                </Grid>
-              </Grid>
-            </Box>
+              Our Courses
+            </Typography>
           </Box>
-        </Box>
+          <Typography
+            variant="h1"
+            sx={{
+              font: {
+                xs: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
+                sm: `normal normal 400 normal 28px ${Fonts.secondary}`,
+              },
+              color: Colors.light,
+              letterSpacing: "0em",
+              mb: '10px'
+            }}
+          >
+            Scholarship opportunities
+          </Typography>
+          <Typography
+            variant="h1"
+            sx={{
+              font: {
+                xs: ` normal 200  14px/24px ${Fonts.secondary}`,
+                sm: `  normal 200 14px/24px ${Fonts.secondary}`,
+              },
+              color: Colors.light,
+              width: "80%",
+              mx: 'auto',
+            }}
+          >
+            Explore various scholarships designed to support your educational
+            journey. <br/>Find out if you qualify and learn how to apply today.
+          </Typography>
+          </Box>  
+            <Box sx={{
+              width: '70%', 
+              mx: 'auto',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 3
+            }}>
+             <Box sx={{
+              width: '100%', 
+              display: 'flex',
 
+            }}> 
+             <ScholarshipProgramCard  />
+             <ScholarshipProgramCard  />
+             <ScholarshipProgramCard  />
+             </Box>
+             <Box sx={{
+              width: '100%', 
+              display: 'flex',
+              
+            }}> 
+             <ScholarshipProgramCard  />
+             <ScholarshipProgramCard  />
+             <ScholarshipProgramCard  />
+             </Box>
+            </Box>
+        </Box>
         {/* eleigibility */}
         <Box
           sx={{
@@ -636,13 +605,13 @@ export default function Assetium() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    px: "3px",
-                    pt: "2px",
-                    borderRadius: "4px",
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
-                  <AllGenderIcon width="14px" />
+                  <AllGenderIcon width="14px"/>
                 </Box>{" "}
                 <Typography
                   gutterBottom
@@ -674,9 +643,9 @@ export default function Assetium() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    px: "3px",
-                    pt: "2px",
-                    borderRadius: "4px",
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
@@ -712,9 +681,9 @@ export default function Assetium() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    px: "3px",
-                    pt: "2px",
-                    borderRadius: "4px",
+                    px: '3px',
+                    pt: '2px',
+                    borderRadius: '4px',
                     alignItems: "center",
                   }}
                 >
@@ -746,6 +715,12 @@ export default function Assetium() {
   );
 }
 
-Assetium.getLayout = function getLayout(page) {
+ZenithScholarship.getLayout = function getLayout(page) {
   return <HomePageLayout>{page}</HomePageLayout>;
 };
+
+
+
+
+
+

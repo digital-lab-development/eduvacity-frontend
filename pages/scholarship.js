@@ -1,28 +1,28 @@
 import { useRouter } from "next/router";
 import HomePageLayout from "../src/views/home/layout";
 import {
-  Avatar,
-  AvatarGroup,
   Box,
-  CssBaseline,
-  Divider,
+  Button,
+  Card,
+  CardContent,
   Grid,
   Typography,
 } from "@mui/material";
-import { AllGenderIcon, ArrowUp, BoltsIcon, DocsIcon, EduLogo, PlayButton, WhatsApp, ZapIcon } from "../src/components/svg";
+import {
+  AllGenderIcon,
+  ArrowUp,
+  BoltsIcon,
+  DocsIcon,
+} from "../src/components/svg";
 import { Colors } from "../src/components/themes/colors";
 import { Fonts } from "../src/components/themes/fonts";
-import {
-  EDUVACITY_VALUE,
-  EMPOWERMENT_DESC,
-  EMPOWERMENT_TITLE,
-  HERO_TEXT,
-  PROGRAM_DESC,
-  PROGRAM_TITLE,
-} from "../src/utils/contants";
 
 import Intercom from "@intercom/messenger-js-sdk";
-import { ChildCareRounded, DocumentScannerRounded } from "@mui/icons-material";
+import {
+  ArrowCircleRightOutlined,
+  ChildCareRounded,
+  DocumentScannerRounded,
+} from "@mui/icons-material";
 import Image from "next/image";
 
 export default function Scholarship() {
@@ -33,14 +33,13 @@ export default function Scholarship() {
 
   return (
     <div className="h-full  bg-white text-black">
-     <Box
+      <Box
         component="section"
         id="hero-section"
         sx={{
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          pt: { xs: 8, md: 12.5 },
           pb: { xs: 8, md: 3.5 },
           backgroundRepeat: "repeat",
           backgroundSize: "cover",
@@ -50,274 +49,15 @@ export default function Scholarship() {
         }}
       >
         <Box
-          sx={{
-            width: { xs: "100%", sm: "80%" },
-            mx: "auto",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            px: { xs: "1rem", sm: "1rem", lg: 12.5, xl: 16 },
-            gap: { xs: 4, sm: 8 },
-            backgroundColor: Colors.light,
-            borderRadius: "10px",
-          }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: { xs: "40px", sm: "80px" },
-              backgroundColor: Colors.prim,
-              backgroundImage: {
-                xs: "url(/images/bacgroundpattern.svg)",
-                sm: "url(/images/bacgroundpattern.svg)",
-              },
-              backgroundRepeat: "repeat",
-            backgroundSize: "cover",
-            }}
-          >
-            {/* logos */}
-            <Box
-              sx={{
-                width: "40%",
-                display: "flex",
-                flexDirection: "row",
-                mx: "auto",
-                justifyContent: 'center', alignItems: 'center'
-              }}
-            >
-              <Box
-                sx={{
-                  backgroundColor: Colors.primary,
-                  px: 1.2,
-                  py: 0.7,
-                  borderRadius: "100%",
-                }}
-              >
-                <EduLogo width="32" height="34" fill={Colors.light} />
-              </Box>
-
-              <Box
-                sx={{
-                  backgroundColor: Colors.light,
-                  borderColor: Colors.primary,
-                  px: 1.5,
-                  py: 1,
-                  borderRadius: "100%",
-                  border: `solid 2px ${Colors.primary}`,
-                  position: "relative",
-                  left: '-10px'
-                }}
-              >
-                <Image
-                  src="/images/zen.png"
-                  alt={"Zenith Bank PLC"}
-                  width={20}
-                  height={20}
-                />
-              </Box>
-            </Box>
-            {/* textsss */}
-            <Box
-              sx={{
-                width: "100%",
-                display: "flex",
-                ustifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-                gap: "16px",
-              }}
-            >
-              <Typography
-                variant="h1"
-                sx={{
-                  maxWidth: { xs: 340, sm: 1260 },
-                  font: {
-                    xs: `normal normal 600 normal 32px/48px ${Fonts.primary}`,
-                    md: `normal normal 600 normal 64px/77px ${Fonts.primary}`,
-                  },
-                  color: Colors.secondary,
-                  m: 0,
-                  p: 0,
-                  letterSpacing: "-2%",
-                }}
-              >
-                Zenith Bank Educate Her{" "}
-                <Typography variant="span" sx={{ color: Colors.primary }}>
-                Scholarship
-                </Typography>{" "}
-                Program
-              </Typography>
-              <Box
-                component="span"
-                sx={{
-                  maxWidth: 1050,
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  variant="span"
-                  sx={{
-                    font: {
-                      xs: `normal 400 normal 14px/29px ${Fonts.secondary}`,
-                      sm: `normal 400 normal 14px/28px ${Fonts.secondary}`,
-                    },
-                    color: Colors.secondary,
-                  }}
-                >
-                  Empower stay-at-home mothers and women in rural northern
-                  communities to <br /> reach the top 1% by providing programs
-                  that guarantee employability
-                </Typography>
-                <Box
-                  component="div"
-                  sx={{
-                    // maxWidth: 500,
-                    display: "flex",
-                    flexDirection: { xs: "row", sm: "row" },
-                    gap: 2,
-                    mt: { xs: 5, md: 10 },
-                    justifyContent: "center",
-                    alignItems: "center",
-                    mb: { xs: 4, sm: 1 },
-                  }}
-                >
-                   <Box
-                    component="a"
-                    target="_blank"
-                    href="https://wa.link/3xhcsh"
-                    // onClick={() => router.push(`https://wa.link/3xhcsh`)}
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                      gap: "8px",
-                      padding: "12px 20px 12px 20px",
-                      color: Colors.light,
-                      border: `1px solid ${Colors.primary}`,
-                      borderRadius: "46px",
-                      cursor: "pointer",
-                      gap: "10px",
-                      background: Colors.primary,
-                      "&:hover": {
-                        background: Colors.secondary,
-                      },
-                    }}
-                  >
-                    Apply Now
-                  </Box>
-                  <Box
-                    component="a"
-                    target="_blank"
-                    href="https://wa.link/3xhcsh"
-                    // onClick={() => router.push(`https://wa.link/3xhcsh`)}
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
-                      gap: "8px",
-                      padding: "12px 20px 12px 20px",
-                      color: Colors.primary,
-                      border: `1px solid ${Colors.primary}`,
-                      borderRadius: "46px",
-                      cursor: "pointer",
-                      gap: "10px",
-                      "&:hover": {
-                        background: "transparent",
-                      },
-                    }}
-                  >
-                    Learn more
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-
-            <Box
-              sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                gap: "35px",
-                mx: "auto",
-                my: "auto",
-              }}
-            >
-             
-
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                }}
-              >
-                <Box
-                  sx={{
-                    height: {
-                      xs: 240,
-                      sm: 516,
-                      // xs: showCover ? 0 : 240,
-                      // sm: showCover ? 0 : 516,
-                    },
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "100%",
-                      height: 416,
-                      // paddingBottom: '56.250%',
-                    }}
-                  >
-                    <iframe
-                      title="How to be a school teacher"
-                      allow="fullscreen"
-                      allowFullScreen
-                      height="100%"
-                      src="https://www.youtube.com/embed/la0ytnh7Gzg?si=sW7Yi9SqCjuOds4Y"
-                      width="100%"
-                      style={{
-                        // display: showCover ? 'none' : 'block',
-                        borderRadius: "24px",
-                        border: "none",
-                        width: "100%",
-                        height: "100%",
-                        overflow: "hidden",
-                        cursor: "pointer",
-                        aspectRatio: "video",
-                      }}
-                    ></iframe>
-                  </div>
-                </Box>
-              </div>
-            </Box>
-          </Box>
-        </Box>
-
-
-
-        <Box
           component="section"
           id="hero-section"
           sx={{
             width: "100%",
             display: "flex",
             flexDirection: "column",
-            pt: { xs: 8, md: 15.5 },
-            pb: { xs: 8, md: 6.5 },
-            backgroundImage: {
-              xs: "url(/images/hero-section-pattern-xs.svg)",
-              sm: "url(/images/hero.svg)",
-            },
-            backgroundRepeat: "repeat",
-            backgroundSize: "cover",
             backgroundColor: Colors.secondary,
-            mt: { xs: 40, sm: 1 },
+            pt: { xs: 4, md: 12.5 },
+            pb: { xs: 4, md: 6.5 },
           }}
         >
           <Box
@@ -327,134 +67,520 @@ export default function Scholarship() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              px: { xs: "1rem", sm: "1rem", lg: 12.5, xl: 16 },
-              gap: { xs: 4, sm: 8 },
+              px: { xs: 3, sm: 8.5, md: 5.5, lg: 7.2, xl: 12.5 },
+              py: { xs: 4, sm: 3, xl: 4 },
+              gap: { xs: "32px", sm: "64px" },
             }}
           >
             <Box
               sx={{
-                width: "70%",
+                width: "100%",
                 display: "flex",
-                flexDirection: { xs: "column", sm: "row" },
-                gap: { xs: "40px", sm: "10px" },
-                alignItems: "center",
-                justifyContent: { xs: "center", sm: "space-between" },
+                flexDirection: "column",
+                gap: { xs: "40px", sm: "80px" },
               }}
             >
               <Box
                 sx={{
                   width: "100%",
                   display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  gap: "16px",
                 }}
               >
                 <Typography
                   variant="h1"
                   sx={{
                     font: {
-                      xs: `normal normal 600 normal 32px/48px ${Fonts.primary}`,
-                      md: `normal normal 600 normal 50px/77px ${Fonts.primary}`,
+                      xs: `normal normal 500 normal 14px/20px ${Fonts.primary}`,
+                      sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
                     },
-                    color: Colors.light,
-                    width: "100%",
-                    textAlign: { xs: "center", sm: "left" },
+                    color: Colors.primary,
+                    m: 0,
+                    p: 0,
+                    letterSpacing: "0em",
+                    textTransform: "uppercase",
+                    textAlign: "left",
                   }}
                 >
-                  Our Goal
+                  vast scholarshop offers
                 </Typography>
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                }}
-              >
-                <Typography
-                  gutterBottom
-                  variant="h6"
+                <Box
                   sx={{
-                    font: {
-                      xs: `normal normal 400 normal 14px/29px ${Fonts.secondary}`,
-                      sm: `normal normal 400 normal 14px/28px ${Fonts.secondary}`,
-                    },
-                    color: Colors.light,
                     width: "100%",
-                    textAlign: { xs: "center", sm: "left" },
+                    display: "flex",
+                    flexDirection: { xs: "column", sm: "row" },
+                    gap: { xs: "12px", sm: "64px" },
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
-                  Our goal for the Educate Her scholarship program in the
-                  upcoming five years is to empower 20,000 women in Northern
-                  Nigeria to attain accredited certifications from their homes
-                  and communities. This endeavour will create pathways to
-                  international employment prospects.
-                </Typography>
+                  <Box sx={{ width: "100%", maxWidth: 672 }}>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        width: "100%",
+                        maxWidth: { xs: "100%", sm: "98%", md: 672 },
+                        font: {
+                          xs: `normal normal 600 normal 32.5px/44px ${Fonts.inter}`,
+                          md: `normal normal 600 normal 46px/60px ${Fonts.inter}`,
+                        },
+                        color: Colors.light,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "-0.02em",
+                        textAlign: "left",
+                      }}
+                    >
+                      You are not left out, we&apos;ve got you covered
+                    </Typography>
+                  </Box>
+                  <Typography
+                    variant="p"
+                    sx={{
+                      width: "100%",
+                      maxWidth: { xs: "100%", sm: "98%", md: 672 },
+                      font: {
+                        xs: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                        md: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
+                      },
+                      color: Colors.textColor,
+                      m: 0,
+                      p: 0,
+                      letterSpacing: "0em",
+                      textAlign: "left",
+                    }}
+                  >
+                    No matter your financial strength, we constantly seek to
+                    have a scholarship that makes our vast library of courses
+                    available to you
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           </Box>
         </Box>
 
-        {/* scholarship opp */}
         <Box
           sx={{
-            background: Colors.secondary,
-            width: "100%",
-            display: "flex",
-            py: 10,
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "20px",
+            padding: "5px",
+            width: { xs: "90%", sm: "80%" },
+            mx: "auto",
+            background: Colors.light,
           }}
         >
           <Box
             sx={{
-              border: "1px solid yellow ",
-              alignSelf: "center",
-              display: "flex",
-              width: "140px",
-              justifyContent: "center",
-              borderRadius: 5,
-              mb: "16px",
+              width: "100%",
+              py: { xs: "40px", sm: "60px" },
             }}
           >
-            <Typography
-              variant="h1"
+            <Box
               sx={{
-                fontFamily: Fonts.primary,
-                fontSize: 16,
-                py: 1,
-                color: Colors.light,
+                width: "100%",
+                mx: "auto",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                pb: 4,
               }}
             >
-              Our Courses
-            </Typography>
+              <Typography
+                variant="h1"
+                sx={{
+                  font: {
+                    xs: `normal normal 600 normal 14px/16px ${Fonts.inter}`,
+                    md: `normal normal 600 normal 14px/18px ${Fonts.inter}`,
+                  },
+                  color: Colors.primary,
+                  m: 0,
+                  pb: 0,
+                  letterSpacing: "0em",
+                  textTransform: "uppercase",
+                  textAlign: "center",
+                }}
+              >
+                Enroll for a scholarship
+              </Typography>
+              <Typography
+                variant="h1"
+                sx={{
+                  font: {
+                    xs: `normal normal 600 normal 32.5px/44px ${Fonts.primary}`,
+                    md: `normal normal 600 normal 46px/60px ${Fonts.primary}`,
+                  },
+                  color: Colors.dark,
+                  m: 0,
+                  py: 2,
+                  letterSpacing: "0em",
+                  textAlign: "center",
+                }}
+              >
+                Open Scholarships
+              </Typography>
+              <Typography
+                variant="h1"
+                sx={{
+                  font: {
+                    xs: `normal normal 600 normal 14px/16px ${Fonts.inter}`,
+                    md: `normal normal 600 normal 14px/18px ${Fonts.inter}`,
+                  },
+                  color: Colors.dark,
+                  m: 0,
+                  pb: 0,
+                  letterSpacing: "0em",
+                  textAlign: "center",
+                  width: { xs: "100%", sm: "70%" },
+                  mx: "auto",
+                }}
+              >
+                Check through our list of currently open scholarship for a
+                perfect fit. We have a programme for designed for you
+              </Typography>
+            </Box>
+
+            <Grid container spacing={{ xs: 3, lg: 8 }} sx={{ width: "100%" }}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Card
+                  sx={{
+                    padding: "4px",
+                    borderRadius: "16px",
+                    backgroundColor: "#011B23",
+                    boxShadow: "0px 16px 16px 0px #0000000D",
+                    border: `1px solid #ffffff`,
+                  }}
+                >
+                  <CardContent
+                    sx={{ display: "flex", flexDirection: "column" }}
+                  >
+                    <Box sx={{ display: "flex", gap: 2 }}>
+                      <Box
+                        sx={{
+                          backgroundColor: Colors.light,
+                          borderColor: Colors.primary,
+                          borderRadius: "100%",
+                          border: `solid 2px ${Colors.secondary}`,
+                          alignItems: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          width: 40,
+                          height: 40,
+                        }}
+                      >
+                        <Image
+                          src="/images/assetium-logo.png"
+                          alt="Assetium Logo"
+                          width={25}
+                          height={23}
+                        />
+                      </Box>
+                      <Box sx={{ textAlign: "left" }}>
+                        <Typography
+                          variant="body2"
+                          sx={{ color: Colors.greyText }}
+                        >
+                          Sponsors
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          sx={{ color: Colors.light }}
+                        >
+                          Assetium
+                        </Typography>
+                      </Box>
+                    </Box>
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        borderTop: `1px solid ${Colors.grey}`,
+                        pt: 1,
+                        mt: 1,
+                        borderBottom: `1px solid ${Colors.grey}`,
+                        pb: 1,
+                        mb: 1,
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          font: {
+                            xs: ` 10px/16px ${Fonts.primary}`,
+                          },
+                          color: Colors.greyText,
+                        }}
+                      >
+                        VALUE
+                      </Typography>
+                      <Typography
+                        sx={{
+                          font: {
+                            xs: ` 12px/16px ${Fonts.primary}`,
+                          },
+                          color: Colors.light,
+                        }}
+                      >
+                        100% Tuition
+                      </Typography>
+                    </Box>
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          textAlign: "left",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: `10px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.greyText,
+                          }}
+                        >
+                          Program
+                        </Typography>
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: ` 12px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.light,
+                            lineBreak: "loose",
+                          }}
+                        >
+                          Bootcamp
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          textAlign: "left",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: ` 10px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.greyText,
+                          }}
+                        >
+                          DEADLINE
+                        </Typography>
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: ` 12px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.light,
+                          }}
+                        >
+                          02-10-2024
+                        </Typography>
+                      </Box>
+                    </Box>
+
+                   
+                    <Button
+                      size="small"
+                      onClick={() => router.push(`/scholarship/assetium`)}
+                      endIcon={<ArrowCircleRightOutlined />}
+                      sx={{
+                        font: `normal 400 14px/24px ${Fonts.openSans}`,
+                        textTransform: "none",
+                        color: Colors.light,
+                        marginTop: 3,
+                        backgroundColor: Colors.primary
+                      }}
+                    >
+                      View Scholarship
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={4}>
+                <Card
+                  sx={{
+                    padding: "4px",
+                    borderRadius: "16px",
+                    backgroundColor: "#011B23",
+                    boxShadow: "0px 16px 16px 0px #0000000D",
+                    border: `1px solid #ffffff`,
+                  }}
+                >
+                  <CardContent
+                    sx={{ display: "flex", flexDirection: "column" }}
+                  >
+                    <Box sx={{ display: "flex", gap: 2 }}>
+                      <Box
+                        sx={{
+                          backgroundColor: Colors.light,
+                          borderColor: Colors.primary,
+                          borderRadius: "100%",
+                          border: `solid 2px ${Colors.secondary}`,
+                          alignItems: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          width: 40,
+                          height: 40,
+                        }}
+                      >
+                        <Image
+                          src="/images/zen.png"
+                          alt="Zenith Bank Logo"
+                          width={25}
+                          height={23}
+                        />
+                      </Box>
+                      <Box sx={{ textAlign: "left" }}>
+                        <Typography
+                          variant="body2"
+                          sx={{ color: Colors.greyText }}
+                        >
+                          Sponsors
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          sx={{ color: Colors.light }}
+                        >
+                          Zenith Bank
+                        </Typography>
+                      </Box>
+                    </Box>
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        borderTop: `1px solid ${Colors.grey}`,
+                        pt: 1,
+                        mt: 1,
+                        borderBottom: `1px solid ${Colors.grey}`,
+                        pb: 1,
+                        mb: 1,
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          font: {
+                            xs: ` 10px/16px ${Fonts.primary}`,
+                          },
+                          color: Colors.greyText,
+                        }}
+                      >
+                        VALUE
+                      </Typography>
+                      <Typography
+                        sx={{
+                          font: {
+                            xs: ` 12px/16px ${Fonts.primary}`,
+                          },
+                          color: Colors.light,
+                        }}
+                      >
+                        100% Tuition
+                      </Typography>
+                    </Box>
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          textAlign: "left",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: `10px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.greyText,
+                          }}
+                        >
+                          Program
+                        </Typography>
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: ` 12px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.light,
+                            lineBreak: "loose",
+                          }}
+                        >
+                          Bootcamp
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          textAlign: "left",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: ` 10px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.greyText,
+                          }}
+                        >
+                          DEADLINE
+                        </Typography>
+                        <Typography
+                          sx={{
+                            font: {
+                              xs: ` 12px/16px ${Fonts.primary}`,
+                            },
+                            color: Colors.light,
+                          }}
+                        >
+                          --/ -- /--
+                        </Typography>
+                      </Box>
+                    </Box>
+
+                    <Button
+                      size="small"
+                      // onClick={() => router.push(`/scholarship/assetium`)}
+                      endIcon={<ArrowCircleRightOutlined />}
+                      sx={{
+                        font: `normal 400 14px/24px ${Fonts.openSans}`,
+                        textTransform: "none",
+                        color: Colors.light,
+                        marginTop: 3,
+                        backgroundColor: Colors.primary
+                      }}
+                    >
+                      Coming soon
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
           </Box>
-          <Typography
-            variant="h1"
-            sx={{
-              font: {
-                xs: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
-                sm: `normal normal 400 normal 28px ${Fonts.secondary}`,
-              },
-              color: Colors.light,
-              letterSpacing: "0em",
-            }}
-          >
-            Scholarship opportunities
-          </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              font: {
-                xs: `normal normal 400 normal 14px/18px ${Fonts.secondary}`,
-                sm: `normal normal 400 normal 14px/18px ${Fonts.secondary}`,
-              },
-              color: Colors.light,
-              width: "80%",
-            }}
-          >
-            Explore various scholarships designed to support your educational
-            journey. Find out if you qualify and learn how to apply today.
-          </Typography>
         </Box>
         {/* eleigibility */}
         <Box
@@ -560,13 +686,13 @@ export default function Scholarship() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    px: '3px',
-                    pt: '2px',
-                    borderRadius: '4px',
+                    px: "3px",
+                    pt: "2px",
+                    borderRadius: "4px",
                     alignItems: "center",
                   }}
                 >
-                  <AllGenderIcon width="14px"/>
+                  <AllGenderIcon width="14px" />
                 </Box>{" "}
                 <Typography
                   gutterBottom
@@ -598,9 +724,9 @@ export default function Scholarship() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    px: '3px',
-                    pt: '2px',
-                    borderRadius: '4px',
+                    px: "3px",
+                    pt: "2px",
+                    borderRadius: "4px",
                     alignItems: "center",
                   }}
                 >
@@ -636,9 +762,9 @@ export default function Scholarship() {
                 <Box
                   sx={{
                     border: `1px solid ${Colors.primary} `,
-                    px: '3px',
-                    pt: '2px',
-                    borderRadius: '4px',
+                    px: "3px",
+                    pt: "2px",
+                    borderRadius: "4px",
                     alignItems: "center",
                   }}
                 >
