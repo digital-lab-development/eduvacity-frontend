@@ -1,41 +1,21 @@
 import { useRouter } from "next/router";
 import HomePageLayout from "../../src/views/home/layout";
 import {
-  Avatar,
-  AvatarGroup,
   Box,
-  Card,
-  CssBaseline,
-  Divider,
   Grid,
   Typography,
 } from "@mui/material";
 import {
   AllGenderIcon,
-  ArrowUp,
   BoltsIcon,
   DocsIcon,
   EduLogo,
-  PlayButton,
-  WhatsApp,
-  ZapIcon,
 } from "../../src/components/svg";
 // import { ArrowUp, PlayButton, WhatsApp, ZapIcon } from "../src/components/svg";
 import { Colors } from "../../src/components/themes/colors";
 import { Fonts } from "../../src/components/themes/fonts";
-import {
-  EDUVACITY_VALUE,
-  EMPOWERMENT_DESC,
-  EMPOWERMENT_TITLE,
-  HERO_TEXT,
-  PROGRAM_DESC,
-  PROGRAM_TITLE,
-} from "../../src/utils/contants";
-
 import Intercom from "@intercom/messenger-js-sdk";
-import { ChildCareRounded, DocumentScannerRounded } from "@mui/icons-material";
 import Image from "next/image";
-import AppLogo from "../../src/components/svg/applogo";
 import ScholarshipProgramCard from "../../src/views/home/tab/scholarshipCard";
 
 export default function Assetium() {
@@ -211,23 +191,49 @@ export default function Assetium() {
                   communities to <br /> reach the top 1% by providing programs
                   that guarantee employability
                 </Typography>
+                
                 <Box
                   component="div"
                   sx={{
                     // maxWidth: 500,
                     display: "flex",
                     flexDirection: { xs: "row", sm: "row" },
-
+                    gap: 2,
                     mt: { xs: 5, md: 10 },
                     justifyContent: "center",
                     alignItems: "center",
                     mb: { xs: 4, sm: 1 },
                   }}
                 >
-                  <Box
+                   <Box
                     component="a"
                     target="_blank"
                     href="https://wa.link/3xhcsh"
+                    // onClick={() => router.push(`https://wa.link/3xhcsh`)}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
+                      gap: "8px",
+                      padding: "12px 20px 12px 20px",
+                      color: Colors.light,
+                      border: `1px solid ${Colors.primary}`,
+                      borderRadius: "46px",
+                      cursor: "pointer",
+                      gap: "10px",
+                      background: Colors.primary,
+                      "&:hover": {
+                        background: Colors.secondary,
+                      },
+                    }}
+                  >
+                    Apply Now
+                  </Box>
+                  <Box
+                    component="a"
+                    target="_blank"
+                    
                     // onClick={() => router.push(`https://wa.link/3xhcsh`)}
                     sx={{
                       display: "flex",
@@ -246,7 +252,6 @@ export default function Assetium() {
                       },
                     }}
                   >
-                    <WhatsApp />
                     Learn more
                   </Box>
                 </Box>

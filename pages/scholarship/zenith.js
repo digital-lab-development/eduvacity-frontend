@@ -1,30 +1,15 @@
 import { useRouter } from "next/router";
-import HomePageLayout from "../src/views/home/layout";
+import HomePageLayout from "../../src/views/home/layout";
 import {
-  Avatar,
-  AvatarGroup,
   Box,
-  CssBaseline,
-  Divider,
-  Grid,
   Typography,
 } from "@mui/material";
-import { AllGenderIcon, ArrowUp, BoltsIcon, DocsIcon, EduLogo, PlayButton, WhatsApp, ZapIcon } from "../src/components/svg";
-import { Colors } from "../src/components/themes/colors";
-import { Fonts } from "../src/components/themes/fonts";
-import {
-  EDUVACITY_VALUE,
-  EMPOWERMENT_DESC,
-  EMPOWERMENT_TITLE,
-  HERO_TEXT,
-  PROGRAM_DESC,
-  PROGRAM_TITLE,
-} from "../src/utils/contants";
-
+import { AllGenderIcon, ArrowUp, BoltsIcon, DocsIcon, EduLogo, PlayButton, WhatsApp, ZapIcon } from "../../src/components/svg";
+import { Colors } from "../../src/components/themes/colors";
+import { Fonts } from "../../src/components/themes/fonts";
 import Intercom from "@intercom/messenger-js-sdk";
-import { ChildCareRounded, DocumentScannerRounded } from "@mui/icons-material";
 import Image from "next/image";
-import ScholarshipProgramCard from "../src/views/home/tab/scholarshipCard";
+import ScholarshipProgramCard from "../../src/views/home/tab/scholarshipCard";
 
 export default function ZenithScholarship() {
   const router = useRouter();
