@@ -67,8 +67,8 @@ export default function FooterPage() {
             sx={{
               maxWidth: '100%',
               font: {
-                xs: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
-                md: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 14px/24px ${Fonts.secondary}`,
+                md: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
               },
               color: '#87A0A8',
               textAlign: { xs: 'left', sm: 'left' },
@@ -81,7 +81,7 @@ export default function FooterPage() {
               textAlign: 'left',
               mt: { xs: 2, lg: 8 },
               color: Colors.primary,
-              font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+              font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
             }}>
             Address
           </Typography>
@@ -90,8 +90,8 @@ export default function FooterPage() {
             sx={{
               maxWidth: '100%',
               font: {
-                xs: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
-                md: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 14px/24px ${Fonts.secondary}`,
+                md: `normal normal 500 normal 114/24px ${Fonts.secondary}`,
               },
               color: '#87A0A8',
               textAlign: { xs: 'left', sm: 'left' },
@@ -125,7 +125,7 @@ export default function FooterPage() {
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
-                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
                   }}>
                   Company
                 </Typography>
@@ -160,7 +160,7 @@ export default function FooterPage() {
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
-                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
                   }}>
                   Resources
                 </Typography>
@@ -171,7 +171,7 @@ export default function FooterPage() {
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
                     letterSpacing: '0em',
                   }}>
                   FAQs
@@ -182,7 +182,7 @@ export default function FooterPage() {
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
                     letterSpacing: '0em',
                   }}>
                   How to get started
@@ -205,7 +205,7 @@ export default function FooterPage() {
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
-                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
                   }}>
                   Scholarships
                 </Typography>
@@ -217,7 +217,7 @@ export default function FooterPage() {
                     sx={{
                       textAlign: 'left',
                       color: '#E6F4ED',
-                      font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                      font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
                       letterSpacing: '0em',
                     }}>
                     {company.title}
@@ -256,7 +256,7 @@ export default function FooterPage() {
               textAlign: 'left',
               color: Colors.light,
               display: { xs: 'none', sm: 'flex' },
-              font: `normal normal 400 normal 16px/24px ${Fonts.inter}`,
+              font: `normal normal 400 normal 14px/24px ${Fonts.primary}`,
               letterSpacing: '0em',
             }}>
             © {year} eduvacity. All rights reserved.
@@ -310,7 +310,7 @@ export default function FooterPage() {
               textAlign: 'left',
               color: Colors.light,
               display: { xs: 'flex', sm: 'none' },
-              font: `normal normal 400 normal 16px/24px ${Fonts.inter}`,
+              font: `normal normal 400 normal 14px/24px ${Fonts.primary}`,
               letterSpacing: '0em',
             }}>
             © {year} eduvacity. All rights reserved.

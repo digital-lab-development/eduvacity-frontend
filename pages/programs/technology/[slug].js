@@ -269,8 +269,8 @@ export default function CloudComputingPage() {
               sx={{
                 width: '100%',
                 font: {
-                  xs: `normal normal 400 normal 20px/28px ${Fonts.arial}`,
-                  md: `normal normal 400 normal 20px/30px ${Fonts.arial}`,
+                  xs: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
+                  md: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
                 },
                 color: Colors.textColor,
                 letterSpacing: { xs: '0em' },
@@ -458,7 +458,7 @@ export default function CloudComputingPage() {
               <Box
                 component="span"
                 sx={{
-                  font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                  font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
                   color: Colors.primary,
                   m: 0,
                   p: 0,
@@ -504,7 +504,7 @@ export default function CloudComputingPage() {
               <Box
                 component="span"
                 sx={{
-                  font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                  font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
                   color: Colors.primary,
                   m: 0,
                   p: 0,
@@ -540,7 +540,7 @@ export default function CloudComputingPage() {
               <Box
                 component="span"
                 sx={{
-                  font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                  font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
                   color: Colors.primary,
                   m: 0,
                   p: 0,
@@ -621,9 +621,8 @@ export default function CloudComputingPage() {
                           <Typography
                             variant="h6"
                             sx={{
-                              fontSize: '20px',
-                              fontWeight: 700,
-                              color: '#101828',
+                              font: `normal normal 600 normal 20px/36px ${Fonts.primary}`,
+                              color: Colors.greyText,
                             }}>
                             {item.title}
                           </Typography>
@@ -632,9 +631,9 @@ export default function CloudComputingPage() {
                           <Typography
                             variant="h6"
                             sx={{
-                              fontSize: '16px',
+                              font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
                               fontWeight: 400,
-                              color: '#868B93',
+                              color: Colors.greyText,
                             }}>
                             {item.content}
                           </Typography>
@@ -957,10 +956,10 @@ export default function CloudComputingPage() {
                   <Typography
                     sx={{
                       mt: '8px',
-                      fontSize: '16px',
+                      font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
                       fontWeight: 400,
                       fontFamily: Fonts.primary,
-                      color: '#868B93',
+                      color: Colors.greyText,
                     }}>
                     {advantage.content}
                   </Typography>
@@ -1119,10 +1118,7 @@ export default function CloudComputingPage() {
                   <Typography
                     variant="span"
                     sx={{
-                      font: {
-                        xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                        sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
-                      },
+                      font: `normal normal 600 normal 14px/24px ${Fonts.primary}`,
                       color: Colors.grey,
                     }}>
                     {course?.certificationDetails}
@@ -1234,10 +1230,7 @@ export default function CloudComputingPage() {
                   <Typography
                     variant="span"
                     sx={{
-                      font: {
-                        xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                        sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
-                      },
+                      font: `normal normal 600 normal 14px/24px ${Fonts.primary}`,
                       color: Colors.textColor,
                       textAlign: 'center',
                     }}>
@@ -1321,10 +1314,7 @@ export default function CloudComputingPage() {
                 <Typography
                   variant="span"
                   sx={{
-                    font: {
-                      xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                      sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
-                    },
+                    font: `normal normal 600 normal 14px/24px ${Fonts.primary}`,
                     color: Colors.grey,
                     textAlign: { xs: 'justify', md: 'start' },
                   }}>
@@ -1360,63 +1350,7 @@ export default function CloudComputingPage() {
         />
       </Box>
 
-      {/* <Box
-        component="section"
-        id="feature-section"
-        sx={{
-          width: '100%',
-          display: 'flex',
-
-          flexDirection: 'column',
-          pt: { xs: 8, md: 12 },
-          pb: { xs: 8, md: 12 },
-          backgroundColor: Colors.light,
-        }}>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            px: { xs: '1rem', sm: '1rem', md: '5rem' },
-            gap: 8,
-          }}>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: { xs: '40px', sm: '80px' },
-            }}>
-            <Box
-              sx={{
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-              }}>
-              <Typography
-                variant="h2"
-                sx={{
-                  maxWidth: 768,
-                  font: {
-                    xs: `normal normal 600 normal 28.5px/36px ${Fonts.Demi}`,
-                    md: `normal normal 600 normal 36px/44px ${Fonts.Demi}`,
-                  },
-                  color: Colors.dark,
-                  m: 0,
-                  p: 0,
-                  letterSpacing: '-0.02em',
-                  textAlign: 'left',
-                }}>
-                Key Features
-              </Typography>
-              <KeyFeaturesCard />
-            </Box>
-          </Box>
-        </Box>
-      </Box> */}
+     
       <Box sx={{ px: { xs: 4, sm: 3, lg: 12.5, xl: 16 } }}>
         <Divider
           sx={{
@@ -1484,10 +1418,7 @@ export default function CloudComputingPage() {
                     <Typography
                       variant="span"
                       sx={{
-                        font: {
-                          xs: `normal normal 500 normal 18px/28px ${Fonts.primary}`,
-                          sm: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
-                        },
+                        font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
                         color: Colors.grey,
                       }}>
                       The result must include a minimum of five credits in the
@@ -1511,7 +1442,7 @@ export default function CloudComputingPage() {
                       flexDirection: 'column',
                       gap: '12px',
                     }}>
-                    <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
+                    <Box sx={{ width: '100%', display: 'flex', gap: '12px', alignItems: 'center' }}>
                       <Box>
                         <CheckCircled />
                       </Box>{' '}
@@ -1520,7 +1451,7 @@ export default function CloudComputingPage() {
                         variant="h6"
                         component="div"
                         sx={{
-                          font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                          font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
                           color: '#475467',
                           letterSpacing: '0em',
                           textAlign: 'left',
@@ -1528,7 +1459,7 @@ export default function CloudComputingPage() {
                         English language
                       </Typography>
                     </Box>
-                    <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
+                    <Box sx={{ width: '100%', display: 'flex', gap: '12px', alignItems: 'center' }}>
                       <Box>
                         <CheckCircled />
                       </Box>{' '}
@@ -1537,7 +1468,7 @@ export default function CloudComputingPage() {
                         variant="h6"
                         component="div"
                         sx={{
-                          font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                          font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
                           color: '#475467',
                           letterSpacing: '0em',
                           textAlign: 'left',
@@ -1545,7 +1476,7 @@ export default function CloudComputingPage() {
                         Mathematics
                       </Typography>
                     </Box>
-                    <Box sx={{ width: '100%', display: 'flex', gap: '12px' }}>
+                    <Box sx={{ width: '100%', display: 'flex', gap: '12px', alignItems: 'center' }}>
                       <Box>
                         <CheckCircled />
                       </Box>{' '}
@@ -1554,7 +1485,7 @@ export default function CloudComputingPage() {
                         variant="h6"
                         component="div"
                         sx={{
-                          font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                          font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
                           color: '#475467',
                           letterSpacing: '0em',
                           textAlign: 'left',
@@ -1669,7 +1600,7 @@ export default function CloudComputingPage() {
                     {careerPaths.map((path, index) => (
                       <Grid item xs={12} lg={6} key={`career_path_${index}`}>
                         <Box
-                          sx={{ width: '100%', display: 'flex', gap: '12px' }}>
+                          sx={{ width: '100%', display: 'flex', gap: '12px', alignItems: 'center' }}>
                           <Box>
                             <GhostCheckIcon />
                           </Box>{' '}
@@ -1678,7 +1609,7 @@ export default function CloudComputingPage() {
                             variant="h6"
                             component="div"
                             sx={{
-                              font: `normal normal 400 normal 18px/28px ${Fonts.inter}`,
+                              font: `normal normal 400 normal 14px/24px ${Fonts.secondary}`,
                               color: '#475467',
                               letterSpacing: '0em',
                               textAlign: 'left',

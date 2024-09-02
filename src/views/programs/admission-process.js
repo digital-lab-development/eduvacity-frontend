@@ -78,7 +78,7 @@ export default function AdmissionProcessCard() {
                         variant="h6"
                         component="div"
                         sx={{
-                          font: `normal normal 400 normal 16px/24px ${Fonts.primary}`,
+                          font: `normal normal 400 normal 14px/24px ${Fonts.primary}`,
                           color: Colors.grey,
                           letterSpacing: '0em',
                           textAlign: 'left',

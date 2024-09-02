@@ -208,7 +208,7 @@ export default function Assetium() {
                    <Box
                     component="a"
                     target="_blank"
-                    href="https://wa.link/3xhcsh"
+                    // href="https://wa.link/3xhcsh"
                     // onClick={() => router.push(`https://wa.link/3xhcsh`)}
                     sx={{
                       display: "flex",
