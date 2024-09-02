@@ -42,7 +42,7 @@ export const FOOTER_COMPANY = [
 ];
 export const FOOTER_SCHOLARSHIP = [
   { title: 'Assetium 100%', href: '/scholarship/assetium' },
-  { title: 'Educate Her', href: '/scholarship' },
+  // { title: 'Educate Her', href: '/scholarship' },
   
 ];
 
