@@ -36,6 +36,15 @@ export default function ProgramCard({ cards, handleClick }) {
       swiperRef.current.swiper.slidePrev();
     }
   };
+  // const truncateText = (text, maxLength) => {
+  //   if (text.length <= maxLength) return text;
+  //   return text.substring(0, maxLength) + '...';
+  // };
+  const truncateTextByWords = (text, wordLimit) => {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) return text;
+    return words.slice(0, wordLimit).join(' ') + '...';
+  };
 
   return (
     <div
@@ -173,7 +182,7 @@ export default function ProgramCard({ cards, handleClick }) {
                           color: "#fff",
                         }}
                       >
-                        {/* {card.schoolName} */} ABU
+                        {truncateTextByWords(card.schoolName, 1)}
                       </Typography>
                     </Box>
                     <Box
