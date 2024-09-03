@@ -67,7 +67,7 @@ export default function FeaturesCard() {
                   borderRadius: '12px',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '64px',
+                  gap: '40px',
                   boxShadow: 'none',
                   background: '#F6F7F7',
                 }}>
@@ -75,7 +75,7 @@ export default function FeaturesCard() {
                 <Box sx={{ width: '100%' }}>
                   <Typography
                     gutterBottom
-                    variant="g"
+                    variant="body1"
                     component="div"
                     sx={{
                       font: {
@@ -91,7 +91,10 @@ export default function FeaturesCard() {
                     variant="p"
                     sx={{
                       width: 341,
-                      font: `normal normal 400 normal 16px/24px ${Fonts.secondary}`,
+                      font: {
+                        xs: `normal normal 400 14px/18px ${Fonts.secondary}`,
+                        sm: `normal normal 400 14px/18px ${Fonts.secondary}`,
+                      },
                       color: Colors.textColor,
                     }}>
                     {card.description}

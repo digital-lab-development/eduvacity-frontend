@@ -144,10 +144,11 @@ export default function HomePage() {
                   variant="span"
                   sx={{
                     font: {
-                      xs: `normal normal 500 normal 18px/28px ${Fonts.secondary}`,
-                      sm: `normal normal 500 normal 20px/30px ${Fonts.secondary}`,
+                      xs: `normal normal 400 14px/18px ${Fonts.inter}`,
+                      sm: `normal normal 400 14px/18px ${Fonts.inter}`,
                     },
                     color: Colors.offWhite,
+                    width: {xs: '100%', sm: '80%'}
                   }}>
                   {HERO_TEXT.secondary}
                 </Typography>
@@ -258,8 +259,6 @@ export default function HomePage() {
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                // gap: '16px',
-                // px: { xs: '1rem', sm: 8.5, md: 5.5, lg: 7.2, lg: 15.5 },
                 px: { xs: '1rem', sm: '1rem', lg: 12.5, xl: 16 },
               }}>
               <Typography
@@ -420,12 +419,14 @@ export default function HomePage() {
                   variant="span"
                   sx={{
                     font: {
-                      xs: `normal normal 400 normal 16px/28px ${Fonts.secondary}`,
-                      sm: `normal normal 500 normal 20px/30px ${Fonts.secondary}`,
+                      xs: `normal normal 400 14px/18px ${Fonts.inter}`,
+                      sm: `normal normal 400 14px/18px ${Fonts.inter}`,
                     },
                     color: Colors.grey,
+                    mt: '10px',
+                    mb: 10
                   }}>
-                  {EMPOWERMENT_DESC}
+                  {EMPOWERMENT_DESC} 
                 </Typography>
               </Box>
               <div
@@ -446,8 +447,8 @@ export default function HomePage() {
                   <div
                     style={{
                       position: 'relative',
-                      width: '100%',
-                      height: 516,
+                      width: '90%',
+                      height: 416,
                       // paddingBottom: '56.250%',
                     }}>
                     <iframe
@@ -530,7 +531,7 @@ export default function HomePage() {
         </Box>
       </Box>
 
-      {/* PARTNERS */}
+      {/* PARTNERS 2251203852 */}
       <Box
         sx={{
           bgcolor: '#fff',
@@ -561,7 +562,10 @@ export default function HomePage() {
               mx: 'auto',
               mt: '20px',
               color: '#505F79',
-              font: `normal normal 600 normal 36px/44px ${Fonts.secondary}`,
+              font: {
+                xs: `normal normal 400 14px/18px ${Fonts.inter}`,
+                sm: `normal normal 400 14px/18px ${Fonts.inter}`,
+              },
               fontSize: ['18px', '20px'],
               fontWeight: 300,
             }}>
@@ -645,8 +649,8 @@ export default function HomePage() {
             sx={{
               maxWidth: 665,
               font: {
-                xs: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                md: `normal normal 500 normal 20px/30px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
+                md: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
               },
               color: '#B9C8CD',
               textAlign: { xs: 'center', sm: 'left' },
@@ -688,7 +692,12 @@ export default function HomePage() {
 
       <Testimony />
 
-      {/* FREQUENTLY ASK QUESTION */}
+      {/* FREQUENTLY ASK QUESTION 
+
+      paystack titan
+      9901495101
+      
+       */}
       <Box
         component="section"
         id="hero-section faqs "
@@ -730,7 +739,10 @@ export default function HomePage() {
               <Typography
                 variant="h2"
                 sx={{
-                  font: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
+                  font: {
+                    xs: `normal normal 400 14px/18px ${Fonts.inter}`,
+                    sm: `normal normal 400 14px/18px ${Fonts.inter}`,
+                  },
                   color: Colors.primary,
                   m: 0,
                   p: 0,
@@ -813,10 +825,10 @@ export default function HomePage() {
                 variant="span"
                 sx={{
                   font: {
-                    xs: `normal normal 400 normal 18px/28px ${Fonts.secondary}`,
-                    sm: `normal normal 400 normal 18px/28px ${Fonts.secondary}`,
+                    xs: ` 14px/28px ${Fonts.secondary}`,
+                    sm: ` 14px/28px ${Fonts.secondary}`,
                   },
-                  color: Colors.grey,
+                  color: Colors.dark,
                   textAlign: 'center',
                 }}>
                 Feel free to get in touch with our Success Advisors for

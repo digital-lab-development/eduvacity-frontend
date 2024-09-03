@@ -200,7 +200,7 @@ export default function WhyEduvasityPage() {
             }}
           >
             <Grid sx={{ justifyContent: 'center',  alignItems: "center"}} container columnGap={10} rowSpacing={2} >
-                <Grid xs={5} sm={3}>
+                <Grid xs={5} sm={4} >
                   <Box
                     sx={{
                       display: "flex",
@@ -211,6 +211,7 @@ export default function WhyEduvasityPage() {
                       borderColor: Colors.secondary,
                       borderRadius: 1,
                       alignItems: "center",
+                      height: '150px'
                     }}
                   >
                     <StackBookAvatar />
@@ -228,7 +229,7 @@ export default function WhyEduvasityPage() {
                     </Typography>
                   </Box>
                 </Grid>
-                <Grid xs={3}>
+                <Grid xs={5} sm={4} >
                   <Box
                     sx={{
                       width: "100%",
@@ -240,6 +241,7 @@ export default function WhyEduvasityPage() {
                       borderColor: Colors.secondary,
                       borderRadius: 1,
                       alignItems: "center",
+                      height: '150px'
                     }}
                   >
                     <Box>
@@ -259,7 +261,7 @@ export default function WhyEduvasityPage() {
                     </Typography>
                   </Box>
                 </Grid>
-                <Grid xs={3}>
+                <Grid xs={5} sm={4} >
                   <Box
                     sx={{
                       width: "100%",
@@ -271,6 +273,7 @@ export default function WhyEduvasityPage() {
                       borderColor: Colors.secondary,
                       borderRadius: 1,
                       alignItems: "center",
+                      height: '150px'
                     }}
                   >
                     <Box>
@@ -290,7 +293,7 @@ export default function WhyEduvasityPage() {
                     </Typography>
                   </Box>
                 </Grid>
-                <Grid xs={3}>
+                <Grid xs={5} sm={4} >
                   <Box
                     sx={{
                       width: "100%",
@@ -302,6 +305,7 @@ export default function WhyEduvasityPage() {
                       // borderColor: Colors.secondary,
                       borderRadius: 1,
                       alignItems: "center",
+                      height: '150px'
                     }}
                   >
                     <Box>

@@ -26,7 +26,7 @@ const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(
   () => ({
     backgroundColor: Colors.light,
     textAlign: 'left',
-    font: `normal normal 500 18px/28px ${Fonts.primary}`,
+    font: `normal normal 500 14px/28px ${Fonts.primary}`,
     letterSpacing: 0,
     color: '#011B23',
     padding: 0,
@@ -44,7 +44,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
   textAlign: 'left',
   font: {
     xs: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
-    sm: `normal normal 500 normal 18px/24px ${Fonts.secondary}`,
+    sm: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
   },
   letterSpacing: 0,
   color: '#868B93',
@@ -97,7 +97,7 @@ export default function FrequentlyAskQuestions() {
       }}>
       {questions?.map((quest, i) => (
         <Box key={`quest-${i}`} sx={{ width: '100%' }}>
-          <Accordion
+          <Accordion  
             expanded={expanded === `panel${i + 1}`}
             onChange={handleChange(`panel${i + 1}`)}>
             <AccordionSummary

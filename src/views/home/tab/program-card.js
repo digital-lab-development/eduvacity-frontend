@@ -36,6 +36,15 @@ export default function ProgramCard({ cards, handleClick }) {
       swiperRef.current.swiper.slidePrev();
     }
   };
+  // const truncateText = (text, maxLength) => {
+  //   if (text.length <= maxLength) return text;
+  //   return text.substring(0, maxLength) + '...';
+  // };
+  const truncateTextByWords = (text, wordLimit) => {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) return text;
+    return words.slice(0, wordLimit).join(' ') + '...';
+  };
 
   return (
     <div
@@ -81,14 +90,14 @@ export default function ProgramCard({ cards, handleClick }) {
                   padding: "10px",
                   borderRadius: "16px",
                   width: "80%",
-                  height: "410px",
+                  height: "340px",
                   backgroundColor: "#011B23",
                   boxShadow: "0px 16px 16px 0px #0000000D",
                   border: `1px solid #ffffff`,
                 }}
               >
                 <CardMedia
-                  sx={{ height: { xs: 190, sm: 240 }, borderRadius: 3 }}
+                  sx={{ height: { xs: 190, sm: 200 }, borderRadius: 3 }}
                   image={card.thumbnail || ""}
                   title={card.name}
                 />
@@ -121,7 +130,7 @@ export default function ProgramCard({ cards, handleClick }) {
                           alignItems: "center",
                           color: "#fff",
                           gap: 1,
-                          font: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                          font: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
                           color: Colors.light,
                         }}
                       >{`${card.programName}`}</Typography>
@@ -130,8 +139,8 @@ export default function ProgramCard({ cards, handleClick }) {
                       variant="h6"
                       sx={{
                         font: {
-                          xs: `normal normal 700 normal 12.67px/25.33px ${Fonts.secondary}`,
-                          sm: `normal normal 700 normal 16px/32px ${Fonts.secondary}`,
+                          xs: `normal normal 700 normal 14px/24px ${Fonts.secondary}`,
+                          sm: `normal normal 700 normal 14px/24px ${Fonts.secondary}`,
                         },
                         color: "#fff",
                       }}
@@ -173,7 +182,7 @@ export default function ProgramCard({ cards, handleClick }) {
                           color: "#fff",
                         }}
                       >
-                        {card.schoolName}
+                        {truncateTextByWords(card.schoolName, 1)}
                       </Typography>
                     </Box>
                     <Box
@@ -212,7 +221,8 @@ export default function ProgramCard({ cards, handleClick }) {
                       textAlign: "center",
                       // justifyContent: "center",
                       // justifyItems: "center",
-                      marginBottom: 0
+                      marginBottom: 0,
+                      mt: '10px'
                     }}
                   >
                     <Button

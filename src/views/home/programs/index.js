@@ -92,7 +92,10 @@ export default function ProgramsCard() {
                     variant="p"
                     sx={{
                       width: '100%',
-                      font: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
+                      font: {
+                        xs: `normal normal 400 14px/18px  ${Fonts.secondary}`,
+                        sm: `normal normal 400 14px/18px  ${Fonts.secondary}`,
+                      },
                       color: Colors.textPrimaryDark,
                     }}
                   >

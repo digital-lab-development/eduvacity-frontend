@@ -4,6 +4,16 @@ import {
   Box,
   Grid,
   Typography,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  TextField,
+  Button,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import {
   AllGenderIcon,
@@ -17,12 +27,51 @@ import { Fonts } from "../../src/components/themes/fonts";
 import Intercom from "@intercom/messenger-js-sdk";
 import Image from "next/image";
 import ScholarshipProgramCard from "../../src/views/home/tab/scholarshipCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Assetium() {
   const router = useRouter();
   Intercom({
     app_id: "y4ubjwyw",
   });
+  const [open, setOpen] = useState(false);
+  const [programs, setPrograms] = useState([
+    { id: 1, name: "Computer Science" },
+    { id: 2, name: "Business Administration" },
+    { id: 3, name: "Mechanical Engineering" },
+    { id: 4, name: "Medicine" },
+  ]);
+  const [selectedProgram, setSelectedProgram] = useState("");
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  // Fetch programs from API
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/programs") 
+  //     .then((response) => {
+  //       setPrograms(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching programs:", error);
+  //     });
+  // }, []);
+
+ 
+
+  
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form data here
+    console.log("Form submitted");
+    // Close the dialog after submission
+    handleClose();
+  };
 
   // CardData =  [
   //   {
@@ -191,7 +240,7 @@ export default function Assetium() {
                   communities to <br /> reach the top 1% by providing programs
                   that guarantee employability
                 </Typography>
-                
+
                 <Box
                   component="div"
                   sx={{
@@ -205,11 +254,10 @@ export default function Assetium() {
                     mb: { xs: 4, sm: 1 },
                   }}
                 >
-                   <Box
+                  <Box
                     component="a"
                     target="_blank"
-                    href="https://wa.link/3xhcsh"
-                    // onClick={() => router.push(`https://wa.link/3xhcsh`)}
+                    onClick={handleClickOpen}
                     sx={{
                       display: "flex",
                       justifyContent: "center",
@@ -233,7 +281,6 @@ export default function Assetium() {
                   <Box
                     component="a"
                     target="_blank"
-                    
                     // onClick={() => router.push(`https://wa.link/3xhcsh`)}
                     sx={{
                       display: "flex",
@@ -497,10 +544,9 @@ export default function Assetium() {
               display: "flex",
               flexDirection: "column",
               gap: 3,
-              mt: 5
+              mt: 5,
             }}
           >
-            
             <Box
               sx={{
                 width: "100%",
@@ -516,7 +562,6 @@ export default function Assetium() {
                   <ScholarshipProgramCard />
                 </Grid>
 
-                
                 <Grid item xs={12} sm={6} md={4}>
                   <ScholarshipProgramCard />
                 </Grid>
@@ -746,6 +791,108 @@ export default function Assetium() {
             </Box>
           </Box>
         </Box>
+
+        <Box
+          component="div"
+          sx={{
+            // maxWidth: 500,
+            display: "flex",
+            flexDirection: { xs: "row", sm: "row" },
+            gap: 2,
+            mt: { xs: 5, md: 10 },
+            justifyContent: "center",
+            alignItems: "center",
+            mb: { xs: 4, sm: 1 },
+          }}
+        >
+          <Box
+            component="a"
+            onClick={handleClickOpen}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              font: `normal normal 500 normal 14px/16.8px ${Fonts.primary}`,
+              gap: "8px",
+              padding: "12px 20px 12px 20px",
+              color: Colors.light,
+              border: `1px solid ${Colors.primary}`,
+              borderRadius: "46px",
+              cursor: "pointer",
+              gap: "10px",
+              background: Colors.primary,
+              "&:hover": {
+                background: Colors.secondary,
+              },
+            }}
+          >
+            Apply Now
+          </Box>
+        </Box>
+
+        {/* Popup Form */}
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle>Apply for Scholarship</DialogTitle>
+          <DialogContent>
+            <form onSubmit={handleSubmit}>
+              <TextField
+                autoFocus
+                margin="dense"
+                id="name"
+                label="Full Name"
+                type="text"
+                fullWidth
+                variant="outlined"
+                required
+              />
+              <TextField
+                margin="dense"
+                id="phone"
+                label="Phone Number"
+                type="number"
+                fullWidth
+                variant="outlined"
+                required
+              />
+
+<TextField
+                margin="dense"
+                id="email"
+                label="Email Address"
+                type="email"
+                fullWidth
+                variant="outlined"
+                required
+              />
+              {/* Program of Interest Dropdown */}
+                <FormControl fullWidth margin="dense" variant="outlined" required>
+                  <InputLabel id="program-label">Program of Interest</InputLabel>
+                  <Select
+                    labelId="program-label"
+                    id="program"
+                    value={selectedProgram}
+                    onChange={(e) => setSelectedProgram(e.target.value)}
+                    label="Program of Interest"
+                  >
+                    {programs.map((program) => (
+                      <MenuItem key={program.id} value={program.id}>
+                        {program.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              {/* Add more form fields as necessary */}
+            </form>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={handleSubmit} color="primary">
+              Submit
+            </Button>
+          </DialogActions>
+        </Dialog>
       </Box>
     </div>
   );
