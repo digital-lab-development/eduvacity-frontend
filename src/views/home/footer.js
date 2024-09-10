@@ -250,7 +250,7 @@ export default function FooterPage() {
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
                   }}>
-                  Terms
+                  Terms of Use
                 </Link>{' '}
                 <Link
                   underline="hover"
@@ -261,7 +261,7 @@ export default function FooterPage() {
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
                   }}>
-                  Privacy
+                  Privacy Policy
                 </Link>
                 <Link
                   underline="hover"
@@ -272,7 +272,7 @@ export default function FooterPage() {
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
                   }}>
-                  Cookies
+                  Cookie Policy
                 </Link>
                 <Link
                   underline="hover"

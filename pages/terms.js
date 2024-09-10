@@ -117,7 +117,7 @@ export default function Terms() {
                     textAlign: "left",
                   }}
                 >
-                  Our terms 
+                  Our Terms of Use
                 </Typography>
                     <Typography
                       variant="h4"
@@ -135,7 +135,7 @@ export default function Terms() {
                         textAlign: "left",
                       }}
                     >
-                      Learn our terms of operation.
+                      Read our Terms of Use.
                     </Typography>
                   </Box>
                   <Typography
@@ -203,7 +203,7 @@ export default function Terms() {
                   textAlign: "center",
                 }}
               >
-                Read Our Terms of service
+                Read our Terms of Use
               </Typography>
               <Typography
                 variant="h1"
@@ -219,7 +219,7 @@ export default function Terms() {
                   textAlign: "center",
                 }}
               >
-                Terms of Operation
+                Terms of Use
               </Typography>
               <Typography
                 variant="h1"

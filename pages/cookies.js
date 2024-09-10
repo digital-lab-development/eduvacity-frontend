@@ -135,7 +135,7 @@ export default function Cookies() {
                         textAlign: "left",
                       }}
                     >
-                      Your safty is our concern
+                      Your safety is our concern
                     </Typography>
                   </Box>
                   <Typography
@@ -217,7 +217,7 @@ export default function Cookies() {
                   textAlign: "center",
                 }}
               >
-                Cookies Policies
+                Cookie Policy
               </Typography>
               <Typography
                 variant="h1"
