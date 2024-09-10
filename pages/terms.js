@@ -138,26 +138,7 @@ export default function Terms() {
                       Read our Terms of Use.
                     </Typography>
                   </Box>
-                  <Typography
-                    variant="body4"
-                    sx={{
-                      width: "100%",
-                      maxWidth: { xs: "100%", sm: "98%", md: 672 },
-                      font: {
-                        xs: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                        md: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                      },
-                      color: Colors.textColor,
-                      m: 0,
-                      p: 0,
-                      letterSpacing: "0em",
-                      textAlign: "left",
-                    }}
-                  >
-                    No matter your financial strength, we constantly seek to
-                    have a scholarship that makes our vast library of courses
-                    available to you
-                  </Typography>
+                  
                 </Box>
               </Box>
             </Box>

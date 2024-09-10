@@ -138,23 +138,6 @@ export default function Licenses() {
                       Read our license of operation
                     </Typography>
                   </Box>
-                  <Typography
-                    variant="p"
-                    sx={{
-                      width: "100%",
-                      font: {
-                        xs: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                        md: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                      },
-                      color: Colors.textColor,
-                      m: 0,
-                      p: 0,
-                      letterSpacing: "0em",
-                      textAlign: "left",
-                    }}
-                  >
-                    We operate with license you can trust, read through for more details
-                  </Typography>
                 </Box>
               </Box>
             </Box>
