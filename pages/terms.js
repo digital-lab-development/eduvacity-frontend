@@ -89,7 +89,6 @@ export default function Terms() {
                   gap: "16px",
                 }}
               >
-                
                 <Box
                   sx={{
                     width: "80%",
@@ -98,27 +97,27 @@ export default function Terms() {
                     gap: { xs: "12px", sm: "64px" },
                     alignItems: "center",
                     justifyContent: "center",
-                    mx: 'auto'
+                    mx: "auto",
                   }}
                 >
-                  <Box sx={{ width: "80%", }}>
-                  <Typography
-                  variant="h1"
-                  sx={{
-                    font: {
-                      xs: `normal normal 500 normal 14px/20px ${Fonts.primary}`,
-                      sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                    },
-                    color: Colors.primary,
-                    m: 0,
-                    p: 0,
-                    letterSpacing: "0em",
-                    textTransform: "uppercase",
-                    textAlign: "left",
-                  }}
-                >
-                  Our Terms of Use
-                </Typography>
+                  <Box sx={{ width: "100%" }}>
+                    <Typography
+                      variant="h1"
+                      sx={{
+                        font: {
+                          xs: `normal normal 500 normal 14px/20px ${Fonts.primary}`,
+                          sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                        },
+                        color: Colors.primary,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "0em",
+                        textTransform: "uppercase",
+                        textAlign: "left",
+                      }}
+                    >
+                      Our Terms of Use
+                    </Typography>
                     <Typography
                       variant="h4"
                       sx={{
@@ -138,7 +137,6 @@ export default function Terms() {
                       Read our Terms of Use.
                     </Typography>
                   </Box>
-                  
                 </Box>
               </Box>
             </Box>
@@ -224,7 +222,6 @@ export default function Terms() {
             </Box>
           </Box>
         </Box>
-        
       </Box>
     </div>
   );
