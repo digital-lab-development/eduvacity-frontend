@@ -110,7 +110,7 @@ export default function FooterPage() {
             alignItems: 'center',
           }}>
           <Grid container spacing={{ xs: 3, lg: 8 }}>
-            <Grid item xs={4} sm={3} md={4} >
+            <Grid item xs={4} sm={3} md={3} >
               <Box
                 sx={{
                   width: '100%',
@@ -145,8 +145,7 @@ export default function FooterPage() {
                 ))}
               </Box>
             </Grid>
-            
-            <Grid item xs={4} sm={3} md={4} >
+            <Grid item xs={4} sm={3} md={3} >
               <Box
                 sx={{
                   width: { xs: '100%', sm: 146 },
@@ -178,7 +177,7 @@ export default function FooterPage() {
                 </Link>
                 <Link
                   underline="hover"
-                  href="#"
+                  href=""
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
@@ -189,8 +188,7 @@ export default function FooterPage() {
                 </Link>
               </Box>
             </Grid>
-
-            <Grid item xs={4} sm={3} md={4} >
+            <Grid item xs={4} sm={3} md={3} >
               <Box
                 sx={{
                   width: '100%',
@@ -224,6 +222,77 @@ export default function FooterPage() {
                   </Link>
                 ))}
               </Box>
+            </Grid>
+            <Grid item xs={4} sm={3} md = {3}>
+              <Box
+                sx={{
+                  width: { xs: '100%', sm: 146 },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  alignItems: 'flex-start',
+                }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    textAlign: 'left',
+                    color: Colors.primary,
+                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+                  }}>
+                  Legal
+                </Typography>
+                <Link
+                  underline="hover"
+                  href="/terms"
+                  sx={{
+                    textAlign: 'left',
+                    color: '#E6F4ED',
+                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    letterSpacing: '0em',
+                  }}>
+                  Terms
+                </Link>{' '}
+                <Link
+                  underline="hover"
+                  href="/privacy"
+                  sx={{
+                    textAlign: 'left',
+                    color: '#E6F4ED',
+                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    letterSpacing: '0em',
+                  }}>
+                  Privacy
+                </Link>
+                <Link
+                  underline="hover"
+                  href="/cookies"
+                  sx={{
+                    textAlign: 'left',
+                    color: '#E6F4ED',
+                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    letterSpacing: '0em',
+                  }}>
+                  Cookies
+                </Link>
+                <Link
+                  underline="hover"
+                  href="/license"
+                  sx={{
+                    textAlign: 'left',
+                    color: '#E6F4ED',
+                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    letterSpacing: '0em',
+                  }}>
+                  Licenses
+                </Link>
+              </Box>
+            
+
+
+
+
+
+
             </Grid>
           </Grid>
         </Box>
