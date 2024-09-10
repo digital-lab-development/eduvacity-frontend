@@ -92,14 +92,14 @@ export default function HomeLayout({ children }) {
     {
       name: 'Why eduvacity',
     },
-    {
-      name: 'Programs',
-      children: [
-        'Technology',
-        'Business',
-        'Management'
-      ],
-    },
+    // {
+    //   name: 'Programs',
+    //   children: [
+    //     'Technology',
+    //     'Business',
+    //     'Management'
+    //   ],
+    // },
     {
       name: 'Scholarship',
     },

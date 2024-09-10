@@ -138,24 +138,7 @@ export default function Privacy() {
                       Your privacy matters
                     </Typography>
                   </Box>
-                  <Typography
-                    variant="p"
-                    sx={{
-                      width: "100%",
-                      maxWidth: { xs: "100%", sm: "98%", md: 672 },
-                      font: {
-                        xs: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                        md: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                      },
-                      color: Colors.textColor,
-                      m: 0,
-                      p: 0,
-                      letterSpacing: "0em",
-                      textAlign: "left",
-                    }}
-                  >
-                    We are mindful of your choice of privacy and ensure not to infridge. Read for more insight
-                  </Typography>
+                  
                 </Box>
               </Box>
             </Box>

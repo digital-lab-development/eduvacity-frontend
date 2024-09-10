@@ -89,7 +89,6 @@ export default function Terms() {
                   gap: "16px",
                 }}
               >
-                
                 <Box
                   sx={{
                     width: "80%",
@@ -98,27 +97,27 @@ export default function Terms() {
                     gap: { xs: "12px", sm: "64px" },
                     alignItems: "center",
                     justifyContent: "center",
-                    mx: 'auto'
+                    mx: "auto",
                   }}
                 >
-                  <Box sx={{ width: "80%", }}>
-                  <Typography
-                  variant="h1"
-                  sx={{
-                    font: {
-                      xs: `normal normal 500 normal 14px/20px ${Fonts.primary}`,
-                      sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-                    },
-                    color: Colors.primary,
-                    m: 0,
-                    p: 0,
-                    letterSpacing: "0em",
-                    textTransform: "uppercase",
-                    textAlign: "left",
-                  }}
-                >
-                  Our terms 
-                </Typography>
+                  <Box sx={{ width: "100%" }}>
+                    <Typography
+                      variant="h1"
+                      sx={{
+                        font: {
+                          xs: `normal normal 500 normal 14px/20px ${Fonts.primary}`,
+                          sm: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                        },
+                        color: Colors.primary,
+                        m: 0,
+                        p: 0,
+                        letterSpacing: "0em",
+                        textTransform: "uppercase",
+                        textAlign: "left",
+                      }}
+                    >
+                      Our Terms of Use
+                    </Typography>
                     <Typography
                       variant="h4"
                       sx={{
@@ -135,29 +134,9 @@ export default function Terms() {
                         textAlign: "left",
                       }}
                     >
-                      Learn our terms of operation.
+                      Read our Terms of Use.
                     </Typography>
                   </Box>
-                  <Typography
-                    variant="body4"
-                    sx={{
-                      width: "100%",
-                      maxWidth: { xs: "100%", sm: "98%", md: 672 },
-                      font: {
-                        xs: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                        md: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                      },
-                      color: Colors.textColor,
-                      m: 0,
-                      p: 0,
-                      letterSpacing: "0em",
-                      textAlign: "left",
-                    }}
-                  >
-                    No matter your financial strength, we constantly seek to
-                    have a scholarship that makes our vast library of courses
-                    available to you
-                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -203,7 +182,7 @@ export default function Terms() {
                   textAlign: "center",
                 }}
               >
-                Read Our Terms of service
+                Read our Terms of Use
               </Typography>
               <Typography
                 variant="h1"
@@ -219,7 +198,7 @@ export default function Terms() {
                   textAlign: "center",
                 }}
               >
-                Terms of Operation
+                Terms of Use
               </Typography>
               <Typography
                 variant="h1"
@@ -243,7 +222,6 @@ export default function Terms() {
             </Box>
           </Box>
         </Box>
-        
       </Box>
     </div>
   );

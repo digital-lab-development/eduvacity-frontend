@@ -135,27 +135,9 @@ export default function Cookies() {
                         textAlign: "left",
                       }}
                     >
-                      Your safty is our concern
+                      Your safety is our concern
                     </Typography>
                   </Box>
-                  <Typography
-                    variant="p"
-                    sx={{
-                      width: "100%",
-                      maxWidth: { xs: "100%", sm: "98%", md: 672 },
-                      font: {
-                        xs: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                        md: `normal normal 500 normal 14px/18px ${Fonts.primary}`,
-                      },
-                      color: Colors.textColor,
-                      m: 0,
-                      p: 0,
-                      letterSpacing: "0em",
-                      textAlign: "left",
-                    }}
-                  >
-                    We care about your safety across the various platforms and browsers you access our services from, read to find out more
-                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -217,7 +199,7 @@ export default function Cookies() {
                   textAlign: "center",
                 }}
               >
-                Cookies Policies
+                Cookie Policy
               </Typography>
               <Typography
                 variant="h1"
