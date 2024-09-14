@@ -26,7 +26,7 @@ const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(
   () => ({
     backgroundColor: Colors.light,
     textAlign: 'left',
-    font: `normal normal 400 18px/28px ${Fonts.secondary}`,
+    font: `normal normal 500 14px/28px ${Fonts.primary}`,
     letterSpacing: 0,
     color: '#011B23',
     padding: 0,
@@ -43,8 +43,8 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
   paddingBottom: 24,
   textAlign: 'left',
   font: {
-    xs: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
-    sm: `normal normal 500 normal 18px/24px ${Fonts.primary}`,
+    xs: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
+    sm: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
   },
   letterSpacing: 0,
   color: '#868B93',
@@ -79,7 +79,7 @@ const questions = [
   {
     question: 'How much does tuition cost for eduvacity programs',
     answer:
-      'The starting point for our tuition fees is just 120,000 Naira per year. We also offer flexible payment plans to make financing your education convenient and manageable.',
+      'The starting point for our tuition fees is currently at 210,000 Naira per year. We also offer flexible payment plans to make financing your education convenient and manageable.',
   },
 ];
 export default function FrequentlyAskQuestions() {
@@ -97,7 +97,7 @@ export default function FrequentlyAskQuestions() {
       }}>
       {questions?.map((quest, i) => (
         <Box key={`quest-${i}`} sx={{ width: '100%' }}>
-          <Accordion
+          <Accordion  
             expanded={expanded === `panel${i + 1}`}
             onChange={handleChange(`panel${i + 1}`)}>
             <AccordionSummary

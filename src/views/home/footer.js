@@ -16,6 +16,7 @@ import {
   FOOTER_COMPANY,
   FOOTER_COURSES,
   FOOTER_NOTE,
+  FOOTER_SCHOLARSHIP,
 } from '../../utils/contants';
 
 export default function FooterPage() {
@@ -35,8 +36,9 @@ export default function FooterPage() {
       }}>
       <Box
         sx={{
-          width: '100%',
+          width: '90%',
           display: 'flex',
+          justifyContent: 'space-between',
           flexDirection: { xs: 'column', md: 'row' },
           gap: { xs: 4, md: 4, lg: 10, xl: 9 },
           pl: { xs: 4, sm: 3, lg: 5, xl: 16 },
@@ -65,8 +67,8 @@ export default function FooterPage() {
             sx={{
               maxWidth: '100%',
               font: {
-                xs: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
-                md: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 14px/24px ${Fonts.secondary}`,
+                md: `normal normal 500 normal 16px/24px ${Fonts.secondary}`,
               },
               color: '#87A0A8',
               textAlign: { xs: 'left', sm: 'left' },
@@ -79,7 +81,7 @@ export default function FooterPage() {
               textAlign: 'left',
               mt: { xs: 2, lg: 8 },
               color: Colors.primary,
-              font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+              font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
             }}>
             Address
           </Typography>
@@ -88,8 +90,8 @@ export default function FooterPage() {
             sx={{
               maxWidth: '100%',
               font: {
-                xs: `normal normal 500 normal 14px/24px ${Fonts.primary}`,
-                md: `normal normal 500 normal 16px/24px ${Fonts.primary}`,
+                xs: `normal normal 500 normal 14px/24px ${Fonts.secondary}`,
+                md: `normal normal 500 normal 114/24px ${Fonts.secondary}`,
               },
               color: '#87A0A8',
               textAlign: { xs: 'left', sm: 'left' },
@@ -104,43 +106,11 @@ export default function FooterPage() {
             maxWidth: 1616,
             flex: 1,
             display: 'flex',
-            justifyContent: { xs: 'flex-start', sm: 'flex-end' },
+            justifyContent: { xs: 'flex-start', sm: 'space-between' },
             alignItems: 'center',
           }}>
           <Grid container spacing={{ xs: 3, lg: 8 }}>
-            <Grid item xs={8} sm={3} md={4} lg={2.4}>
-              <Box
-                sx={{
-                  width: { xs: '100%', sm: 205 },
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '16px',
-                  alignItems: 'flex-start',
-                }}>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    textAlign: 'left',
-                    color: Colors.primary,
-                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-                  }}>
-                  Courses
-                </Typography>
-                {FOOTER_COURSES.map((course, index) => (
-                  <Box
-                    key={`${course}_${index}`}
-                    sx={{
-                      textAlign: 'left',
-                      color: '#E6F4ED',
-                      font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
-                      letterSpacing: '0em',
-                    }}>
-                    {course}
-                  </Box>
-                ))}
-              </Box>
-            </Grid>
-            <Grid item xs={4} sm={3} md={4} lg={2.4}>
+            <Grid item xs={4} sm={3} md={3} >
               <Box
                 sx={{
                   width: '100%',
@@ -155,7 +125,7 @@ export default function FooterPage() {
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
-                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
                   }}>
                   Company
                 </Typography>
@@ -175,7 +145,7 @@ export default function FooterPage() {
                 ))}
               </Box>
             </Grid>
-            <Grid item xs={8} sm={3} md={4} lg={2.4}>
+            <Grid item xs={4} sm={3} md={3} >
               <Box
                 sx={{
                   width: { xs: '100%', sm: 146 },
@@ -189,121 +159,71 @@ export default function FooterPage() {
                   sx={{
                     textAlign: 'left',
                     color: Colors.primary,
-                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
-                  }}>
-                  Academics
-                </Typography>
-                <Link
-                  underline="hover"
-                  href="#"
-                  sx={{
-                    textAlign: 'left',
-                    color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
-                    letterSpacing: '0em',
-                  }}>
-                  Blogs
-                </Link>{' '}
-                <Link
-                  underline="hover"
-                  href="#"
-                  sx={{
-                    textAlign: 'left',
-                    color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
-                    letterSpacing: '0em',
-                  }}>
-                  Idea hubs
-                </Link>
-                <Link
-                  underline="hover"
-                  href="#"
-                  sx={{
-                    textAlign: 'left',
-                    color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
-                    letterSpacing: '0em',
-                  }}>
-                  Contact us
-                </Link>
-              </Box>
-            </Grid>
-            <Grid item xs={4} sm={3} md={4} lg={2.4}>
-              <Box
-                sx={{
-                  width: { xs: '100%', sm: 146 },
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '16px',
-                  alignItems: 'flex-start',
-                }}>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    textAlign: 'left',
-                    color: Colors.primary,
-                    font: `normal normal 600 normal 14px/20px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
                   }}>
                   Resources
                 </Typography>
+                
                 <Link
                   underline="hover"
-                  href="#"
+                  href="#faqs"
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
-                    letterSpacing: '0em',
-                  }}>
-                  Blogs
-                </Link>{' '}
-                <Link
-                  underline="hover"
-                  href="#"
-                  sx={{
-                    textAlign: 'left',
-                    color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
-                    letterSpacing: '0em',
-                  }}>
-                  Idea hubs
-                </Link>
-                <Link
-                  underline="hover"
-                  href="https://ocw.mit.edu"
-                  sx={{
-                    textAlign: 'left',
-                    color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
-                    letterSpacing: '0em',
-                  }}>
-                  E-library
-                </Link>
-                <Link
-                  underline="hover"
-                  href="#"
-                  sx={{
-                    textAlign: 'left',
-                    color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
                     letterSpacing: '0em',
                   }}>
                   FAQs
                 </Link>
                 <Link
                   underline="hover"
-                  href="#"
+                  href=""
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
-                    font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
+                    font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
                     letterSpacing: '0em',
                   }}>
                   How to get started
                 </Link>
               </Box>
             </Grid>
-            <Grid item xs={8} sm={3} md={4} lg={2.4}>
+            <Grid item xs={4} sm={3} md={3} >
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  alignItems: 'flex-start',
+                  ml: { xs: 0, sm: 4, lg: 6, xl: 3 },
+                }}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    textAlign: 'left',
+                    color: Colors.primary,
+                    font: `normal normal 600 normal 14px/20px ${Fonts.primary}`,
+                  }}>
+                  Scholarships
+                </Typography>
+                {FOOTER_SCHOLARSHIP.map((company, index) => (
+                  <Link
+                    key={`${company}_${index}`}
+                    underline="hover"
+                    href={company.href}
+                    sx={{
+                      textAlign: 'left',
+                      color: '#E6F4ED',
+                      font: `normal normal 600 normal 14px/24px ${Fonts.secondary}`,
+                      letterSpacing: '0em',
+                    }}>
+                    {company.title}
+                  </Link>
+                ))}
+              </Box>
+            </Grid>
+            <Grid item xs={4} sm={3} md = {3}>
               <Box
                 sx={{
                   width: { xs: '100%', sm: 146 },
@@ -323,40 +243,40 @@ export default function FooterPage() {
                 </Typography>
                 <Link
                   underline="hover"
-                  href="#"
+                  href="/terms"
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
                   }}>
-                  Terms
+                  Terms of Use
                 </Link>{' '}
                 <Link
                   underline="hover"
-                  href="#"
+                  href="/privacy"
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
                   }}>
-                  Privacy
+                  Privacy Policy
                 </Link>
                 <Link
                   underline="hover"
-                  href="#"
+                  href="/cookies"
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
                     font: `normal normal 600 normal 14px/24px ${Fonts.inter}`,
                     letterSpacing: '0em',
                   }}>
-                  Cookies
+                  Cookie Policy
                 </Link>
                 <Link
                   underline="hover"
-                  href="#"
+                  href="/license"
                   sx={{
                     textAlign: 'left',
                     color: '#E6F4ED',
@@ -366,6 +286,13 @@ export default function FooterPage() {
                   Licenses
                 </Link>
               </Box>
+            
+
+
+
+
+
+
             </Grid>
           </Grid>
         </Box>
@@ -374,7 +301,7 @@ export default function FooterPage() {
         sx={{
           width: '100%',
           display: 'flex',
-          alignItems: 'flex-start',
+          alignItems: 'center',
           justifyContent: 'space-between',
           gap: '64px',
           padding: '48px 0 48px 0',
@@ -384,7 +311,7 @@ export default function FooterPage() {
         }}>
         <Box
           sx={{
-            width: '100%',
+            width: '90%',
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },
             justifyContent: 'space-between',
@@ -398,7 +325,7 @@ export default function FooterPage() {
               textAlign: 'left',
               color: Colors.light,
               display: { xs: 'none', sm: 'flex' },
-              font: `normal normal 400 normal 16px/24px ${Fonts.inter}`,
+              font: `normal normal 400 normal 14px/24px ${Fonts.primary}`,
               letterSpacing: '0em',
             }}>
             © {year} eduvacity. All rights reserved.
@@ -452,7 +379,7 @@ export default function FooterPage() {
               textAlign: 'left',
               color: Colors.light,
               display: { xs: 'flex', sm: 'none' },
-              font: `normal normal 400 normal 16px/24px ${Fonts.inter}`,
+              font: `normal normal 400 normal 14px/24px ${Fonts.primary}`,
               letterSpacing: '0em',
             }}>
             © {year} eduvacity. All rights reserved.

@@ -79,7 +79,7 @@ export default function BillingProcessCard({ course }) {
                           component="div"
                           sx={{
                             background: `linear-gradient(0deg, #D7FEE9, #D7FEE9),linear-gradient(0deg, #F5FFFA, #F5FFFA)`,
-                            font: `normal normal 400 normal 14px/20px ${Fonts.inter}`,
+                            font: `normal normal 400 normal 14px/20px ${Fonts.openSans}`,
                             padding: `4px 12px 4px 12px`,
                             borderRadius: '9999px',
                             border: '1px solid #D7FEE9',
@@ -107,13 +107,13 @@ export default function BillingProcessCard({ course }) {
                         display: 'flex',
                         gap: '4px',
                         alignItems: 'center',
-                        font: `normal normal 700 normal 60px/72px ${Fonts.inter}`,
+                        font: `normal normal 700 normal 60px/72px ${Fonts.openSans}`,
                         letterSpacing: '-0.02em',
                         textAlign: 'left',
                         color: '#fff',
                       }}>
                       {ngnCurrencyFormatter(
-                        course?.programType === 'diploma' ? 70000 : 35000
+                        course === 'diploma' ? card.price : 35000
                       )}
                       {course?.programType === 'diploma' && (
                         <>
@@ -163,7 +163,7 @@ export default function BillingProcessCard({ course }) {
                   <Box
                     sx={{
                       textTransform: 'none',
-                      font: `normal normal 700 normal 16px/24px ${Fonts.inter}`,
+                      font: `normal normal 700 normal 16px/24px ${Fonts.openSans}`,
                       color: '#fff',
                       letterSpacing: '0em',
                       textAlign: 'left',

@@ -35,10 +35,15 @@ export const FOOTER_COURSES = [
 
 export const FOOTER_COMPANY = [
   { title: 'Why eduvacity', href: '/why-eduvacity' },
-  { title: 'Careers', href: '#' },
-  { title: 'Partners', href: '#' },
-  { title: 'Become an instructors', href: '#' },
-  { title: 'Scholarships', href: '#' },
+  { title: 'Careers', href: '/become-an-instructor' },
+  { title: 'Contact us', href: 'https://wa.link/3xhcsh' },
+  // { title: 'Become an instructors', href: '/become-an-instructor' },
+  // { title: 'Scholarships', href: '/scholarship' },
+];
+export const FOOTER_SCHOLARSHIP = [
+  { title: 'Assetium 100%', href: '/scholarship/assetium' },
+  // { title: 'Educate Her', href: '/scholarship' },
+  
 ];
 
 //WHY EDUVACITY
