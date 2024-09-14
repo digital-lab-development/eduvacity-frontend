@@ -1160,8 +1160,14 @@ export default function CloudComputingPage() {
               width: { xs: '100%', sm: '45%' },
               height: { xs: 342, sm: '100%' },
               backgroundImage: {
-                xs: 'url(/images/certificate.svg)',
-                sm: 'url(/images/certificate.svg)',
+                xs:
+                  course?.programType === 'diploma'
+                    ? 'url(/images/certificate.svg)'
+                    : 'url(/images/certificate-eduvacity.png)',
+                sm:
+                  course?.programType === 'diploma'
+                    ? 'url(/images/certificate.svg)'
+                    : 'url(/images/certificate-eduvacity.png)',
               },
               backgroundSize: 'contain',
               backgroundPosition: { xs: 'top right', sm: 'top right' },
